@@ -26,15 +26,6 @@ export default function Home() {
     // nav bar
     <div className="min-h-screen flex flex-col items-center bg-white-0 text-white">
       <nav className="w-full py-4 bg-white-800 shadow-lg">
-          {/* <div className="flex items-center space-x-2">
-            <Image
-              src="/logo.png" // 確保有放入 public/logo.png
-              alt="Project Logo"
-              width={32}
-              height={32}
-              className="rounded-full"
-            />
-          </div> */}
         <div className="container mx-auto flex items-center justify-center space-x-4">
           <Link href="/" className="flex items-center space-x-1">
             <HomeIcon className="w-6 h-6 text-stone-900 hover:scale-110 transition-transform" />
