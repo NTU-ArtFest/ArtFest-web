@@ -1,2 +1,2 @@
-# Wave - wave through people's heard
-## this is just a template, please wait for me to change it
+# Wave - wave through people's heart
+## I am just a template
