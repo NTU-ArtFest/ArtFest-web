@@ -1,4 +1,3 @@
-import nodemailer from 'nodemailer';
 import { sendEmail } from '@/components/email/send_email';
 
 export async function POST(request: Request) {
