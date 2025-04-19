@@ -24,16 +24,16 @@ export const FloatingImageButton: React.FC<FloatingImageButtonProps> = ({
     return (
         <div
             className={`
-        absolute
-        ${left}
-        ${mdLeft}
-        ${bottom}
-        ${mdBottom}
-        -translate-x-1/2
-        -translate-y-1/2
-        ${width}
-        ${mdWidth}
-      `}
+                absolute
+                ${left}
+                ${mdLeft}
+                ${bottom}
+                ${mdBottom}
+                -translate-x-1/2
+                -translate-y-1/2
+                ${width}
+                ${mdWidth}
+            `}
         >
             <button onClick={onClick} className="w-full">
                 <Image

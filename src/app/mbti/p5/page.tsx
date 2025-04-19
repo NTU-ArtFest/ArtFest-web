@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import { FloatingImageButton } from "@/components/mbti/FloatingImageButton";
 
 export default function Page5() {
     const router = useRouter();
@@ -19,65 +20,26 @@ export default function Page5() {
                     priority
                 />
                 {/* Clickable Button SVG - different positioning for mobile vs desktop */}
-                <div
-                    className="
-                        absolute 
-                        left-[40%]          /* Mobile: centered horizontally */
-                        md:left-[52%]     /* Desktop: offset to right */
-                        bottom-[10%]         /* Mobile: higher from bottom */
-                        md:bottom-[17%]      /* Desktop: different bottom position */
-                        -translate-x-1/2 
-                        -translate-y-1/2 
-                        w-[70%]             /* Mobile: wider */
-                        md:w-[20%]
-                        lg:w-[16%]          /* Desktop: narrower */
-                        "
-                >
-                    <button
-                        onClick={() => {
-                            // do some stuff to save the answer.
-                            router.push("/mbti/p6");
-                        }}
-                        className="w-full"
-                    >
-                        <Image
-                            src="/mbti/p5-btn-1.svg"
-                            alt="Cool Button"
-                            width={140}
-                            height={140}
-                            className="w-full h-auto"
-                        />
-                    </button>
-                </div>
-                <div
-                    className="
-                        absolute 
-                        left-[75%]          /* Mobile: centered horizontally */
-                        md:left-[52%]     /* Desktop: offset to right */
-                        bottom-[0%]         /* Mobile: higher from bottom */
-                        md:bottom-[8%]      /* Desktop: different bottom position */
-                        -translate-x-1/2 
-                        -translate-y-1/2 
-                        w-[70%]             /* Mobile: wider */
-                        md:w-[17%]          /* Desktop: narrower */
-                        "
-                >
-                    <button
-                        onClick={() => {
-                            // do some stuff to save the answer.
-                            router.push("/mbti/p6");
-                        }}
-                        className="w-full"
-                    >
-                        <Image
-                            src="/mbti/p5-btn-2.svg"
-                            alt="Cool Button"
-                            width={140}
-                            height={140}
-                            className="w-full h-auto"
-                        />
-                    </button>
-                </div>
+                <FloatingImageButton
+                    imageSrc="/mbti/p5-btn-1.svg"
+                    onClick={() => router.push("/mbti/p6")}
+                    left="left-[40%]"
+                    mdLeft="md:left-[52%]"
+                    bottom="bottom-[10%]"
+                    mdBottom="md:bottom-[17%]"
+                    width="w-[70%]"
+                    mdWidth="md:w-[16%]"
+                />
+                <FloatingImageButton
+                    imageSrc="/mbti/p5-btn-2.svg"
+                    onClick={() => router.push("/mbti/p6")}
+                    left="left-[75%]"
+                    mdLeft="md:left-[52%]"
+                    bottom="bottom-[0%]"
+                    mdBottom="md:bottom-[8%]"
+                    width="w-[70%]"
+                    mdWidth="md:w-[17%]"
+                />
             </div>
         </div>
     );

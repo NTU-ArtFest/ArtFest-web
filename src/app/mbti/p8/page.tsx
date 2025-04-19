@@ -6,7 +6,7 @@ import localFont from "next/font/local";
 
 // const myFont = localFont({ src: "/SourceHanSerifTC-VF.ttf" }); 思源宋體
 
-export default function Page7() {
+export default function Page8() {
     const router = useRouter();
 
     return (
@@ -25,6 +25,7 @@ export default function Page7() {
             <input
                 className={`
                     ${"myFont.className"}
+                    font-bold
                     bg-transparent
                     text-[#2B7687]
                     text-center

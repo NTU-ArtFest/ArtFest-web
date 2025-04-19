@@ -1,5 +1,6 @@
 "use client";
 
+import { FloatingImageButton } from "@/components/mbti/FloatingImageButton";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
@@ -7,7 +8,7 @@ export default function Problem2() {
     const router = useRouter();
 
     return (
-        <div className="flex items-center justify-center w-full h-screen bg-[#88A4CA] overflow-hidden">
+        <div className="flex items-center justify-center w-full h-screen bg-gradient-to-b from-[#88A4CA] from-20% via-[#F0F5AA] via-70% to-[#F8EFD9] overflow-hidden">
             {/* Background SVG */}
             <div className="relative w-full h-full">
                 <Image
@@ -19,7 +20,6 @@ export default function Problem2() {
                     priority
                 />
 
-                {/* Title SVG - different positioning for mobile vs desktop */}
                 <div
                     className="
                         absolute 
@@ -42,65 +42,26 @@ export default function Problem2() {
                         className="w-full h-auto"
                     />
                 </div>
-
-                {/* Clickable Button SVG - different positioning for mobile vs desktop */}
-                <div
-                    className="
-                        absolute 
-                        left-[40%]          /* Mobile: centered horizontally */
-                        md:left-[47%]     /* Desktop: offset to right */
-                        bottom-[10%]         /* Mobile: higher from bottom */
-                        md:bottom-[14%]      /* Desktop: different bottom position */
-                        -translate-x-1/2 
-                        -translate-y-1/2 
-                        w-[70%]             /* Mobile: wider */
-                        md:w-[20%]
-                        lg:w-[18%]          /* Desktop: narrower */
-                        "
-                >
-                    <button
-                        onClick={() => {
-                            router.push("/mbti/p3");
-                        }}
-                        className="w-full"
-                    >
-                        <Image
-                            src="/mbti/p2-btn-1.svg"
-                            alt="Cool Button"
-                            width={140}
-                            height={140}
-                            className="w-full h-auto"
-                        />
-                    </button>
-                </div>
-                <div
-                    className="
-                        absolute 
-                        left-[75%]          /* Mobile: centered horizontally */
-                        md:left-[55.6%]     /* Desktop: offset to right */
-                        bottom-[0%]         /* Mobile: higher from bottom */
-                        md:bottom-[3%]      /* Desktop: different bottom position */
-                        -translate-x-1/2 
-                        -translate-y-1/2 
-                        w-[70%]             /* Mobile: wider */
-                        md:w-[20%]          /* Desktop: narrower */
-                        "
-                >
-                    <button
-                        onClick={() => {
-                            router.push("/mbti/p3");
-                        }}
-                        className="w-full"
-                    >
-                        <Image
-                            src="/mbti/p2-btn-2.svg"
-                            alt="Cool Button"
-                            width={140}
-                            height={140}
-                            className="w-full h-auto"
-                        />
-                    </button>
-                </div>
+                <FloatingImageButton
+                    imageSrc="/mbti/p2-btn-1.svg"
+                    onClick={() => router.push("/mbti/p3")}
+                    left="left-[40%]"
+                    mdLeft="md:left-[47%]"
+                    bottom="bottom-[10%]"
+                    mdBottom="md:bottom-[14%]"
+                    width="w-[70%]"
+                    mdWidth="w-[18%]"
+                />
+                <FloatingImageButton
+                    imageSrc="/mbti/p2-btn-2.svg"
+                    onClick={() => router.push("/mbti/p3")}
+                    left="left-[75%]"
+                    mdLeft="md:left-[55.6%]"
+                    bottom="bottom-[0%]"
+                    mdBottom="md:bottom-[3%]"
+                    width="w-[70%]"
+                    mdWidth="w-[20%]"
+                />
             </div>
         </div>
     );
