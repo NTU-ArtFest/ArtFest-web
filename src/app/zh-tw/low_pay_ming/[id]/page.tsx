@@ -14,7 +14,7 @@ async function getPostById(id: string) {
       date: '2022年2月10日 星期四',
       description: `！兒童健康不可少！\n羅培民下鄉服務隊於 2022 年 1 月 10 日到南投鄉下社區，為所有兒童施打疫苗，以及舉辦小遊戲，用遊戲帶領小孩理解健康的重要`,
       images: [
-        '/low_pay.png', 
+        '/arg/low_pay.png', 
       ],
     },
   ];
@@ -34,7 +34,7 @@ export default async function PostPage({ params }: { params: Promise<{ id: strin
 
     <div className="relative min-h-screen bg-retroYellow">
         <div
-            className=" fixed inset-0 bg-[url('/arg/nice_pic_bg.jpeg')]  bg-cover bg-center filter blur-lg "
+            className=" fixed inset-0 bg-[url('/arg/nice_pic_bg.jpeg')] bg-cover bg-center filter blur-lg "
             aria-hidden="true"
         ></div>
 

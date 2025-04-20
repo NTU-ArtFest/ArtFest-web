@@ -24,7 +24,7 @@ export default function WikiPage() {
         <div className="flex items-center">
           <div className="pl-2 pr-4 pt-1 relative z-100">
             <Image 
-              src="/wikipedia.png" 
+              src="/arg/wikipedia.png" 
               alt="維基百科" 
               width={50}
               height={50}
@@ -151,7 +151,7 @@ export default function WikiPage() {
 
             <div className="float-right ml-4 mb-2 pt-10">
               <Image 
-                src="/dog3.jpg" 
+                src="/arg/du_zhi.png" 
                 alt="杜知更" 
                 width={300} 
                 height={400} 
