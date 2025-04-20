@@ -51,7 +51,7 @@ export default function Home() {
                     <div className="text-sm text-gray-500">{post.date}</div>
                 </div>
                 
-                <div className="mb-4 whitespace-pre-line">{post.content}</div>
+                <div className="mb-4 whitespace-pre-line text-black">{post.content}</div>
                 
                 <div className="grid grid-cols-2 gap-2 mb-4">
                     {post.images.map((image, index) => (

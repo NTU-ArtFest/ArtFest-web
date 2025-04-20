@@ -32,8 +32,8 @@ export default function WikiPage() {
             />
           </div>
           <div className="flex flex-col">
-            <span className="font-bold text-xl md:text-2xl tracking-wider">維基百科</span>
-            <span className="text-sm">自由的百科全書</span>
+            <span className="font-bold text-xl md:text-2xl tracking-wider text-black">維基百科</span>
+            <span className="text-sm text-black">自由的百科全書</span>
           </div>
         </div>
         
@@ -63,7 +63,7 @@ export default function WikiPage() {
         {/* 左側目錄區塊 */}
         <aside className="hidden lg:block w-1/6 bg-white pl-10 pr-4">
             <div className="sticky top-[130px] p-4">
-              <h2 className="text-sm font-extrabold mb-3 border-b pb-1">目次</h2>
+              <h2 className="text-sm font-extrabold mb-3 border-b pb-1 text-black">目次</h2>
               <div className="space-y-2 text-sm">
                 <Link href="#intro" className="text-blue-600 hover:underline block">序言</Link>
                 <div>
@@ -104,7 +104,7 @@ export default function WikiPage() {
           {/* 標題區域 */}
             <div id = "intro"className="border-b border-gray-300">
               <div className="flex justify-between items-center px-0 py-1">
-                <h1 className="text-3xl font-bold font-Noto_Serif_TC">杜知更
+                <h1 className="text-3xl font-bold font-Noto_Serif_TC text-black">杜知更
                 </h1>
                 <div className="flex items-center">
                   <button className="text-blue-600 hover:underline flex items-center">
@@ -161,9 +161,9 @@ export default function WikiPage() {
                 height={400} 
                 className="object-cover w-full md:w-80 h-auto"
               />
-              <p className="text-center font-bold">杜知更</p>
+              <p className="text-center font-bold text-black">杜知更</p>
               <p className="text-center text-sm text-gray-500">杜知更</p>
-              <p className="text-center text-xs text-gray-400">攝於2030年</p>
+              <p className="text-center text-xs text-gray-400 text-black">攝於2030年</p>
             </div>
 
             
@@ -177,32 +177,32 @@ export default function WikiPage() {
               </div>
               
               <div id="intro">
-                <p className="mb-4">
+                <p className="mb-4 text-black">
                   <strong>杜知庚</strong>（英語：du zhi gun） （2010年－），是一位著名的生化科技專家，也是全球知名企業 Current Effect 的創辦人之一。他以其在生物技術領域的卓越貢獻和創新精神而聞名，帶領公司從初創階段成長為世界一流的生技企業。
                 </p>
                 
-                <p className="mb-4">
+                <p className="mb-4 text-black">
                 </p>
               </div>
               <div className="inline-block border-b border-gray-300 mt-6 w-[630px]">
-                <h2 id="early-life" className="text-2xl ">
+                <h2 id="early-life" className="text-2xl text-black">
                   生平
                 </h2>
               </div>
               <div className="inline-block border-b border-gray-300 pb-1 mb-4 mt-6 w-[630px]">
-                <h2 id="early-life" className="text-xl font-bold">
+                <h2 id="early-life" className="text-xl font-bold text-black">
                   學涯
                 </h2>
               </div>
-              <p className="mb-4">
+              <p className="mb-4 text-black">
               杜知更出生於一個富裕且充滿奮鬥精神的家庭，其父母白手起家，創立了一家成功的製藥公司。他從小便對醫藥和生物科學充滿熱情，並展現出過人的學術天賦。
               </p>
 
-              <p className="mb-4">
+              <p className="mb-4 text-black">
               在中學時期，他已經能熟練閱讀多種科學期刊，並對基因工程和分子生物學產生濃厚興趣。在高中畢業後，杜知更以優異成績考入台灣大學，主修分子生物學與生物工程。他在大學期間表現卓越，多次獲得校內外的科研獎項，並參與了數個關於基因編輯技術的前沿研究項目
               </p>
               
-              <p className="mb-4">
+              <p className="mb-4 text-black">
               畢業後，他憑藉出色的學術成果獲得全額獎學金，繼續攻讀台大碩士學位。
 
 在 NTU 的碩士研究期間，杜知更專注於合成生物學與蛋白質工程領域。他的碩士論文《基於合成蛋白質設計的新型抗體開發》被《自然·生物技術》（Nature Biotechnology）期刊刊載，並被視為該領域的重要突破之一。這篇論文不僅為他贏得了國際聲譽，也奠定了他日後進軍生技產業的基礎。
@@ -210,47 +210,47 @@ export default function WikiPage() {
 在這段期間，他結識了同樣對生物科技充滿熱情的凱麗。兩人因共同的理想而一拍即合，共同創立 Current Effect 生化科技公司。
               </p>
 
-              <h2 id="career" className="text-xl font-bold border-b border-gray-300 pb-1 mb-4 mt-6 w-screen">職業經歷</h2>
+              <h2 id="career" className="text-xl font-bold border-b border-gray-300 pb-1 mb-4 mt-6 w-screen text-black">職業經歷</h2>
 
-              <p className="mb-4">
+              <p className="mb-4 text-black">
               2020年：拜茶（Bi Tê）成立。杜知更創立生化科技公司「拜茶」（Bi Tê），專注於研究保養與延長壽命的技術。公司以生物科技為基礎，致力於開發能改變人類健康與美麗的新產品。
               </p>
 
-              <p className="mb-4">
+              <p className="mb-4 text-black">
               2021年：推出首款產品。公司推出第一款養顏美容精品，宣稱使用後可讓皮膚年輕30歲，迅速吸引市場關注，成為保養品行業的一匹黑馬。
               </p>
               
-              <p className="mb-4">
+              <p className="mb-4 text-black">
               2022年：新聞風波導致銷量下滑，原本銷量穩步上升，但因被媒體揭露產品使用過期酪梨油的醜聞，公司形象受損，營收大幅下跌。
 
 
               </p>
               
-              <p className="mb-4">
+              <p className="mb-4 text-black">
               2023年：面臨破產危機。公司銷量急劇下降，一季僅售出不到1000份產品。杜知更面臨破產危機，開始尋找新的靈感以拯救公司。
               </p>
               
-              <p className="mb-4">
+              <p className="mb-4 text-black">
               2027年：潮間帶研究的突破。杜知更和團隊在潮間帶的生態研究中逐漸發現蛛絲馬跡，認為這片自然界可能隱藏著改變世界的秘密。
               </p>
               
-              <p className="mb-4">
+              <p className="mb-4 text-black">
               2029年：潮間帶精華發掘。經過兩年的深入研究，團隊成功提取潮間帶中最精華的部分，這些成分被認為具有改變人類健康與抗衰老的潛力。
               </p>
               
-              <p className="mb-4">
+              <p className="mb-4 text-black">
               2029~2030年：專注研發與品質。杜知更極力推動研發工作，堅持品質至上，並提醒團隊莫忘初衷，以善良和創新精神作為核心理念。
               </p>
               
-              <p className="mb-4">
+              <p className="mb-4 text-black">
               2030年：公司改名為 Current Effect。為了展示技術突破並重新定位品牌，公司正式更名為 Current Effect，強調已找到能對抗「年齡小偷」的革命性技術。
               </p>
               
-              <p className="mb-4">
+              <p className="mb-4 text-black">
               2030~2035年：研發與測試階段。團隊投入大量資源進行研究、實驗、研發和測試，以確保產品安全性和有效性。這段時間成為公司技術積累的重要階段。
               </p>
               
-              <p className="mb-4">
+              <p className="mb-4 text-black">
               2035年：革命性產品問世
 Current Effect 發表最新產品，包括：
 
@@ -259,30 +259,30 @@ Exhibit O-o：一種培育出最強抗體的珍珠，可將人類平均壽命延
 Exhibit O-o-A：萃取自珍珠技術的醫美療程「Tidal-A」，能讓外貌美麗定格，成為醫美市場的新標杆。
               </p>
 
-              <p className="mb-4">
+              <p className="mb-4 text-black">
               2036年：銷量暴增。隨著新產品的成功上市，公司銷量逐年暴增，一季平均銷量達到100,000份，奠定了市場領導地位。
 
 
               </p>
 
-              <p className="mb-4">
+              <p className="mb-4 text-black">
               2040年：成立10周年。Current Effect 慶祝成立10周年，公司年度營收突破10億美元。同仁們持續努力開發新產品，保持技術領先地位。
               </p>
 
-              <h2 id="honor" className="text-xl font-bold border-b border-gray-300 pb-1 mb-4 mt-6 w-screen">榮譽</h2>
-              <p className="mb-4">
+              <h2 id="honor" className="text-xl font-bold border-b border-gray-300 pb-1 mb-4 mt-6 w-screen text-black">榮譽</h2>
+              <p className="mb-4 text-black">
               最佳狗狗獎得主
               </p>
-              <p id = "data" className="mb-4">
+              <p id = "data" className="mb-4 text-black">
               最佳美容保養大師
               </p>
-              <div className="inline-block border-b border-gray-300 mt-6 w-screen">
+              <div className="inline-block border-b border-gray-300 mt-6 w-screen text-black">
                 <h2 id="early-life" className="text-2xl">
                   參考資料
                 </h2>
               </div>
               <p className="mb-4">
-                <Link href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" className="text-blue-600 hover:underline block pt-3">杜知更人生傳記</Link>
+                <Link href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" className="text-blue-600 hover:underline block pt-3 text-black">杜知更人生傳記</Link>
               </p>
             </div>
             
@@ -291,7 +291,7 @@ Exhibit O-o-A：萃取自珍珠技術的醫美療程「Tidal-A」，能讓外貌
 
         {/* 右側附加資訊區塊 */}
         <aside className="hidden lg:block w-1/6 bg-white flex justify-end pr-10">
-          <div className="sticky top-[100px] p-4 text-sm">
+          <div className="sticky top-[100px] p-4 text-sm text-black">
             <div className="mb-6">
               <h3 className="font-medium mb-2 border-b pb-2">外觀</h3>
               <h3 className="font-medium mb-2 border-b pb-2">文字</h3>
@@ -323,7 +323,7 @@ Exhibit O-o-A：萃取自珍珠技術的醫美療程「Tidal-A」，能讓外貌
               </div>
             </div>
             
-            <div>
+            <div className="text-black">
               <h3 className="font-medium mb-2 border-b pb-2">色彩</h3>
               <div className="space-y-1">
                 <button 
