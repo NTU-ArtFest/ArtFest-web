@@ -22,8 +22,9 @@ async function getPostById(id: string) {
   return posts.find(post => post.id === id);
 }
 
-export default async function PostPage({ params }: { params: { id: string } }) {
-  const post = await getPostById(params.id);
+export default async function PostPage({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
+  const post = await getPostById(id);
   
   if (!post) {
     return <div>文章不存在</div>;

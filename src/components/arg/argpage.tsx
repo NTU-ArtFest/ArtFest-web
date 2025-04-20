@@ -1,13 +1,17 @@
-import ArgPage from '@/components/arg/argpage';
+// app/page.tsx
+'use client';
+
+import React, {  useState, useEffect } from 'react';
+// useRef,
+import { useRouter } from 'next/navigation'; // 使用 next/navigation 路由器
+
+// import Image from 'next/image';
+import ImageLoader from '../../components/ImageLoader'; // Adjust the path as necessary
+// import Draggable from 'react-draggable';
+// import puzzleBg from '../../public/puzzle-bg.png'; // Adjust the path as necessary
 
 
-export const metadata = {
-  title: 'Arg - 30th NTU ArtFest',
-  description: '第 𝟑𝟎 屆臺大藝術季 𝟑𝟎𝐭𝐡 𝐍𝐓𝐔 𝐀𝐫𝐭𝐅𝐞𝐬𝐭《 潮汐 𝐑𝐢𝐬𝐞 𝐚𝐧𝐝 𝐅𝐚𝐥𝐥 》 - ARG 體驗 - 這天在潮間黨的造勢會上，名氣鼎盛的總裁王凱麗突然消失無蹤，Current Effect 也因此開出了高額獎金，希望能盡快找到總裁的下落⋯⋯',
-};
-
-
-export default function Page() {
+export default function ArgPage() {
   const router = useRouter();
   const [isOverDropZone, setIsOverDropZone] = useState(false);
   const [holePosition, setHolePosition] = useState({ x: 300, y: 200 });
@@ -225,7 +229,7 @@ export default function Page() {
         setIsCompleted(true);  // 設置完成狀態
         // 延遲跳轉
         setTimeout(() => {
-            router.replace('./arg-home/uncover');  // 使用 replace 來確保不保留當前狀態
+            router.replace('./arg/uncover');  // 使用 replace 來確保不保留當前狀態
         }, 1200);  // 2秒後跳轉
     }
   };

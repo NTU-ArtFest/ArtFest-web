@@ -11,7 +11,6 @@ export const metadata = {
   };
 
 
-// 模擬文章數據
 const posts = [
   {
     id: '/zh-tw/low_pay_ming/1',
