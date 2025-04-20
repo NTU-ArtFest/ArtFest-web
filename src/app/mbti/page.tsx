@@ -20,7 +20,8 @@ export default function Mbti() {
                 />
                 <FloatingImageButton
                     imageSrc="/mbti/index-btn.svg"
-                    onClick={() => router.push("/mbti/p1")}
+                    page={0}
+                    choice={"start"}
                     left="left-[68%]"
                     mdLeft="md:left-[54.5%]"
                     bottom="bottom-[-10%]"
