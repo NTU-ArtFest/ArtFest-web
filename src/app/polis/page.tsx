@@ -1,10 +1,8 @@
 'use client';
 
-import { useRef, useEffect } from 'react';
 import { Canvas } from '@react-three/fiber';
-import { OrbitControls, useGLTF, Environment } from '@react-three/drei';
+import { OrbitControls, useGLTF } from '@react-three/drei';
 import { Suspense } from 'react';
-import * as THREE from 'three';
 
 function Model() {
   const gltf = useGLTF('/ntu_map2.glb'); // 路徑對應 public 資料夾

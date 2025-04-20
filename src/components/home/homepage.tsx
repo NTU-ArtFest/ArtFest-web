@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Home as HomeIcon, Globe as GlobeIcon } from "lucide-react"; 
+import { Globe as GlobeIcon } from "lucide-react"; 
 
 import { motion } from "framer-motion";
 import { Autoplay, EffectCoverflow, Navigation } from "swiper/modules";
@@ -61,11 +61,11 @@ export default function Home() {
       }, [index]);
     
 
-    // circle
-    const allCircles = Array.from({ length: 8 }, (_, i) => ({
-        id: i,
-        description: `這是圓形框框 ${i + 1} 的描述`,
-      }));
+    // // circle
+    // const allCircles = Array.from({ length: 8 }, (_, i) => ({
+    //     id: i,
+    //     description: `這是圓形框框 ${i + 1} 的描述`,
+    //   }));
 
 
     // gsap
@@ -101,7 +101,7 @@ export default function Home() {
         // 當 scrollY 越大，透明度 (opacity) 越小；此處以 500 為分界值
         return Math.min(0 + scrollY / 500, 1);
     };
-    const scrolly_calcultae = () => (-880 + scrollY * 0.1);
+    // const scrolly_calcultae = () => (-880 + scrollY * 0.1);
   
   
     const slides = [
