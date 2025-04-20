@@ -328,7 +328,7 @@ useEffect(() => {
         setIsCompleted(true);  // 設置完成狀態
         // 延遲跳轉
         setTimeout(() => {
-            router.replace('./arg-home/uncover');  // 使用 replace 來確保不保留當前狀態
+            router.replace('./arg/uncover');  // 使用 replace 來確保不保留當前狀態
         }, 1200);  // 2秒後跳轉
     }
   };

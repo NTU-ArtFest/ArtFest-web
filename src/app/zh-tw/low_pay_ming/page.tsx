@@ -36,7 +36,7 @@ export default function Home() {
             aria-hidden="true"
         ></div>
 
-        <div className='relative z-10 mx-[200px] pt-20'>
+      <div className='relative z-10 mx-[50px] pt-20 md:mx-[100px] lg:mx-[200px] transition-all duration-300'>
         <Header /> 
         <div className="flex flex-col md:flex-row bg-white">
             <main className="w-full md:w-2/3 p-4">

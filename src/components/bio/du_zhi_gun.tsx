@@ -15,13 +15,13 @@ export default function WikiPage() {
   return (
     <div className='font-Noto_Serif_TC text-lg'>
       <header className="w-screen bg-white flex items-center justify-between px-10 pt-2 pb-2">
-        <button className="p-2 ">
+        <button className="p-2 self-start md:self-center">
           <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
           </svg>
         </button>
         
-        <div className="flex items-center">
+        <div className="flex items-center w-full md:w-auto justify-center md:justify-start">
           <div className="pl-2 pr-4 pt-1 relative z-100">
             <Image 
               src="/arg/wikipedia.png" 
@@ -32,29 +32,26 @@ export default function WikiPage() {
             />
           </div>
           <div className="flex flex-col">
-            <span className=" font-bold text-lg tracking-wider text-2xl">維基百科</span>
+            <span className="font-bold text-xl md:text-2xl tracking-wider">維基百科</span>
             <span className="text-sm">自由的百科全書</span>
           </div>
         </div>
         
-        <div className="flex-1 mx-4">
-          <div className="w-2/4 relative flex items-center border border-gray-300 rounded ">
-
-            {/* 輸入框 */}
-            <input 
-              type="search" 
-              placeholder="搜尋維基百科" 
-              className="flex-1 px-2 py-1 focus:outline-none"
-            />
-
-            {/* 搜尋按鈕 */}
-            <button className="px-4 py-2 bg-gray-100 border-l border-gray-300 text-gray-500 hover:bg-gray-200">
-              搜尋
-            </button>
-          </div>
+        <div className="hidden md:block flex-1 w-full md:w-auto md:mx-4">
+        <div className="w-full md:w-2/4 relative flex items-center border border-gray-300 rounded">
+          <input 
+            type="search" 
+            placeholder="搜尋維基百科" 
+            className="flex-1 px-2 py-1 focus:outline-none w-full"
+          />
+          <button className="px-4 py-2 bg-gray-100 border-l border-gray-300 text-gray-500 hover:bg-gray-200">
+            搜尋
+          </button>
         </div>
+      </div>
         
-        <div className="flex space-x-4 text-sm">
+        
+        <div className="hidden md:flex space-x-4 text-sm w-full md:w-auto justify-center md:justify-end">
           <Link href="#" className="text-blue-600 hover:underline">贊助維基百科</Link>
           <Link href="#" className="text-blue-600 hover:underline">建立帳號</Link>
           <Link href="#" className="text-blue-600 hover:underline">登入</Link>
@@ -102,7 +99,7 @@ export default function WikiPage() {
         </aside>
 
         {/* 主內容區塊 */}
-        <main className="flex-1 mx-auto p-6 bg-white h-[10000px] w-3/5">
+        <main className="flex-1 mx-auto p-6 bg-white h-[3400px] w-3/5">
           <div className="flex-1 overflow-y-auto ">
           {/* 標題區域 */}
             <div id = "intro"className="border-b border-gray-300">
@@ -149,18 +146,26 @@ export default function WikiPage() {
               </div>
             </div>
 
-            <div className="float-right ml-4 mb-2 pt-10">
+            <div className="
+              w-full 
+              md:w-80 
+              md:float-right 
+              md:ml-4 
+              mb-2 
+              pt-10
+            ">
               <Image 
                 src="/arg/du_zhi.png" 
                 alt="杜知更" 
                 width={300} 
                 height={400} 
-                className="object-cover"
+                className="object-cover w-full md:w-80 h-auto"
               />
-              <p  className="text-center font-bold">杜知更</p>
+              <p className="text-center font-bold">杜知更</p>
               <p className="text-center text-sm text-gray-500">杜知更</p>
               <p className="text-center text-xs text-gray-400">攝於2030年</p>
             </div>
+
             
             <div className={`
               ${fontSize === 'small' ? 'text-sm' : 
