@@ -19,29 +19,6 @@ export default function Problem2() {
                     sizes="100vw"
                     priority
                 />
-
-                <div
-                    className="
-                        absolute 
-                        left-1/2 
-                        top-[9%]          /* Mobile: lower position */
-                        md:top-[12%]       /* Desktop: higher position */
-                        -translate-x-1/2 
-                        -translate-y-1/2 
-                        w-[70%]            /* Mobile: wider */
-                        md:w-[30%]         /* Desktop: narrower */
-                        max-w-[250px] 
-                        md:max-w-[250px]
-                        "
-                >
-                    <Image
-                        src="/mbti/p2-title.svg"
-                        alt="Title"
-                        width={320}
-                        height={205}
-                        className="w-full h-auto"
-                    />
-                </div>
                 <FloatingImageButton
                     imageSrc="/mbti/p2-btn-1.svg"
                     onClick={() => router.push("/mbti/p3")}
@@ -50,7 +27,7 @@ export default function Problem2() {
                     bottom="bottom-[10%]"
                     mdBottom="md:bottom-[14%]"
                     width="w-[70%]"
-                    mdWidth="w-[18%]"
+                    mdWidth="md:w-[18%]"
                 />
                 <FloatingImageButton
                     imageSrc="/mbti/p2-btn-2.svg"
@@ -60,7 +37,7 @@ export default function Problem2() {
                     bottom="bottom-[0%]"
                     mdBottom="md:bottom-[3%]"
                     width="w-[70%]"
-                    mdWidth="w-[20%]"
+                    mdWidth="md:w-[20%]"
                 />
             </div>
         </div>

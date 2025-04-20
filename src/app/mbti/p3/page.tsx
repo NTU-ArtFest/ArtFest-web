@@ -20,30 +20,6 @@ export default function Page3() {
                     priority
                 />
 
-                {/* Title SVG - different positioning for mobile vs desktop */}
-                <div
-                    className="
-                        absolute 
-                        left-[54%] 
-                        top-[9%]          /* Mobile: lower position */
-                        md:top-[15%]       /* Desktop: higher position */
-                        -translate-x-1/2 
-                        -translate-y-1/2 
-                        w-[70%]            /* Mobile: wider */
-                        md:w-[30%]         /* Desktop: narrower */
-                        max-w-[250px] 
-                        md:max-w-[200px]
-                        "
-                >
-                    <Image
-                        src="/mbti/p3-title.svg"
-                        alt="Title"
-                        width={320}
-                        height={205}
-                        className="w-full h-auto"
-                    />
-                </div>
-
                 {/* Clickable Button SVG - different positioning for mobile vs desktop */}
                 <FloatingImageButton
                     imageSrc="/mbti/p3-btn-1.svg"
@@ -53,7 +29,7 @@ export default function Page3() {
                     bottom="bottom-[10%]"
                     mdBottom="md:bottom-[15%]"
                     width="w-[70%]"
-                    mdWidth="w-[16%]"
+                    mdWidth="md:w-[16%]"
                 />
                 <FloatingImageButton
                     imageSrc="/mbti/p3-btn-2.svg"
@@ -63,7 +39,7 @@ export default function Page3() {
                     bottom="bottom-[0%]"
                     mdBottom="md:bottom-[5%]"
                     width="w-[70%]"
-                    mdWidth="w-[16%]"
+                    mdWidth="md:w-[16%]"
                 />
             </div>
         </div>
