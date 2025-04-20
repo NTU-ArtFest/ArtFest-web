@@ -8,6 +8,7 @@ export const metadata = {
 
 
 export default function Page() {
+<<<<<<< HEAD
   const router = useRouter();
   const [isOverDropZone, setIsOverDropZone] = useState(false);
   const [holePosition, setHolePosition] = useState({ x: 300, y: 200 });
@@ -433,5 +434,11 @@ export default function Page() {
         }
       `}</style>
     </div> 
+=======
+  
+  return (
+      <ArgPage/>
+
+>>>>>>> aabc1ebfad6a6618a6347b91392557d280cbff0a
   );
 }
