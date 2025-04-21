@@ -9,12 +9,12 @@ export default function Mbti() {
     return (
         <div className="flex items-center justify-center w-full h-screen overflow-hidden bg-gradient-to-b from-[#F4F4B5] from-20% via-[#E8ECC0] via-35% to-[#90D5CC] to-65%">
             {/* Background SVG */}
-            <div className="relative w-full h-full">
+            <div className="relative h-full w-auto max-w-full max-h-full aspect-[9/16]">
                 <Image
                     src="/mbti/index.svg"
                     alt="MBTI Background"
                     fill
-                    className="object-cover md:object-contain pointer-events-none"
+                    className="object-contain pointer-events-none"
                     sizes="100vw"
                     priority
                 />
@@ -22,9 +22,9 @@ export default function Mbti() {
                     imageSrc="/mbti/index-btn.svg"
                     page={0}
                     choice={"start"}
-                    left="left-[54%]"
+                    left="left-[65%]"
                     bottom="bottom-[-7.5%]"
-                    width="w-[15%]"
+                    width="w-[50%]"
                 />
             </div>
         </div>
