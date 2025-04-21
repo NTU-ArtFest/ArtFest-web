@@ -67,54 +67,6 @@ export default function Result() {
         return ("00" + n.toString()).slice(-3);
     };
 
-    const handleDownload = async () => {
-        if (!imageContainerRef.current) {
-            console.error("Image container ref not found.");
-            alert("Could not initiate download. Please try again.");
-            return;
-        }
-        if (!username) {
-            alert("Username not loaded yet. Please wait.");
-            return;
-        }
-
-        setIsDownloading(true);
-        await new Promise((resolve) => setTimeout(resolve, 100));
-
-        try {
-            // Target the specific div containing the image and text
-            const elementToCapture = imageContainerRef.current;
-            // Use html2canvas to capture the element
-            const canvas = await html2canvas(elementToCapture, {
-                useCORS: true,
-                allowTaint: true, // May be needed depending on image source and browser
-                backgroundColor: null, // Keep transparency if any (though image likely opaque)
-                // Increase scale for potentially higher resolution output
-                scale: 2,
-                scrollX: 0,
-                scrollY: 0,
-            });
-            // Convert the canvas to a PNG data URL
-            const dataUrl = canvas.toDataURL("image/png");
-            // Create a temporary link element
-            const link = document.createElement("a");
-            link.href = dataUrl;
-            // Create a filename, make it user-specific
-            link.download = `mbti-result-${username.replace(/\s+/g, "_")}.png`; // Replace spaces in username
-            // Append link to body (needed for Firefox)
-            document.body.appendChild(link);
-            // Programmatically click the link to trigger download
-            link.click();
-            // Remove the link from the body
-            document.body.removeChild(link);
-        } catch (error) {
-            console.error("Error generating image:", error);
-            alert("An error occurred while generating the image for download.");
-        } finally {
-            setIsDownloading(false); // Reset loading state
-        }
-    };
-
     useEffect(() => {
         async function fetchResultImage() {
             const mbtiTraitsStr = localStorage.getItem("mbti-traits");
@@ -179,58 +131,58 @@ export default function Result() {
         };
     }, []);
     useEffect(() => {
-      async function generateFinalImage() {
-        if (
-          imageContainerRef.current &&
-          imageURL.startsWith("blob:") &&
-          username
-        ) {
-          const canvas = await html2canvas(imageContainerRef.current, {
-            useCORS: true,
-            allowTaint: true,
-            backgroundColor: null,
-            scale: 2,
-            scrollX: 0,
-            scrollY: 0,
-          });
-          const generatedImageUrl = canvas.toDataURL("image/png");
-          setImageURL(generatedImageUrl); // ✅ final image
-          setIsComposited(true); // ✅ mark compositing complete
+        async function generateFinalImage() {
+            if (
+                imageContainerRef.current &&
+                imageURL.startsWith("blob:") &&
+                username
+            ) {
+                const canvas = await html2canvas(imageContainerRef.current, {
+                    useCORS: true,
+                    allowTaint: true,
+                    backgroundColor: null,
+                    scale: 2,
+                    scrollX: 0,
+                    scrollY: 0,
+                });
+                const generatedImageUrl = canvas.toDataURL("image/png");
+                setImageURL(generatedImageUrl);
+                setIsComposited(true);
+            }
         }
-      }
 
-      generateFinalImage();
+        generateFinalImage();
     }, [imageURL, username]);
 
     return (
-      <div className="w-full">
-        {/* --- Section 1: First Image --- */}
-        <div
-          className="relative flex items-center justify-center w-full overflow-hidden bg-gradient-to-b from-[#F4F4B5] from-20% via-[#C7ECB8] via-50% to-[#8DCEA2]"
-          style={{
-            minHeight: "100vh",
-            height: "calc(var(--vh, 1vh) * 100)",
-          }}
-        >
-          <div
-            ref={imageContainerRef}
-            className={`${
-              isDownloading ? "leading-[0.5]" : ""
-            } relative h-full w-auto max-w-full max-h-full aspect-[9/16]`}
-          >
-            {/* Background Image */}
-            {imageURL && (
-              <img
-                src={imageURL}
-                alt="Final MBTI Result"
-                className="object-contain w-full h-full"
-                crossOrigin="anonymous"
-                draggable={false}
-              />
-            )}
-            {imageURL && !isComposited && username && (
-              <div
-                className={`
+        <div className="w-full">
+            {/* --- Section 1: First Image --- */}
+            <div
+                className="relative flex items-center justify-center w-full overflow-hidden bg-gradient-to-b from-[#F4F4B5] from-20% via-[#C7ECB8] via-50% to-[#8DCEA2]"
+                style={{
+                    minHeight: "100vh",
+                    height: "calc(var(--vh, 1vh) * 100)",
+                }}
+            >
+                <div
+                    ref={imageContainerRef}
+                    className={`${
+                        isDownloading ? "leading-[0.5]" : ""
+                    } relative h-full w-auto max-w-full max-h-full aspect-[9/16]`}
+                >
+                    {/* Background Image */}
+                    {imageURL && (
+                        <img
+                            src={imageURL}
+                            alt="Final MBTI Result"
+                            className="object-contain w-full h-full"
+                            crossOrigin="anonymous"
+                            draggable={false}
+                        />
+                    )}
+                    {imageURL && !isComposited && username && (
+                        <div
+                            className={`
                 ${titleFont.className}
                 absolute top-[1.5%] left-[8.5%] z-10
                 text-[48px]
@@ -238,44 +190,33 @@ export default function Result() {
                 font-bold
                 select-none
                 `}
-              >
-                {username}
-              </div>
-            )}
-          </div>
+                        >
+                            {username}
+                        </div>
+                    )}
+                </div>
+            </div>
+            <div
+                className="relative flex items-center justify-center w-full overflow-hidden bg-gradient-to-b from-[#8DCEA2] from-20% via-[#C7ECB8] via-50% to-[#F4F4B5]" // Section 2 background (adjust gradient as needed)
+                // Set height using the --vh CSS variable
+                style={{
+                    minHeight: "100vh",
+                    height: "calc(var(--vh, 1vh) * 100)",
+                }}
+            >
+                <div
+                    className={`relative h-full w-auto max-w-full max-h-full aspect-[9/16]`}
+                >
+                    {/* Background Image 2 */}
+                    <Image
+                        src={`/mbti/${mbti}.jpg`}
+                        alt="MBTI Result Background 2"
+                        fill
+                        className="object-contain pointer-events-none"
+                        sizes="100vw"
+                    />
+                </div>
+            </div>
         </div>
-        <button
-          onClick={handleDownload}
-          disabled={isDownloading || !username || !imageURL}
-          className={`
-                    hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50
-                    disabled:opacity-50 disabled:cursor-not-allowed
-                    transition duration-150 ease-in-out
-                `}
-        >
-          {isDownloading ? "Generating..." : "Download Result"}
-        </button>
-        <div
-          className="relative flex items-center justify-center w-full overflow-hidden bg-gradient-to-b from-[#8DCEA2] from-20% via-[#C7ECB8] via-50% to-[#F4F4B5]" // Section 2 background (adjust gradient as needed)
-          // Set height using the --vh CSS variable
-          style={{
-            minHeight: "100vh",
-            height: "calc(var(--vh, 1vh) * 100)",
-          }}
-        >
-          <div
-            className={`relative h-full w-auto max-w-full max-h-full aspect-[9/16]`}
-          >
-            {/* Background Image 2 */}
-            <Image
-              src={`/mbti/${mbti}.jpg`}
-              alt="MBTI Result Background 2"
-              fill
-              className="object-contain pointer-events-none"
-              sizes="100vw"
-            />
-          </div>
-        </div>
-      </div>
     );
 }
