@@ -16,20 +16,14 @@ export async function GET(request: NextRequest) {
     console.log(`[Image Proxy] Attempting to fetch: ${targetUrl}`); // Server-side log
 
     try {
-        // Fetch the image from the target URL
-        // Add any necessary headers if the target requires them
         const response = await fetch(targetUrl, {
             method: "GET",
-            // Optional: Add headers like User-Agent if needed by the target server
-            // headers: { 'User-Agent': 'MyImageProxy/1.0' }
         });
 
-        // Check if the fetch was successful
         if (!response.ok) {
             console.error(
                 `[Image Proxy] Failed to fetch image. Status: ${response.status} ${response.statusText}, URL: ${targetUrl}`
             );
-            // Return an error response, forwarding the status code
             return NextResponse.json(
                 {
                     error: `Failed to fetch image from source: ${response.statusText}`,

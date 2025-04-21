@@ -53,10 +53,11 @@ export default function Result() {
     }, []);
 
     const getFinalMBTI = (traits: MBTI): string | null => {
-        const { EI, NS, FT } = traits;
-        if (EI && NS && FT) {
-            const mbti = `${EI.toUpperCase()}${NS.toUpperCase()}${FT.toUpperCase()}`;
-            return VALID_FINAL_TYPES.includes(mbti) ? mbti : null;
+        const { EI, NS, FT, JP } = traits;
+        if (EI && NS && FT && JP) {
+            const mbti1 = `${EI.toUpperCase()}${NS.toUpperCase()}${FT.toUpperCase()}`;
+            const mbti2 = `${EI.toUpperCase()}${NS.toUpperCase()}${JP.toUpperCase()}`;
+            return VALID_FINAL_TYPES.includes(mbti1) ? mbti1 : mbti2;
         }
         return null;
     };
@@ -76,18 +77,21 @@ export default function Result() {
             return;
         }
 
-        setIsDownloading(true); // Set loading state
+        setIsDownloading(true);
+        await new Promise((resolve) => setTimeout(resolve, 100));
 
         try {
             // Target the specific div containing the image and text
             const elementToCapture = imageContainerRef.current;
             // Use html2canvas to capture the element
             const canvas = await html2canvas(elementToCapture, {
-                useCORS: true, // Important if the image source is cross-origin (proxy helps)
+                useCORS: true,
                 allowTaint: true, // May be needed depending on image source and browser
                 backgroundColor: null, // Keep transparency if any (though image likely opaque)
                 // Increase scale for potentially higher resolution output
                 scale: 2,
+                scrollX: 0,
+                scrollY: 0,
             });
             // Convert the canvas to a PNG data URL
             const dataUrl = canvas.toDataURL("image/png");
@@ -186,7 +190,9 @@ export default function Result() {
             >
                 <div
                     ref={imageContainerRef}
-                    className={`relative h-full w-auto max-w-full max-h-full aspect-[9/16]`}
+                    className={`${
+                        isDownloading ? "leading-[0.5]" : ""
+                    } relative h-full w-auto max-w-full max-h-full aspect-[9/16]`}
                 >
                     {/* Background Image */}
                     {imageURL && ( // Conditionally render image if URL exists
@@ -199,9 +205,10 @@ export default function Result() {
                             priority // Or adjust as needed
                         />
                     )}
-                    {username && ( // Only render if username is fetched
-                        <p
-                            className={`
+                    {imageURL &&
+                        username && ( // Only render if username is fetched
+                            <div
+                                className={`
                             ${titleFont.className}
                             absolute top-[4.5%] left-[8.5%] z-10
                             text-[48px]
@@ -209,13 +216,13 @@ export default function Result() {
                             font-bold
                             select-none
                         `}
-                        >
-                            {username}
-                        </p>
-                    )}
+                            >
+                                {username}
+                            </div>
+                        )}
                 </div>
             </div>
-            {/* <button
+            <button
                 onClick={handleDownload}
                 disabled={isDownloading || !username || !imageURL}
                 className={`
@@ -225,7 +232,7 @@ export default function Result() {
                 `}
             >
                 {isDownloading ? "Generating..." : "Download Result"}
-            </button> */}
+            </button>
             <div
                 className="relative flex items-center justify-center w-full overflow-hidden bg-gradient-to-b from-[#8DCEA2] from-20% via-[#C7ECB8] via-50% to-[#F4F4B5]" // Section 2 background (adjust gradient as needed)
                 // Set height using the --vh CSS variable
