@@ -35,6 +35,7 @@ export default function Result() {
     const imageContainerRef = useRef<HTMLDivElement>(null);
     const [mbti, setMbti] = useState("");
     const [isComposited, setIsComposited] = useState(false);
+    const [isMobile, setIsMobile] = useState(false);
     useEffect(() => {
         const updateVh = () => {
             const vh = window.innerHeight * 0.01;
@@ -44,6 +45,14 @@ export default function Result() {
 
         window.addEventListener("resize", updateVh);
         return () => window.removeEventListener("resize", updateVh);
+    }, []);
+    useEffect(() => {
+      const checkMobile = () => {
+        setIsMobile(window.innerWidth <= 768); // Tailwind's md breakpoint is 768px
+      };
+      checkMobile();
+      window.addEventListener("resize", checkMobile);
+      return () => window.removeEventListener("resize", checkMobile);
     }, []);
 
     useEffect(() => {
@@ -87,7 +96,10 @@ export default function Result() {
                     return;
                 }
 
-                const picNum = Math.floor(Math.random() * 400) + 1;
+                const maxPicNum = ["ENF", "ENT", "ESJ"].includes(finalMBTI)
+                  ? 400
+                  : 100;
+                const picNum = Math.floor(Math.random() * maxPicNum) + 1;
                 const targetImageUrl = `${BASE_URL}${finalMBTI}/${
                     finalTraits.accessory
                 }_${finalTraits.weapon}/${formatNumber(picNum)}.png`;
@@ -155,68 +167,73 @@ export default function Result() {
     }, [imageURL, username]);
 
     return (
-        <div className="w-full">
-            {/* --- Section 1: First Image --- */}
-            <div
-                className="relative flex items-center justify-center w-full overflow-hidden bg-gradient-to-b from-[#F4F4B5] from-20% via-[#C7ECB8] via-50% to-[#8DCEA2]"
-                style={{
-                    minHeight: "100vh",
-                    height: "calc(var(--vh, 1vh) * 100)",
-                }}
-            >
-                <div
-                    ref={imageContainerRef}
-                    className={`${
-                        isDownloading ? "leading-[0.5]" : ""
-                    } relative h-full w-auto max-w-full max-h-full aspect-[9/16]`}
-                >
-                    {/* Background Image */}
-                    {imageURL && (
-                        <img
-                            src={imageURL}
-                            alt="Final MBTI Result"
-                            className="object-contain w-full h-full"
-                            crossOrigin="anonymous"
-                            draggable={false}
-                        />
-                    )}
-                    {imageURL && !isComposited && username && (
-                        <div
-                            className={`
-                ${titleFont.className}
-                absolute top-[1.5%] left-[8.5%] z-10
-                text-[48px]
-                text-black
-                font-bold
-                select-none
+      <div className="w-full">
+        {/* --- Section 1: First Image --- */}
+        <div
+          className="relative flex items-center justify-center w-full overflow-hidden bg-gradient-to-b from-[#F4F4B5] from-20% via-[#C7ECB8] via-50% to-[#8DCEA2]"
+          style={{
+            minHeight: "100vh",
+            height: "calc(var(--vh, 1vh) * 100)",
+          }}
+        >
+          <div
+            ref={imageContainerRef}
+            className={`${
+              isDownloading ? "leading-[0.5]" : ""
+            } relative h-full w-auto max-w-full max-h-full aspect-[9/16]`}
+          >
+            {/* Background Image */}
+            {imageURL && (
+              <img
+                src={imageURL}
+                alt="Final MBTI Result"
+                className="object-contain w-full h-full"
+                crossOrigin="anonymous"
+                draggable={false}
+              />
+            )}
+            {imageURL && !isComposited && username && (
+              <div
+                className={`
+                    ${titleFont.className}
+                    ${
+                      isMobile
+                        ? "absolute top-[3%] left-[8.5%] z-10"
+                        : "absolute top-[4%] left-[8.5%] z-10"
+                    }
+                    
+                    ${isMobile ? "text-[36px]" : "text-[48px]"}
+                    text-black
+                    font-medium
+                    select-none
                 `}
-                        >
-                            {username}
-                        </div>
-                    )}
-                </div>
-            </div>
-            <div
-                className="relative flex items-center justify-center w-full overflow-hidden bg-gradient-to-b from-[#8DCEA2] from-20% via-[#C7ECB8] via-50% to-[#F4F4B5]" // Section 2 background (adjust gradient as needed)
-                // Set height using the --vh CSS variable
-                style={{
-                    minHeight: "100vh",
-                    height: "calc(var(--vh, 1vh) * 100)",
-                }}
-            >
-                <div
-                    className={`relative h-full w-auto max-w-full max-h-full aspect-[9/16]`}
-                >
-                    {/* Background Image 2 */}
-                    <Image
-                        src={`/mbti/${mbti}.jpg`}
-                        alt="MBTI Result Background 2"
-                        fill
-                        className="object-contain pointer-events-none"
-                        sizes="100vw"
-                    />
-                </div>
-            </div>
+              >
+                {username}
+              </div>
+            )}
+          </div>
         </div>
+        <div
+          className="relative flex items-center justify-center w-full overflow-hidden bg-gradient-to-b from-[#8DCEA2] from-20% via-[#C7ECB8] via-50% to-[#F4F4B5]" // Section 2 background (adjust gradient as needed)
+          // Set height using the --vh CSS variable
+          style={{
+            minHeight: "100vh",
+            height: "calc(var(--vh, 1vh) * 100)",
+          }}
+        >
+          <div
+            className={`relative h-full w-auto max-w-full max-h-full aspect-[9/16]`}
+          >
+            {/* Background Image 2 */}
+            <Image
+              src={`/mbti/${mbti}.jpg`}
+              alt="MBTI Result Background 2"
+              fill
+              className="object-contain pointer-events-none"
+              sizes="100vw"
+            />
+          </div>
+        </div>
+      </div>
     );
 }
