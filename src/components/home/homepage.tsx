@@ -134,7 +134,7 @@ export default function Home() {
   
               {/* Navigation Links */}
               <div className="flex space-x-6">
-                {["Exhibition", "ARG", "Polis", "MBTI（記得改）", "About Us"].map((item) => (
+                {["Exhibition", "ARG", "Polis", "who-art-you", "About Us"].map((item) => (
                   <Link
                     key={item}
                     href={`/${item.toLowerCase().replace(" ", "-")}`}
