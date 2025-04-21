@@ -22,12 +22,9 @@ export default function Mbti() {
                     imageSrc="/mbti/index-btn.svg"
                     page={0}
                     choice={"start"}
-                    left="left-[68%]"
-                    mdLeft="md:left-[54.5%]"
-                    bottom="bottom-[-10%]"
-                    mdBottom="md:bottom-[-7%]"
-                    width="w-[55%]"
-                    mdWidth="md:w-[15%]"
+                    left="left-[54%]"
+                    bottom="bottom-[-7.5%]"
+                    width="w-[15%]"
                 />
             </div>
         </div>
