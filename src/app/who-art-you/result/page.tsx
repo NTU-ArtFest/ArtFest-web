@@ -152,10 +152,10 @@ export default function Result() {
                 const canvas = await html2canvas(imageContainerRef.current, {
                     useCORS: true,
                     allowTaint: true,
-                    backgroundColor: null,
-                    scale: 2,
-                    scrollX: 0,
-                    scrollY: 0,
+                    background: undefined,
+                    // scale: 2,
+                    // scrollX: 0,
+                    // scrollY: 0,
                 });
                 const generatedImageUrl = canvas.toDataURL("image/png");
                 setImageURL(generatedImageUrl);

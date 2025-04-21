@@ -26,7 +26,7 @@ export default function Page8() {
         if (e.key === "Enter") {
             localStorage.setItem("username", name);
             setName("");
-            router.push("/mbti/result");
+            router.push("/who-art-you/result");
         }
     };
     return (

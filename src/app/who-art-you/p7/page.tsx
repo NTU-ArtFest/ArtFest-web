@@ -35,7 +35,7 @@ export default function Page7() {
                     priority
                 />
                 <FloatingImageButton
-                    imageSrc="p7-hammer.svg"
+                    imageSrc="/mbti/p7-hammer.svg"
                     page={7}
                     choice="hammer"
                     left="left-[32.5%]"
@@ -43,7 +43,7 @@ export default function Page7() {
                     width="w-[30%]"
                 />
                 <FloatingImageButton
-                    imageSrc="p7-wand.svg"
+                    imageSrc="/mbti/p7-wand.svg"
                     page={7}
                     choice="wand"
                     left="left-[65.5%]"
@@ -51,7 +51,7 @@ export default function Page7() {
                     width="w-[30%]"
                 />
                 <FloatingImageButton
-                    imageSrc="p7-sword.svg"
+                    imageSrc="/mbti/p7-sword.svg"
                     page={7}
                     choice="sword"
                     left="left-[32.5%]"
@@ -59,7 +59,7 @@ export default function Page7() {
                     width="w-[30%]"
                 />
                 <FloatingImageButton
-                    imageSrc="p7-shield.svg"
+                    imageSrc="/mbti/p7-shield.svg"
                     page={7}
                     choice="sword"
                     left="left-[67.5%]"

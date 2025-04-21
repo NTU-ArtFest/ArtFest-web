@@ -41,13 +41,6 @@ export default function Page1() {
                     left="left-[75.5%]"
                     bottom="bottom-[3%]"
                     width="w-[30%]"
-                    onClick={() => router.push("/who-art-you/p2")}
-                    left="left-[80%]"
-                    mdLeft="md:left-[57.9%]"
-                    bottom="bottom-[0%]"
-                    mdBottom="md:bottom-[2%]"
-                    width="w-[10%]"
-                    mdWidth="w-[10%]"
                 />
             </div>
         </div>

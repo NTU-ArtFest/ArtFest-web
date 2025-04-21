@@ -35,7 +35,7 @@ export default function Page4() {
                     priority
                 />
                 <FloatingImageButton
-                    imageSrc="p4-hat.svg"
+                    imageSrc="/mbti/p4-hat.svg"
                     page={4}
                     choice="hat"
                     left="left-[30%]"
@@ -43,7 +43,7 @@ export default function Page4() {
                     width="w-[40%]"
                 />
                 <FloatingImageButton
-                    imageSrc="p4-hp.svg"
+                    imageSrc="/mbti/p4-hp.svg"
                     page={4}
                     choice="headphones"
                     left="left-[70%]"
@@ -51,7 +51,7 @@ export default function Page4() {
                     width="w-[30%]"
                 />
                 <FloatingImageButton
-                    imageSrc="p4-sg.svg"
+                    imageSrc="/mbti/p4-sg.svg"
                     page={4}
                     choice="sunglasses"
                     left="left-[30%]"
@@ -59,7 +59,7 @@ export default function Page4() {
                     width="w-[45%]"
                 />
                 <FloatingImageButton
-                    imageSrc="p4-bt.svg"
+                    imageSrc="/mbti/p4-bt.svg"
                     page={4}
                     choice="bowtie"
                     left="left-[70%]"
