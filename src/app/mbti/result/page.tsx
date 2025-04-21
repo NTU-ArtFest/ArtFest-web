@@ -28,7 +28,7 @@ type MBTI = {
 };
 
 export default function Result() {
-    const BASE_URL = "https://artfest.ntu.edu.tw:2001/public/mbti/results/";
+    const BASE_URL = "https://artfest.ntu.edu.tw:2025/public/mbti/results/";
     const [imageURL, setImageURL] = useState("");
     const [username, setUsername] = useState("");
     const [isDownloading, setIsDownloading] = useState(false);

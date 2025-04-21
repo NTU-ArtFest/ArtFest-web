@@ -2,10 +2,8 @@
 
 import { FloatingImageButton } from "@/components/mbti/FloatingImageButton";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
 
 export default function Mbti() {
-    const router = useRouter();
     return (
         <div className="flex items-center justify-center w-full h-screen overflow-hidden bg-gradient-to-b from-[#F4F4B5] from-20% via-[#E8ECC0] via-35% to-[#90D5CC] to-65%">
             {/* Background SVG */}
