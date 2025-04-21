@@ -21,7 +21,7 @@ export default function Problem2() {
                 />
                 <FloatingImageButton
                     imageSrc="/mbti/p2-btn-1.svg"
-                    onClick={() => router.push("/mbti/p3")}
+                    onClick={() => router.push("/who-art-you/p3")}
                     left="left-[40%]"
                     mdLeft="md:left-[47%]"
                     bottom="bottom-[10%]"
@@ -31,7 +31,7 @@ export default function Problem2() {
                 />
                 <FloatingImageButton
                     imageSrc="/mbti/p2-btn-2.svg"
-                    onClick={() => router.push("/mbti/p3")}
+                    onClick={() => router.push("/who-art-you/p3")}
                     left="left-[75%]"
                     mdLeft="md:left-[55.6%]"
                     bottom="bottom-[0%]"

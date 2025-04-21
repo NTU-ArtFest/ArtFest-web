@@ -20,9 +20,9 @@ export default function Page4() {
                     priority
                 />
                 <FloatingImageButton
-                    imageSrc="p4-hat.svg"
+                    imageSrc="/mbti/p4-hat.svg"
                     onClick={() => {
-                        router.push("/mbti/p5");
+                        router.push("/who-art-you/p5");
                     }}
                     left="left-[75%]"
                     mdLeft="md:left-[44%]"
@@ -32,9 +32,9 @@ export default function Page4() {
                     mdWidth="md:w-[12%]"
                 />
                 <FloatingImageButton
-                    imageSrc="p4-hp.svg"
+                    imageSrc="/mbti/p4-hp.svg"
                     onClick={() => {
-                        router.push("/mbti/p5");
+                        router.push("/who-art-you/p5");
                     }}
                     left="left-[75%]"
                     mdLeft="md:left-[56%]"
@@ -44,9 +44,9 @@ export default function Page4() {
                     mdWidth="md:w-[9%]"
                 />
                 <FloatingImageButton
-                    imageSrc="p4-sg.svg"
+                    imageSrc="/mbti/p4-sg.svg"
                     onClick={() => {
-                        router.push("/mbti/p5");
+                        router.push("/who-art-you/p5");
                     }}
                     left="left-[75%]"
                     mdLeft="md:left-[45%]"
@@ -56,9 +56,9 @@ export default function Page4() {
                     mdWidth="md:w-[14%]"
                 />
                 <FloatingImageButton
-                    imageSrc="p4-bt.svg"
+                    imageSrc="/mbti/p4-bt.svg"
                     onClick={() => {
-                        router.push("/mbti/p5");
+                        router.push("/who-art-you/p5");
                     }}
                     left="left-[75%]"
                     mdLeft="md:left-[56%]"

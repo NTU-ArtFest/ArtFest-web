@@ -20,9 +20,9 @@ export default function Page7() {
                     priority
                 />
                 <FloatingImageButton
-                    imageSrc="p7-hammer.svg"
+                    imageSrc="/mbti/p7-hammer.svg"
                     onClick={() => {
-                        router.push("/mbti/p8");
+                        router.push("/who-art-you/p8");
                     }}
                     left="left-[75%]"
                     mdLeft="md:left-[45%]"
@@ -32,9 +32,9 @@ export default function Page7() {
                     mdWidth="md:w-[8%]"
                 />
                 <FloatingImageButton
-                    imageSrc="p7-wand.svg"
+                    imageSrc="/mbti/p7-wand.svg"
                     onClick={() => {
-                        router.push("/mbti/p8");
+                        router.push("/who-art-you/p8");
                     }}
                     left="left-[75%]"
                     mdLeft="md:left-[55%]"
@@ -44,9 +44,9 @@ export default function Page7() {
                     mdWidth="md:w-[8%]"
                 />
                 <FloatingImageButton
-                    imageSrc="p7-sword.svg"
+                    imageSrc="/mbti/p7-sword.svg"
                     onClick={() => {
-                        router.push("/mbti/p8");
+                        router.push("/who-art-you/p8");
                     }}
                     left="left-[75%]"
                     mdLeft="md:left-[45%]"
@@ -56,9 +56,9 @@ export default function Page7() {
                     mdWidth="md:w-[8%]"
                 />
                 <FloatingImageButton
-                    imageSrc="p7-shield.svg"
+                    imageSrc="/mbti/p7-shield.svg"
                     onClick={() => {
-                        router.push("/mbti/p8");
+                        router.push("/who-art-you/p8");
                     }}
                     left="left-[75%]"
                     mdLeft="md:left-[55.5%]"

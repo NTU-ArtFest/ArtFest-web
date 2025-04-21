@@ -22,7 +22,7 @@ export default function Page5() {
                 {/* Clickable Button SVG - different positioning for mobile vs desktop */}
                 <FloatingImageButton
                     imageSrc="/mbti/p5-btn-1.svg"
-                    onClick={() => router.push("/mbti/p6")}
+                    onClick={() => router.push("/who-art-you/p6")}
                     left="left-[40%]"
                     mdLeft="md:left-[52%]"
                     bottom="bottom-[10%]"
@@ -32,7 +32,7 @@ export default function Page5() {
                 />
                 <FloatingImageButton
                     imageSrc="/mbti/p5-btn-2.svg"
-                    onClick={() => router.push("/mbti/p6")}
+                    onClick={() => router.push("/who-art-you/p6")}
                     left="left-[75%]"
                     mdLeft="md:left-[52%]"
                     bottom="bottom-[0%]"
