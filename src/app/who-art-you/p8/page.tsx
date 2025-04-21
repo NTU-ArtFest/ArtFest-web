@@ -3,7 +3,6 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import localFont from "next/font/local";
 
 export default function Page8() {
     const router = useRouter();

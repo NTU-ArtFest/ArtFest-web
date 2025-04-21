@@ -42,7 +42,7 @@ const traitMap: Partial<Record<string, keyof MBTI>> = {
 const updateMBTITraits = (choice: string, traits: MBTI): MBTI => {
     const key = traitMap[choice];
     if (key) {
-        return { ...traits, [key]: choice as any };
+        return { ...traits, [key]: choice as MBTI };
     }
     return traits;
 };

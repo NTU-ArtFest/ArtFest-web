@@ -31,7 +31,7 @@ export default function Result() {
     const BASE_URL = "https://artfest.ntu.edu.tw:2025/public/mbti/results/";
     const [imageURL, setImageURL] = useState("");
     const [username, setUsername] = useState("");
-    const [isDownloading, setIsDownloading] = useState(false);
+    const isDownloading = false ;
     const imageContainerRef = useRef<HTMLDivElement>(null);
     const [mbti, setMbti] = useState("");
     const [isComposited, setIsComposited] = useState(false);
@@ -122,6 +122,7 @@ export default function Result() {
                         const errorJson = await response.json();
                         errorMsg += ` - ${errorJson.error || "Unknown error"}`;
                     } catch (_) {
+                        console.error("Failed to parse error response:", _);
                         // Ignore if response is not JSON
                     }
                     throw new Error(errorMsg);
