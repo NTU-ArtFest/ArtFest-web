@@ -13,11 +13,16 @@ export async function GET(request: NextRequest) {
         );
     }
 
-    console.log(`[Image Proxy] Attempting to fetch: ${targetUrl}`); // Server-side log
+    const encodedUrl = encodeURIComponent(targetUrl);
+    const decodedUrl = decodeURIComponent(encodedUrl);
+    console.log(`[Image Proxy] Attempting to fetch: ${decodedUrl}`); // Server-side log
 
     try {
-        const response = await fetch(targetUrl, {
+        const response = await fetch(decodedUrl, {
             method: "GET",
+            headers: {
+                'Accept': 'image/*'
+            }
         });
 
         if (!response.ok) {
