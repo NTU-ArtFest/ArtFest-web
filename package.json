@@ -25,12 +25,10 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@tailwindcss/typography": "^0.5.16",
-<<<<<<< HEAD
+
     "@types/html2canvas": "^0.5.35",
-    "@types/node": "^20",
-=======
+
     "@types/node": "20.17.30",
->>>>>>> de30889 (added Google Analytics function)
     "@types/nodemailer": "^6.4.17",
     "@types/react": "19.1.2",
     "@types/react-dom": "^19",
