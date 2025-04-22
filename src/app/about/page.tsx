@@ -1,356 +1,10 @@
-export default function about() {
-  return (
-    <div>about</div>
-  );
-}
-// // 'use client';
-
-// // import { Canvas } from '@react-three/fiber';
-// // import { OrbitControls, useGLTF } from '@react-three/drei';
-// // import { useFrame, useThree } from '@react-three/fiber'
-// // import { Suspense, useRef, useState } from 'react';
-// // import * as THREE from 'three'
-
-// // function Model() {
-// //   const gltf = useGLTF('/ntu_map2.glb'); // 路徑對應 public 資料夾
-// //   return <primitive object={gltf.scene} />;
-// // }
-
-// // export default function ModelViewer() {
-// //   return (
-// //     <div className="w-full h-screen bg-gray-100 rounded-lg shadow-lg">
-// //       <Canvas camera={{ position: [151, 100, 100], fov: 75 }}>
-// //         <ambientLight intensity={0.8} />
-// //         <directionalLight position={[2, 2, 2]} intensity={4} />
-// //         {/* <Environment preset="sunset" background /> */}
-// //         <Suspense fallback={null}>
-// //           <Model />
-// //         </Suspense>
-// //         <OrbitControls 
-// //             target={[121, -30, -139]}
-// //             minPolarAngle={-Math.PI / 2} 
-// //             maxPolarAngle={Math.PI / 3} 
-// //             enablePan={false} 
-// //         />
-// //       </Canvas>
-// //     </div>
-// //   );
-// // }
-
-
-// // 'use client';
-
-// // import { Canvas } from '@react-three/fiber';
-// // import { OrbitControls, useGLTF, Html } from '@react-three/drei';
-// // import { SetStateAction, Suspense, useRef, useState } from 'react';
-// // import * as THREE from 'three';
-
-// // // 你的 tooltip 元件
-// // function Tooltip({ info, position }: { info: { name: string; desc: string } | null; position: THREE.Vector3 | null }) {
-// //   if (!info || !position) return null;
-// //   return (
-// //     <Html position={position} center>
-// //       <div className="bg-white text-black p-2 rounded shadow-lg min-w-[120px] text-xs pointer-events-none">
-// //         <div className="font-bold">{info.name}</div>
-// //         <div>{info.desc}</div>
-// //       </div>
-// //     </Html>
-// //   );
-// // }
-
-// // function Model({ onBuildingHover }: { onBuildingHover: (info: { name: string; desc: string } | null, pos: THREE.Vector3 | null) => void }) {
-// //   const { scene } = useGLTF('/ntu_map2.glb');
-// //   // 你可以列出所有要互動的建築物名稱
-// //   const interactiveBuildings = [
-// //     { name: 'library', info: { name: '台大圖書館', desc: '這是圖書館介紹' } },
-// //     // { name: 'buildingB', info: { name: 'B棟', desc: '這是B棟介紹' } },
-// //   ];
-
-// //   // traverse 設定互動
-// //   scene.traverse((obj) => {
-// //     const building = interactiveBuildings.find(b => b.name === obj.name);
-// //     if (building) {
-// //       obj.userData.interactiveInfo = building.info;
-// //     }
-// //   });
-
-// //   return (
-// //     <primitive
-// //       object={scene}
-// //       onPointerOver={(e: { object: { userData: { interactiveInfo: any; }; }; point: THREE.Vector3 | null; }) => {
-// //         const info = e.object.userData.interactiveInfo;
-// //         if (info) {
-// //           onBuildingHover(info, e.point);
-// //         }
-// //       }}
-// //       onPointerOut={(e: { object: { userData: { interactiveInfo: any; }; }; }) => {
-// //         const info = e.object.userData.interactiveInfo;
-// //         if (info) {
-// //           onBuildingHover(null, null);
-// //         }
-// //       }}
-// //     />
-// //   );
-// // }
-
-// // export default function ModelViewer() {
-// //   const [tooltipInfo, setTooltipInfo] = useState<{ name: string; desc: string } | null>(null);
-// //   const [tooltipPos, setTooltipPos] = useState<THREE.Vector3 | null>(null);
-
-// //   const handleBuildingHover = (info: { name: string; desc: string } | null, pos: THREE.Vector3 | null) => {
-// //     setTooltipInfo(info);
-// //     setTooltipPos(pos);
-// //   };
-
-// //   return (
-// //     <div className="w-full h-screen bg-gray-100 rounded-lg shadow-lg">
-// //       <Canvas camera={{ position: [151, 100, 100], fov: 75 }}>
-// //         <ambientLight intensity={0.8} />
-// //         <directionalLight position={[2, 2, 2]} intensity={4} />
-// //         <Suspense fallback={null}>
-// //           <Model onBuildingHover={handleBuildingHover} />
-// //           <Tooltip info={tooltipInfo} position={tooltipPos} />
-// //         </Suspense>
-// //         <OrbitControls
-// //           target={[121, -30, -139]}
-// //           minPolarAngle={-Math.PI / 2}
-// //           maxPolarAngle={Math.PI / 3}
-// //           enablePan={false}
-// //         />
-// //       </Canvas>
-// //     </div>
-// //   );
-// // }
-
-
-// // 'use client';
-
-// // import { Canvas, useFrame } from '@react-three/fiber';
-// // import { OrbitControls, useGLTF, Html } from '@react-three/drei';
-// // import { SetStateAction, Suspense, useRef, useState } from 'react';
-// // import { useRouter } from 'next/navigation';
-// // import * as THREE from 'three';
-
-// // // 1. 可互動的建築物元件
-// // // function InteractiveBuilding({ object, info, onHover, isHovered}: { object: THREE.Object3D; info: any; onHover: (info: any, pos: THREE.Vector3 | null, object: THREE.Object3D | null) => void; isHovered: boolean;  }) {
-
-// // //   return (
-// // //     <primitive
-// // //       object={object}
-// // //       onPointerOver={(e: { stopPropagation: () => void; point: THREE.Vector3 | null; }) => {
-// // //         e.stopPropagation();
-// // //         onHover(info, e.point, object);
-// // //       }}
-// // //       onPointerOut={(e: { stopPropagation: () => void; }) => {
-// // //         e.stopPropagation();
-// // //         onHover(null, null, null);
-// // //       }}
-
-// // //     />
-// // //   );
-// // // }
-
-// // // 2. 模型載入元件，將特定建築物包成 InteractiveBuilding
-// // function Model({ onBuildingHover, hoveredName }: { onBuildingHover: (info: any, pos: any, object: any) => void; hoveredName: string | null; }) {
-// //   const { scene } = useGLTF('/ntu_map2.glb');
-// //   // 你可以列出所有要互動的建築物名稱
-// //   const interactiveBuildings = [
-// //     { name: 'library', info: { name: '台大圖書館', desc: '這是圖書館介紹' } },
-// //     // 你可以加更多建築物
-// //   ];
-
-// //   // traverse 設定 userData
-// //   scene.traverse((obj) => {
-// //     if ((obj as THREE.Mesh).isMesh && obj.name === 'MainMap') {
-// //       obj.raycast = () => {}; // 讓它不會被 Raycaster 擊中
-// //     }
-// //     if ((obj as THREE.Mesh).isMesh && obj.name === 'library') {
-// //       obj.userData.interactiveInfo = { name: '台大圖書館', desc: '這是圖書館介紹' };
-// //     }
-// //   });
-
-// //   return (
-// //     <primitive
-// //       object={scene}
-// //       onPointerOver={(e: { object: { isMesh: any; userData: { interactiveInfo: any; }; }; point: any; }) => {
-// //         // 只處理 mesh，避免 group/scene
-// //         console.log('Hovered object:', e.object);
-// //         if (e.object.isMesh && e.object.userData.interactiveInfo) {
-// //           onBuildingHover(e.object.userData.interactiveInfo, e.point, e.object);
-// //         }
-// //       }}
-// //       onPointerOut={(e: { object: { isMesh: any; userData: { interactiveInfo: any; }; }; }) => {
-// //         if (e.object.isMesh && e.object.userData.interactiveInfo) {
-// //           onBuildingHover(null, null, null);
-// //         }
-// //       }}
-// //     />
-// //   );
-// // }
-
-// // // 3. Tooltip 元件
-// // type TooltipInfo = {
-// //   name: string;
-// //   desc: string;
-// // };
-
-// // function Tooltip({ info, position }: { info: TooltipInfo | null; position: THREE.Vector3 | null }) {
-// //   if (!info || !position) return null;
-// //   console.log('Tooltip position:', position);
-// //   return (
-// //     <Html position={position} center>
-// //       <div className="bg-white text-black p-2 rounded shadow-lg min-w-[120px] text-xs">
-// //         <div className="font-bold">{info.name}</div>
-// //         <div>{info.desc}</div>
-// //       </div>
-// //     </Html>
-// //   );
-// // }
-
-// // // 4. 主 viewer
-// // export default function ModelViewer() {
-// //   const [hoveredInfo, setHoveredInfo] = useState(null);
-// //   const [tooltipPos, setTooltipPos] = useState(null);
-// //   const [hoveredName, setHoveredName] = useState(null);
-// //   const router = useRouter();
-
-// //   // hover 事件處理
-// //   const handleBuildingHover = (info: SetStateAction<null>, pos: SetStateAction<null>, object: { name: any; }) => {
-// //     setHoveredInfo(info);
-// //     setTooltipPos(pos);
-// //     setHoveredName(object?.name || null);
-// //   };
-
-// //   const handleCanvasPointerMissed = () => {
-// //     setHoveredInfo(null);
-// //     setTooltipPos(null);
-// //     setHoveredName(null);
-// //   };
-
-
-// //   return (
-// //     <div className="w-full h-screen bg-gray-100 rounded-lg shadow-lg">
-// //       <Canvas 
-// //         camera={{ position: [151, 100, 100], fov: 75 }}
-// //         onPointerMissed={handleCanvasPointerMissed}
-// //       >
-// //         <ambientLight intensity={0.8} />
-// //         <directionalLight position={[2, 2, 2]} intensity={4} />
-// //         <Suspense fallback={null}>
-// //           <Model
-// //             onBuildingHover={handleBuildingHover}
-// //             hoveredName={hoveredName}
-// //           />
-// //           <Tooltip info={hoveredInfo} position={tooltipPos} />
-// //         </Suspense>
-// //         <OrbitControls
-// //           target={[121, -30, -139]}
-// //           minPolarAngle={-Math.PI / 2}
-// //           maxPolarAngle={Math.PI / 3}
-// //           enablePan={false}
-// //         />
-// //       </Canvas>
-// //     </div>
-// //   );
-// // }
-
-
-// // "use client"
-// // import { Canvas } from '@react-three/fiber'
-// // import { useGLTF, Html, OrbitControls } from '@react-three/drei'
-// // import { SetStateAction, Suspense, useRef, useState } from 'react'
-// // import * as THREE from 'three'
-
-// // // 假設這是你的建築物資料
-// // const buildings = [
-// //   { name: 'library', label: '1', info: { name: '台大圖書館', desc: '這是圖書館介紹' } },
-// //   { name: 'gym', label: '2', info: { name: '體育館', desc: '這是體育館介紹' } },
-// //   // ...更多建築物
-// // ]
-
-// // function Markers({ scene, onMarkerHover }: { scene: THREE.Scene; onMarkerHover: (info: any, pos: [number, number, number] | null) => void }) {
-// //   // 依照建築物名稱找到 mesh，並在其上方放 marker
-// //   return buildings.map((b) => {
-// //     const mesh = scene.getObjectByName(b.name)
-// //     if (!mesh) return null
-// //     // 取得 mesh 的世界座標
-// //     const pos = mesh.getWorldPosition(new THREE.Vector3())
-// //     // 你可以微調 y 軸讓 marker 浮在建築物上方
-// //     const markerPos: [number, number, number] = [pos.x, pos.y + 5, pos.z]
-// //     return (
-// //       <group key={b.name} position={markerPos}>
-// //         {/* Marker 可以是球、icon 或 Html */}
-// //         <mesh
-// //           onPointerOver={(e) => {
-// //              console.log(e.object)
-// //              e.stopPropagation(); 
-// //              onMarkerHover(b.info, markerPos); 
-// //             }}
-// //           onPointerOut={e => { e.stopPropagation(); onMarkerHover(null, null) }}
-// //           renderOrder={999}
-// //         >
-// //           <sphereGeometry args={[1, 16, 16]} />
-// //           <meshStandardMaterial color="orange" />
-// //         </mesh>
-// //         {/* 數字標籤 */}
-// //         <Html center>
-// //           <div className="bg-white rounded-full px-2 text-xs font-bold border border-gray-300 shadow">{b.label}</div>
-// //         </Html>
-// //       </group>
-// //     )
-// //   })
-// // }
-
-// // function Tooltip({ info, position }: { info: { name: string; desc: string } | null; position: [number, number, number] | null }) {
-// //   if (!info || !position) return null
-// //   return (
-// //     <Html position={position} center>
-// //       <div className="bg-white text-black p-2 rounded shadow-lg min-w-[120px] text-xs pointer-events-none">
-// //         <div className="font-bold">{info.name}</div>
-// //         <div>{info.desc}</div>
-// //       </div>
-// //     </Html>
-// //   )
-// // }
-
-// // function ModelWithMarkers({ onMarkerHover }: { onMarkerHover: (info: { name: string; desc: string } | null, pos: [number, number, number] | null) => void }) {
-// //   const { scene } = useGLTF('/ntu_map2.glb')
-// //   return (
-// //     <group>
-// //       <primitive object={scene} />
-// //       <Markers scene={scene as unknown as THREE.Scene} onMarkerHover={onMarkerHover} />
-// //     </group>
-// //   )
-// // }
-
-// // export default function ModelViewer() {
-// //   const [tooltipInfo, setTooltipInfo] = useState<{ name: string; desc: string } | null>(null)
-// //   const [tooltipPos, setTooltipPos] = useState<[number, number, number] | null>(null)
-
-// //   const handleMarkerHover = (info: { name: string; desc: string } | null, pos: [number, number, number] | null) => {
-// //     setTooltipInfo(info)
-// //     setTooltipPos(pos)
-// //   }
-
-// //   return (
-// //     <div className="w-full h-screen bg-gray-100 rounded-lg shadow-lg">
-// //       <Canvas camera={{ position: [151, 100, 100], fov: 75 }}>
-// //         <ambientLight intensity={0.8} />
-// //         <directionalLight position={[2, 2, 2]} intensity={4} />
-// //         <Suspense fallback={null}>
-// //           <ModelWithMarkers onMarkerHover={handleMarkerHover} />
-// //           <Tooltip info={tooltipInfo} position={tooltipPos} />
-// //         </Suspense>
-// //         <OrbitControls
-// //           target={[121, -30, -139]}
-// //           minPolarAngle={-Math.PI / 2}
-// //           maxPolarAngle={Math.PI / 3}
-// //           enablePan={false}
-// //         />
-// //       </Canvas>
-// //     </div>
-// //   )
-// // }
+export default function About() {
+    return (
+      <div className="flex flex-col items-center justify-center h-screen bg-gray-100 text-black text-bold text-2xl">
+        about
+      </div>
+    );
+  }
 
 // "use client"
 // import { Canvas, useFrame, useThree } from '@react-three/fiber'
@@ -369,16 +23,34 @@ export default function about() {
 
 // interface Building {
 //   name: string;
+//   real_name: string;
 //   label: string;
 //   info: BuildingInfo;
 //   // 可以加入自定義位置偏移
 //   offset?: [number, number, number];
 // }
 
+// const buildingNames = [
+//   'library',
+//   'grass',
+//   'first_student',
+//   'second_library',
+//   'new_student',
+//   'stadium',
+//   'bank',
+//   'clock',
+//   'second',
+//   'gate',
+//   'MRT',
+//   'market',
+//   'lake',
+// ]
 // // 建築物資料
 // const buildings: Building[] = [
+//     // ...更多建築物
 //   { 
 //     name: 'library', 
+//     real_name: '台大圖書館',
 //     label: '1', 
 //     info: { 
 //       name: '台大圖書館', 
@@ -389,23 +61,71 @@ export default function about() {
 //     offset: [0, 6, 0] // 自定義標籤位置偏移
 //   },
 //   { 
-//     name: 'gym', 
+//     name: 'grass', 
+//     real_name: '振興草皮',
 //     label: '2', 
 //     info: { 
-//       name: '體育館', 
+//       name: '振興草皮', 
 //       desc: '這是體育館介紹，提供各種運動設施與場地。',
 //       openHours: '週一至週日 6:00-22:00',
 //       functions: ['籃球場', '游泳池', '健身房']
 //     },
 //     offset: [0, 7, 0]
 //   },
-//   // ...更多建築物
+//     { 
+//         name: 'first_student', 
+//         real_name: '第一學生宿舍',
+//         label: '3', 
+//         info: { 
+//         name: '第一學生宿舍', 
+//         desc: '這是學生宿舍介紹，提供舒適的住宿環境。',
+//         openHours: '24小時開放',
+//         functions: ['住宿服務', '自習室']
+//         },
+//         offset: [0, 5, 0]
+//     },
+//     { 
+//         name: 'second_library', 
+//         real_name: '第二圖書館',
+//         label: '4', 
+//         info: { 
+//         name: '第二圖書館', 
+//         desc: '這是第二圖書館介紹，提供豐富的學術資源與安靜的讀書環境。',
+//         openHours: '週一至週五 8:00-22:00',
+//         functions: ['借閱服務', '自習空間', '電子資源']
+//         },
+//         offset: [0, 6, 0]
+//     },
+//     {
+//         name: 'new_student',
+//         real_name: '新生宿舍',
+//         label: '5',
+//         info: { 
+//             name: '新生宿舍',
+//             desc: '這是新生宿舍介紹，提供舒適的住宿環境。',
+//             openHours: '24小時開放',
+//             functions: ['住宿服務', '自習室']
+//         },
+//         offset: [0, 5, 0]
+//     },
+//     {
+//         name: 'new_student',
+//         real_name: '新生宿舍',
+//         label: '5',
+//         info: { 
+//             name: '新生宿舍',
+//             desc: '這是新生宿舍介紹，提供舒適的住宿環境。',
+//             openHours: '24小時開放',
+//             functions: ['住宿服務', '自習室']
+//         },
+//         offset: [0, 5, 0]
+//     }
 // ]
 
 // // 標記組件
-// function Markers({ scene, onMarkerHover }: { 
+// function Markers({ scene, onActiveBuilding }: { 
 //   scene: THREE.Scene; 
-//   onMarkerHover: (info: BuildingInfo | null, pos: [number, number, number] | null, meshName: string | null) => void 
+//   onActiveBuilding: (info: String | null) => void; 
 // }) {
 //   const { camera } = useThree();
 //   const markersRef = useRef<THREE.Group[]>([]);
@@ -448,30 +168,41 @@ export default function about() {
 //             {/* 可點擊的標記 */}
 //             <mesh
 //               onPointerOver={(e) => {
-//                 e.stopPropagation();
-//                 onMarkerHover(building.info, markerPos, building.name);
-//                 document.body.style.cursor = 'pointer';
+//                 buildingNames.forEach(name => {
+//                     if (building.name === name) {
+//                         onActiveBuilding(name);
+//                     }
+//                     // 其他 hover 處理
+//                 })
+                
 //               }}
-//               onPointerOut={(e) => { 
-//                 e.stopPropagation(); 
-//                 onMarkerHover(null, null, null);
-//                 document.body.style.cursor = 'auto';
+//               onPointerOut={(e) => {
+//                 buildingNames.forEach(name => {
+//                     if (building.name === name) {
+//                         onActiveBuilding(null);
+//                     }
+//                     // 其他 hover 處理
+//                 })
+//                 // 其他 out 處理
+//               }}
+//               onClick={(e) => {
+//                 buildingNames.forEach(name => {
+//                     if (building.name === name) {
+//                         onActiveBuilding(name);
+//                     }
+//                     // 其他 hover 處理
+//                 })
+//                 // 其他 click 處理
 //               }}
 //               renderOrder={999}
 //             >
-//               <sphereGeometry args={[2.5, 16, 16]} />
-//               <meshStandardMaterial 
-//                 color="orange" 
-//                 emissive="orange"
-//                 emissiveIntensity={1}
-//                 toneMapped={false}
-//               />
+
 //             </mesh>
             
 //             {/* 數字標籤 - 始終面向相機 */}
-//             <Html center distanceFactor={10}>
-//               <div className="bg-white rounded-full w-10 h-10 flex items-center justify-center text-xs font-bold border border-gray-300 shadow-md transform transition-transform hover:scale-110">
-//                 {building.label}
+//             <Html center distanceFactor={300}>
+//               <div className=" w-10 h-10 flex items-center justify-center text-xs font-bold transform transition-transform hover:scale-110">
+//                 {building.real_name}
 //               </div>
 //             </Html>
 //           </group>
@@ -524,120 +255,147 @@ export default function about() {
 //   );
 // }
 
-// // 高亮顯示選中的建築物
-// function HighlightedBuilding({ scene, highlightedName }: {
-//   scene: THREE.Scene;
-//   highlightedName: string | null;
-// }) {
-//   useEffect(() => {
-//     // 恢復所有建築物的材質
-//     scene.traverse((object) => {
-//       if (object instanceof THREE.Mesh && object.material) {
-//         if (Array.isArray(object.material)) {
-//           object.material.forEach(mat => {
-//             if (mat.userData.originalColor) {
-//               mat.color.set(mat.userData.originalColor);
-//               mat.emissive?.set(0x000000);
-//             }
-//           });
-//         } else {
-//           if (object.material.userData.originalColor) {
-//             object.material.color.set(object.material.userData.originalColor);
-//             object.material.emissive?.set(0x000000);
-//           }
-//         }
-//       }
-//     });
+// // // 高亮顯示選中的建築物
+// // function HighlightedBuilding({ scene, highlightedName }: {
+// //   scene: THREE.Scene;
+// //   highlightedName: string | null;
+// // }) {
+// //   useEffect(() => {
+// //     // 恢復所有建築物的材質
+// //     scene.traverse((object) => {
+// //       if (object instanceof THREE.Mesh && object.material) {
+// //         if (Array.isArray(object.material)) {
+// //           object.material.forEach(mat => {
+// //             if (mat.userData.originalColor) {
+// //               mat.color.set(mat.userData.originalColor);
+// //               mat.emissive?.set(0x000000);
+// //             }
+// //           });
+// //         } else {
+// //           if (object.material.userData.originalColor) {
+// //             object.material.color.set(object.material.userData.originalColor);
+// //             object.material.emissive?.set(0x000000);
+// //           }
+// //         }
+// //       }
+// //     });
 
-//     // 如果有高亮的建築物，改變其材質
-//     if (highlightedName) {
-//       const building = scene.getObjectByName(highlightedName);
-//       if (building) {
-//         building.traverse((object) => {
-//           if (object instanceof THREE.Mesh && object.material) {
-//             if (Array.isArray(object.material)) {
-//               object.material.forEach(mat => {
-//                 // 保存原始顏色
-//                 if (!mat.userData.originalColor) {
-//                   mat.userData.originalColor = mat.color.clone();
-//                 }
-//                 // 設置高亮效果
-//                 mat.emissive?.set(0x555555);
-//               });
-//             } else {
-//               // 保存原始顏色
-//               if (!object.material.userData.originalColor) {
-//                 object.material.userData.originalColor = object.material.color.clone();
-//               }
-//               // 設置高亮效果
-//               object.material.emissive?.set(0x555555);
-//             }
-//           }
-//         });
-//       }
-//     }
-//   }, [scene, highlightedName]);
+// //     // 如果有高亮的建築物，改變其材質
+// //     if (highlightedName) {
+// //       const building = scene.getObjectByName(highlightedName);
+// //       if (building) {
+// //         building.traverse((object) => {
+// //           if (object instanceof THREE.Mesh && object.material) {
+// //             if (Array.isArray(object.material)) {
+// //               object.material.forEach(mat => {
+// //                 // 保存原始顏色
+// //                 if (!mat.userData.originalColor) {
+// //                   mat.userData.originalColor = mat.color.clone();
+// //                 }
+// //                 // 設置高亮效果
+// //                 mat.emissive?.set(0x555555);
+// //               });
+// //             } else {
+// //               // 保存原始顏色
+// //               if (!object.material.userData.originalColor) {
+// //                 object.material.userData.originalColor = object.material.color.clone();
+// //               }
+// //               // 設置高亮效果
+// //               object.material.emissive?.set(0x555555);
+// //             }
+// //           }
+// //         });
+// //       }
+// //     }
+// //   }, [scene, highlightedName]);
 
-//   return null;
-// }
+// //   return null;
+// // }
 
-// function ModelWithMarkers({ 
-//   onMarkerHover 
-// }: { 
-//   onMarkerHover: (info: BuildingInfo | null, pos: [number, number, number] | null, meshName: string | null) => void 
+// function ModelWithMarkers({ onActiveBuilding }: { 
+//   onActiveBuilding: (info: String | null) => void; 
 // }) {
 //   const { scene } = useGLTF('/ntu_map2.glb');
   
 //   return (
 //     <group>
 //       <primitive object={scene} />
-//       <Markers scene={scene as unknown as THREE.Scene} onMarkerHover={onMarkerHover} />
+//       <Markers scene={scene as unknown as THREE.Scene} onActiveBuilding={onActiveBuilding} />
 //     </group>
 //   );
 // }
 
 // export default function ModelViewer() {
-//   const [tooltipInfo, setTooltipInfo] = useState<BuildingInfo | null>(null);
-//   const [tooltipPos, setTooltipPos] = useState<[number, number, number] | null>(null);
-//   const [isTooltipActive, setIsTooltipActive] = useState(false);
-//   const [highlightedBuilding, setHighlightedBuilding] = useState<string | null>(null);
-//   const { scene } = useGLTF('/ntu_map2.glb');
+//     // const [tooltipInfo, setTooltipInfo] = useState<BuildingInfo | null>(null);
+//     // const [tooltipPos, setTooltipPos] = useState<[number, number, number] | null>(null);
+//     // const [isTooltipActive, setIsTooltipActive] = useState(false);
+//     // const [highlightedBuilding, setHighlightedBuilding] = useState<string | null>(null);
+//     const [activeBuildingInfo, setBuildingInfo] = useState<BuildingInfo | null>(null);
+//     const [activeBuildingname, setActiveBuildingname] = useState<String | null>(null);
 
-//   const handleMarkerHover = (
-//     info: BuildingInfo | null, 
-//     pos: [number, number, number] | null,
-//     meshName: string | null
-//   ) => {
-//     setTooltipInfo(info);
-//     setTooltipPos(pos);
-//     setHighlightedBuilding(meshName);
-    
-//     // 添加延遲顯示效果
-//     if (info) {
-//       setTimeout(() => setIsTooltipActive(true), 50);
-//     } else {
-//       setIsTooltipActive(false);
-//     }
-//   };
+//     // const handleMarkerHover = (
+//     //     info: BuildingInfo | null, 
+//     //     pos: [number, number, number] | null,
+//     //     meshName: string | null
+//     // ) => {
+//     //     setTooltipInfo(info);
+//     //     setTooltipPos(pos);
+//     //     setHighlightedBuilding(meshName);
+        
+//     //     // 添加延遲顯示效果
+//     //     if (info) {
+//     //     setTimeout(() => setIsTooltipActive(true), 50);
+//     //     } else {
+//     //     setIsTooltipActive(false);
+//     //     }
+//     // };
+
+//     useEffect(() => {
+        
+//         if (activeBuildingname) {
+//             const building = buildings.find(b => b.name === activeBuildingname);
+//             if (building) {
+//                 setBuildingInfo(building.info);
+//             } else {
+//                 setBuildingInfo(null);
+//             }
+//         } else {
+//             setBuildingInfo(null);
+//         }
+//     }, [activeBuildingname]);
 
 //   return (
 //     <div className="w-full h-screen bg-gray-100 rounded-lg shadow-lg relative">
 //       {/* 可以添加頂部導航或說明 */}
-//       <div className="absolute top-4 left-4 z-10 bg-white bg-opacity-80 p-2 rounded shadow-md">
-//         <h2 className="text-lg font-bold">台大校園導覽</h2>
-//         <p className="text-sm text-gray-600">將滑鼠移至標記點查看建築資訊</p>
-//       </div>
+//       <div className="absolute top-4 left-4 z-20">
+//         {activeBuildingInfo && (
+//             <div className="bg-white bg-opacity-90 p-4 rounded shadow-lg min-w-[220px] max-w-xs">
+//             <div className="font-bold text-lg mb-1">{activeBuildingInfo.name}</div>
+//             <div className="text-gray-700 mb-2">{activeBuildingInfo.desc}</div>
+//             {activeBuildingInfo.openHours && (
+//                 <div className="text-xs text-gray-500 mb-1">開放時間: {activeBuildingInfo.openHours}</div>
+//             )}
+//             {activeBuildingInfo.functions && (
+//                 <div className="flex flex-wrap gap-1">
+//                 {activeBuildingInfo.functions.map((f, i) => (
+//                     <span key={i} className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">{f}</span>
+//                 ))}
+//                 </div>
+//             )}
+//             </div>
+//         )}
+//         </div>
       
 //       <Canvas camera={{ position: [151, 100, 100], fov: 75 }}>
 //         <ambientLight intensity={0.8} />
 //         <directionalLight position={[2, 2, 2]} intensity={4} />
 //         <Suspense fallback={null}>
-//           <ModelWithMarkers onMarkerHover={handleMarkerHover} />
-//           <Tooltip 
+//           <ModelWithMarkers  onActiveBuilding={setActiveBuildingname}/>
+//           {/* <Tooltip 
 //             info={tooltipInfo} 
 //             position={tooltipPos} 
 //             active={isTooltipActive}
-//           />
+//           /> */}
 //           {/* <HighlightedBuilding 
 //             scene={scene as unknown as THREE.Scene}
 //             highlightedName={highlightedBuilding}
