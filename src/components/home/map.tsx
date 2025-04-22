@@ -1,11 +1,3 @@
-// export default function About() {
-//     return (
-//       <div className="flex flex-col items-center justify-center h-screen bg-gray-100 text-black text-bold text-2xl">
-//         about
-//       </div>
-//     );
-//   }
-
 "use client"
 import { Canvas, useFrame, useThree } from '@react-three/fiber'
 import { useGLTF,  OrbitControls } from '@react-three/drei'
@@ -15,8 +7,6 @@ import * as THREE from 'three'
 import * as module from "./info";
 
 
-
-// 標記組件
 function Markers({ scene, onActiveBuilding }: { 
   scene: THREE.Scene; 
   onActiveBuilding: (info: string | null) => void; 
@@ -27,7 +17,6 @@ function Markers({ scene, onActiveBuilding }: {
   const textureLoader = useMemo(() => new THREE.TextureLoader(), []);
   const texture = useMemo(() => textureLoader.load('/Footer.png'), []);   
   
-  // 更新標記朝向相機
   useFrame(() => {
     markersRef.current.forEach(marker => {
       if (marker && marker.parent) {
@@ -41,12 +30,10 @@ function Markers({ scene, onActiveBuilding }: {
       {module.buildings.map((building, index) => {
         const mesh = scene.getObjectByName(building.name);
         if (!mesh) return null;
-        
-        // 取得 mesh 的世界座標
+
         const pos = new THREE.Vector3();
         mesh.getWorldPosition(pos);
         
-        // 應用自定義偏移或使用默認偏移
         const offset = building.offset || [100, 100, 100];
         const markerPos: [number, number, number] = [
           pos.x + offset[0], 
@@ -66,17 +53,14 @@ function Markers({ scene, onActiveBuilding }: {
                 e.stopPropagation();
                 onActiveBuilding(building.name);
               }}
-              // onPointerOut={(e) => {
-              //   e.stopPropagation();
-              //   onActiveBuilding(null);
-              // }}
+
               onClick={(e) => {
                 e.stopPropagation();
                 onActiveBuilding(building.name);
               }}
               renderOrder={999}
             >
-            <planeGeometry args={[4, 4]} />
+            <planeGeometry args={[5, 5]} />
             <meshBasicMaterial 
               map={texture}
               transparent={true}
@@ -111,7 +95,7 @@ export default function ModelViewer() {
    
     const [activeBuildingInfo, setBuildingInfo] = useState<module.BuildingInfo | null>(null);
     const [activeBuildingname, setActiveBuildingname] = useState<string | null>(null);
-
+    const [isAutoRotating, setIsAutoRotating] = useState(true);
 
     useEffect(() => {
         if (activeBuildingname) {
@@ -127,18 +111,18 @@ export default function ModelViewer() {
     }, [activeBuildingname]);
 
   return (
-    <div className="w-full h-screen bg-gray-100 rounded-lg shadow-lg relative">
+    <div className="w-full h-screen rounded-lg  relative">
       {/* 可以添加頂部導航或說明 */}
-      <div className="absolute top-4 left-4 z-20">
+      <div className="absolute top-6 left-6 z-20 shadow-lg">
         {activeBuildingInfo && (
-            <div className="bg-white bg-opacity-90 p-4 rounded shadow-lg min-w-[220px] max-w-xs">
+            <div className="bg-white bg-opacity-90 p-4 rounded  min-w-[220px] max-w-xs">
             <div className="font-bold text-lg mb-1">{activeBuildingInfo.name}</div>
             <div className="text-gray-700 mb-1">{activeBuildingInfo.desc}</div>
             {activeBuildingInfo.activities && activeBuildingInfo.activities.map((activity, index) => (
               <div key={index}>
                 <div className="font-bold text-base mt-5">{activity.name}</div>
                 <div className="text-gray-700 mb-1">{activity.intro}</div>
-                <Link href={activity.url} className="text-blue-600 hover:text-blue-800 underline ">
+                <Link href={activity.url} className="hover:text-gray-900 underline text-gray-700 ">
                   點我帶你去玩
                 </Link>
               </div>
@@ -150,10 +134,21 @@ export default function ModelViewer() {
       <Canvas 
         camera={{ position: [151, 100, 100], fov: 75 }}
         onPointerMissed={() => {
-          // 當點擊到空白處時，隱藏建築物資訊
           setActiveBuildingname(null);
         }}
+        gl={{ 
+          alpha: true,
+          antialias: true,
+          preserveDrawingBuffer: true,
+          premultipliedAlpha: false
+        }}
+        onCreated={({ gl }) => {
+          gl.setClearColor(0x000000, 0);
+          gl.setPixelRatio(window.devicePixelRatio);
+        }}
+        style={{ background: 'transparent' }}
       >
+        
         <ambientLight intensity={0.8} />
         <directionalLight position={[2, 2, 2]} intensity={4} />
         <Suspense fallback={null}>
@@ -168,11 +163,15 @@ export default function ModelViewer() {
           enableDamping={true}
           dampingFactor={0.05}
           // 限制縮放範圍
-          minDistance={150}
+          minDistance={200}
           maxDistance={300}
+          autoRotate={isAutoRotating}
+          autoRotateSpeed={0.5} // 调整旋转速度
+          onStart={() => setIsAutoRotating(false)} // 用户开始交互时停止自动旋转
+          onEnd={() => setIsAutoRotating(true)}    // 用户结束交互时恢复自动旋转
         />
         {/* 添加環境光和霧效增強視覺效果 */}
-        <fog attach="fog" args={['#f0f0f0', 200, 700]} />
+        {/* <fog attach="fog" args={['#f0f0f0', 200, 700]} /> */}
       </Canvas>
     </div>
   );

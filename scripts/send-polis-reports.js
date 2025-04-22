@@ -12,7 +12,6 @@ import dotenv from 'dotenv';
 dotenv.config();
 const prisma = new PrismaClient();
 
-// 1. 抓取 Polis Metadata
 async function fetchPolisData(puzzleId) {
   const res = await axios.get(
     `https://api.pol.is/v1/puzzles/${puzzleId}/metadata`,
@@ -21,12 +20,10 @@ async function fetchPolisData(puzzleId) {
   return res.data;
 }
 
-// 2. 生成使用者互動摘要 (不寄信，僅匯出)
 async function generateUserSummaries(puzzleId) {
   const polis = await fetchPolisData(puzzleId);
   const events = polis.events || [];
 
-  // 按 userId 分組
   const byUser = events.reduce((map, evt) => {
     const uid = evt.userId;
     if (!map[uid]) map[uid] = [];
@@ -34,12 +31,10 @@ async function generateUserSummaries(puzzleId) {
     return map;
   }, {});
 
-  // 取得對應註冊資料
   const tokens = Object.keys(byUser);
   const regs = await prisma.registration.findMany({ where: { token: { in: tokens } } });
   const regMap = Object.fromEntries(regs.map(r => [r.token, { email: r.email, nickname: r.nickname }]));
 
-  // 組成摘要
   const summaries = tokens.map(token => {
     const eventsList = byUser[token];
     const reg = regMap[token] || { email: '未註冊', nickname: '匿名' };
@@ -55,7 +50,6 @@ async function generateUserSummaries(puzzleId) {
   return summaries;
 }
 
-// 3. 主程式：輸出到 console
 async function main() {
   try {
     const puzzleId = process.argv[2] || '6hnmhdc6ea';

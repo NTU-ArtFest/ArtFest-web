@@ -97,7 +97,7 @@ export default function PolisList() {
 
         {/* 教學懸浮層 */}
         {showTutorial && (
-        <div className="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 px-4">
+        <div className="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 px-4 ">
           {/* 對話框容器：最大高度 90vh，內容超出時捲動 */}
           <div className="relative bg-white rounded-xl shadow-lg w-full max-w-4xl max-h-[90vh] flex flex-col overflow-hidden">
             <button
@@ -114,7 +114,7 @@ export default function PolisList() {
                 <img
                   src={tutorialImages[step].src}
                   alt={tutorialImages[step].alt}
-                  className="max-h-full w-auto p-10"
+                  className="max-h-full w-auto mt-5 object-cover"
                 />
               )}
             </div>
