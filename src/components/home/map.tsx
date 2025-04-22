@@ -19,7 +19,7 @@ import * as module from "./info";
 // 標記組件
 function Markers({ scene, onActiveBuilding }: { 
   scene: THREE.Scene; 
-  onActiveBuilding: (info: String | null) => void; 
+  onActiveBuilding: (info: string | null) => void; 
 }) {
   const { camera } = useThree();
   const markersRef = useRef<THREE.Group[]>([]);
@@ -95,7 +95,7 @@ function Markers({ scene, onActiveBuilding }: {
 
 
 function ModelWithMarkers({ onActiveBuilding }: { 
-  onActiveBuilding: (info: String | null) => void; 
+  onActiveBuilding: (info: string | null) => void; 
 }) {
   const { scene } = useGLTF('/ntu_map2.glb');
   
@@ -110,7 +110,7 @@ function ModelWithMarkers({ onActiveBuilding }: {
 export default function ModelViewer() {
    
     const [activeBuildingInfo, setBuildingInfo] = useState<module.BuildingInfo | null>(null);
-    const [activeBuildingname, setActiveBuildingname] = useState<String | null>(null);
+    const [activeBuildingname, setActiveBuildingname] = useState<string | null>(null);
 
 
     useEffect(() => {

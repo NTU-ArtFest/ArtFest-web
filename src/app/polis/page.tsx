@@ -5,9 +5,6 @@ import Link from 'next/link';
 import { X, HelpCircle } from 'lucide-react';
 
 export default function PolisList() {
-  // token 暫時設為 null
-  const [userToken, setUserToken] = useState<string | null>(null);
-  useEffect(() => setUserToken(null), []);
 
   // 教學 Modal 狀態
   const [showTutorial, setShowTutorial] = useState(false);
@@ -117,7 +114,7 @@ export default function PolisList() {
                 <img
                   src={tutorialImages[step].src}
                   alt={tutorialImages[step].alt}
-                  className="max-h-full w-auto"
+                  className="max-h-full w-auto p-10"
                 />
               )}
             </div>

@@ -3,6 +3,19 @@
 import { useEffect } from 'react';
 import { useParams, useSearchParams } from 'next/navigation';
 
+interface PolisConfig {
+  puzzleId: string;
+  user: {
+    userId: string | null;
+  };
+}
+
+declare global {
+  interface Window {
+    POLIS_CONFIG: PolisConfig;
+  }
+}
+
 export default function PolisEmbed() {
   const { puzzle } = useParams();              // 動態路由拿到 puzzle
   const params = useSearchParams();
@@ -12,8 +25,8 @@ export default function PolisEmbed() {
     console.log('Mount Embed:', { puzzle, token });
     if (!token) return;
     // 1) 全域注入配置
-    ;(window as any).POLIS_CONFIG = {
-      puzzleId: puzzle!,
+    window.POLIS_CONFIG = {
+      puzzleId: Array.isArray(puzzle) ? puzzle[0] : puzzle!,
       user: { userId: token }
     };
     // 2) 載入官方 embed 腳本
@@ -39,3 +52,4 @@ export default function PolisEmbed() {
     </div>
   );
 }
+

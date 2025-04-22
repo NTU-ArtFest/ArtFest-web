@@ -11,7 +11,7 @@ import * as module from "../../components/home/info";
 // 標記組件
 function Markers({ scene, onActiveBuilding }: { 
   scene: THREE.Scene; 
-  onActiveBuilding: (info: String | null) => void; 
+  onActiveBuilding: (info: string| null) => void; 
 }) {
   const { camera } = useThree();
   const markersRef = useRef<THREE.Group[]>([]);
@@ -58,10 +58,7 @@ function Markers({ scene, onActiveBuilding }: {
                 e.stopPropagation();
                 onActiveBuilding(building.name);
               }}
-              // onPointerOut={(e) => {
-              //   e.stopPropagation();
-              //   onActiveBuilding(null);
-              // }}
+
               onClick={(e) => {
                 e.stopPropagation();
                 onActiveBuilding(building.name);
@@ -87,7 +84,7 @@ function Markers({ scene, onActiveBuilding }: {
 
 
 function ModelWithMarkers({ onActiveBuilding }: { 
-  onActiveBuilding: (info: String | null) => void; 
+  onActiveBuilding: (info: string| null) => void; 
 }) {
   const { scene } = useGLTF('/ntu_map2.glb');
   
@@ -102,7 +99,7 @@ function ModelWithMarkers({ onActiveBuilding }: {
 export default function ModelViewer() {
    
     const [activeBuildingInfo, setBuildingInfo] = useState<module.BuildingInfo | null>(null);
-    const [activeBuildingname, setActiveBuildingname] = useState<String | null>(null);
+    const [activeBuildingname, setActiveBuildingname] = useState<string| null>(null);
 
 
     useEffect(() => {
@@ -120,7 +117,7 @@ export default function ModelViewer() {
 
   return (
     <div className="w-full h-screen bg-gray-100 rounded-lg shadow-lg relative">
-      {/* 可以添加頂部導航或說明 */}
+
       <div className="absolute top-4 left-4 z-20">
         {activeBuildingInfo && (
             <div className="bg-white bg-opacity-90 p-4 rounded shadow-lg min-w-[220px] max-w-xs">
@@ -142,7 +139,6 @@ export default function ModelViewer() {
       <Canvas 
         camera={{ position: [151, 100, 100], fov: 75 }}
         onPointerMissed={() => {
-          // 當點擊到空白處時，隱藏建築物資訊
           setActiveBuildingname(null);
         }}
       >
@@ -156,14 +152,13 @@ export default function ModelViewer() {
           minPolarAngle={-Math.PI / 2}
           maxPolarAngle={Math.PI / 3}
           enablePan={false}
-          // 添加阻尼效果使相機移動更平滑
+
           enableDamping={true}
           dampingFactor={0.05}
-          // 限制縮放範圍
+
           minDistance={150}
           maxDistance={300}
         />
-        {/* 添加環境光和霧效增強視覺效果 */}
         <fog attach="fog" args={['#f0f0f0', 200, 700]} />
       </Canvas>
     </div>
