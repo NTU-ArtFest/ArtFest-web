@@ -1,10 +1,18 @@
+// export default function About() {
+//     return (
+//       <div className="flex flex-col items-center justify-center h-screen bg-gray-100 text-black text-bold text-2xl">
+//         about
+//       </div>
+//     );
+//   }
+
 "use client"
 import { Canvas, useFrame, useThree } from '@react-three/fiber'
 import { useGLTF,  OrbitControls } from '@react-three/drei'
 import { Suspense, useState, useEffect, useRef, useMemo} from 'react'
 import Link from 'next/link'
 import * as THREE from 'three'
-import * as module from "../../components/home/info";
+import * as module from "./info";
 
 
 
