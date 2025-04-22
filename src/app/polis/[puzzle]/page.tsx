@@ -34,6 +34,7 @@ export default function PolisEmbed() {
         className="polis w-full max-w-4xl"
         data-conversation_id={puzzle}
         data-site_id="polis_site_id_G5IJKiuEILYrbDfDvu"
+        data-xid={token!}
       />
     </div>
   );
