@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { FloatingImageButton } from "@/components/mbti/FloatingImageButton";
-import Image from "next/image";
+import { BackgroundImage } from "@/components/mbti/BackgroundImage";
 
 export default function Page2() {
     const [vh, setVh] = useState("100vh");
@@ -26,14 +26,7 @@ export default function Page2() {
             style={{ height: vh }}
         >
             <div className="relative h-full w-auto max-w-full max-h-full aspect-[9/16]">
-                <Image
-                    src="/mbti/p2.svg"
-                    alt="MBTI Background"
-                    fill
-                    className="object-contain pointer-events-none"
-                    sizes="100vw"
-                    priority
-                />
+                <BackgroundImage src="/mbti/p2.svg" />
                 <FloatingImageButton
                     imageSrc="/mbti/p2-btn-1.svg"
                     page={2}

@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { FloatingImageButton } from "@/components/mbti/FloatingImageButton";
+import { BackgroundImage } from "@/components/mbti/BackgroundImage";
 import Image from "next/image";
 
 export default function Page1() {
@@ -26,14 +27,7 @@ export default function Page1() {
             style={{ height: vh }}
         >
             <div className="relative h-full w-auto max-w-full max-h-full aspect-[9/16]">
-                <Image
-                    src="/mbti/p1.svg"
-                    alt="MBTI Background"
-                    fill
-                    className="object-contain pointer-events-none"
-                    sizes="100vw"
-                    priority
-                />
+                <BackgroundImage src="/mbti/p1.svg" />
                 <FloatingImageButton
                     imageSrc="/mbti/p1-ready-btn.svg"
                     page={1}

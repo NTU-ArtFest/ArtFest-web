@@ -1,9 +1,14 @@
 "use client";
 
-import Image from "next/image";
+import { BackgroundImage } from "@/components/mbti/BackgroundImage";
+import { FloatingImageButton } from "@/components/mbti/FloatingImageButton";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import localFont from "next/font/local";
+
+const titleFont = localFont({
+    src: "../SourceHanSerifTC-VF.ttf",
+});
 
 export default function Page8() {
     const router = useRouter();
@@ -36,21 +41,21 @@ export default function Page8() {
         >
             {/* Background SVG */}
             <div className="relative h-full w-auto max-w-full max-h-full aspect-[9/16]">
-                <Image
-                    src="/mbti/p8.svg"
-                    alt="MBTI Background"
-                    fill
-                    className="object-contain pointer-events-none"
-                    sizes="100vw"
-                    priority
+                <BackgroundImage src="/mbti/p8.svg" />
+                <FloatingImageButton
+                    imageSrc="p8-btn.svg"
+                    page={8}
+                    choice={name}
+                    left="left-[69.7%]"
+                    bottom="bottom-[-11%]"
+                    width="w-[42.5%]"
                 />
-            </div>
-            <input
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                onKeyDown={handleKeyDown}
-                className={`
-                    ${"myFont.className"}
+                <input
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    onKeyDown={handleKeyDown}
+                    className={`
+                    ${titleFont.className}
                     font-bold
                     text-[#2B7687]
                     text-center
@@ -61,10 +66,11 @@ export default function Page8() {
                     bottom-[44.5%]         /* Mobile: higher from bottom */
                     -translate-x-1/2 
                     -translate-y-1/2 
-                    w-[8%]             /* Mobile: wider */
+                    w-[26%]             /* Mobile: wider */
                     h-[4.5%]
                 `}
-            />
+                />
+            </div>
         </div>
     );
 }

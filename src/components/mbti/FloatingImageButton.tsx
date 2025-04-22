@@ -79,8 +79,12 @@ export const FloatingImageButton: React.FC<FloatingImageButtonProps> = ({
             const updatedTraits = updateMBTITraits(choice, currentTraits);
             localStorage.setItem("mbti-traits", JSON.stringify(updatedTraits));
         }
-
-        router.push(`/mbti/p${page + 1}`);
+        if (page == 8) {
+            localStorage.setItem("username", choice);
+            router.push("/mbti/result");
+        } else if (page < 8) {
+            router.push(`/mbti/p${page + 1}`);
+        }
     };
 
     return (

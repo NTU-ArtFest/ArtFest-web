@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Image from "next/image";
+import { BackgroundImage } from "@/components/mbti/BackgroundImage";
 import { FloatingImageButton } from "@/components/mbti/FloatingImageButton";
 
 export default function Page7() {
@@ -26,14 +26,7 @@ export default function Page7() {
         >
             {/* Background SVG */}
             <div className="relative h-full w-auto max-w-full max-h-full aspect-[9/16]">
-                <Image
-                    src="/mbti/p7.svg"
-                    alt="MBTI Background"
-                    fill
-                    className="object-contain pointer-events-none"
-                    sizes="100vw"
-                    priority
-                />
+                <BackgroundImage src="/mbti/p7.svg" />
                 <FloatingImageButton
                     imageSrc="p7-hammer.svg"
                     page={7}
