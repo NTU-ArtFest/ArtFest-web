@@ -185,13 +185,15 @@ export default function Result() {
           >
             {/* Background Image */}
             {imageURL && (
-              <img
-                src={imageURL}
-                alt="Final MBTI Result"
-                className="object-contain w-full h-full"
-                crossOrigin="anonymous"
-                draggable={false}
-              />
+              <Image
+              src={imageURL}
+              alt="Final MBTI Result"
+              className="object-contain w-full h-full"
+              draggable={false}
+              width={500}  // 設置一個合適的寬度，或使用 fill 屬性
+              height={300} // 設置一個合適的高度，或使用 fill 屬性
+              unoptimized={imageURL.startsWith('data:')} // 如果是 data URL，設置為 unoptimized
+            />
             )}
             {imageURL && !isComposited && username && (
               <div

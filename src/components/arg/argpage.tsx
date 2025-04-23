@@ -113,7 +113,7 @@ useEffect(() => {
     setPuzzlePosition({ x: puzzleX, y: puzzleY });
     setHolePosition({ x: holeX, y: holeY });
   }
-}, [isInSafeZone]);
+}, [isInSafeZone, setPuzzlePosition, setHolePosition]);
   
 
   useEffect(() => {
@@ -158,7 +158,7 @@ useEffect(() => {
     setPuzzlePosition({ x: puzzleX, y: puzzleY });
     setHolePosition({ x: holeX, y: holeY });
   }
-}, []);
+},  [isInSafeZone, setPuzzlePosition, setHolePosition]);
  
   // 生成不重疊的位置
   // useEffect(() => {

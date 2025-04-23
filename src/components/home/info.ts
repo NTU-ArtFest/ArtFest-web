@@ -157,8 +157,8 @@ export const buildings: Building[] = [
       real_name: '華南銀行',
       label: '7',
       info: { 
-        name: '校內銀行',
-        desc: '校內銀行提供師生便捷的金融服務，包括存款、提款、轉帳及各類繳費業務。校內設有多台ATM機，方便師生日常金融需求。',
+        name: '華南銀行',
+        desc: '大家要多光顧華南銀行歐！',
         activities: [
             {
                 name: '陶土工作坊',
@@ -184,7 +184,7 @@ export const buildings: Building[] = [
       real_name: '傅鐘',
       label: '8',
       info: { 
-        name: '校鐘',
+        name: '傅鐘',
         desc: '台大校鐘是校園的地標之一，也是學生約會集合的熱門地點。每到整點報時，悠揚的鐘聲迴盪在校園中，成為台大特有的聲音記憶。',
         activities: []
       },
@@ -196,7 +196,7 @@ export const buildings: Building[] = [
       label: '9',
       info: { 
         name: '第二學生活動中心',
-        desc: '第二學生活動中心',
+        desc: '整棟樓乘載了學生的一切，笑聲，打鬧，淚水，歡笑，都將成為了這棟樓的回憶',
         activities: [
             {
                 name: '潮差 - 失衡',
@@ -231,10 +231,10 @@ export const buildings: Building[] = [
     },
     {
       name: 'market',
-      real_name: '校內市集',
+      real_name: '水源市場',
       label: '12',
       info: { 
-        name: '校內市集',
+        name: '水源市場',
         desc: '校內市集匯集多家餐廳、小吃及便利商店，提供多元的飲食選擇。是學生用餐、購物及社交的熱門場所，尤其在午餐時間特別熱鬧。',
         activities: [
             {

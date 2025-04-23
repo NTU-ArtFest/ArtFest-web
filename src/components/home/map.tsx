@@ -111,7 +111,7 @@ export default function ModelViewer() {
     }, [activeBuildingname]);
 
   return (
-    <div className="w-full h-screen rounded-lg  relative">
+    <div className="w-full h-screen rounded-lg relative h-[78vh]">
       {/* 可以添加頂部導航或說明 */}
       <div className="absolute top-6 left-6 z-20 shadow-lg">
         {activeBuildingInfo && (
@@ -163,15 +163,14 @@ export default function ModelViewer() {
           enableDamping={true}
           dampingFactor={0.05}
           // 限制縮放範圍
-          minDistance={200}
-          maxDistance={300}
+          minDistance={120}
+          maxDistance={230}
           autoRotate={isAutoRotating}
           autoRotateSpeed={0.5} // 调整旋转速度
           onStart={() => setIsAutoRotating(false)} // 用户开始交互时停止自动旋转
           onEnd={() => setIsAutoRotating(true)}    // 用户结束交互时恢复自动旋转
         />
         {/* 添加環境光和霧效增強視覺效果 */}
-        {/* <fog attach="fog" args={['#f0f0f0', 200, 700]} /> */}
       </Canvas>
     </div>
   );

@@ -17,6 +17,12 @@ import "swiper/css/pagination";
 import ModelViewer from './map';
 
 
+
+// 註冊 ScrollTrigger 插件
+if (typeof window !== 'undefined') {
+  gsap.registerPlugin(ScrollTrigger);
+}
+
 export default function Home() {
     const [text, setText] = useState("");
     const [text1, setText1] = useState("");
@@ -27,7 +33,6 @@ export default function Home() {
     const [scrollY, setScrollY] = useState(0);
   
     const containerRef = useRef<HTMLDivElement>(null);
-    const horizontalRef = useRef<HTMLDivElement>(null);
   
     // 監聽滾動事件
     useEffect(() => {
@@ -61,33 +66,75 @@ export default function Home() {
         }
       }, [index]);
     
-
-
-
-    // gsap
-    useEffect(() => {
-      // 注册 ScrollTrigger 插件
-      gsap.registerPlugin(ScrollTrigger);
   
-      // 设置水平滚动动画
-      const horizontalScroll = gsap.to(horizontalRef.current, {
-        x: () => horizontalRef.current ? -(horizontalRef.current.scrollWidth - window.innerWidth) : 0, // 水平滚动的距离
-        ease: "none",
+  useEffect(() => {
+    // 確保在客戶端執行
+    if (typeof window === 'undefined') return;
+    
+    const ctx = gsap.context(() => {
+      // 設置左側進入的文字動畫
+      gsap.from(".text-left1", {
+        x: -100,
+        opacity: 0,
+        duration: 0.8,
+        ease: "power2.out",
         scrollTrigger: {
-          trigger: containerRef.current, // 触发器
-          start: "top top", // 滚动开始位置
-          end: () => horizontalRef.current ? `+=${horizontalRef.current.scrollWidth}` : "+=0", // 滚动结束位置
-          scrub: true, // 平滑滚动
-          pin: true, // 固定容器
-          anticipatePin: 1,
-          
-        },
+          trigger: ".text-left1",
+          start: "top 60%", 
+          // end: "top 50%", 
+          toggleActions: "play", 
+          markers: false   
+        }
       });
+      
+      // 設置右側進入的文字動畫
+      gsap.from(".text-right1", {
+        x: 100,
+        opacity: 0,
+        duration: 0.8,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: ".text-right1",
+          start: "top 60%",
+          // end: "top 50%",
+          toggleActions: "play ",
+          markers: false
+        }
+      });
+      
+     // 設置左側進入的文字動畫
+      gsap.from(".text-left2", {
+        x: -100,
+        opacity: 0,
+        duration: 0.8,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: ".text-left2",
+          start: "top 60%", 
+          // end: "top 50%",  
+          toggleActions: "play", 
+          markers: false   
+        }
+      });
+      // 設置左側進入的文字動畫
+      gsap.from(".text-right2", {
+        x: 100,
+        opacity: 0,
+        duration: 0.8,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: ".text-right2",
+          start: "top 60%", 
+          // end: "top 50%",  
+          toggleActions: "play", 
+          markers: false    
+        }
+      });
+    }, containerRef);
+    
+    return () => ctx.revert(); // 清理動畫
+  }, []);
   
-      return () => {
-        horizontalScroll.kill(); // 清除动画实例
-      };
-    }, []);
 
     const calculateOpacity = () => 0.6 + scrollY/2000; 
     const calculateOpacity1 = () => Math.max(0, 1 - scrollY / 500); // 最大透明度为1，
@@ -97,7 +144,7 @@ export default function Home() {
         // 當 scrollY 越大，透明度 (opacity) 越小；此處以 500 為分界值
         return Math.min(0.3 + scrollY / 500, 1);
     };
-    const scrolly_calcultae = () => (-880 + scrollY * 0.1);
+    const scrolly_calcultae = () => (-365 + scrollY * 0.1);
   
   
     const slides = [
@@ -130,7 +177,7 @@ export default function Home() {
   
               {/* Navigation Links */}
               <div className="flex space-x-6">
-                {["ARG", "Polis", "who-art-you"].map((item) => (
+                {["ARG", "Polis", "Who-Art-You"].map((item) => (
                   <Link
                     key={item}
                     href={`/${item.toLowerCase().replace(" ", "-")}`}
@@ -197,16 +244,16 @@ export default function Home() {
         </div>
         <div className="absolute inset-0 z-10 bg-gradient-to-b from-black/0 to-black/50"></div>
 
-        <div className="relative z-17 mt-[100vh]">
-            <div className=''>
-              <div className="w-full absolute">
+        <div className="relative z-17 mt-[100vh] h-[100vh]">
+            <div className='relative '>
+              <div className="w-full absolute top-0 left-0" >
                   <Image 
                       src="/bg.png"
                       alt="背景圖片"
                       width={0}
                       height={0}
                       sizes="100vw"
-                      className="w-full h-full object-cover  brightness-100"
+                      className="w-full object-cover  brightness-100"
                       priority
                       style={{
                           opacity: calculateOpacity2(), // 使用 opacity 而非 color
@@ -214,18 +261,25 @@ export default function Home() {
                       }}
                   />
               </div>
+
+              {/* Second main section : horizontal scroll */}
+              <div className="min-h-screen flex items-center justify-center z-20 pt-40 pt-10"> 
+                  <div className="relative w-[70%] backdrop-blur-sm rounded-md"> 
+                      <h2 className="text-6xl font-bold ">展場地圖</h2> 
+                      <ModelViewer/>
+                  </div>
+              </div>
               {/* First main section : introduction */}
-              <div className=" min-h-screen flex items-center justify-center">
+              <div className="h-[500px] flex items-center justify-center">
                   <div className=" container mx-auto px-6 flex flex-col md:flex-row items-center md:justify-end">
-    
-                      <div className="md:w-1/2 mt-10 md:mt-0 z-20">
+                      <div className="md:w-1/2 md:mt-0 z-20">
                           <h2 className="text-6xl font-bold mb-4 tracking-wider" >人與人的連結</h2>
 
                       </div>
                   </div>
               </div>
 
-              <div className="flex items-center justify-center">
+              <div className="h-[500px] flex items-center justify-center">
                   <div className=" container mx-auto px-6 flex flex-col md:flex-row items-center md:justify-center">
     
                       <div className="md:w-1/2 mt-10 md:mt-0 z-20">
@@ -235,14 +289,14 @@ export default function Home() {
                   </div>
               </div>
 
-              <div className="min-h-screen flex items-center justify-center">
+              <div className="h-[800px] ">
                   <div className="w-full mx-auto flex flex-col md:flex-row items-center md:justify-center">
-                      <div className="md:w-1/2 mt-20 md:mt-[450px] z-20 flex items-center justify-center">
+                      <div className="md:w-1/2 md:mt-[200px] mt-20 z-20 flex justify-center">
                       <h2
                           className="text-6xl font-bold mb-4 tracking-wider"
                           style={{
-                          writingMode: "vertical-rl",    // 或者 "vertical-lr" 根據你希望文字排列的方向
-                          textOrientation: "upright",    // 保持文字直立
+                          writingMode: "vertical-rl",    
+                          textOrientation: "upright",    
                           }}
                       >
                           也是一種潮汐
@@ -253,47 +307,56 @@ export default function Home() {
             </div>
             
             
-            {/* Second main section : horizontal scroll */}
-            <div className="min-h-screen flex items-center justify-center z-20 pt-40"> 
-                <div className="relative w-[70%] backdrop-blur-sm rounded-md"> 
-                    <h2 className="text-6xl font-bold ">展場介紹</h2> 
-                    <ModelViewer/>
-                </div>
-            </div>
-            
-
             {/* Third main section : arg */}
-            <div
-                className="h-[700px] bg-cover bg-center z-20"
+            <div className="h-[700px] relative overflow-hidden">
+              <div 
+                className="absolute inset-0 w-full h-[calc(100%+200px)]" // 增加高度以允許視差移動
                 style={{
-                    backgroundImage: "url('/arg/arg.png')", // 替换为实际背景图片路径
-                    backgroundPositionY: `${scrolly_calcultae()}px`,
+                  transform: `translateY(${scrolly_calcultae()}px)`,
                 }}
-                >
-                <div className="h-full flex items-center justify-center bg-black/50">
-                </div>
+              >
+                <Image 
+                  src="/arg/arg.png"
+                  alt="背景圖片"
+                  fill
+                  sizes="100vw"
+                  className="object-cover object-center"
+                  priority
+                />
+                {/* <div className="absolute h-[700px] flex items-center justify-center bg-black/50"></div> */}
+              </div>
+              
             </div>
+              
             
-            <div ref={containerRef} className="relative h-screen overflow-hidden">
-                <div
-                ref={horizontalRef}
-                className="top-0 left-0 flex h-full"
-                >
-                    <div className="flex-shrink-0 w-screen h-full flex items-center justify-center bg-black">
-                        <h2 className="text-4xl font-bold text-white">story 1</h2>
-                    </div>
-    
-                    <div className="flex-shrink-0 w-screen h-full flex items-center justify-center bg-black">
-                        <h2 className="text-4xl font-bold text-white">story 2</h2>
-                    </div>
-    
-                    <div className="flex-shrink-0 w-screen h-full flex items-center justify-center bg-black">
-                        <h2 className="text-4xl font-bold text-white">story 3 </h2>
-                    </div>
+            <div ref={containerRef} className="pt-20 py-16 bg-gray-50 w-full h-[90vh] relative opacity-80">
+              <div className="relative container mx-auto px-4 ">
+                <div className="max-w-4xl mx-auto space-y-12"> 
+
+                  <div className="text-left1 p-8 ">
+                    <h3 className="text-3xl font-semibold text-black">你是否生活厭倦了呢？</h3>
+                  </div>
+                  
+                  <div className="text-right1 p-8 text-right">
+                    <h3 className="text-3xl font-semibold text-black">又或是在日常生活中找不到那所謂的快感</h3>
+                  </div>
+                  
+                  <div className="text-left2 p-8">
+                    <h3 className="text-3xl font-semibold text-black">你是否曾幻想過，在現實生活過著虛擬的生活啊</h3>
+                  </div>
+                  
+                  <div className="text-right2 p-8 text-right mb-10">
+                    <h3 className="text-3xl font-semibold mb-10 text-orange-600">如果有的話，那就來玩 ARG 吧！</h3>
+                    <Link href="/arg" className="text-lg text-bold text-gray-700 hover:text-gray-900 hover:underline ">
+                      來 我帶你走 〉〉
+                    </Link>
+                  </div>
+                  
                 </div>
+              </div>
             </div>
-               
-  
+
+{/*   
             <div className="w-full absolute h-[1150px]">
                   <Image 
                       src="/bg.png"
@@ -308,10 +371,15 @@ export default function Home() {
                           transition: "opacity 0.3s ease",
                       }}
                   />
-              </div>
+              </div> */}
+
           {/* Fourth main section : mbti */}
-            <section className="py-10  h-screen flex flex-col items-center justify-center relative">
-                <h2 className="text-center text-[50px] font-bold m-[100px]">想知道自己是什麼浪潮間帶生物嗎</h2>
+            <section className="py-10  h-screen flex flex-col items-center justify-center relative bg-white">
+                <div className='h-[300px]'>
+                  <h2 className="text-center text-[50px] font-bold mt-10">你</h2>
+                  <h2 className="text-center text-[50px] font-bold ">又是什麼潮間帶生物呢</h2>
+                </div>
+                
                 <Swiper
                 modules={[Autoplay, EffectCoverflow, Navigation]}
                 effect="coverflow"
@@ -330,7 +398,7 @@ export default function Home() {
                     modifier: 1,
                     slideShadows: false, 
                 }}
-                className="w-full h-full"
+                className="w-full h-full "
                 >
                 {slides.map((slide) => (
                     <SwiperSlide key={slide.id} className="flex flex-col items-center justify-center">
@@ -351,13 +419,17 @@ export default function Home() {
   
   
           {/* Fifth main section : polis */}
-            <div className="h-screen flex items-center justify-center bg-white">
-                <section id="final-block" className="py-20  text-center">
-                <h2 className="text-[100px]">參與公共議題，人人有責</h2>
-                {/* <p>你喜歡浪潮嗎？</p> */}
-                </section>
-            </div>
-          
+          <div className="h-screen flex items-center justify-center bg-white">
+            <section id="final-block" className="py-20 text-center w-full">
+              <h2 className="text-[100px] md:text-[70px] sm:text-[40px]">參與公共議題，人人有責</h2>
+              <div className="flex justify-end mt-4 px-4 w-[80%]">
+                <Link href="/polis" className="text-blue-600 hover:text-blue-800 underline">
+                  了解更多公共議題
+                </Link>
+              </div>
+            </section>
+          </div>
+                    
             {/* Footer */}
             <footer className="bg-gray-300 py-10 text-center relative">
               <div className="container mx-auto px-4">

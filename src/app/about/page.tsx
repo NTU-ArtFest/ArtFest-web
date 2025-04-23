@@ -17,7 +17,7 @@ function Markers({ scene, onActiveBuilding }: {
   const markersRef = useRef<THREE.Group[]>([]);
 
   const textureLoader = useMemo(() => new THREE.TextureLoader(), []);
-  const texture = useMemo(() => textureLoader.load('/Footer.png'), []);   
+  const texture = useMemo(() => textureLoader.load('/Footer.png'), [textureLoader]);   
   
   // 更新標記朝向相機
   useFrame(() => {
