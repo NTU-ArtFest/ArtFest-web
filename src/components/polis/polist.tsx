@@ -81,7 +81,7 @@ export default function PolisList() {
         <header className="flex justify-between items-center p-4 bg-white bg-opacity-50 shadow">
           <h1 className="text-2xl font-bold text-black">Polis 議題列表</h1>
           <div className="flex items-center space-x-2">
-            <button onClick={() => router.push('/')} aria-label="Home" className="p-2 hover:bg-gray-200 rounded text-black">
+            <button onClick={() => router.push('http://www.active.ntu.edu.tw/Activity_ArtsFestival')} aria-label="Home" className="p-2 hover:bg-gray-200 rounded text-black">
               <Home size={24} />
             </button>
             <button onClick={() => setShowGmailModal(true)} aria-label="Register" className="p-2 hover:bg-gray-200 rounded text-black">
