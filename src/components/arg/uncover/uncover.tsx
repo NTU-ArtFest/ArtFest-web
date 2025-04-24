@@ -81,7 +81,7 @@ export default function ArgUncover() {
       </div>
       
       <button
-        
+        className="mt-7"
         onClick={handleStartGame}
         style={{
           position: 'relative',

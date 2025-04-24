@@ -7,6 +7,27 @@ import * as THREE from 'three'
 import * as module from "./info";
 
 
+function useWindowSize() {
+  const [size, setSize] = useState({
+    width: typeof window !== 'undefined' ? window.innerWidth : 0,
+    height: typeof window !== 'undefined' ? window.innerHeight : 0,
+  });
+
+  useEffect(() => {
+    function handleResize() {
+      setSize({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+    }
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  return size;
+}
+
 function Markers({ scene, onActiveBuilding }: { 
   scene: THREE.Scene; 
   onActiveBuilding: (info: string | null) => void; 
@@ -60,7 +81,7 @@ function Markers({ scene, onActiveBuilding }: {
               }}
               renderOrder={999}
             >
-            <planeGeometry args={[5, 5]} />
+            <planeGeometry args={[10, 10]} />
             <meshBasicMaterial 
               map={texture}
               transparent={true}
@@ -97,6 +118,12 @@ export default function ModelViewer() {
     const [activeBuildingname, setActiveBuildingname] = useState<string | null>(null);
     const [isAutoRotating, setIsAutoRotating] = useState(true);
 
+    const { width } = useWindowSize();
+  
+    // Calculate distances based on screen width
+    const minDistance = width < 768 ? 180 : 120; 
+    const maxDistance = width < 768 ? 350 : 230;
+
     useEffect(() => {
         if (activeBuildingname) {
             const building = module.buildings.find(b => b.name === activeBuildingname);
@@ -111,22 +138,21 @@ export default function ModelViewer() {
     }, [activeBuildingname]);
 
   return (
-    <div className="w-full h-screen rounded-lg relative h-[78vh]">
-      {/* 可以添加頂部導航或說明 */}
+    <div className="w-full h-screen rounded-lg relative h-[45vh] md:h-[75vh]">
       <div className="absolute top-6 left-6 z-20 shadow-lg">
         {activeBuildingInfo && (
-            <div className="bg-white bg-opacity-90 p-4 rounded  min-w-[220px] max-w-xs">
-            <div className="font-bold text-lg mb-1">{activeBuildingInfo.name}</div>
-            <div className="text-gray-700 mb-1">{activeBuildingInfo.desc}</div>
-            {activeBuildingInfo.activities && activeBuildingInfo.activities.map((activity, index) => (
-              <div key={index}>
-                <div className="font-bold text-base mt-5">{activity.name}</div>
-                <div className="text-gray-700 mb-1">{activity.intro}</div>
-                <Link href={activity.url} className="hover:text-gray-900 underline text-gray-700 ">
-                  點我帶你去玩
-                </Link>
-              </div>
-            ))}
+            <div className="bg-white bg-opacity-90 p-4 rounded  w-[220px] md:w-[300px]">
+              <div className="font-bold text-lg mb-1">{activeBuildingInfo.name}</div>
+              <div className="text-gray-700 mb-1">{activeBuildingInfo.desc}</div>
+              {activeBuildingInfo.activities && activeBuildingInfo.activities.map((activity, index) => (
+                <div key={index}>
+                  <div className="font-bold text-base mt-5">{activity.name}</div>
+                  <div className="text-gray-700 mb-1">{activity.intro}</div>
+                  <Link href={activity.url} className="hover:text-gray-900 underline text-gray-700 ">
+                    點我帶你去玩
+                  </Link>
+                </div>
+              ))}
             </div>
         )}
       </div>
@@ -149,7 +175,7 @@ export default function ModelViewer() {
         style={{ background: 'transparent' }}
       >
         
-        <ambientLight intensity={0.8} />
+        <ambientLight intensity={1.3} />
         <directionalLight position={[2, 2, 2]} intensity={4} />
         <Suspense fallback={null}>
           <ModelWithMarkers  onActiveBuilding={setActiveBuildingname}/>
@@ -159,18 +185,16 @@ export default function ModelViewer() {
           minPolarAngle={-Math.PI / 2}
           maxPolarAngle={Math.PI / 3}
           enablePan={false}
-          // 添加阻尼效果使相機移動更平滑
           enableDamping={true}
           dampingFactor={0.05}
-          // 限制縮放範圍
-          minDistance={120}
-          maxDistance={230}
+          minDistance={minDistance}
+          maxDistance={maxDistance}
           autoRotate={isAutoRotating}
-          autoRotateSpeed={0.5} // 调整旋转速度
-          onStart={() => setIsAutoRotating(false)} // 用户开始交互时停止自动旋转
-          onEnd={() => setIsAutoRotating(true)}    // 用户结束交互时恢复自动旋转
+          autoRotateSpeed={1}
+          onStart={() => setIsAutoRotating(false)} 
+          onEnd={() => setIsAutoRotating(true)}   
         />
-        {/* 添加環境光和霧效增強視覺效果 */}
+
       </Canvas>
     </div>
   );

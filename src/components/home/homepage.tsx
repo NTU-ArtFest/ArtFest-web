@@ -3,7 +3,6 @@
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-// import { Globe as GlobeIcon } from "lucide-react"; 
 
 import { motion } from "framer-motion";
 import { Autoplay, EffectCoverflow, Navigation } from "swiper/modules";
@@ -16,34 +15,76 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import ModelViewer from './map';
 
-
-
-// 註冊 ScrollTrigger 插件
+// enroll
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
 }
 
+
 export default function Home() {
+
+    //  --- var ---
+
+    // for typing text effect 
     const [text, setText] = useState("");
     const [text1, setText1] = useState("");
     const fullText = "NTU Artfest";
     const fullText2 = "           -《潮汐》";
     const [index, setIndex] = useState(0);
-    // const [language, setLanguage] = useState("EN");
+
+    // for scrolling 
     const [scrollY, setScrollY] = useState(0);
   
+    // for gsap animation
     const containerRef = useRef<HTMLDivElement>(null);
+
+    // to check whether user use phone or computer 
+    const [windowWidth, setWindowWidth] = useState(1024); 
+
+    // to adjust the height of the arg propoganda pic
+    const minDistance = windowWidth < 768 ? -395 : -365; 
+
+    // to prevent from hydrate error
+    const [opacity, setOpacity] = useState<number | undefined>(0.3);
+    
+    // menu
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isMobile, setIsMobile] = useState(false);
+
+    // --- function --- 
+
+    // calculate  alot about opacity
+    const calculateOpacity = () => 0.6 + scrollY/2000; 
+    const calculateOpacity1 = () => Math.max(0, 1 - scrollY / 500); 
   
-    // 監聽滾動事件
+    const calculateOpacity2 = () => {
+        const scrollY = typeof window !== "undefined" ? window.scrollY : 0;
+        return Math.min(0.3 + scrollY / 500, 1);
+    };
+    const scrolly_calcultae = () => (minDistance + scrollY * 0.1);
+
+    // --- useEffect ----
+
+    // listen scrolling event 
     useEffect(() => {
+      setWindowWidth(window.innerWidth);
+      setOpacity(calculateOpacity2());
+
       const handleScroll = () => {
         setScrollY(window.scrollY);
+
+        console.log(window.scrollY);
+        
+        if(scrollY>400)
+          setOpacity(1);
+        setOpacity(calculateOpacity2());
+
       };
       window.addEventListener("scroll", handleScroll);
       return () => window.removeEventListener("scroll", handleScroll);
     }, []);
     
-    // 文字打字效果1
+    // typing effect 1
     useEffect(() => {
       if (index < fullText.length) {
         const timeout = setTimeout(() => {
@@ -55,7 +96,7 @@ export default function Home() {
     }, [index]);
 
 
-    // 文字打字效果1
+    // typing effect 2
     useEffect(() => {
         if (index < fullText2.length) {
           const timeout = setTimeout(() => {
@@ -66,134 +107,229 @@ export default function Home() {
         }
       }, [index]);
     
-  
-  useEffect(() => {
-    // 確保在客戶端執行
-    if (typeof window === 'undefined') return;
-    
-    const ctx = gsap.context(() => {
-      // 設置左側進入的文字動畫
-      gsap.from(".text-left1", {
-        x: -100,
-        opacity: 0,
-        duration: 0.8,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: ".text-left1",
-          start: "top 60%", 
-          // end: "top 50%", 
-          toggleActions: "play", 
-          markers: false   
-        }
-      });
-      
-      // 設置右側進入的文字動畫
-      gsap.from(".text-right1", {
-        x: 100,
-        opacity: 0,
-        duration: 0.8,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: ".text-right1",
-          start: "top 60%",
-          // end: "top 50%",
-          toggleActions: "play ",
-          markers: false
-        }
-      });
-      
-     // 設置左側進入的文字動畫
-      gsap.from(".text-left2", {
-        x: -100,
-        opacity: 0,
-        duration: 0.8,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: ".text-left2",
-          start: "top 60%", 
-          // end: "top 50%",  
-          toggleActions: "play", 
-          markers: false   
-        }
-      });
-      // 設置左側進入的文字動畫
-      gsap.from(".text-right2", {
-        x: 100,
-        opacity: 0,
-        duration: 0.8,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: ".text-right2",
-          start: "top 60%", 
-          // end: "top 50%",  
-          toggleActions: "play", 
-          markers: false    
-        }
-      });
-    }, containerRef);
-    
-    return () => ctx.revert(); // 清理動畫
-  }, []);
-  
+    // gsap
+    useEffect(() => {
 
-    const calculateOpacity = () => 0.6 + scrollY/2000; 
-    const calculateOpacity1 = () => Math.max(0, 1 - scrollY / 500); // 最大透明度为1，
-  
-    const calculateOpacity2 = () => {
-        const scrollY = typeof window !== "undefined" ? window.scrollY : 0;
-        // 當 scrollY 越大，透明度 (opacity) 越小；此處以 500 為分界值
-        return Math.min(0.3 + scrollY / 500, 1);
-    };
-    const scrolly_calcultae = () => (-365 + scrollY * 0.1);
+      if (typeof window === 'undefined') return;
+      
+      const ctx = gsap.context(() => {
+
+        // from left
+        gsap.from(".text-left1", {
+          x: -100,
+          opacity: 0,
+          duration: 0.8,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: ".text-left1",
+            start: "top 60%", 
+            toggleActions: "play", 
+            markers: false   
+          }
+        });
+        
+        // from right
+        gsap.from(".text-right1", {
+          x: 100,
+          opacity: 0,
+          duration: 0.8,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: ".text-right1",
+            start: "top 60%",
+            toggleActions: "play ",
+            markers: false
+          }
+        });
+        
+      // from left
+        gsap.from(".text-left2", {
+          x: -100,
+          opacity: 0,
+          duration: 0.8,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: ".text-left2",
+            start: "top 60%", 
+            toggleActions: "play", 
+            markers: false   
+          }
+        });
+        // from right
+        gsap.from(".text-right2", {
+          x: 100,
+          opacity: 0,
+          duration: 0.8,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: ".text-right2",
+            start: "top 60%", 
+            toggleActions: "play", 
+            markers: false    
+          }
+        });
+      }, containerRef);
+      
+      return () => ctx.revert(); 
+    }, []);
+
+    
+
+    // 檢測螢幕大小變化
+    useEffect(() => {
+      const checkScreenSize = () => {
+        setIsMobile(window.innerWidth < 768);
+        if (window.innerWidth >= 768) {
+          setIsMenuOpen(false);
+        }
+      };
+
+      // 初始檢查
+      checkScreenSize();
+
+      // 監聽視窗大小變化
+      window.addEventListener('resize', checkScreenSize);
+      
+      // 清理監聽器
+      return () => window.removeEventListener('resize', checkScreenSize);
+    }, []);
   
   
     const slides = [
-      { id: 1, description: "圖片 1", color: "bg-red-500", caption: "這是圖片 1 的描述"},
-      { id: 2, description: "圖片 2", color: "bg-blue-500",  caption: "這是圖片 2 的描述" },
-      { id: 3, description: "圖片 3", color: "bg-green-500", caption: "這是圖片 3 的描述" },
-      { id: 4, description: "圖片 4", color: "bg-yellow-500", caption: "這是圖片 4 的描述" },
-      { id: 5, description: "圖片 5", color: "bg-purple-500", caption: "這是圖片 5 的描述" },
+      { id: 1, description: "INF", color: "bg-red-500", caption: "這是 INF 的描述"},
+      { id: 2, description: "ESJ", color: "bg-blue-500",  caption: "這是 ESJ 的描述" },
+      { id: 3, description: "ISP", color: "bg-green-500", caption: "這是 ISP 的描述" },
+      { id: 4, description: "ENT", color: "bg-yellow-500", caption: "這是 ENT 的描述" },
+      { id: 5, description: "ENP", color: "bg-purple-500", caption: "這是 ENP 的描述" },
     ];
   
     return (
-      <div> 
-        {/* Header */}
+
+
+      <div className="w-full"> 
+
+        {/* header */}
         <header
-            className={`fixed top-0 left-0 w-full text-black z-50 shadow-lg transition duration-300 bg-white`}
-            style={{
-              backgroundColor: `rgba(0, 0, 0, ${calculateOpacity()})`, 
-              transition: "background-color 0.3s ease",
+          className={`fixed top-0 left-0 w-full text-black z-50 shadow-lg transition duration-300 bg-white w-screen`}
+          style={{
+            backgroundColor: `rgba(0, 0, 0, ${calculateOpacity()})`,
+            transition: "background-color 0.3s ease",
           }}
-          >
+        >
           <nav className="w-full py-6">
-            <div className="container mx-auto flex items-center justify-center space-x-6">
-              {/* Home Icon */}
-              <Link href="/" className="flex items-center space-x-1 text-xl font-bold text-white hover:text-gray-300 hover:scale-105 transition-transform">
-                Artfest
-              </Link>
-  
-              {/* Separator */}
-              <span className="text-white">|</span>
-  
-              {/* Navigation Links */}
-              <div className="flex space-x-6">
-                {["ARG", "Polis", "Who-Art-You"].map((item) => (
-                  <Link
-                    key={item}
-                    href={`/${item.toLowerCase().replace(" ", "-")}`}
-                    className="text-white hover:text-gray-300 hover:scale-105 transition-transform"
-                  >
-                    {item}
+            <div className="container mx-auto px-4">
+
+              {/* desktop navi */}
+              <div className="hidden md:flex items-center justify-center space-x-6 text-center">
+                <Link href="/" className="flex items-center space-x-1 text-xl font-bold text-white hover:text-gray-300 hover:scale-105 transition-transform">
+                  Artfest
+                </Link>
+
+                <span className="text-white">|</span>
+
+                <div className="flex space-x-6">
+                  {["ARG", "Polis", "Who-Art-You"].map((item) => (
+                    <Link
+                      key={item}
+                      href={`/${item.toLowerCase().replace(" ", "-")}`}
+                      className="text-white hover:text-gray-300 hover:scale-105 transition-transform"
+                    >
+                      {item}
+                    </Link>
+                  ))}
+                </div>
+                <div className="flex items-center space-x-4">
+                  <Link href="https://www.instagram.com/ntuartfest/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-300 hover:scale-110 transition-transform">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                    </svg>
                   </Link>
-                ))}
+                  <Link href="https://www.facebook.com/NTUartfest?locale=zh_TW" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-300 hover:scale-110 transition-transform">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/>
+                    </svg>
+                  </Link>
+                </div>
               </div>
-                
+
+              {/* phone navi */}
+              <div className="md:hidden flex items-center justify-between">
+                <div className="flex-1"></div> {/* 左側空白區域，用於置中 */}
+                <Link href="/" className="flex-1 text-center text-2xl font-bold text-white">
+                  Artfest
+                </Link>
+                <div className="flex-1 flex justify-end">
+                  <button
+                    onClick={() => setIsMenuOpen(!isMenuOpen)}
+                    className="text-white focus:outline-none"
+                    aria-label="Toggle menu"
+                  >
+                    {/* 漢堡選單圖示 */}
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-6 w-6"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      {isMenuOpen ? (
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M6 18L18 6M6 6l12 12"
+                        />
+                      ) : (
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M4 6h16M4 12h16M4 18h16"
+                        />
+                      )}
+                    </svg>
+                  </button>
+                </div>
+              </div>
+
+              {/* menu */}
+              {isMobile && (
+                <div
+                  className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
+                    isMenuOpen ? 'max-h-60 opacity-100 mt-4' : 'max-h-0 opacity-0'
+                  }`}
+                >
+                  <div className="flex flex-col items-center space-y-4 py-2">
+                    {["ARG", "Polis", "Who-Art-You"].map((item) => (
+                      <Link
+                        key={item}
+                        href={`/${item.toLowerCase().replace(" ", "-")}`}
+                        className="text-white hover:text-gray-300 w-full text-center py-2"
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        {item}
+                      </Link>
+                    ))}
+                  </div>
+                  <div className="flex items-center space-x-6 pt-5 pb-1 border-t border-gray-600 w-full justify-center mt-2">
+                      <Link href="https://www.instagram.com/ntuartfest/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                      </Link>
+                      <Link href="https://www.facebook.com/NTUartfest?locale=zh_TW" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/>
+                        </svg>
+                      </Link>
+                    </div>
+                </div>
+              )}
             </div>
           </nav>
         </header>
   
-        {/* Hero Section */}
-        <div className="h-screen w-full fixed top-0 left-0 z-2">
+        <div className="w-screen h-screen fixed top-0 left-0 z-2">
             <section id="hero" className="relative h-screen flex flex-col items-center justify-center text-white">
                 <video
                     autoPlay
@@ -243,206 +379,206 @@ export default function Home() {
             </section>
         </div>
         <div className="absolute inset-0 z-10 bg-gradient-to-b from-black/0 to-black/50"></div>
+        <div className='relative'>
+          <div 
+            className="w-full absolute top-0 left-0 h-[5400px]"  // 他預設只有一個 h-screen 不能有 h-full
+            style={{
+        backgroundImage: `url('/bg.png')`,
+        backgroundRepeat: 'repeat-y',
+        backgroundSize: '100% auto',
+        opacity: opacity,
+        transition: "opacity 0.3s ease",
+        boxShadow: "inset 0 10px 20px -10px rgba(0,0,0,0.5), inset 0 -10px 20px -10px rgba(0,0,0,0.5)"
+      }}
+          ></div>
+          <div 
+            className="absolute inset-0 h-[5400px]"
+            style={{
+              backgroundColor: 'rgba(255, 255, 255, 0.2)', 
+              backdropFilter: 'blur(1px)', 
+            }}
+          />
+          <div className="relative z-17 mt-[100vh] h-[100vh] ">
+          
+              <div className='relative '>
 
-        <div className="relative z-17 mt-[100vh] h-[100vh]">
-            <div className='relative '>
-              <div className="w-full absolute top-0 left-0" >
-                  <Image 
-                      src="/bg.png"
-                      alt="背景圖片"
-                      width={0}
-                      height={0}
-                      sizes="100vw"
-                      className="w-full object-cover  brightness-100"
-                      priority
-                      style={{
-                          opacity: calculateOpacity2(), // 使用 opacity 而非 color
-                          transition: "opacity 0.3s ease",
-                      }}
-                  />
-              </div>
-
-              {/* Second main section : horizontal scroll */}
-              <div className="min-h-screen flex items-center justify-center z-20 pt-40 pt-10"> 
-                  <div className="relative w-[70%] backdrop-blur-sm rounded-md"> 
-                      <h2 className="text-6xl font-bold ">展場地圖</h2> 
-                      <ModelViewer/>
-                  </div>
-              </div>
-              {/* First main section : introduction */}
-              <div className="h-[500px] flex items-center justify-center">
-                  <div className=" container mx-auto px-6 flex flex-col md:flex-row items-center md:justify-end">
-                      <div className="md:w-1/2 md:mt-0 z-20">
-                          <h2 className="text-6xl font-bold mb-4 tracking-wider" >人與人的連結</h2>
-
-                      </div>
-                  </div>
-              </div>
-
-              <div className="h-[500px] flex items-center justify-center">
-                  <div className=" container mx-auto px-6 flex flex-col md:flex-row items-center md:justify-center">
-    
-                      <div className="md:w-1/2 mt-10 md:mt-0 z-20">
-                          <h2 className="text-6xl font-bold mb-4 tracking-wider" >或許</h2>
-
-                      </div>
-                  </div>
-              </div>
-
-              <div className="h-[800px] ">
-                  <div className="w-full mx-auto flex flex-col md:flex-row items-center md:justify-center">
-                      <div className="md:w-1/2 md:mt-[200px] mt-20 z-20 flex justify-center">
-                      <h2
-                          className="text-6xl font-bold mb-4 tracking-wider"
-                          style={{
-                          writingMode: "vertical-rl",    
-                          textOrientation: "upright",    
-                          }}
-                      >
-                          也是一種潮汐
-                      </h2>
-                      </div>
-                  </div>
-              </div>
-            </div>
-            
-            
-            {/* Third main section : arg */}
-            <div className="h-[700px] relative overflow-hidden">
-              <div 
-                className="absolute inset-0 w-full h-[calc(100%+200px)]" // 增加高度以允許視差移動
-                style={{
-                  transform: `translateY(${scrolly_calcultae()}px)`,
-                }}
-              >
-                <Image 
-                  src="/arg/arg.png"
-                  alt="背景圖片"
-                  fill
-                  sizes="100vw"
-                  className="object-cover object-center"
-                  priority
-                />
-                {/* <div className="absolute h-[700px] flex items-center justify-center bg-black/50"></div> */}
-              </div>
-              
-            </div>
-              
-            
-            <div ref={containerRef} className="pt-20 py-16 bg-gray-50 w-full h-[90vh] relative opacity-80">
-              <div className="relative container mx-auto px-4 ">
-                <div className="max-w-4xl mx-auto space-y-12"> 
-
-                  <div className="text-left1 p-8 ">
-                    <h3 className="text-3xl font-semibold text-black">你是否生活厭倦了呢？</h3>
-                  </div>
-                  
-                  <div className="text-right1 p-8 text-right">
-                    <h3 className="text-3xl font-semibold text-black">又或是在日常生活中找不到那所謂的快感</h3>
-                  </div>
-                  
-                  <div className="text-left2 p-8">
-                    <h3 className="text-3xl font-semibold text-black">你是否曾幻想過，在現實生活過著虛擬的生活啊</h3>
-                  </div>
-                  
-                  <div className="text-right2 p-8 text-right mb-10">
-                    <h3 className="text-3xl font-semibold mb-10 text-orange-600">如果有的話，那就來玩 ARG 吧！</h3>
-                    <Link href="/arg" className="text-lg text-bold text-gray-700 hover:text-gray-900 hover:underline ">
-                      來 我帶你走 〉〉
-                    </Link>
-                  </div>
-                  
+                {/* Second main section : horizontal scroll */}
+                <div className="min-h-screen md:min-h-screen flex items-center justify-center z-20 pt-40"> 
+                    <div className="relative w-[85%] md:w-[70%] backdrop-blur-sm rounded-md"> 
+                        <h2 className="pb-10 text-5xl text-center md:text-left font-bold md:text-6xl ">展場地圖</h2> 
+                        <ModelViewer/>
+                    </div>
                 </div>
-              </div>
-            </div>
-
-{/*   
-            <div className="w-full absolute h-[1150px]">
-                  <Image 
-                      src="/bg.png"
-                      alt="背景圖片"
-                      width={0}
-                      height={0}
-                      sizes="100vw"
-                      className="w-full h-full object-cover  brightness-100"
-                      priority
-                      style={{
-                          opacity: calculateOpacity2(), // 使用 opacity 而非 color
-                          transition: "opacity 0.3s ease",
-                      }}
-                  />
-              </div> */}
-
-          {/* Fourth main section : mbti */}
-            <section className="py-10  h-screen flex flex-col items-center justify-center relative bg-white">
-                <div className='h-[300px]'>
-                  <h2 className="text-center text-[50px] font-bold mt-10">你</h2>
-                  <h2 className="text-center text-[50px] font-bold ">又是什麼潮間帶生物呢</h2>
-                </div>
-                
-                <Swiper
-                modules={[Autoplay, EffectCoverflow, Navigation]}
-                effect="coverflow"
-                grabCursor={true}
-                centeredSlides={true}
-                slidesPerView={3} 
-                loop={true} 
-                autoplay={{
-                    delay: 3000, 
-                    disableOnInteraction: false, 
-                }}
-                coverflowEffect={{
-                    rotate: 0, 
-                    stretch: 10, 
-                    depth: 100,
-                    modifier: 1,
-                    slideShadows: false, 
-                }}
-                className="w-full h-full "
-                >
-                {slides.map((slide) => (
-                    <SwiperSlide key={slide.id} className="flex flex-col items-center justify-center">
-                    
-                    <div className="flex items-center justify-center h-[300px] w-full">
-                        <div
-                        className={`w-[150px] h-[150px] rounded-full flex items-center justify-center text-white ${slide.color} hover:scale-110 transition-transform`}
-                        >
-                        {slide.description}
+                {/* First main section : introduction */}
+                <div className="h-[500px] flex items-center justify-center relative ">
+                    <div className=" container mx-auto px-6 flex flex-col md:flex-row items-center md:justify-end">
+                        <div className="md:w-1/2 md:mt-0 z-20 ">
+                            <h2 className="text-4xl md:text-6xl font-bold backdrop-blur-sm mb-4 tracking-wider p-10 " >人與人的連結</h2>
                         </div>
                     </div>
-                    <p className="mt-4 text-gray-700 text-center">{slide.caption}</p>
-                    </SwiperSlide>
-                ))}
-                </Swiper>
-                <p className="mt-4 text-gray-500">想了解更多，歡迎玩玩我們的測驗！</p>
-            </section>
-  
-  
-          {/* Fifth main section : polis */}
-          <div className="h-screen flex items-center justify-center bg-white">
-            <section id="final-block" className="py-20 text-center w-full">
-              <h2 className="text-[100px] md:text-[70px] sm:text-[40px]">參與公共議題，人人有責</h2>
-              <div className="flex justify-end mt-4 px-4 w-[80%]">
-                <Link href="/polis" className="text-blue-600 hover:text-blue-800 underline">
-                  了解更多公共議題
-                </Link>
+                    <div className="w-full absolute top-0 left-0" >
+                </div>
+
+                </div>
+
+                <div className="h-[500px] flex items-center justify-center">
+                    <div className=" container mx-auto px-6 flex flex-col md:flex-row items-center md:justify-center">
+      
+                        <div className="md:w-1/2 mt-10 md:mt-0 z-20">
+                            <h2 className="text-4xl md:text-6xl font-bold mb-4 tracking-wider backdrop-blur-sm" >或許</h2>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div className="h-[500px] md:h-[800px]">
+                    <div className="w-full mx-auto flex flex-col md:flex-row items-center md:justify-center">
+                        <div className="md:w-1/2 md:mt-[200px] mt-20 z-20 flex justify-center">
+                        <h2
+                            className="text-4xl md:text-6xl font-bold mb-4 tracking-wider backdrop-blur-sm"
+                            style={{
+                              writingMode: "vertical-rl",    
+                              textOrientation: "upright",    
+                            }}
+                        >
+                            也是一種潮汐
+                        </h2>
+                        </div>
+                    </div>
+                </div>
               </div>
-            </section>
-          </div>
+              
+              
+              {/* Third main section : arg */}
+              <div className="h-[370px] md:h-[700px] relative">
+                <div 
+                  className="absolute inset-0 w-full overflow-hidden" 
+                >
+                  <div 
+                    className="absolute inset-0 w-[120%] md:w-full h-[calc(100%+200px)]"
+                    style={{
+                      transform: `translateY(${scrolly_calcultae()}px)`,
+                      left: windowWidth < 768 ? '-15%' : '0%',
+                    }}
+                  >
+                    <Image 
+                      src="/arg/arg.png"
+                      alt="背景圖片"
+                      fill
+                      sizes="100vw"
+                      className="object-cover object-center"
+                      priority
+                    />
+                  </div>
+                </div>
+              </div>
+                
+              {/* gsap amimation */}
+              <div ref={containerRef} className="pt-10 py-16 bg-gray-50 w-full h-[90vh] relative opacity-70 overflow-x-hidden">
+                <div className="relative container mx-auto px-4 ">
+                  <div className="max-w-4xl mx-auto space-y-12"> 
+
+                    <div className="text-left1 p-8 mt-6">
+                      <h3 className="text-xl md:text-3xl font-semibold text-black">你是否生活厭倦了呢？</h3>
+                    </div>
                     
-            {/* Footer */}
-            <footer className="bg-gray-300 py-10 text-center relative">
-              <div className="container mx-auto px-4">
-                <Image
-                  src="/Footer.png"
-                  alt="Footer logo"
-                  width={200}
-                  height={100}
-                  className="mx-auto mb-4 object-contain"
-                />
-                <h2 className="text-black font-medium">© 30th NTU Artfestival. All Rights Reserved.</h2>
+                    <div className="text-right1 p-8 text-right">
+                      <h3 className="text-xl md:text-3xl font-semibold text-black">又或是在日常生活中找不到那所謂的快感</h3>
+                    </div>
+                    
+                    <div className="text-left2 p-8">
+                      <h3 className="text-xl md:text-3xl font-semibold text-black">你是否曾幻想過，在現實生活過著虛擬的生活啊</h3>
+                    </div>
+                    
+                    <div className="text-right2 p-8 text-right mb-10">
+                      <h3 className="text-xl md:text-3xl font-semibold mb-10 text-orange-600">如果有的話，那就來玩 ARG 吧！</h3>
+                      <Link href="/arg" className="text-lg text-bold text-gray-700 hover:text-gray-900 hover:underline ">
+                        來 我帶你走 〉〉
+                      </Link>
+                    </div>
+                    
+                  </div>
+                </div>
               </div>
-            </footer>
+
+
+            {/* Fourth main section : mbti */}
+              <section className="py-10  h-screen flex flex-col items-center justify-center relative bg-white">
+                  <div className='h-[500px]'>
+                    <h2 className="text-center text-[30px] md:text-[50px] font-bold mt-10">在遊玩 ARG 的同時</h2>
+                    <h2 className="text-center text-[30px] md:text-[50px] font-bold ">你又屬於哪個潮間帶生物呢</h2>
+                  </div>
+                  
+                  <Swiper
+                  modules={[Autoplay, EffectCoverflow, Navigation]}
+                  effect="coverflow"
+                  grabCursor={true}
+                  centeredSlides={true}
+                  slidesPerView={2} 
+                  loop={true} 
+                  autoplay={{
+                      delay: 3000, 
+                      disableOnInteraction: false, 
+                  }}
+                  coverflowEffect={{
+                      rotate: 0, 
+                      stretch: 10, 
+                      depth: 100,
+                      modifier: 1,
+                      slideShadows: false, 
+                  }}
+                  breakpoints={{
+                    768: {
+                      slidesPerView: 3,
+                    },
+                  }}
+                  className="w-full h-full"
+                  >
+                  {slides.map((slide) => (
+                      <SwiperSlide key={slide.id} className="flex flex-col items-center justify-center">
+                      
+                      <div className="flex items-center justify-center h-[300px] w-full">
+                          <div
+                          className={`w-[150px] h-[150px] rounded-full flex items-center justify-center text-white ${slide.color} hover:scale-110 transition-transform`}
+                          >
+                          {slide.description}
+                          </div>
+                      </div>
+                      <p className="mt-4 text-gray-700 text-center">{slide.caption}</p>
+                      </SwiperSlide>
+                  ))}
+                  </Swiper>
+                  <p className="mt-4 text-gray-500">想了解更多，歡迎玩玩我們的測驗！</p>
+              </section>
+    
+    
+            {/* Fifth main section : polis */}
+            <div className="h-screen flex items-center justify-center bg-white">
+              <section id="final-block" className="py-20 text-center w-full">
+              <h2 className="md:text-[70px]  text-[45px]">最後</h2>
+                <h2 className="md:text-[70px]  text-[45px]">說說你內心的聲音吧！</h2>
+                <div className="flex justify-end mt-4 px-4 w-[80%]">
+                  <Link href="/polis" className="hover:text-gray-900 underline text-gray-700">
+                    點我了解更多公共議題
+                  </Link>
+                </div>
+              </section>
+            </div>
+                      
+              {/* Footer */}
+              <footer className="bg-gray-300 py-10 text-center relative">
+                <div className="container mx-auto px-4">
+                  <Image
+                    src="/Footer.png"
+                    alt="Footer logo"
+                    width={200}
+                    height={100}
+                    className="mx-auto mb-4 object-contain"
+                  />
+                  <h2 className="text-black font-medium">© 30th NTU Artfestival. All Rights Reserved.</h2>
+                </div>
+              </footer>
+          </div>
         </div>
       </div>
     );

@@ -2,13 +2,11 @@
 'use client';
 
 import React, {  useState, useEffect } from 'react';
-// useRef,
-import { useRouter } from 'next/navigation'; // 使用 next/navigation 路由器
 
-// import Image from 'next/image';
-import ImageLoader from '../../components/ImageLoader'; // Adjust the path as necessary
-// import Draggable from 'react-draggable';
-// import puzzleBg from '../../public/puzzle-bg-5.png'; // Adjust the path as necessary
+import { useRouter } from 'next/navigation'; 
+
+import ImageLoader from '../../components/ImageLoader';
+
 
 
 export default function Page() {
@@ -17,13 +15,10 @@ export default function Page() {
   const [holePosition, setHolePosition] = useState({ x: 300, y: 200 });
   const [puzzlePosition, setPuzzlePosition] = useState({ x: 50, y: 100 });
   const [isDragging, setIsDragging] = useState(false);
-  const [isCompleted, setIsCompleted] = useState(false);  // 新增：追踪拼圖是否完成
+  const [isCompleted, setIsCompleted] = useState(false);  
   const [windowSize, setWindowSize] = useState({ width: 0, height: 0 });
   const [backgroundSize, setBackgroundSize] = useState({ width: 0, height: 0 });
   const [backgroundPosition, setBackgroundPosition] = useState({ x: 0, y: 0 });
-
-  // const [borderStyle, setBorderStyle] = useState('none'); // 新增狀態來管理邊框樣式
-  // const [borderStyle, setBorderStyle] = useState('2px solid white'); // 初始邊框樣式
 
   // 定義拼圖形狀
   const PUZZLE_SHAPE_PIXELS = `polygon(
@@ -73,7 +68,7 @@ export default function Page() {
 
 useEffect(() => {
   const PUZZLE_SIZE = 100;
-  const SAFE_DISTANCE = 150; // 確保拼圖與缺口垂直方向也有足夠距離
+  const SAFE_DISTANCE = 150; 
   
   // 將畫面分成左右兩半
   const leftHalf = Math.floor(window.innerWidth / 2) - PUZZLE_SIZE;
@@ -118,7 +113,7 @@ useEffect(() => {
 
   useEffect(() => {
   const PUZZLE_SIZE = 100;
-  const SAFE_DISTANCE = 150; // 確保拼圖與缺口垂直方向也有足夠距離
+  const SAFE_DISTANCE = 150; 
   
   // 將畫面分成左右兩半
   const leftHalf = Math.floor(window.innerWidth / 2) - PUZZLE_SIZE;
@@ -159,67 +154,6 @@ useEffect(() => {
     setHolePosition({ x: holeX, y: holeY });
   }
 },  [isInSafeZone, setPuzzlePosition, setHolePosition]);
- 
-  // 生成不重疊的位置
-  // useEffect(() => {
-  //   // const maxX = window.innerWidth - 100;  // 減去拼圖寬度
-  //   // const maxY = window.innerHeight - 100; // 減去拼圖高度
-  //   // const randomX = Math.floor(Math.random() * maxX);
-  //   // const randomY = Math.floor(Math.random() * maxY);
-  //   // setHolePosition({ x: randomX, y: randomY });
-  //   const PUZZLE_SIZE = 100;
-  //   const SAFE_DISTANCE = 150; // 確保兩個位置之間有足夠的距離
-
-  //   // 將畫面分成左右兩半
-  //   const leftHalf = Math.floor(window.innerWidth / 2) - PUZZLE_SIZE;
-  //   const rightHalf = Math.floor(window.innerWidth / 2);
-
-  //   // 隨機決定拼圖塊在左邊還是右邊
-  //   const isPuzzleOnLeft = Math.random() > 0.5;
-
-  //   // 生成拼圖塊的位置
-  //   const puzzleX = isPuzzleOnLeft
-  //     ? Math.floor(Math.random() * (leftHalf - PUZZLE_SIZE))
-  //     : Math.floor(Math.random() * (window.innerWidth - rightHalf - PUZZLE_SIZE)) + rightHalf;
-  //   const puzzleY = Math.floor(Math.random() * (window.innerHeight - PUZZLE_SIZE));
-    
-  //   // 生成缺口的位置（在另一半）
-  //   const holeX = !isPuzzleOnLeft
-  //     ? Math.floor(Math.random() * (leftHalf - PUZZLE_SIZE))
-  //     : Math.floor(Math.random() * (window.innerWidth - rightHalf - PUZZLE_SIZE)) + rightHalf;
-  //   const holeY = Math.floor(Math.random() * (window.innerHeight - PUZZLE_SIZE));
-
-  //   // 確保垂直方向也有足夠距離
-  //   if (Math.abs(puzzleY - holeY) < SAFE_DISTANCE) {
-  //     const offset = SAFE_DISTANCE - Math.abs(puzzleY - holeY);
-  //     if (puzzleY < window.innerHeight / 2) {
-  //       setPuzzlePosition({ x: puzzleX, y: puzzleY });
-  //       setHolePosition({ x: holeX, y: holeY + offset });
-  //       console.log('位置生成 (上半部調整):', {
-  //         puzzle: { x: puzzleX, y: puzzleY },
-  //         hole: { x: holeX, y: holeY + offset },
-  //         isPuzzleOnLeft
-  //       });
-  //     } else {
-  //       setPuzzlePosition({ x: puzzleX, y: puzzleY });
-  //       setHolePosition({ x: holeX, y: Math.max(0, holeY - offset) });
-  //       console.log('位置生成 (下半部調整):', {
-  //         puzzle: { x: puzzleX, y: puzzleY },
-  //         hole: { x: holeX, y: Math.max(0, holeY - offset) },
-  //         isPuzzleOnLeft
-  //       });
-  //     }
-  //   } else {
-  //     setPuzzlePosition({ x: puzzleX, y: puzzleY });
-  //     setHolePosition({ x: holeX, y: holeY });
-  //     console.log('位置生成 (無需調整):', {
-  //       puzzle: { x: puzzleX, y: puzzleY },
-  //       hole: { x: holeX, y: holeY },
-  //       isPuzzleOnLeft
-  //     });
-  //   }
-    
-  // }, []);
 
   useEffect(() => {
     // 設置初始視窗大小
@@ -521,28 +455,6 @@ useEffect(() => {
           }}
         />
       </div>
-
-      {/* 被切下來的底圖 */}
-      {/* <div
-        style={{
-          position: 'absolute',
-          left: `${holePosition.x}px`,
-          top: `${holePosition.y}px`,
-          width: '100px',
-          height: '100px',
-          // backgroundImage: "url('https://averybigwhale.github.io/entry/public/puzzle-bg-5.png')",
-          // backgroundImage: "url('/puzzle-bg-5.png')",
-          backgroundImage: `url(${ImageLoader({ src: 'puzzle-bg-5.png' })})`,
-          backgroundSize: `${backgroundSize.width}px ${backgroundSize.height}px`,
-          backgroundPosition: `${-holePosition.x + backgroundPosition.x}px ${-holePosition.y + backgroundPosition.y}px`,
-          clipPath: PUZZLE_SHAPE_PIXELS,
-          WebkitClipPath: PUZZLE_SHAPE_PIXELS,
-          backgroundColor: '#332',
-          zIndex: 5,
-          opacity: isCompleted ? 1 : 0,  // 完成時顯示
-          transition: 'opacity 0.3s ease-in-out',
-        }}
-      /> */}
 
       {/* 放置區域 */}
       <div
