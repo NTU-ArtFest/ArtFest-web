@@ -173,8 +173,10 @@ export default function Result() {
           try {
             const errorJson = await response.json();
             errorMsg += ` - ${errorJson.error || "Unknown proxy error"}`;
-          } catch (_) {
-            /* Ignore if response isn't JSON */
+          } catch (error) {
+            if (process.env.NODE_ENV !== "production") {
+              console.warn("Non-JSON response during proxy fetch:", error);
+            }
           }
           throw new Error(errorMsg);
         }
@@ -183,10 +185,12 @@ export default function Result() {
         currentBlobUrl = URL.createObjectURL(blob);
         setInitialImageURL(currentBlobUrl); // Set the state for the initial blob URL
         // -> isLoading remains true, waiting for composition
-      } catch (e: any) {
-        console.error("Error fetching result image:", e);
-        setError(`Failed to load image: ${e.message || String(e)}`);
-        setIsLoading(false); // Stop loading on fetch error
+      } catch (e: unknown) {
+        if (e instanceof Error) {
+          console.error(e.message);
+        } else {
+          console.error("Unknown error:", e);
+        }
       }
     }
 
