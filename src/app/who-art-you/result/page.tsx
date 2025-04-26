@@ -5,6 +5,16 @@ import { useState, useEffect, useRef } from "react";
 import html2canvas from "html2canvas";
 import localFont from "next/font/local";
 
+interface ExtendedHtml2CanvasOptions {
+  useCORS?: boolean;
+  allowTaint?: boolean;
+  background?: string | undefined;
+  windowWidth?: number;
+  windowHeight?: number;
+  scale?: number;
+}
+
+
 // --- Font Setup ---
 const titleFont = localFont({ src: "../SourceHanSerifTC-VF.ttf" });
 
@@ -173,8 +183,10 @@ export default function Result() {
           try {
             const errorJson = await response.json();
             errorMsg += ` - ${errorJson.error || "Unknown proxy error"}`;
-          } catch (_) {
-            /* Ignore if response isn't JSON */
+          } catch (error) {
+            if (process.env.NODE_ENV !== "production") {
+              console.warn("Non-JSON response during proxy fetch:", error);
+            }
           }
           throw new Error(errorMsg);
         }
@@ -183,10 +195,12 @@ export default function Result() {
         currentBlobUrl = URL.createObjectURL(blob);
         setInitialImageURL(currentBlobUrl); // Set the state for the initial blob URL
         // -> isLoading remains true, waiting for composition
-      } catch (e: any) {
-        console.error("Error fetching result image:", e);
-        setError(`Failed to load image: ${e.message || String(e)}`);
-        setIsLoading(false); // Stop loading on fetch error
+      } catch (e: unknown) {
+        if (e instanceof Error) {
+          console.error(e.message);
+        } else {
+          console.error("Unknown error:", e);
+        }
       }
     }
 
@@ -220,16 +234,16 @@ export default function Result() {
 
       console.log("Starting html2canvas composition...");
       try {
-        const canvas = await html2canvas(imageContainerRef.current, {
-          useCORS: true, // Necessary if fetching external resources (though proxy helps)
-          allowTaint: true, // Often used with useCORS
-          backgroundColor: null, // Keep transparency
-          scale: 2, // Increase resolution for better quality
-          scrollX: -window.scrollX, // Capture from viewport origin
-          scrollY: -window.scrollY,
-          windowWidth: imageContainerRef.current.scrollWidth, // Use element dimensions
+        const options: ExtendedHtml2CanvasOptions = {
+          useCORS: true,
+          allowTaint: true,
+          background: undefined,
+          windowWidth: imageContainerRef.current.scrollWidth,
           windowHeight: imageContainerRef.current.scrollHeight,
-        });
+          scale: window.devicePixelRatio || 2,
+        };
+
+        const canvas = await html2canvas(imageContainerRef.current, options);
         const generatedImageUrl = canvas.toDataURL("image/png"); // Get image as base64 data URL
 
         console.log("Composition complete. Setting final data URL.");
