@@ -13,12 +13,12 @@ interface FloatingImageButtonProps {
 }
 
 type MBTI = {
-    EI?: "e" | "i";
-    NS?: "n" | "s";
-    FT?: "f" | "t";
-    JP?: "j" | "p";
-    accessory?: "sunglasses" | "hat" | "bowtie" | "headphone";
-    weapon?: "sword" | "wand" | "shield" | "hammer";
+  EI?: "e" | "i";
+  NS?: "n" | "s";
+  FT?: "f" | "t";
+  JP?: "j" | "p";
+  accessory?: "sunglasses" | "hat" | "bowtie" | "headphone";
+  weapon?: "sword" | "wand" | "shield" | "hammer";
 };
 
 // Map input choices to trait keys
@@ -42,11 +42,11 @@ const traitMap: Partial<Record<string, keyof MBTI>> = {
 };
 
 const updateMBTITraits = (choice: string, traits: MBTI): MBTI => {
-    const key = traitMap[choice];
-    if (key) {
-        return { ...traits, [key]: choice as MBTI };
-    }
-    return traits;
+  const key = traitMap[choice] as keyof MBTI;
+  if (key) {
+    return { ...traits, [key]: choice };
+  }
+  return traits;
 };
 
 export const FloatingImageButton: React.FC<FloatingImageButtonProps> = ({
@@ -178,7 +178,7 @@ export const ResponsiveFloatingButton = ({
     handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
-  }, [imageWidth, imageHeight, x, y, btnWidth, btnHeight]);
+  }, [imageWidth, imageHeight, x, y, btnWidth, btnHeight, bottom, left, width]);
 
   if (!left || !width || !bottom) return null;
 
