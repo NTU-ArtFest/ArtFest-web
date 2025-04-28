@@ -117,6 +117,7 @@ export default function ModelViewer() {
     const [activeBuildingInfo, setBuildingInfo] = useState<module.BuildingInfo | null>(null);
     const [activeBuildingname, setActiveBuildingname] = useState<string | null>(null);
     const [isAutoRotating, setIsAutoRotating] = useState(true);
+    const [isBegin, setIsBegin] = useState(true);
 
     const { width } = useWindowSize();
   
@@ -129,6 +130,7 @@ export default function ModelViewer() {
             const building = module.buildings.find(b => b.name === activeBuildingname);
             if (building) {
                 setBuildingInfo(building.info);
+                setIsBegin(false)
             } else {
                 setBuildingInfo(null);
             }
@@ -140,7 +142,12 @@ export default function ModelViewer() {
   return (
     <div className="w-full h-screen rounded-lg relative h-[45vh] md:h-[75vh]">
       <div className="absolute top-6 left-6 z-20 shadow-lg">
-        {activeBuildingInfo && (
+        { isBegin && (
+            <div className="bg-white bg-opacity-90 p-4 rounded  w-[220px] md:w-[300px] flex item-center justify-center">
+              <div className="text center font-bold text-lg">歡迎來到台大！</div>
+            </div>
+        )}
+        {!isBegin && activeBuildingInfo && (
             <div className="bg-white bg-opacity-90 p-4 rounded  w-[220px] md:w-[300px]">
               <div className="font-bold text-lg mb-1">{activeBuildingInfo.name}</div>
               <div className="text-gray-700 mb-1">{activeBuildingInfo.desc}</div>
@@ -161,6 +168,7 @@ export default function ModelViewer() {
         camera={{ position: [151, 100, 100], fov: 75 }}
         onPointerMissed={() => {
           setActiveBuildingname(null);
+          setIsBegin(false)
         }}
         gl={{ 
           alpha: true,

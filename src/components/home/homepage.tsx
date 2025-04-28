@@ -196,17 +196,17 @@ export default function Home() {
   
   
     const slides = [
-      { id: 1, description: "INF", color: "bg-red-500", caption: "這是 INF 的描述"},
-      { id: 2, description: "ESJ", color: "bg-blue-500",  caption: "這是 ESJ 的描述" },
-      { id: 3, description: "ISP", color: "bg-green-500", caption: "這是 ISP 的描述" },
-      { id: 4, description: "ENT", color: "bg-yellow-500", caption: "這是 ENT 的描述" },
-      { id: 5, description: "ENP", color: "bg-purple-500", caption: "這是 ENP 的描述" },
+      { id: 1, description: "ISP", color: "bg-red-500", caption: "招寄居蟹一生都在尋找合適的新殼，展現出對自由和靈活生活方式的追求", url: '/who-art-you/001_without_bg.png'},
+      { id: 2, description: "ESP", color: "bg-blue-500",  caption: "招潮蟹的英文名稱為「Fiddler crabs」，在泥灘上揮舞蟹螯的他們是天生的提琴演奏家，除了吸引異性之外，也是力量的象徵", url: '/who-art-you/001.png' },
+      { id: 3, description: "ISJ", color: "bg-green-500", caption: "藤壺是潮間帶的釘子戶，一旦找到合適的地方，就牢牢黏住不放，無論是岩石、船底，甚至鯨魚身上都能見到牠的蹤影，是潮間帶低調的強者", url: '/who-art-you/ENF001.png' },
+      { id: 4, description: "ENF", color: "bg-yellow-500", caption: "跳跳魚是潮間帶的活力高手，能在水中游動，也能在泥灘上靈活跳躍，像個不受拘束的探險家", url: '/who-art-you/ESJ001_without_bg.png' },
+      { id: 5, description: "INF", color: "bg-purple-500", caption: "海兔是海底的神秘遊俠，柔軟的身軀隨著海流飄動，優雅穿梭於珊瑚與沙地之間。", url: '/who-art-you/INF001_without_bg.png' },
     ];
   
     return (
 
 
-      <div className="w-full"> 
+      <div className="w-full text-black"> 
 
         {/* header */}
         <header
@@ -378,7 +378,7 @@ export default function Home() {
                 </div>
             </section>
         </div>
-        <div className="absolute inset-0 z-10 bg-gradient-to-b from-black/0 to-black/50"></div>
+        <div className="absolute inset-0 z-10 bg-gradient-to-b from-black/0 to-black/50 h-screen"></div>
         <div className='relative'>
           <div 
             className="w-full absolute top-0 left-0 h-[5400px]"  // 他預設只有一個 h-screen 不能有 h-full
@@ -400,7 +400,7 @@ export default function Home() {
           />
           <div className="relative z-17 mt-[100vh] h-[100vh] ">
           
-              <div className='relative '>
+              <div className='relative'>
 
                 {/* Second main section : horizontal scroll */}
                 <div className="min-h-screen md:min-h-screen flex items-center justify-center z-20 pt-40"> 
@@ -503,8 +503,8 @@ export default function Home() {
 
 
             {/* Fourth main section : mbti */}
-              <section className="py-10  h-screen flex flex-col items-center justify-center relative bg-white">
-                  <div className='h-[500px]'>
+              <section className="py-10  min-h-screen flex flex-col items-center justify-center relative bg-white">
+                  <div className='h-[200px]'>
                     <h2 className="text-center text-[30px] md:text-[50px] font-bold mt-10">在遊玩 ARG 的同時</h2>
                     <h2 className="text-center text-[30px] md:text-[50px] font-bold ">你又屬於哪個潮間帶生物呢</h2>
                   </div>
@@ -516,10 +516,10 @@ export default function Home() {
                   centeredSlides={true}
                   slidesPerView={2} 
                   loop={true} 
-                  autoplay={{
-                      delay: 3000, 
-                      disableOnInteraction: false, 
-                  }}
+                  // autoplay={{
+                  //     delay: 3000, 
+                  //     disableOnInteraction: false, 
+                  // }}
                   coverflowEffect={{
                       rotate: 0, 
                       stretch: 10, 
@@ -532,23 +532,32 @@ export default function Home() {
                       slidesPerView: 3,
                     },
                   }}
-                  className="w-full h-full"
+                  className="w-full h-[440px] md:h-[640px]"
                   >
                   {slides.map((slide) => (
-                      <SwiperSlide key={slide.id} className="flex flex-col items-center justify-center">
-                      
-                      <div className="flex items-center justify-center h-[300px] w-full">
-                          <div
-                          className={`w-[150px] h-[150px] rounded-full flex items-center justify-center text-white ${slide.color} hover:scale-110 transition-transform`}
-                          >
+                      <SwiperSlide key={slide.id} className="flex flex-col items-center justify-center text-center">
+                        <Image 
+                          src={slide.url}
+                          alt="背景圖片"
+                          height={500}
+                          width={500}
+                          // fill
+                          sizes="10vw"
+                          className="object-cover object-center23 scale-100 hover:scale-[1.1] transition duration-300"
+                          priority
+                        />
+                      <div className="flex items-center justify-center h-[50px] w-full ">
+                          <div>
                           {slide.description}
                           </div>
                       </div>
-                      <p className="mt-4 text-gray-700 text-center">{slide.caption}</p>
+                      <div className="flex justify-center h-[100px] w-full">
+                        <p className="mt-4 text-gray-700 w-[70%]">{slide.caption}</p>
+                      </div>
                       </SwiperSlide>
                   ))}
                   </Swiper>
-                  <p className="mt-4 text-gray-500">想了解更多，歡迎玩玩我們的測驗！</p>
+                  <p className="mt-10 md:mt-1 text-gray-500">想了解更多嗎，歡迎玩玩我們的<Link href='/who-art-you' className='text-[#ff9500]'> 測驗 </Link>！</p>
               </section>
     
     
