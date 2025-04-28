@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-    title: "Polis - 第 𝟑𝟎 屆臺大藝術季",
-    description: "Polis - 一起參與公眾議題吧！",
+    title: "第 𝟑𝟎 屆臺大藝術季 - 潮汐",
+    description: "活動期間：5/2-5/16",
 };
 
 export default function RootLayout({
