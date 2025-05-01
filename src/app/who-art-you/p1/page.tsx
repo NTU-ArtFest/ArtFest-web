@@ -1,48 +1,27 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { FloatingImageButton } from "@/components/mbti/FloatingImageButton";
-import Image from "next/image";
+import { ResponsiveFloatingButton } from "@/components/mbti/FloatingImageButton";
+import { BackgroundImage } from "@/components/mbti/BackgroundImage";
 
 export default function Page1() {
-    const [vh, setVh] = useState("100vh");
-
-    useEffect(() => {
-        // Fix for mobile browser vh issues
-        const updateVh = () => {
-            const height = window.innerHeight * 0.01;
-            setVh(`${height * 100}px`);
-        };
-
-        updateVh(); // initial run
-        window.addEventListener("resize", updateVh);
-
-        return () => window.removeEventListener("resize", updateVh);
-    }, []);
-
-    return (
-        <div
-            className="relative flex items-center justify-center w-full bg-gradient-to-b from-[#F4F4B5] from-20% via-[#C7ECB8] via-50% to-[#8DCEA2] overflow-hidden"
-            style={{ height: vh }}
-        >
-            <div className="relative h-full w-auto max-w-full max-h-full aspect-[9/16]">
-                <Image
-                    src="/mbti/p1.svg"
-                    alt="MBTI Background"
-                    fill
-                    className="object-contain pointer-events-none"
-                    sizes="100vw"
-                    priority
-                />
-                <FloatingImageButton
-                    imageSrc="/mbti/p1-ready-btn.svg"
-                    page={1}
-                    choice="init"
-                    left="left-[75.5%]"
-                    bottom="bottom-[3%]"
-                    width="w-[30%]"
-                />
-            </div>
+  return (
+    <div className="w-screen h-screen sm:h-auto overflow-y-auto sm:overflow-visible md:bg-gradient-to-b md:from-[#F4F4B5] md:via-[#C7ECB8] md:to-[#8DCEA2]">
+      <div className="relative w-screen md:h-screen">
+        <div className="relative w-full aspect-[869/1884] md:aspect-auto md:h-full">
+          <BackgroundImage src="/who-art-you/p1.png" />
+          <ResponsiveFloatingButton
+            imageSrc="/who-art-you/p1-ready-btn.png"
+            page={1}
+            choice="init"
+            imageWidth={869}
+            imageHeight={1884}
+            x={547}
+            y={1370}
+            btnWidth={313}
+            btnHeight={256}
+          />
         </div>
-    );
+      </div>
+    </div>
+  );
 }

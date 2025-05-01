@@ -1,56 +1,41 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { FloatingImageButton } from "@/components/mbti/FloatingImageButton";
-import Image from "next/image";
+import { ResponsiveFloatingButton } from "@/components/mbti/FloatingImageButton";
+import { BackgroundImage } from "@/components/mbti/BackgroundImage";
 
 export default function Page3() {
-    const [vh, setVh] = useState("100vh");
-
-    useEffect(() => {
-        // Fix for mobile browser vh issues
-        const updateVh = () => {
-            const height = window.innerHeight * 0.01;
-            setVh(`${height * 100}px`);
-        };
-
-        updateVh(); // initial run
-        window.addEventListener("resize", updateVh);
-
-        return () => window.removeEventListener("resize", updateVh);
-    }, []);
-
     return (
-        <div
-            className="relative flex items-center justify-center w-full bg-gradient-to-b from-[#FFFFFF] from-20% via-[#F6D8B4] via-50% to-[#C1E9B4] to-70% overflow-hidden"
-            style={{ height: vh }}
-        >
-            <div className="relative h-full w-auto max-w-full max-h-full aspect-[9/16]">
-                <Image
-                    src="/mbti/p3.svg"
-                    alt="MBTI Background"
-                    fill
-                    className="object-contain pointer-events-none"
-                    sizes="100vw"
-                    priority
-                />
-                <FloatingImageButton
-                    imageSrc="/mbti/p3-btn-1.svg"
-                    page={3}
-                    choice="e"
-                    left="left-[60%]"
-                    bottom="bottom-[15%]"
-                    width="w-[60%]"
-                />
-                <FloatingImageButton
-                    imageSrc="/mbti/p3-btn-2.svg"
-                    page={3}
-                    choice="i"
-                    left="left-[60%]"
-                    bottom="bottom-[5%]"
-                    width="w-[60%]"
-                />
-            </div>
+      <div className="w-screen h-screen sm:h-auto overflow-y-auto sm:overflow-visible md:bg-gradient-to-b md:from-[#FFFFFF] md:via-[#F6D8B4] md:to-[#C1E9B4]">
+        <div className="relative w-screen md:h-screen">
+          <div className="relative w-full aspect-[869/1884] md:aspect-auto md:h-full">
+            <BackgroundImage src="/who-art-you/p3.png" />
+
+            <ResponsiveFloatingButton
+              imageSrc="/who-art-you/p3-btn-1.png"
+              page={3}
+              choice="e"
+              imageWidth={869}
+              imageHeight={1884}
+              x={276}
+              y={1385}
+              btnWidth={530}
+              btnHeight={118}
+            />
+            <ResponsiveFloatingButton
+              imageSrc="/who-art-you/p3-btn-2.png"
+              page={3}
+              choice="i"
+              imageWidth={869}
+              imageHeight={1884}
+              x={258}
+              y={1559.3}
+              btnWidth={559}
+              btnHeight={143}
+            />
+          </div>
         </div>
+      </div>
     );
 }
+
+
