@@ -7,19 +7,9 @@ import { useRouter } from 'next/navigation'; // 使用 next/navigation 路由器
 
 // import Image from 'next/image';
 import ImageLoader from '../../components/ImageLoader'; // Adjust the path as necessary
-// import Draggable from 'react-draggable';
-// import puzzleBg from '../../public/puzzle-bg-5.png'; // Adjust the path as necessary
 
-// import { Stick } from "next/font/google"
-// import { Potta_One } from "next/font/google"
 import { Kaisei_Opti } from "next/font/google"
-// import { Yuji_Syuku } from "next/font/google"
-// import { Zen_Antique } from "next/font/google"
-// import { Reggae_One } from "next/font/google"
-// import { Zen_Antique_Soft } from "next/font/google"
-// import { Yusei_Magic } from "next/font/google"
-// import { Yusei_Magic } from "next/font/google"
-// import { Dela_Gothic_One } from "next/font/google"
+
 
 const bokorFont = Kaisei_Opti({
   subsets: ['latin'],
@@ -37,44 +27,8 @@ export default function Page() {
   const [backgroundSize, setBackgroundSize] = useState({ width: 0, height: 0 });
   const [backgroundPosition, setBackgroundPosition] = useState({ x: 0, y: 0 });
 
-  // const [borderStyle, setBorderStyle] = useState('none'); // 新增狀態來管理邊框樣式
-  // const [borderStyle, setBorderStyle] = useState('2px solid white'); // 初始邊框樣式
 
   // 定義拼圖形狀
-  // const PUZZLE_SHAPE_PIXELS = `polygon(
-  //   20px 0px, 
-  //   30px 0px, 
-  //   30px 10px, 
-  //   40px 10px,
-  //   50px 10px, 
-  //   60px 10px, 
-  //   70px 0px, 
-  //   80px 0px, 
-  //   100px 0px, 
-  //   100px 20px, 
-  //   90px 30px,
-  //   90px 40px, 
-  //   90px 50px, 
-  //   90px 60px,
-  //   100px 70px, 
-  //   100px 80px, 
-  //   100px 100px, 
-  //   80px 100px, 
-  //   70px 90px, 
-  //   60px 90px, 
-  //   50px 90px, 
-  //   40px 90px, 
-  //   30px 100px, 
-  //   20px 100px, 
-  //   0px 100px, 
-  //   0px 80px, 
-  //   10px 70px, 
-  //   10px 60px, 
-  //   10px 50px, 
-  //   10px 40px, 
-  //   0px 30px, 
-  //   0px 20px
-  // )`;
 
   useEffect(() => {
     // 設置初始視窗大小
@@ -128,52 +82,8 @@ export default function Page() {
       console.log('背景圖片最左上角座標：', bgX, bgY);
     };
 
-
-    // console.log(f`'背景圖片尺寸: { width: ${backgroundSize.width}, height: ${backgroundSize.height} }');
-    // console.log(f`背景圖片位置: { x: ${backgroundPosition.x}, y: ${backgroundPosition.y} }`);
   }, [windowSize]);
 
-  // useEffect(() => {
-  //   console.log('背景位置 (state):', backgroundPosition);
-  // }, [backgroundPosition]);
-  
-  // const handleDragStart = (e: React.DragEvent<HTMLDivElement>) => {
-  //   e.dataTransfer.setData('text', e.currentTarget.id);
-
-  //   // Create a custom drag image
-  //   const dragImage = document.createElement('div');
-  //   dragImage.style.width = '100px';
-  //   dragImage.style.height = '100px';
-  //   // dragImage.style.backgroundColor  = '#fff'; // Change to desired color
-  //   dragImage.style.backgroundImage = `url(${ImageLoader({ src: 'puzzle-bg-5.png' })})`;
-
-  //   dragImage.style.backgroundSize = `${backgroundSize.width}px ${backgroundSize.height}px`;
-  //   dragImage.style.backgroundPosition = `${-holePosition.x + backgroundPosition.x}px ${-holePosition.y + backgroundPosition.y}px`;
-            
-  //   dragImage.style.opacity = '1'; // Optional: make it slightly transparent
-  //   dragImage.style.position = 'absolute';
-  //   dragImage.style.pointerEvents = 'none'; // Prevent interaction with the drag image
-  //   dragImage.style.clipPath = PUZZLE_SHAPE_PIXELS;
-  //   // dragImage.style.WebkitClipPath = PUZZLE_SHAPE_PIXELS,
-  //   // Append to body to make it visible
-  //   document.body.appendChild(dragImage);
-
-  //   // Set the custom drag image
-  //   e.dataTransfer.setDragImage(dragImage, 50, 50); // Offset to center the image
-
-    
-  //   // Remove the custom drag image after a short delay
-  //   setTimeout(() => {
-  //     document.body.removeChild(dragImage);
-  //   }, 0);
-  //   setIsDragging(true);
-  //   // setBorderStyle(BORDER_STYLE); // 拖曳時設置白色邊框
-  // };
-
-  // // 拖曳結束
-  // const handleDragEnd = () => {
-  //   setIsDragging(false);
-  // };
 
   // 拖曳進入區域時顯示放置提示
   const handleDragOver = (e: React.DragEvent<HTMLDivElement>) => {
@@ -196,7 +106,7 @@ export default function Page() {
         setIsCompleted(true);  // 設置完成狀態
         // 延遲跳轉
         setTimeout(() => {
-            router.replace('./arg-home/uncover');  // 使用 replace 來確保不保留當前狀態
+            router.replace('./arg/uncover');  // 使用 replace 來確保不保留當前狀態
         }, 1200);  // 2秒後跳轉
     }
   };  
@@ -246,7 +156,7 @@ export default function Page() {
     if (isInDropZone()) {
       setIsCompleted(true); // 與 drop 一樣的完成邏輯
       setTimeout(() => {
-        router.replace('./arg-home/uncover');
+        router.replace('./arg/uncover');
       }, 1200);
     }
   };
@@ -286,16 +196,11 @@ export default function Page() {
     if (isInDropZone()) {
       setIsCompleted(true);
       setTimeout(() => {
-        router.replace('./arg-home/uncover');
+        router.replace('./arg/uncover');
       }, 1200);
     }
   };
 
-  // Pointer up（拖曳結束）
-  // const handlePointerUp = (e: React.PointerEvent<HTMLDivElement>) => {
-  //   e.currentTarget.releasePointerCapture(e.pointerId);
-  //   setIsDragging(false);
-  // };
 
   useEffect(() => {
     console.log('圖塊位置 (state):', backgroundPosition.x - holePosition.x, backgroundPosition.y - holePosition.y);
@@ -303,30 +208,6 @@ export default function Page() {
     console.log('hole 位置 (state):', holePosition.x, holePosition.y);
   }, [backgroundPosition]);
 
-  // useEffect(() => {
-  //   const diff = windowSize.height - backgroundSize.height;
-  //   console.log('window height 減 background height 的差值:', diff);
-  // }, [windowSize, backgroundSize]);
-
-  // 在你的 component 裡面直接計算 diff
-  
-  // useEffect(() => {
-  //   const textEl = document.getElementById('safeText');
-  //   if (textEl) {
-  //     const rect = textEl.getBoundingClientRect();
-  //     // 儲存 safeZone 範圍，這裡舉例：
-  //     const safeZone = {
-  //       top: rect.top,
-  //       left: rect.left,
-  //       bottom: rect.bottom,
-  //       right: rect.right,
-  //     };
-  //     console.log('safeZone:', safeZone);
-  
-  //     // 之後你可以在判斷拼圖或缺口是否落在 safe zone 中，
-  //     // 並作調整以避免重疊這個區域。
-  //   }
-  // }, [windowSize]);
 
   const safeTextRef = useRef<HTMLDivElement>(null);
   const [safeZone, setSafeZone] = useState<{ left: number; top: number; width: number; height: number } | null>(null);
@@ -345,19 +226,6 @@ export default function Page() {
   }, []);
 
 
-  // const isInSafeZone = React.useCallback((x: number, y: number, size: number): boolean => {
-  //   return (
-  //     (x + size > window.innerWidth * 0.18 &&
-  //     x < window.innerWidth * 0.18 + window.innerWidth * 0.22 &&
-  //     y + size > window.innerHeight * 0.35 &&
-  //     y < window.innerHeight * 0.35 + window.innerHeight * 0.35)
-  //     &&
-  //     (x + size > safeZone?.left &&
-  //     x < window.innerWidth * 0.18 + window.innerWidth * 0.22 &&
-  //     y + size > window.innerHeight * 0.35 &&
-  //     y < window.innerHeight * 0.35 + window.innerHeight * 0.35)
-  //   );
-  // }, []);
   const isInSafeZone = React.useCallback((x: number, y: number, size: number): boolean => {
     // 定義固定 safe zone
     const fixedSafeZone = {
@@ -450,31 +318,6 @@ export default function Page() {
       }}>
     
 
-      {/* <div
-        style={{
-          position: 'absolute',
-          left: `${window.innerWidth * 0.18}px`,
-          top: `${window.innerHeight * 0.35}px`,
-          width: `${window.innerWidth * 0.22}px`,
-          height: `${window.innerHeight * 0.35}px`,
-          backgroundColor: 'rgba(255, 0, 0, 0.3)',
-          zIndex: 1000, // 確保在頂層可以看到
-        }}
-      /> */}
-
-      {/* {safeZone && (
-        <div
-          style={{
-            position: 'absolute',
-            left: `${safeZone.left}px`,
-            top: `${safeZone.top}px`,
-            width: `${safeZone.width}px`,
-            height: `${safeZone.height}px`,
-            backgroundColor: 'rgba(151, 208, 44, 0.87)', // 與上色區塊相同的色彩
-            zIndex: 1000, // 根據需求調整層級
-          }}
-        />
-      )} */}
       
       {/* 底層背景 */}
       <div
@@ -517,14 +360,6 @@ export default function Page() {
             backgroundPosition: windowSize.width < 768 ? 'center top' : 'center',
             backgroundRepeat: 'no-repeat',
             
-            // backgroundPosition: `${-holePosition.x + backgroundPosition.x}px ${-holePosition.y + backgroundPosition.y}px`,
-          
-            // backgroundPosition: `0px 0px`,
-            // left: `0px`,
-            // top: `${puzzlePosition.y}px`,
-            // backgroundSize: `${backgroundSize.width}px ${backgroundSize.height}px`,
-            // // backgroundPosition: `${backgroundPosition.x}px ${backgroundPosition.y}px`,
-            // backgroundPosition: `${backgroundPosition.x - holePosition.x}px ${backgroundPosition.y - holePosition.y}px`,
           }}
         />
 
@@ -618,18 +453,7 @@ export default function Page() {
       
 
       {/* 可拖曳的拼圖塊 */}
-      <div
-        style={{
-          // position: 'absolute',
-          // left: `${puzzlePosition.x}px`,
-          // top: `${puzzlePosition.y}px`,
-          // width: '100px',
-          // height: '100px',
-          // boxShadow: '0 4px 8px rgba(0,0,0,0.5)',  // 包裹的陰影
-          // filter: 'drop-shadow(0 4px 8px rgba(0,0,100,0.8))'
-          //  drop-shadow(0 200px 400px rgba(0,0,0,0.1)) drop-shadow(0 0 2px rgba(0,0,0,0.1))',
-        }}
-      >
+      <div>
         <div
           id="puzzlePiece"
           onPointerDown={handlePointerDown}
@@ -659,12 +483,6 @@ export default function Page() {
           //   zIndex: 3,
             boxShadow: '0 40px 50px rgba(0,0,0,1), 0 40px 20px rgba(0,0,0,0.6)',
             zIndex: isCompleted ? 10 : 30,
-            // transition: 'all 0.3s ease-in-out',
-            // transition: 'border 0.3s ease', // 添加邊框過渡效果
-            // border: borderStyle, // 使用邊框樣式狀態骯
-            // outline: '4px solid white', // 使用 outline 來顯示邊框
-            // outlineOffset: '-4px', // 調整邊框位置
-            // transition: 'background-color 0.3s ease', 
           }}
         />
       
@@ -719,155 +537,6 @@ export default function Page() {
         }}
       />
 
-      {/* 紅色的點 */}
-      {/* <div
-        style={{
-          position: 'absolute',
-          left: `${holePosition.x - 5}px`, // 點置中調整
-          top: `${holePosition.y - 5}px`,
-          width: '10px',
-          height: '10px',
-          borderRadius: '50%',
-          backgroundColor: 'red',
-          zIndex: 1000,
-        }}
-      />
-
-      <div
-        style={{
-          position: 'absolute',
-          left: `${holePosition.x + 12}px`,
-          top: `${holePosition.y}px`,
-          color: 'red',
-          zIndex: 1000,
-          fontSize: '24px',
-        }}
-      >
-        {`HolePosition\n(${holePosition.x}, ${holePosition.y})`}
-      </div> */}
-
-
-      {/* 左上角位置標註 */}
-      {/* <div
-        style={{
-          position: 'absolute',
-          left: `-5 px`, // 點置中調整
-          top: `-5px`,
-          width: '10px',
-          height: '10px',
-          borderRadius: '50%',
-          backgroundColor: 'green',
-          zIndex: 1000,
-        }}
-      />
-      <div
-        style={{
-          position: 'absolute',
-          left: `0px`,
-          top: `0px`,
-          color: 'light green',
-          zIndex: 1000,
-          fontSize: '36px',
-        }}
-      >
-        {`0, 0`}
-        
-      </div> */}
-
-
-      {/* 左上角位置標註 */}
-      {/* <div
-        style={{
-          position: 'absolute',
-          left: `-5 px`, // 點置中調整
-          top: `-5px`,
-          width: '10px',
-          height: '10px',
-          borderRadius: '50%',
-          backgroundColor: 'green',
-          zIndex: 1000,
-        }}
-      /> */}
-      {/* 座標標註 */}
-      {/* <div
-        style={{
-          position: 'absolute',
-          left: `50px`,
-          top: `50px`,
-          color: 'blue',
-          zIndex: 1000,
-          fontSize: '20px',
-        }}
-      >
-        {`背景減去 hole ${backgroundPosition.x - holePosition.x}px ${backgroundPosition.y - holePosition.y}px\n`}
-        {`BackgroundPosition ${backgroundPosition.x}px ${backgroundPosition.y}px\n`}
-        {`HolePosition ${holePosition.x}px ${holePosition.y}px`}
-      </div>
-
-
-      <div
-        style={{
-          position: 'absolute',
-          left: '0px',
-          top: `${diff / 2}px`,
-          color: 'red',
-          zIndex: 1000,
-          fontSize: '20px',
-        }}
-      >
-        {`Left: 0px, Top: ${diff / 2}px`}
-      </div>
-
-      <div
-        style={{
-          position: 'absolute',
-          left: `-5 px`, // 點置中調整
-          top: `${windowSize.height}px`,
-          width: '10px',
-          height: '10px',
-          borderRadius: '50%',
-          backgroundColor: 'red',
-          zIndex: 1000,
-        }}
-      />
-      <div
-        style={{
-          position: 'absolute',
-          left: '0px',
-          top: `${windowSize.height}px`,
-          color: 'red',
-          zIndex: 1000,
-          fontSize: '20px',
-        }}
-      >
-        {`WindowSize Left: 0px, Top: ${windowSize.height}px`}
-      </div>
-
-      <div
-        style={{
-          position: 'absolute',
-          left: `-5 px`, // 點置中調整
-          top: `${backgroundSize.height}px`,
-          width: '10px',
-          height: '10px',
-          borderRadius: '50%',
-          backgroundColor: 'blue',
-          zIndex: 1000,
-        }}
-      />
-      <div
-        style={{
-          position: 'absolute',
-          left: '0px',
-          top: `${windowSize.height}px`,
-          color: 'blue',
-          zIndex: 1000,
-          fontSize: '20px',
-        }}
-      >
-        {`BackgroundSize Left: 0px, Top: ${backgroundSize.height}px`}
-      </div> */}
-      {/* backgroundPosition: `${backgroundPosition.x - holePosition.x}px ${backgroundPosition.y - holePosition.y}px`, */}
 
       {/* 完成時的閃光效果 */}
       {isCompleted && (
