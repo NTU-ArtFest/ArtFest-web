@@ -418,13 +418,13 @@ export default function Home() {
           <div 
             className="w-full absolute top-0 left-0 h-[5400px]"  // 他預設只有一個 h-screen 不能有 h-full
             style={{
-        backgroundImage: `url('/bg.png')`,
-        backgroundRepeat: 'repeat-y',
-        backgroundSize: '100% auto',
-        opacity: opacity,
-        transition: "opacity 0.3s ease",
-        boxShadow: "inset 0 10px 20px -10px rgba(0,0,0,0.5), inset 0 -10px 20px -10px rgba(0,0,0,0.5)"
-      }}
+              backgroundImage: `url('/bg.png')`,
+              backgroundRepeat: 'repeat-y',
+              backgroundSize: '100% auto',
+              opacity: opacity,
+              transition: "opacity 0.3s ease",
+              boxShadow: "inset 0 10px 20px -10px rgba(0,0,0,0.5), inset 0 -10px 20px -10px rgba(0,0,0,0.5)"
+            }}
           ></div>
           <div 
             className="absolute inset-0 h-[5400px]"
@@ -578,7 +578,7 @@ export default function Home() {
                           width={500}
                           // fill
                           sizes="10vw"
-                          className="object-cover object-center23 scale-100 hover:scale-[1.1] transition duration-300"
+                          className="object-cover object-center23 scale-100 hover:scale-[1.2] transition duration-300"
                           priority
                         />
                       <div className="flex items-center justify-center h-[50px] w-full ">

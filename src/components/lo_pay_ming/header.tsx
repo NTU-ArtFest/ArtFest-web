@@ -9,16 +9,16 @@ export default function Header() {
       <nav className="bg-light text-dark">
         <ul className="flex p-2">
           <li className="mr-4 hover:text-primary">
-            <Link href="/nono">首頁</Link>
+            <Link href="/zh-tw/low_pay_ming/nono">首頁</Link>
           </li>
           <li className="mr-4 hover:text-primary">
-            <Link href="/nono">關於我們</Link>
+            <Link href="/zh-tw/low_pay_ming/nono">關於我們</Link>
           </li>
           <li className="mr-4 hover:text-primary">
-            <Link href="/nono">活動資訊</Link>
+            <Link href="/zh-tw/low_pay_ming/nono">活動資訊</Link>
           </li>
           <li className="hover:text-primary">
-            <Link href="/nono">聯絡我們</Link>
+            <Link href="/zh-tw/low_pay_ming/nono">聯絡我們</Link>
           </li>
         </ul>
       </nav>

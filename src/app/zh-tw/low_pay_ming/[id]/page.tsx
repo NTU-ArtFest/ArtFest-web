@@ -3,6 +3,12 @@ import Sidebar from '@/components/lo_pay_ming/sidebar';
 import Footer from '@/components/lo_pay_ming/footer';
 import Image from 'next/image';
 import Link from 'next/link';
+import { notFound } from 'next/navigation'
+
+export const metadata = {
+  title: '羅培民下鄉服務隊',
+  description: '這是有關羅培民醫生自己經營的網頁。',
+};
 
 
 async function getPostById(id: string) {
@@ -27,7 +33,7 @@ export default async function PostPage({ params }: { params: Promise<{ id: strin
   const post = await getPostById(id);
   
   if (!post) {
-    return <div>文章不存在</div>;
+    notFound();
   }
   
   return (
@@ -127,12 +133,12 @@ export default async function PostPage({ params }: { params: Promise<{ id: strin
                   <Link href="/zh-tw/low_pay_ming" className="text-primary hover:underline">
                     返回
                   </Link>
-                  <Link href={`/nono`} className="text-primary hover:underline">
+                  <Link href={`/zh-tw/low_pay_ming/nono`} className="text-primary hover:underline">
                     發表留言
                   </Link>
-                  <button className="text-primary hover:underline">
+                  <Link href={`/zh-tw/low_pay_ming/nono`} className="text-primary hover:underline">
                     分享至 Facebook
-                  </button>
+                  </Link>
                 </div>
               </div>
             </article>

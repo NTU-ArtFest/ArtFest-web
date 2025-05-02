@@ -7,7 +7,7 @@ import Link from 'next/link';
 
 export const metadata = {
     title: '羅培民下鄉服務隊',
-    description: '這是有關羅培民醫生自己經營的網頁，。',
+    description: '這是有關羅培民醫生自己經營的網頁。',
   };
 
 
@@ -20,7 +20,7 @@ const posts = [
     images: ['/arg/save.webp'],
   },
   {
-    id: '/nono',
+    id: '/zh-tw/low_pay_ming/nono',
     title: '羅培民語錄 - 社會與健康談',
     date: '2020年9月26日 星期六',
     content: '時間：109年8月15日(星期六) 17:00 ~ 22:00\n地點：台北市信義區松高路66號1樓共享講堂\n活動內容：羅培民醫師親自分享，講述社會與健康的關係，並附有茶水供大家飲用。',
@@ -70,7 +70,7 @@ export default function Home() {
                 <div className="text-sm text-gray-500 border-t pt-2">
                     <span>張貼者：羅培民下鄉服務隊</span>
                     <div className="mt-1">
-                    <Link href={`/zh-tw/comment`} className="text-primary hover:underline">
+                    <Link href={`/zh-tw/low_pay_ming/nono`} className="text-primary hover:underline">
                         沒有留言
                     </Link>
                     </div>
@@ -79,10 +79,10 @@ export default function Home() {
             ))}
             
             <div className="flex justify-between my-4">
-                <Link href="/nono" className="text-primary hover:underline">
+                <Link href="/zh-tw/low_pay_ming/nono" className="text-primary hover:underline">
                 較舊的文章
                 </Link>
-                <Link href="/nono" className="text-primary hover:underline">
+                <Link href="/zh-tw/low_pay_ming/nono" className="text-primary hover:underline">
                 首頁
                 </Link>
             </div>

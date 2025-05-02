@@ -13,7 +13,7 @@ export default function Sidebar() {
         <h2 className="text-lg font-bold text-gray-600 uppercase mb-4">關於我自己</h2>
         <div className="flex items-center mb-4">
           <Image
-            src="/dog.jpg"
+            src="/arg/low.png"
             alt="羅培民"
             width={80}
             height={60}
@@ -26,7 +26,7 @@ export default function Sidebar() {
         <p className="text-sm text-gray-600">
           我們是一群滿腔熱血，犧牲奉獻，熱衷社會公益，不求回報的服務團隊。如果你也具備上述人格特質，歡迎加入我們！
         </p>
-        <Link href="/nono" className="text-primary text-sm hover:underline">
+        <Link href="/zh-tw/low_pay_ming/nono" className="text-primary text-sm hover:underline">
           檢視我的完整簡介
         </Link>
       </div>
@@ -43,7 +43,7 @@ export default function Sidebar() {
                 <ul className="pl-4 mt-1">
                   {archive.months.map((month) => (
                     <li key={month} className="text-sm hover:text-primary">
-                      <Link href={`/nono`}>{month}</Link>
+                      <Link href={`/zh-tw/low_pay_ming/nono`}>{month}</Link>
                     </li>
                   ))}
                 </ul>
