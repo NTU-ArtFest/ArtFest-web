@@ -32,7 +32,7 @@ export default function BlogNotFound() {
       </motion.h2>
       <motion.button
         onClick={handleBack}
-        className='p-3 bg-black text-white rounded-lg hover:bg-hover transition duration-300 z-20'
+        className='p-3 bg-blue-200 text-black rounded-lg hover:bg-blue-200 transition duration-300 z-20'
         initial={{ opacity: 0}}
         animate={{ opacity: 1}}
         transition={{ duration: 1.2, ease: "easeInOut", delay: 0.4 }}
