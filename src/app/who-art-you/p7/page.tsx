@@ -1,60 +1,12 @@
-"use client";
+import Page7 from "@/components/mbti/page7";
 
-import { BackgroundImage } from "@/components/mbti/BackgroundImage";
-import { ResponsiveFloatingButton } from "@/components/mbti/FloatingImageButton";
+export const metadata = {
+  title: 'Who-Art-You - 第 𝟑𝟎 屆臺大藝術季',
+  description: '第 𝟑𝟎 屆臺大藝術季 𝟑𝟎𝐭𝐡 𝐍𝐓𝐔 𝐀𝐫𝐭𝐅𝐞𝐬𝐭《 潮汐 𝐑𝐢𝐬𝐞 𝐚𝐧𝐝 𝐅𝐚𝐥𝐥 》 - <<你是在潮什麼啦>> 這是一場找尋的旅程，也是一場了解自己的冒險。現在就來參加尋找你的潮間帶小夥伴，看看屬於你的那一隻，是誰？',
+};
 
-export default function Page7() {
+export default function Who_Page7() {
   return (
-    <div className="w-screen h-screen sm:h-auto overflow-y-auto sm:overflow-visible md:bg-gradient-to-b md:from-[#ABDEE7] md:via-[#FFFFFF] md:to-[#ABDEE7]">
-      <div className="relative w-screen md:h-screen">
-        <div className="relative w-full aspect-[869/1884] md:aspect-auto md:h-full">
-          <BackgroundImage src="/who-art-you/p7.png" />
-          <ResponsiveFloatingButton
-            imageSrc="/who-art-you/p7-hammer.png"
-            page={7}
-            choice="hammer"
-            imageWidth={869}
-            imageHeight={1884}
-            x={124.1}
-            y={932}
-            btnWidth={289}
-            btnHeight={143}
-          />
-          <ResponsiveFloatingButton
-            imageSrc="/who-art-you/p7-wand.png"
-            page={7}
-            choice="wand"
-            imageWidth={869}
-            imageHeight={1884}
-            x={443}
-            y={922}
-            btnWidth={314}
-            btnHeight={163}
-          />
-          <ResponsiveFloatingButton
-            imageSrc="/who-art-you/p7-sword.png"
-            page={7}
-            choice="sword"
-            imageWidth={869}
-            imageHeight={1884}
-            x={128}
-            y={1094}
-            btnWidth={281}
-            btnHeight={150}
-          />
-          <ResponsiveFloatingButton
-            imageSrc="/who-art-you/p7-shield.png"
-            page={7}
-            choice="shield"
-            imageWidth={869}
-            imageHeight={1884}
-            x={476}
-            y={1094}
-            btnWidth={281}
-            btnHeight={157}
-          />
-        </div>
-      </div>
-    </div>
+    <Page7/>
   );
 }

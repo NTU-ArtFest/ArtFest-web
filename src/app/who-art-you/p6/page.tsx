@@ -1,40 +1,12 @@
-"use client";
+import Page6 from "@/components/mbti/page6";
 
-import { ResponsiveFloatingButton } from "@/components/mbti/FloatingImageButton";
-import { BackgroundImage } from "@/components/mbti/BackgroundImage";
+export const metadata = {
+  title: 'Who-Art-You - 第 𝟑𝟎 屆臺大藝術季',
+  description: '第 𝟑𝟎 屆臺大藝術季 𝟑𝟎𝐭𝐡 𝐍𝐓𝐔 𝐀𝐫𝐭𝐅𝐞𝐬𝐭《 潮汐 𝐑𝐢𝐬𝐞 𝐚𝐧𝐝 𝐅𝐚𝐥𝐥 》 - <<你是在潮什麼啦>> 這是一場找尋的旅程，也是一場了解自己的冒險。現在就來參加尋找你的潮間帶小夥伴，看看屬於你的那一隻，是誰？',
+};
 
-export default function Page6() {
-    return (
-      <div className="w-screen h-screen sm:h-auto overflow-y-auto sm:overflow-visible md:bg-gradient-to-b md:from-[#F9F4C3] md:via-[#F6D8B4] md:to-[#C1E9B4]">
-        <div className="relative w-screen md:h-screen">
-          <div className="relative w-full aspect-[869/1884] md:aspect-auto md:h-full">
-            <BackgroundImage src="/who-art-you/p6.png" />
-
-            <ResponsiveFloatingButton
-              imageSrc="/who-art-you/p6-btn-1.png"
-              page={6}
-              choice="s"
-              imageWidth={869}
-              imageHeight={1884}
-              x={51}
-              y={1282}
-              btnWidth={768}
-              btnHeight={175}
-            />
-
-            <ResponsiveFloatingButton
-              imageSrc="/who-art-you/p6-btn-2.png"
-              page={6}
-              choice="n"
-              imageWidth={869}
-              imageHeight={1884}
-              x={60}
-              y={1469}
-              btnWidth={750}
-              btnHeight={165}
-            />
-          </div>
-        </div>
-      </div>
-    );
+export default function Who_Page6() {
+  return (
+    <Page6/>
+  );
 }

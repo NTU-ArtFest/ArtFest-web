@@ -51,10 +51,14 @@ export default function Home() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isMobile, setIsMobile] = useState(false);
 
+    // last part 
+    const finalBlockRef = useRef<HTMLDivElement>(null);
+
+
     // --- function --- 
 
     // calculate  alot about opacity
-    const calculateOpacity = () => 0.6 + scrollY/2000; 
+    const calculateOpacity = () => 0 + scrollY/800; 
     const calculateOpacity1 = () => Math.max(0, 1 - scrollY / 500); 
   
     const calculateOpacity2 = () => {
@@ -62,6 +66,16 @@ export default function Home() {
         return Math.min(0.3 + scrollY / 500, 1);
     };
     const scrolly_calcultae = () => (minDistance + scrollY * 0.1);
+
+    const CAPTION_LIMIT = 32; // 你想要顯示的最大字數
+    const [expandedCaptions, setExpandedCaptions] = useState<{ [key: number]: boolean }>({});
+
+    const toggleCaption = (id: number) => {
+      setExpandedCaptions((prev) => ({
+        ...prev,
+        [id]: !prev[id],
+      }));
+    };
 
     // --- useEffect ----
 
@@ -194,6 +208,26 @@ export default function Home() {
       return () => window.removeEventListener('resize', checkScreenSize);
     }, []);
   
+    
+    // last part 
+    useEffect(() => {
+      if (!finalBlockRef.current) return;
+      gsap.fromTo(
+        finalBlockRef.current,
+        { opacity: 0, y: -100 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1.2,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: finalBlockRef.current,
+            start: "top 50%",
+            toggleActions: "play none none none",
+          },
+        }
+      );
+    }, []);
   
     const slides = [
       { id: 1, description: "ISP", color: "bg-red-500", caption: "招寄居蟹一生都在尋找合適的新殼，展現出對自由和靈活生活方式的追求", url: '/who-art-you/001_without_bg.png'},
@@ -210,7 +244,9 @@ export default function Home() {
 
         {/* header */}
         <header
-          className={`fixed top-0 left-0 w-full text-black z-50 shadow-lg transition duration-300 bg-white w-screen`}
+          className={`fixed top-0 left-0 w-full text-black z-50 shadow-lg transition duration-300 bg-white w-screen
+            ${scrollY > 300? 'shadow-lg' : 'shadow-none'}
+            `}
           style={{
             backgroundColor: `rgba(0, 0, 0, ${calculateOpacity()})`,
             transition: "background-color 0.3s ease",
@@ -222,7 +258,7 @@ export default function Home() {
               {/* desktop navi */}
               <div className="hidden md:flex items-center justify-center space-x-6 text-center">
                 <Link href="/" className="flex items-center space-x-1 text-xl font-bold text-white hover:text-gray-300 hover:scale-105 transition-transform">
-                  Artfest
+                  NTU Artfest
                 </Link>
 
                 <span className="text-white">|</span>
@@ -330,14 +366,14 @@ export default function Home() {
         </header>
   
         <div className="w-screen h-screen fixed top-0 left-0 z-2">
-            <section id="hero" className="relative h-screen flex flex-col items-center justify-center text-white">
+            <section id="hero" className="relative h-screen text-white">
                 <video
                     autoPlay
                     loop
                     muted
                     className="absolute top-0 left-0 w-full h-full object-cover z-0"
                 >
-                    <source src="/Final.m.mov" type="video/mp4" />
+                    <source src="/SeaWave.mov" type="video/mp4" />
                 </video>
 
                 <div
@@ -348,9 +384,9 @@ export default function Home() {
                     }}
                 ></div>
 
-                <div className="text-5xl font-bold md:w-1/2 z-20 relative mb-5">
+                {/* <div className="absolute left-[150px] bottom-[150px] z-20 mb-8 ml-8 md:ml-16 md:mb-12">
                     <motion.span
-                    className="inline-block"
+                    className="inline-block text-3xl md:text-5xl font-bold"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.1 }}
@@ -362,9 +398,9 @@ export default function Home() {
                     {text}
                     </motion.span>
                 </div>
-                <div className="text-5xl font-bold md:w-1/2 z-20 relative ml-[150px]">
+                <div className="absolute left-[230px] bottom-[90px] z-20 mb-8 ml-8 md:ml-16 md:mb-12">
                     <motion.span
-                    className="inline-block"
+                    className="inline-block text-3xl md:text-5xl font-bold"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.1 }}
@@ -375,7 +411,7 @@ export default function Home() {
                     >
                     {text1}
                     </motion.span>
-                </div>
+                </div> */}
             </section>
         </div>
         <div className="absolute inset-0 z-10 bg-gradient-to-b from-black/0 to-black/50 h-screen"></div>
@@ -479,7 +515,7 @@ export default function Home() {
                   <div className="max-w-4xl mx-auto space-y-12"> 
 
                     <div className="text-left1 p-8 mt-6">
-                      <h3 className="text-xl md:text-3xl font-semibold text-black">你是否生活厭倦了呢？</h3>
+                      <h3 className="text-xl md:text-3xl font-semibold text-black">你是否厭倦生活了呢？</h3>
                     </div>
                     
                     <div className="text-right1 p-8 text-right">
@@ -552,27 +588,58 @@ export default function Home() {
                           </div>
                       </div>
                       <div className="flex justify-center h-[100px] w-full">
-                        <p className="mt-4 text-gray-700 w-[70%]">{slide.caption}</p>
+                        <p className="mt-4 text-gray-700 w-[70%]">
+                          {slide.caption.length > CAPTION_LIMIT && !expandedCaptions[slide.id]
+                            ? (
+                              <>
+                                {slide.caption.slice(0, CAPTION_LIMIT)}...
+                                <button
+                                  className="text-gray-500 ml-2 "
+                                  onClick={() => toggleCaption(slide.id)}
+                                  type="button"
+                                >
+                                  打開
+                                </button>
+                              </>
+                            )
+                            : (
+                              <>
+                                {slide.caption}
+                                {slide.caption.length > CAPTION_LIMIT && (
+                                  <button
+                                    className="text-gray-500 ml-2"
+                                    onClick={() => toggleCaption(slide.id)}
+                                    type="button"
+                                  >
+                                    收起
+                                  </button>
+                                )}
+                              </>
+                            )
+                          }
+                        </p>
                       </div>
                       </SwiperSlide>
                   ))}
                   </Swiper>
-                  <p className="mt-10 md:mt-1 text-gray-500">想了解更多嗎，歡迎玩玩我們的<Link href='/who-art-you' className='text-[#ff9500]'> 測驗 </Link>！</p>
+                  <p className="mt-10 md:mt-1 text-gray-500">想了解更多可愛生物嗎，歡迎玩玩我們的<Link href='/who-art-you' className='text-[#ff9500]'> 測驗 </Link>！</p>
               </section>
     
     
             {/* Fifth main section : polis */}
-            <div className="h-screen flex items-center justify-center bg-white">
-              <section id="final-block" className="py-20 text-center w-full">
-              <h2 className="md:text-[70px]  text-[45px]">最後</h2>
-                <h2 className="md:text-[70px]  text-[45px]">說說你內心的聲音吧！</h2>
-                <div className="flex justify-end mt-4 px-4 w-[80%]">
-                  <Link href="/polis" className="hover:text-gray-900 underline text-gray-700">
-                    點我了解更多公共議題
-                  </Link>
-                </div>
-              </section>
-            </div>
+            
+              <div  className="h-screen flex items-center justify-center bg-white z-20">
+                
+                <section ref={finalBlockRef} id="final-block" className="py-20 text-center w-full bg-white">
+                  <h2 className="md:text-[70px] text-[45px]">最後</h2>
+                  <h2 className="md:text-[70px] text-[45px]">說說你內心的聲音吧！</h2>
+                  <div className="flex justify-end mt-4 px-4 w-[80%]">
+                    <Link href="/polis" className="hover:text-gray-900 underline text-gray-700">
+                      點我了解更多公共議題
+                    </Link>
+                  </div>
+                </section>
+              </div>
                       
               {/* Footer */}
               <footer className="bg-gray-300 py-10 text-center relative">
