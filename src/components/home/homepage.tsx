@@ -4,7 +4,6 @@ import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
-import { motion } from "framer-motion";
 import { Autoplay, EffectCoverflow, Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { gsap } from "gsap";
@@ -26,11 +25,11 @@ export default function Home() {
     //  --- var ---
 
     // for typing text effect 
-    const [text, setText] = useState("");
-    const [text1, setText1] = useState("");
-    const fullText = "NTU Artfest";
-    const fullText2 = "           -《潮汐》";
-    const [index, setIndex] = useState(0);
+    // const [text, setText] = useState("");
+    // const [text1, setText1] = useState("");
+    // const fullText = "NTU Artfest";
+    // const fullText2 = "           -《潮汐》";
+    // const [index, setIndex] = useState(0);
 
     // for scrolling 
     const [scrollY, setScrollY] = useState(0);
@@ -59,7 +58,7 @@ export default function Home() {
 
     // calculate  alot about opacity
     const calculateOpacity = () => 0 + scrollY/800; 
-    const calculateOpacity1 = () => Math.max(0, 1 - scrollY / 500); 
+    // const calculateOpacity1 = () => Math.max(0, 1 - scrollY / 500); 
   
     const calculateOpacity2 = () => {
         const scrollY = typeof window !== "undefined" ? window.scrollY : 0;
@@ -99,27 +98,27 @@ export default function Home() {
     }, []);
     
     // typing effect 1
-    useEffect(() => {
-      if (index < fullText.length) {
-        const timeout = setTimeout(() => {
-          setText((prev) => prev + fullText[index]);
-          setIndex(index + 1);
-        }, 100);
-        return () => clearTimeout(timeout);
-      }
-    }, [index]);
+    // useEffect(() => {
+    //   if (index < fullText.length) {
+    //     const timeout = setTimeout(() => {
+    //       setText((prev) => prev + fullText[index]);
+    //       setIndex(index + 1);
+    //     }, 100);
+    //     return () => clearTimeout(timeout);
+    //   }
+    // }, [index]);
 
 
-    // typing effect 2
-    useEffect(() => {
-        if (index < fullText2.length) {
-          const timeout = setTimeout(() => {
-            setText1((prev) => prev + fullText2[index]);
-            setIndex(index + 1);
-          }, 200);
-          return () => clearTimeout(timeout);
-        }
-      }, [index]);
+    // // typing effect 2
+    // useEffect(() => {
+    //     if (index < fullText2.length) {
+    //       const timeout = setTimeout(() => {
+    //         setText1((prev) => prev + fullText2[index]);
+    //         setIndex(index + 1);
+    //       }, 200);
+    //       return () => clearTimeout(timeout);
+    //     }
+    //   }, [index]);
     
     // gsap
     useEffect(() => {
