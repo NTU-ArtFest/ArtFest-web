@@ -37,18 +37,18 @@ export const buildingNames = [
   // 建築物資料
 export const buildings: Building[] = [
     { 
-      name: 'library', 
-      real_name: '台大圖書館',
+      name: '總圖', 
+      real_name: '總圖',
       label: '1', 
       info: { 
         name: '台大圖書館', 
         desc: '台大圖書館是校內最大的圖書館，收藏豐富的學術資源與珍貴文獻。建築設計莊嚴典雅，為學生提供安靜的閱讀與研究環境。',
         activities: []
       },
-      offset: [0, 1, -6]
+      offset: [0, 1, 0]
     },
     { 
-      name: 'grass', 
+      name: '振興草皮', 
       real_name: '振興草皮',
       label: '2', 
       info: { 
@@ -75,7 +75,7 @@ export const buildings: Building[] = [
       offset: [0, 1, 0]
     },
     { 
-      name: 'first_student', 
+      name: '活大', 
       real_name: '第一學生活動中心',
       label: '3', 
       info: { 
@@ -102,7 +102,7 @@ export const buildings: Building[] = [
       offset: [0, 1, 0]
     },
     { 
-      name: 'second_library', 
+      name: '外教中心', 
       real_name: '外教中心',
       label: '4', 
       info: { 
@@ -119,7 +119,7 @@ export const buildings: Building[] = [
       offset: [0, 1, 0]
     },
     {
-      name: 'new_student',
+      name: '新生',
       real_name: '新生教學館',
       label: '5',
       info: { 
@@ -136,7 +136,7 @@ export const buildings: Building[] = [
       offset: [0, 1, 0]
     },
     {
-      name: 'stadium',
+      name: '舊體',
       real_name: '台大體育館（舊體）',
       label: '6',
       info: { 
@@ -153,7 +153,7 @@ export const buildings: Building[] = [
       offset: [0, 1, 0]
     },
     {
-      name: 'bank',
+      name: '華南',
       real_name: '華南銀行',
       label: '7',
       info: { 
@@ -179,19 +179,19 @@ export const buildings: Building[] = [
       },
       offset: [0, 1, 0]
     },
+    // {
+    //   name: 'clock',
+    //   real_name: '傅鐘',
+    //   label: '8',
+    //   info: { 
+    //     name: '傅鐘',
+    //     desc: '台大校鐘是校園的地標之一，也是學生約會集合的熱門地點。每到整點報時，悠揚的鐘聲迴盪在校園中，成為台大特有的聲音記憶。',
+    //     activities: []
+    //   },
+    //   offset: [0, 1, 0]
+    // },
     {
-      name: 'clock',
-      real_name: '傅鐘',
-      label: '8',
-      info: { 
-        name: '傅鐘',
-        desc: '台大校鐘是校園的地標之一，也是學生約會集合的熱門地點。每到整點報時，悠揚的鐘聲迴盪在校園中，成為台大特有的聲音記憶。',
-        activities: []
-      },
-      offset: [0, 1, 0]
-    },
-    {
-      name: 'second',
+      name: '二活',
       real_name: '第二學生活動中心',
       label: '9',
       info: { 
@@ -207,30 +207,30 @@ export const buildings: Building[] = [
       },
       offset: [0, 1, 0]
     },
+    // {
+    //   name: 'gate',
+    //   real_name: '校門',
+    //   label: '10',
+    //   info: { 
+    //     name: '校門',
+    //     desc: '恭賀光臨，歡迎來到台大！',
+    //     activities: []
+    //   },
+    //   offset: [0, 1, 0]
+    // },
+    // {
+    //   name: 'MRT',
+    //   real_name: '捷運公館站',
+    //   label: '11',
+    //   info: { 
+    //     name: '捷運公館站',
+    //     desc: '為什麼不能叫捷運台大站',
+    //     activities: []
+    //   },
+    //   offset: [0, 1, 0]
+    // },
     {
-      name: 'gate',
-      real_name: '校門',
-      label: '10',
-      info: { 
-        name: '校門',
-        desc: '恭賀光臨，歡迎來到台大！',
-        activities: []
-      },
-      offset: [0, 1, 0]
-    },
-    {
-      name: 'MRT',
-      real_name: '捷運公館站',
-      label: '11',
-      info: { 
-        name: '捷運公館站',
-        desc: '為什麼不能叫捷運台大站',
-        activities: []
-      },
-      offset: [0, 1, 0]
-    },
-    {
-      name: 'market',
+      name: '水源',
       real_name: '水源市場',
       label: '12',
       info: { 
@@ -246,15 +246,15 @@ export const buildings: Building[] = [
       },
       offset: [-5, 1, 3]
     },
-    {
-      name: 'lake',
-      real_name: '醉月湖',
-      label: '13',
-      info: { 
-        name: '醉月湖',
-        desc: '醉月湖是台大校園內最著名的景點之一，湖畔環境優美，是學生休閒、約會的理想場所。湖中小島與周圍綠樹相映成趣，四季景色各有特色。',
-        activities: []
-      },
-      offset: [-10, 1, -6]
-    }
+    // {
+    //   name: 'lake',
+    //   real_name: '醉月湖',
+    //   label: '13',
+    //   info: { 
+    //     name: '醉月湖',
+    //     desc: '醉月湖是台大校園內最著名的景點之一，湖畔環境優美，是學生休閒、約會的理想場所。湖中小島與周圍綠樹相映成趣，四季景色各有特色。',
+    //     activities: []
+    //   },
+    //   offset: [-10, 1, -6]
+    // }
   ];

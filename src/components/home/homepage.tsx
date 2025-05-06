@@ -403,8 +403,8 @@ export default function Home() {
               <div className='relative'>
 
                 {/* Second main section : horizontal scroll */}
-                <div className="min-h-screen md:min-h-screen flex items-center justify-center z-20 pt-40"> 
-                    <div className="relative w-[85%] md:w-[70%] backdrop-blur-sm rounded-md"> 
+                <div className="min-h-screen md:min-h-screen flex items-center justify-center z-20 pt-40 "> 
+                    <div className="relative w-[85%] md:w-[70%]  rounded-md"> 
                         <h2 className="pb-10 text-5xl text-center md:text-left font-bold md:text-6xl ">展場地圖</h2> 
                         <ModelViewer/>
                     </div>
