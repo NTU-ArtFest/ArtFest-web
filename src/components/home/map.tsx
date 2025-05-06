@@ -1,6 +1,6 @@
 "use client"
 import { Canvas, useFrame, useThree } from '@react-three/fiber'
-import { useGLTF,  OrbitControls } from '@react-three/drei'
+import { useGLTF,  OrbitControls, Environment, ContactShadows } from '@react-three/drei'
 import { Suspense, useState, useEffect, useRef, useMemo} from 'react'
 import Link from 'next/link'
 import * as THREE from 'three'
@@ -36,7 +36,7 @@ function Markers({ scene, onActiveBuilding }: {
   const markersRef = useRef<THREE.Group[]>([]);
 
   const textureLoader = useMemo(() => new THREE.TextureLoader(), []);
-  const texture = useMemo(() => textureLoader.load('/Footer.png'), []);   
+  const texture = useMemo(() => textureLoader.load('/'), []);   
   
   useFrame(() => {
     markersRef.current.forEach(marker => {
@@ -102,13 +102,43 @@ function Markers({ scene, onActiveBuilding }: {
 function ModelWithMarkers({ onActiveBuilding }: { 
   onActiveBuilding: (info: string | null) => void; 
 }) {
-  const { scene } = useGLTF('/ntu_map2.glb');
+  const { scene } = useGLTF('/MAP.glb');
+  // (scene as unknown as THREE.Scene).background = new THREE.Color(0x000000); // 天空藍
   
   return (
     <group>
-      <primitive object={scene} />
+      <primitive object={scene} scale={[30, 30, 30]} />
       <Markers scene={scene as unknown as THREE.Scene} onActiveBuilding={onActiveBuilding} />
     </group>
+  );
+}
+
+function LightController() {
+  const lightRef = useRef<THREE.DirectionalLight>(null);
+  const { camera } = useThree();
+
+  useFrame(() => {
+    if (lightRef.current) {
+      const offset = 1000;
+      const direction = camera.getWorldDirection(new THREE.Vector3()).normalize();
+      const lightPos = camera.position.clone().add(direction.multiplyScalar(offset));
+      lightRef.current.position.copy(lightPos);
+      direction.y += -20;
+      direction.z += -20;
+      direction.x += -20;
+      lightRef.current.target.position.set(0, 0, 0);
+      lightRef.current.target.updateMatrixWorld();
+    }
+  });
+
+  return (
+    <directionalLight
+      ref={lightRef}
+      intensity={4}
+      castShadow
+      shadow-mapSize-width={2048}
+      shadow-mapSize-height={2048}
+    />
   );
 }
 
@@ -122,8 +152,9 @@ export default function ModelViewer() {
     const { width } = useWindowSize();
   
     // Calculate distances based on screen width
-    const minDistance = width < 768 ? 180 : 120; 
+    const minDistance = width < 768 ? 120 : 120; 
     const maxDistance = width < 768 ? 350 : 230;
+
 
     useEffect(() => {
         if (activeBuildingname) {
@@ -140,11 +171,12 @@ export default function ModelViewer() {
     }, [activeBuildingname]);
 
   return (
-    <div className="w-full h-screen rounded-lg relative h-[45vh] md:h-[75vh]">
+    <div className="w-full h-screen rounded-lg relative h-[490px] md:h-[75vh] shadow-2xl backdrop-blur-sm">
       <div className="absolute top-6 left-6 z-20 shadow-lg">
         { isBegin && (
-            <div className="bg-white bg-opacity-90 p-4 rounded  w-[220px] md:w-[300px] flex item-center justify-center">
+            <div className="bg-white bg-opacity-90 p-4 rounded  w-[220px] md:w-[300px] flex flex-row item-center justify-center">
               <div className="text center font-bold text-lg">歡迎來到台大！</div>
+              {/* <div className="text center font-bold text-lg">歡迎任意拖曳、縮放！</div> */}
             </div>
         )}
         {!isBegin && activeBuildingInfo && (
@@ -165,7 +197,7 @@ export default function ModelViewer() {
       </div>
       
       <Canvas 
-        camera={{ position: [151, 100, 100], fov: 75 }}
+        camera={{ position: [-100, 20, 120], fov: 40}}
         onPointerMissed={() => {
           setActiveBuildingname(null);
           setIsBegin(false)
@@ -183,16 +215,32 @@ export default function ModelViewer() {
         style={{ background: 'transparent' }}
       >
         
-        <ambientLight intensity={1.3} />
-        <directionalLight position={[2, 2, 2]} intensity={4} />
+        {/* <ambientLight intensity={1} />
+        <directionalLight position={[2, 2, 2]} intensity={2} />
+        
+        <Environment preset="city" background={false} />
         <Suspense fallback={null}>
           <ModelWithMarkers  onActiveBuilding={setActiveBuildingname}/>
+        </Suspense> */}
+        <ambientLight intensity={0.5} />
+        <LightController />
+        <Suspense fallback={null}>
+          <Environment preset="sunset" />
+          <ModelWithMarkers onActiveBuilding={setActiveBuildingname} />
         </Suspense>
+        <ContactShadows
+          position={[0, -1, 0]}
+          opacity={0.5}
+          width={20}
+          height={20}
+          blur={2}
+        />
+
         <OrbitControls
-          target={[121, -30, -139]}
+
           minPolarAngle={-Math.PI / 2}
-          maxPolarAngle={Math.PI / 3}
-          enablePan={false}
+          maxPolarAngle={2 * (Math.PI / 5)}
+          enablePan={true}
           enableDamping={true}
           dampingFactor={0.05}
           minDistance={minDistance}
