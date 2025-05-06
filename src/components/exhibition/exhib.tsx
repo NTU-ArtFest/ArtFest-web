@@ -1,6 +1,6 @@
 export default function Exhibition() {
     return (
-      <div className="w-full min-h-screen bg-black text-white" style={{ fontFamily: "'Noto Sans TC', 'Helvetica Neue', sans-serif" }}>
+      <div className="w-full min-h-screen bg-black text-white" style={{ fontFamily: "'Helvetica Neue'" }}>
         {/* 黑色底圖層 */}
         <div className="fixed inset-0 z-0 bg-black"></div>
   
@@ -10,7 +10,7 @@ export default function Exhibition() {
           <img 
             src="/exhibition/video_bg.png"
             alt="Background for video"
-            className="absolute inset-0 w-full h-full object-cover z-0"
+            className="absolute inset-0 w-full h-full object-cover opacity-0 z-0"
           />
           <video
             className="w-full h-full object-contain relative z-10"
@@ -20,28 +20,29 @@ export default function Exhibition() {
             loop
             playsInline
           />
-          <div className="absolute inset-0 bg-black/40 z-20"></div>
+          {/* <div className="absolute inset-0 bg-black/40 z-20"></div> */}
         </div>
   
         {/* 主視覺區塊 - 手機和桌面共用背景 */}
         <div className="relative w-full min-h-screen z-10">
-          {/* 背景圖 */}
+          {/* 背景圖 - 亮度調低 */}
+          <div className="absolute inset-0 bg-black z-0"></div>
           <img
-            className="w-full h-full object-cover absolute inset-0 z-0"
+            className="w-full h-full object-cover absolute inset-0 z-0 opacity-60"
             src="/exhibition/sea.png"
             alt="Exhibition Background"
           />
           
           {/* 手機版布局 */}
-          <div className="md:hidden relative z-20 h-screen w-full px-6 py-6 flex flex-col justify-between">
+          <div className="md:hidden relative z-20 h-screen w-full flex flex-col">
             {/* 左上標題 */}
-            <div className="self-start mt-8">
+            <div className="self-start mt-8 ml-6">
               <h1 className="text-4xl sm:text-5xl font-bold tracking-wider mb-1 uppercase">潮間帶</h1>
               <p className="text-base sm:text-lg tracking-wide">影像展</p>
             </div>
                       
-            {/* 右下展覽資訊 */}
-            <div className="self-end text-right text-xs space-y-2 mb-8">
+            {/* 右下展覽資訊 - 使用絕對定位，設定同等的右邊和底部間距 */}
+            <div className="absolute bottom-8 right-8 text-right text-xs space-y-2">
               <p className="mb-1"><span className="font-bold text-sm">策劃團隊</span><br />
               游善喆、蔡政峰、劉韋杰<br />
               李宥辰、黃楷翔、邱子芹<br />
@@ -70,14 +71,14 @@ export default function Exhibition() {
           <div className="hidden md:block relative w-full min-h-screen z-10">
             
             {/* 左上標題與右下資訊 */}
-            <div className="relative z-20 h-screen w-full px-12 py-12 flex flex-col justify-between">
-              <div className="self-start mt-12">
+            <div className="relative h-screen w-full">
+              <div className="absolute top-12 left-12">
                 <h1 className="text-5xl lg:text-6xl xl:text-7xl font-bold tracking-wider mb-2">潮間帶</h1>
                 <p className="text-xl lg:text-2xl xl:text-3xl font-light tracking-wide">影像展</p>
               </div>
               
-              {/* 右下展覽資訊 */}
-              <div className="self-end text-right max-w-md space-y-4 mb-12">
+              {/* 右下展覽資訊 - 使用絕對定位，設定同等的右邊和底部間距 */}
+              <div className="absolute bottom-12 right-12 text-right max-w-md space-y-4">
                 <p className="mb-1"><span className="font-bold text-base md:text-lg">策劃團隊</span><br />
                 <span className="text-sm md:text-base">
                     游善喆、蔡政峰、劉韋杰<br />
@@ -109,7 +110,6 @@ export default function Exhibition() {
         {/* 引文區塊 */}
         <div className="relative z-10 py-12 md:py-16 bg-black">
           <div className="container mx-auto px-6">
-            <h2 className="text-xl md:text-3xl font-light mb-8 md:mb-12 tracking-wider text-center uppercase">引文</h2>
             <div className="max-w-3xl mx-auto text-base md:text-lg leading-relaxed space-y-6 font-light">
               <p className="text-center italic">
                 「臺大是潮間帶，我們比任何人都還要貼近這個時代。
@@ -133,16 +133,18 @@ export default function Exhibition() {
         <div className="relative z-10 py-12 md:py-16 bg-black">
           <div className="container mx-auto px-6">
             <h2 className="text-xl md:text-3xl font-light mb-8 md:mb-12 tracking-wider text-center uppercase">展覽介紹</h2>
+
             <div className="max-w-3xl mx-auto text-base md:text-lg leading-relaxed space-y-6 font-light">
-              <p className="text-center">
+              <p className="text-left">
                 《潮間帶》影像展以生成式藝術為創作核心，運用其隨機性與互動性，探討規律潮汐下的總總「不規律」：觀者的身體與行為將打破規律，以著流動的行動、視線、思考回應潮汐，讓每一次的觀看都成為獨特傑作。
               </p>
-              <p className="text-center">
+              <p className="text-left">
                 本次展覽於外教中心實驗劇場打造沉浸式場域，運用三面牆面與地板投影，建構如潮水般包覆身體的影像場景。你將行走在波光與資訊的交界，在當中感受自我與環境之間那若有似無的連結。
               </p>
-              <p className="text-center">
+              <p className="text-left">
                 當星球的引力拉動整座海洋，小小的我們，也在陸地邊界學習與成長。而你，將在這片潮間帶裡，發現屬於自己的特質與生存法則。
               </p>
+
             </div>
           </div>
         </div>
