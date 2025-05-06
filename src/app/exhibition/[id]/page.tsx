@@ -1,13 +1,12 @@
 import Exhibition from "@/components/exhibition/exhib";
-import { useParams, useSearchParams } from 'next/navigation';
+import { headers } from 'next/headers';
 
-export default function ExhibitionDetailpPage() {
-    const { puzzle } = useParams();              // 動態路由拿到 puzzle
-    const params = useSearchParams();
-    return (
-    //   <Exhibition puzzle={puzzle}/>
-    <div>nice</div>
-    );
-  }
-
-  
+export default async function ExhibitionDetailPage({ params }: {params: {id:string}}) {
+  const host = (await headers()).get('host');
+  const protocol = process.env.NODE_ENV === 'development' ? 'http' : 'https';
+  const res = await fetch(`${protocol}://${host}/api/exhibition/${params.id}`, {
+    cache: 'no-store'
+  });
+  const data = await res.json();
+  return <Exhibition data={data} />;
+}
