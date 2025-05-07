@@ -12,6 +12,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import { motion } from 'framer-motion';
 import ModelViewer from './map';
 
 // enroll
@@ -23,13 +24,6 @@ if (typeof window !== 'undefined') {
 export default function Home() {
 
     //  --- var ---
-
-    // for typing text effect 
-    // const [text, setText] = useState("");
-    // const [text1, setText1] = useState("");
-    // const fullText = "NTU Artfest";
-    // const fullText2 = "           -《潮汐》";
-    // const [index, setIndex] = useState(0);
 
     // for scrolling 
     const [scrollY, setScrollY] = useState(0);
@@ -66,7 +60,7 @@ export default function Home() {
     };
     const scrolly_calcultae = () => (minDistance + scrollY * 0.1);
 
-    const CAPTION_LIMIT = 32; // 你想要顯示的最大字數
+    const CAPTION_LIMIT = 25; // 你想要顯示的最大字數
     const [expandedCaptions, setExpandedCaptions] = useState<{ [key: number]: boolean }>({});
 
     const toggleCaption = (id: number) => {
@@ -88,37 +82,15 @@ export default function Home() {
 
         console.log(window.scrollY);
         
-        if(scrollY>400)
+        if(scrollY>800)
           setOpacity(1);
-        setOpacity(calculateOpacity2());
+        else
+          setOpacity(calculateOpacity2());
 
       };
       window.addEventListener("scroll", handleScroll);
       return () => window.removeEventListener("scroll", handleScroll);
     }, []);
-    
-    // typing effect 1
-    // useEffect(() => {
-    //   if (index < fullText.length) {
-    //     const timeout = setTimeout(() => {
-    //       setText((prev) => prev + fullText[index]);
-    //       setIndex(index + 1);
-    //     }, 100);
-    //     return () => clearTimeout(timeout);
-    //   }
-    // }, [index]);
-
-
-    // // typing effect 2
-    // useEffect(() => {
-    //     if (index < fullText2.length) {
-    //       const timeout = setTimeout(() => {
-    //         setText1((prev) => prev + fullText2[index]);
-    //         setIndex(index + 1);
-    //       }, 200);
-    //       return () => clearTimeout(timeout);
-    //     }
-    //   }, [index]);
     
     // gsap
     useEffect(() => {
@@ -181,6 +153,31 @@ export default function Home() {
             markers: false    
           }
         });
+        gsap.from(".text-left3", {
+          x: 100,
+          opacity: 0,
+          duration: 0.8,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: ".text-left3",
+            start: "top 60%", 
+            toggleActions: "play", 
+            markers: false    
+          }
+        });
+
+        gsap.from(".text-right3", {
+          x: 100,
+          opacity: 0,
+          duration: 0.8,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: ".text-right3",
+            start: "top 60%", 
+            toggleActions: "play", 
+            markers: false    
+          }
+        });
       }, containerRef);
       
       return () => ctx.revert(); 
@@ -213,15 +210,15 @@ export default function Home() {
       if (!finalBlockRef.current) return;
       gsap.fromTo(
         finalBlockRef.current,
-        { opacity: 0, y: -100 },
+        { opacity: -100, y: 0 },
         {
           opacity: 1,
           y: 0,
-          duration: 1.2,
+          duration: 0.7,
           ease: "power3.out",
           scrollTrigger: {
             trigger: finalBlockRef.current,
-            start: "top 50%",
+            start: "top 80%",
             toggleActions: "play none none none",
           },
         }
@@ -229,11 +226,11 @@ export default function Home() {
     }, []);
   
     const slides = [
-      { id: 1, description: "ISP", color: "bg-red-500", caption: "招寄居蟹一生都在尋找合適的新殼，展現出對自由和靈活生活方式的追求", url: '/who-art-you/001_without_bg.png'},
-      { id: 2, description: "ESP", color: "bg-blue-500",  caption: "招潮蟹的英文名稱為「Fiddler crabs」，在泥灘上揮舞蟹螯的他們是天生的提琴演奏家，除了吸引異性之外，也是力量的象徵", url: '/who-art-you/001.png' },
-      { id: 3, description: "ISJ", color: "bg-green-500", caption: "藤壺是潮間帶的釘子戶，一旦找到合適的地方，就牢牢黏住不放，無論是岩石、船底，甚至鯨魚身上都能見到牠的蹤影，是潮間帶低調的強者", url: '/who-art-you/ENF001.png' },
-      { id: 4, description: "ENF", color: "bg-yellow-500", caption: "跳跳魚是潮間帶的活力高手，能在水中游動，也能在泥灘上靈活跳躍，像個不受拘束的探險家", url: '/who-art-you/ESJ001_without_bg.png' },
-      { id: 5, description: "INF", color: "bg-purple-500", caption: "海兔是海底的神秘遊俠，柔軟的身軀隨著海流飄動，優雅穿梭於珊瑚與沙地之間。", url: '/who-art-you/INF001_without_bg.png' },
+      { id: 1, description: "寄居蟹", color: "bg-red-500", caption: "寄居蟹 ( ISP ) 一生都在尋找合適的新殼，展現出對自由和靈活生活方式的追求", url: '/who-art-you/001_without_bg.png'},
+      { id: 2, description: "招潮蟹", color: "bg-blue-500",  caption: "招潮蟹 ( ESP ) 的英文名稱為「Fiddler crabs」，在泥灘上揮舞蟹螯的他們是天生的提琴演奏家，除了吸引異性之外，也是力量的象徵", url: '/who-art-you/001.png' },
+      { id: 3, description: "藤壺", color: "bg-green-500", caption: "藤壺 ( ISJ ) 是潮間帶的釘子戶，一旦找到合適的地方，就牢牢黏住不放，無論是岩石、船底，甚至鯨魚身上都能見到牠的蹤影，是潮間帶低調的強者", url: '/who-art-you/ENF001.png' },
+      { id: 4, description: "跳跳魚", color: "bg-yellow-500", caption: "跳跳魚 ( ENF ) 是潮間帶的活力高手，能在水中游動，也能在泥灘上靈活跳躍，像個不受拘束的探險家", url: '/who-art-you/ESJ001_without_bg.png' },
+      { id: 5, description: "海兔", color: "bg-purple-500", caption: "海兔 ( INF ) 是海底的神秘遊俠，柔軟的身軀隨著海流飄動，優雅穿梭於珊瑚與沙地之間。", url: '/who-art-you/INF001_without_bg.png' },
     ];
   
     return (
@@ -383,34 +380,6 @@ export default function Home() {
                     }}
                 ></div>
 
-                {/* <div className="absolute left-[150px] bottom-[150px] z-20 mb-8 ml-8 md:ml-16 md:mb-12">
-                    <motion.span
-                    className="inline-block text-3xl md:text-5xl font-bold"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 0.1 }}
-                    style={{
-                        color: `rgba(256, 256, 256, ${calculateOpacity1()})`, 
-                        transition: "color 0.3s ease",
-                    }}
-                    >
-                    {text}
-                    </motion.span>
-                </div>
-                <div className="absolute left-[230px] bottom-[90px] z-20 mb-8 ml-8 md:ml-16 md:mb-12">
-                    <motion.span
-                    className="inline-block text-3xl md:text-5xl font-bold"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 0.1 }}
-                    style={{
-                        color: `rgba(256, 256, 256, ${calculateOpacity1()})`, 
-                        transition: "color 0.3s ease",
-                    }}
-                    >
-                    {text1}
-                    </motion.span>
-                </div> */}
             </section>
         </div>
         <div className="absolute inset-0 z-10 bg-gradient-to-b from-black/0 to-black/50 h-screen"></div>
@@ -445,10 +414,18 @@ export default function Home() {
                     </div>
                 </div>
                 {/* First main section : introduction */}
-                <div className="h-[500px] flex items-center justify-center relative ">
+                <div className="h-[400px] flex items-center justify-center relative ">
                     <div className=" container mx-auto px-6 flex flex-col md:flex-row items-center md:justify-end">
                         <div className="md:w-1/2 md:mt-0 z-20 ">
-                            <h2 className="text-4xl md:text-6xl font-bold backdrop-blur-sm mb-4 tracking-wider p-10 " >人與人的連結</h2>
+                            <motion.h2
+                                className="text-[28px] md:text-5xl font-bold backdrop-blur-sm mb-4 tracking-wider p-10 "
+                                initial={{ opacity: 0 }}
+                                whileInView={{ opacity: 1 }}
+                                viewport={{ once: true, amount: 0.5 }} // 進入一半時觸發，且只觸發一次
+                                transition={{  duration: 1.2, ease: "easeInOut", delay: 0.2 }}
+                              >
+                                願你在潮起潮落之間
+                            </motion.h2>
                         </div>
                     </div>
                     <div className="w-full absolute top-0 left-0" >
@@ -456,28 +433,39 @@ export default function Home() {
 
                 </div>
 
-                <div className="h-[500px] flex items-center justify-center">
-                    <div className=" container mx-auto px-6 flex flex-col md:flex-row items-center md:justify-center">
+                <div className="h-[300px] flex items-center justify-center">
+                    <div className=" container mx-auto px-6 flex flex-col md:flex-row items-center text-center  ">
       
-                        <div className="md:w-1/2 mt-10 md:mt-0 z-20">
-                            <h2 className="text-4xl md:text-6xl font-bold mb-4 tracking-wider backdrop-blur-sm" >或許</h2>
-
+                        <div className="md:w-1/2 mt-10 md:mt-0 z-20 ">
+                            <motion.h2
+                                className="text-[28px] md:text-5xl font-bold mb-4 tracking-wider backdrop-blur-sm"
+                                initial={{ opacity: 0 }}
+                                whileInView={{ opacity: 1 }}
+                                viewport={{ once: true, amount: 0.5 }} // 進入一半時觸發，且只觸發一次
+                                transition={{  duration: 1.2, ease: "easeInOut", delay: 0.2 }}
+                              >
+                                看見自己的輪廓
+                            </motion.h2>
                         </div>
                     </div>
                 </div>
 
-                <div className="h-[500px] md:h-[800px]">
+                <div className="h-[600px] md:h-[800px] mb-20">
                     <div className="w-full mx-auto flex flex-col md:flex-row items-center md:justify-center">
                         <div className="md:w-1/2 md:mt-[200px] mt-20 z-20 flex justify-center">
-                        <h2
-                            className="text-4xl md:text-6xl font-bold mb-4 tracking-wider backdrop-blur-sm"
-                            style={{
-                              writingMode: "vertical-rl",    
-                              textOrientation: "upright",    
-                            }}
-                        >
-                            也是一種潮汐
-                        </h2>
+                            <motion.h2
+                                className="text-[28px] md:text-5xl font-bold mb-4 tracking-wider backdrop-blur-sm"
+                                style={{
+                                  writingMode: "vertical-rl",    
+                                  textOrientation: "upright",    
+                                }}
+                                initial={{ opacity: 0 }}
+                                whileInView={{ opacity: 1 }}
+                                viewport={{ once: true, amount: 0.5 }} // 進入一半時觸發，且只觸發一次
+                                transition={{  duration: 1.2, ease: "easeInOut", delay: 0.2 }}
+                              >
+                                也找到與世界共振的節奏
+                            </motion.h2>
                         </div>
                     </div>
                 </div>
@@ -509,26 +497,33 @@ export default function Home() {
               </div>
                 
               {/* gsap amimation */}
-              <div ref={containerRef} className="pt-10 py-16 bg-gray-50 w-full h-[90vh] relative opacity-70 overflow-x-hidden">
+              <div ref={containerRef} className="pt-10 py-16 bg-gray-50 w-full h-[1250px] relative opacity-70 overflow-x-hidden">
                 <div className="relative container mx-auto px-4 ">
                   <div className="max-w-4xl mx-auto space-y-12"> 
 
                     <div className="text-left1 p-8 mt-6">
-                      <h3 className="text-xl md:text-3xl font-semibold text-black">你是否厭倦生活了呢？</h3>
+                      <h3 className="text-xl md:text-3xl font-semibold text-black">架空世界觀 x 另類實境解謎 x 16型人格MBTI</h3>
                     </div>
                     
                     <div className="text-right1 p-8 text-right">
-                      <h3 className="text-xl md:text-3xl font-semibold text-black">又或是在日常生活中找不到那所謂的快感</h3>
+                      <h3 className="text-xl md:text-3xl font-semibold text-black">2030年<br/>長生不老的夢想終於實現<br/>Current Effect 的科學突破<br/>讓人類的壽命延長至 150、甚至 200 歲</h3>
                     </div>
                     
                     <div className="text-left2 p-8">
-                      <h3 className="text-xl md:text-3xl font-semibold text-black">你是否曾幻想過，在現實生活過著虛擬的生活啊</h3>
+                      <h3 className="text-xl md:text-3xl font-semibold text-black">有些人迎來永恆的青春，有些人卻成了「不良種」<br/>——畸形、智能退化，逐漸被社會遺棄</h3>
                     </div>
                     
                     <div className="text-right2 p-8 text-right mb-10">
-                      <h3 className="text-xl md:text-3xl font-semibold mb-10 text-orange-600">如果有的話，那就來玩 ARG 吧！</h3>
-                      <Link href="/arg" className="text-lg text-bold text-gray-700 hover:text-gray-900 hover:underline ">
-                        來 我帶你走 〉〉
+                      <h3 className="text-xl md:text-3xl font-semibold mb-10 text-black">一顆變種的牡蠣<br/>如何讓社會陷入混亂？</h3>
+                    </div>
+                    
+                    <div className="text-left3 p-8">
+                      <h3 className="text-xl md:text-3xl font-semibold text-orange-600" >當生命不再有終點，你如何度過百歲人生？</h3>
+                    </div>
+
+                    <div className="text-right3 p-8 text-right mb-10">
+                      <Link href="/arg" className=" text-lg text-bold text-gray-700 scale-100 hover:text-black hover:font-semibold hover:underline ">
+                          點我解鎖真相 〉〉
                       </Link>
                     </div>
                     
@@ -536,14 +531,25 @@ export default function Home() {
                 </div>
               </div>
 
-
-            {/* Fourth main section : mbti */}
-              <section className="py-10  min-h-screen flex flex-col items-center justify-center relative bg-white">
-                  <div className='h-[200px]'>
-                    <h2 className="text-center text-[30px] md:text-[50px] font-bold mt-10">在遊玩 ARG 的同時</h2>
-                    <h2 className="text-center text-[30px] md:text-[50px] font-bold ">你又屬於哪個潮間帶生物呢</h2>
+                      
+            {/* Fourth main section : who-art-you */}
+              <section className="py-10 min-h-screen flex flex-col items-center justify-center relative bg-white pt-[140px]">
+                <div className="max-w-2xl mx-auto mb-10 px-4 w-[90%]">
+                  <p className="text-center text-xl md:text-3xl font-bold text-gray-800 leading-relaxed mb-4">
+                    每個人心中，都有一隻住在潮間帶的小夥伴
+                  </p>
+                  <p className="text-center text-lg md:text-xl text-gray-700 leading-relaxed mb-4">
+                    牠可能黏黏軟軟、可能行動敏捷、也可能擁有驚人的防禦力，<br />
+                    而牠的個性，或許和你意想不到地相似。
+                  </p>
+                  <p className="text-center mt-2 mb-2 text-yellow-500 text-lg md:text-xl font-semibold">
+                    ✨這是一場找尋的旅程，也是一場了解自己的冒險
+                  </p>
+                </div>
+                  {/* <div className='h-[200px]'>
+                    <h2 className="text-center text-[25px] md:text-[50px] font-bold ">你又屬於哪個潮間帶生物呢</h2>
                   </div>
-                  
+                   */}
                   <Swiper
                   modules={[Autoplay, EffectCoverflow, Navigation]}
                   effect="coverflow"
@@ -551,10 +557,10 @@ export default function Home() {
                   centeredSlides={true}
                   slidesPerView={2} 
                   loop={true} 
-                  // autoplay={{
-                  //     delay: 3000, 
-                  //     disableOnInteraction: false, 
-                  // }}
+                  autoplay={{
+                      delay: 3000, 
+                      disableOnInteraction: false, 
+                  }}
                   coverflowEffect={{
                       rotate: 0, 
                       stretch: 10, 
@@ -621,24 +627,26 @@ export default function Home() {
                       </SwiperSlide>
                   ))}
                   </Swiper>
-                  <p className="mt-10 md:mt-1 text-gray-500">想了解更多可愛生物嗎，歡迎玩玩我們的<Link href='/who-art-you' className='text-[#ff9500]'> 測驗 </Link>！</p>
+                  <p className="mt-10 md:mt-1 text-gray-500">&gt;&gt; 走！一起看看<Link href='/who-art-you' className='text-[#ff9500]'> 屬於你的那一隻，是誰？</Link></p>
               </section>
     
     
-            {/* Fifth main section : polis */}
-            
-              <div  className="h-screen flex items-center justify-center bg-white z-20">
-                
-                <section ref={finalBlockRef} id="final-block" className="py-20 text-center w-full bg-white">
-                  <h2 className="md:text-[70px] text-[45px]">最後</h2>
-                  <h2 className="md:text-[70px] text-[45px]">說說你內心的聲音吧！</h2>
-                  <div className="flex justify-end mt-4 px-4 w-[80%]">
+              {/* Fifth main section : polis */}
+              <section className="h-screen flex items-center justify-center bg-white z-20 ">
+                <div ref={finalBlockRef} className="max-w-1xl w-full bg-white rounded-xl shadow-xs p-8 md:p-12 space-y-8 scale-90 hover:scale-105 transition-transform duration-300 md:w-[80%] md:text-center leading-relaxed">
+                  <h1 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4 text-center">最後，我們想說的是</h1>
+                  <p className="text-lg md:text-xl text-gray-700 leading-relaxed italic">
+                  藝術季是眾人們能夠聚集在一起的時機，此刻你我最需要的就是自在地讓思想流動的空間，相信當眾人一起對校園、社會上存在的問題有所思考，甚至一起想解決方法時，是會成就傑作的！
+                  </p>
+                  <div className="mt-4 px-4 text-center">
                     <Link href="/polis" className="hover:text-gray-900 underline text-gray-700">
-                      點我了解更多公共議題
+                      &gt;&gt;  走！我們一起來討論「公共議題」！
                     </Link>
                   </div>
-                </section>
-              </div>
+                </div>
+                
+              </section>
+
                       
               {/* Footer */}
               <footer className="bg-gray-300 py-10 text-center relative">
@@ -650,7 +658,7 @@ export default function Home() {
                     height={100}
                     className="mx-auto mb-4 object-contain"
                   />
-                  <h2 className="text-black font-medium">© 30th NTU Artfestival. All Rights Reserved.</h2>
+                  <h2 className="text-black font-medium">© 30th NTU ARTFEST. All Rights Reserved.</h2>
                 </div>
               </footer>
           </div>

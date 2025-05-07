@@ -58,17 +58,17 @@ export const buildings: Building[] = [
             {
                 name: '開幕式',
                 intro: '開幕式很棒',
-                url: 'https://artfest.ntu.edu.tw:2025/'
+                url: 'https://artfest.ntu.edu.tw:2025/exhibition/'
             },
             {
                 name: '浪潮 30 動態地景藝術',
                 intro: '地景藝術讚',
-                url: 'https://artfest.ntu.edu.tw:2025/'
+                url: 'https://artfest.ntu.edu.tw:2025/exhibition/'
             },
             {
                 name: '閉幕式',
                 intro: '閉幕式更棒',
-                url: 'https://artfest.ntu.edu.tw:2025/'
+                url: 'https://artfest.ntu.edu.tw:2025/exhibition/'
             },
         ]
       },
@@ -85,17 +85,17 @@ export const buildings: Building[] = [
             {
                 name: '公園散步地圖',
                 intro: '來散散步吧',
-                url: 'https://artfest.ntu.edu.tw:2025/'
+                url: 'https://artfest.ntu.edu.tw:2025/exhibition/'
             },
             {
                 name: '子題展覽',
                 intro: '展覽讚',
-                url: 'https://artfest.ntu.edu.tw:2025/'
+                url: 'https://artfest.ntu.edu.tw:2025/exhibition/'
             },
             {
                 name: '石尚玩家 ＃飾品手作工作方',
                 intro: '玩石頭囉',
-                url: 'https://artfest.ntu.edu.tw:2025/'
+                url: 'https://artfest.ntu.edu.tw:2025/exhibition/'
             },
         ]
       },
@@ -112,7 +112,7 @@ export const buildings: Building[] = [
             {
                 name: '潮間帶影像展',
                 intro: '沈浸於浪潮的薰陶',
-                url: 'https://artfest.ntu.edu.tw:2025/'
+                url: 'https://artfest.ntu.edu.tw:2025/exhibition/photographic_exhibition'
             },
         ]
       },
@@ -129,7 +129,7 @@ export const buildings: Building[] = [
             {
                 name: '潮起 - 性慾．癒',
                 intro: '敞開心胸，正視性慾',
-                url: 'https://artfest.ntu.edu.tw:2025/'
+                url: 'https://artfest.ntu.edu.tw:2025/exhibition/'
             },
         ]
       },
@@ -146,7 +146,7 @@ export const buildings: Building[] = [
             {
                 name: '無量空處 ＃互動式人格測驗',
                 intro: '來感受一下人格魅力',
-                url: 'https://artfest.ntu.edu.tw:2025/'
+                url: 'https://artfest.ntu.edu.tw:2025/exhibition/'
             },
         ]
       },
@@ -163,17 +163,17 @@ export const buildings: Building[] = [
             {
                 name: '陶土工作坊',
                 intro: '歡迎來捏陶',
-                url: 'https://artfest.ntu.edu.tw:2025/'
+                url: 'https://artfest.ntu.edu.tw:2025/exhibition/'
             },
             {
                 name: '李仁燿陶藝家展覽',
                 intro: '展覽讚',
-                url: 'https://artfest.ntu.edu.tw:2025/'
+                url: 'https://artfest.ntu.edu.tw:2025/exhibition/'
             },
             {
                 name: '浪潮 30 : 潮映',
                 intro: '潮映',
-                url: 'https://artfest.ntu.edu.tw:2025/'
+                url: 'https://artfest.ntu.edu.tw:2025/exhibition/'
             },
         ]
       },
@@ -201,7 +201,7 @@ export const buildings: Building[] = [
             {
                 name: '潮差 - 失衡',
                 intro: '人總是有不如意之事',
-                url: 'https://artfest.ntu.edu.tw:2025/'
+                url: 'https://artfest.ntu.edu.tw:2025/exhibition/'
             },
         ]
       },
@@ -240,7 +240,7 @@ export const buildings: Building[] = [
             {
                 name: '潮之外 - 錯位與形變',
                 intro: '潮之外, 城之內',
-                url: 'https://artfest.ntu.edu.tw:2025/'
+                url: 'https://artfest.ntu.edu.tw:2025/exhibition/'
             },
         ]
       },

@@ -1,5 +1,5 @@
 export interface Exhibition {
-  id: number;
+  id: string;
   title: string;
   subtitle: string;
   team: string[];
@@ -20,7 +20,7 @@ export interface Exhibition {
 
 export const exhibitions: Exhibition[] = [
   {
-    "id": 1,
+    "id": "photographic_exhibition",
     "title": "潮間帶",
     "subtitle": "影像展",
     "team": [

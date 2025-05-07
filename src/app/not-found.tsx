@@ -21,7 +21,6 @@ export default function BlogNotFound() {
         boxShadow: "inset 0 10px 20px -10px rgba(0,0,0,0.5), inset 0 -10px 20px -10px rgba(0,0,0,0.5)"
       }}
     >
-      {/* 水花動畫圖層 */}
       <motion.h2
         className="text-xl md:text-2xl font-semibold text-gray-600 mb-4 z-20"
         initial={{ opacity: 0 }}

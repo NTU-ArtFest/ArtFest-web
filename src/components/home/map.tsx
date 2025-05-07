@@ -160,8 +160,18 @@ export default function ModelViewer() {
         if (activeBuildingname) {
             const building = module.buildings.find(b => b.name === activeBuildingname);
             if (building) {
-                setBuildingInfo(building.info);
-                setIsBegin(false)
+              const base = typeof window !== "undefined" ? window.location.origin : "";
+              // 替換每個 activity 的 url 前綴
+              const infoWithLocalUrl = {
+                ...building.info,
+                activities: building.info.activities.map(act => ({
+                  ...act,
+                  url: act.url.replace(/^https?:\/\/[^/]+/, base)
+                }))
+              };
+
+              setBuildingInfo(infoWithLocalUrl);
+              setIsBegin(false)
             } else {
                 setBuildingInfo(null);
             }

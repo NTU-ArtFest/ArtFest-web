@@ -121,7 +121,7 @@ export default function Exhibition({ data }: ExhibitionProps) {
       <div className="relative z-10 py-12 md:py-16 bg-gradient-to-b from-black to-gray-900">
         <div className="container mx-auto px-6">
           <h2 className="text-xl md:text-3xl font-light mb-10 md:mb-16 tracking-wider text-center uppercase">作品展示</h2>
-          {data.works.map((work: Work , idx:Number) => (
+          {data.works.map((work: Work , idx:number) => (
             <div className={`max-w-6xl mx-auto ${idx !== data.works.length - 1 ? 'mb-16 md:mb-24' : ''}`} key={work.title}>
               <div className="flex flex-col lg:flex-row items-center lg:items-start gap-8 md:gap-12">
                 {/* 作品圖片 */}
