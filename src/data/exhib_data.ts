@@ -64,7 +64,7 @@ export const exhibitions: Exhibition[] = [
         ]
       }
     ],
-    "copyright": "© 2025 《潮間帶》影像展 | 臺大藝術季團隊"
+    "copyright": "© 2025 《潮間帶》影像展 | 第三十屆臺大藝術季籌備團隊"
   }
     
 ];
