@@ -42,7 +42,7 @@ export const buildings: Building[] = [
       label: '1', 
       info: { 
         name: '台大圖書館', 
-        desc: '台大圖書館是校內最大的圖書館，收藏豐富的學術資源與珍貴文獻。建築設計莊嚴典雅，為學生提供安靜的閱讀與研究環境。',
+        desc: '拱窗映椰林，藏書如海，午後陽光灑落書桌，靜靜陪伴每段求知時光',
         activities: []
       },
       offset: [0, 1, 0]
@@ -53,21 +53,21 @@ export const buildings: Building[] = [
       label: '2', 
       info: { 
         name: '振興草皮', 
-        desc: '這諾大的草皮肯定就是要用來躺的啊',
+        desc: '綠地寬廣，陽光下常見青春奔跑，是校園裡最自在的呼吸',
         activities: [
             {
                 name: '開幕式',
-                intro: '開幕式很棒',
+                intro: '在潮汐漲退間，我們持續漂流，透過不斷流動湧起的情緒，感受自我在不斷變化的世界裡存在',
                 url: 'https://artfest.ntu.edu.tw:2025/exhibition/'
             },
             {
                 name: '浪潮 30 動態地景藝術',
-                intro: '地景藝術讚',
+                intro: '《觀潮亭》邀請人們駐足、凝視，重新與自己在時間與生命的流動裡相遇。',
                 url: 'https://artfest.ntu.edu.tw:2025/exhibition/'
             },
             {
                 name: '閉幕式',
-                intro: '閉幕式更棒',
+                intro: '藝術的浪潮逐漸退去，餘韻仍在空氣中迴盪。讓我們用聲音與影像，寫下藝術季最溫柔的句點。',
                 url: 'https://artfest.ntu.edu.tw:2025/exhibition/'
             },
         ]
@@ -80,21 +80,21 @@ export const buildings: Building[] = [
       label: '3', 
       info: { 
         name: '第一學生活動中心', 
-        desc: '第一學生宿舍是台大歷史最悠久的學生宿舍之一，提供舒適的住宿環境。宿舍內設有完善的生活設施，為學生提供良好的住宿體驗。',
+        desc: '社團齊聚，樓內總有笑語與音樂飄散，青春在這裡發酵',
         activities: [
             {
                 name: '公園散步地圖',
-                intro: '來散散步吧',
+                intro: '看完了靜態的展覽，想參加更動態的活動？偷偷跟你說，公館散步地圖的活動開始了！',
                 url: 'https://artfest.ntu.edu.tw:2025/exhibition/'
             },
             {
                 name: '子題展覽',
-                intro: '展覽讚',
+                intro: '子提包涵延續、我們、傳遞、引力，帶領你在茫茫浪潮中找到屬於你的引流',
                 url: 'https://artfest.ntu.edu.tw:2025/exhibition/'
             },
             {
                 name: '石尚玩家 ＃飾品手作工作方',
-                intro: '玩石頭囉',
+                intro: '我們每個人都像一塊石頭，從最初的粗獷到後來的圓潤，在時間的打磨與環境的淬鍊下逐漸成形，最終找到屬於自己的模樣。',
                 url: 'https://artfest.ntu.edu.tw:2025/exhibition/'
             },
         ]
@@ -107,11 +107,11 @@ export const buildings: Building[] = [
       label: '4', 
       info: { 
         name: '外教中心', 
-        desc: '享受置身於浪潮的寧靜之旅',
+        desc: '異國語言與故事交錯，走廊裡總有不同語調的夢想',
         activities: [
             {
                 name: '潮間帶影像展',
-                intro: '沈浸於浪潮的薰陶',
+                intro: '小小的我們在陸地邊界，努力學習，逐漸地找到我們的特質、我們的生存法則。而你，具備什麼特質呢？',
                 url: 'https://artfest.ntu.edu.tw:2025/exhibition/photographic_exhibition'
             },
         ]
@@ -124,11 +124,11 @@ export const buildings: Building[] = [
       label: '5',
       info: { 
         name: '新生教學館',
-        desc: '新生專為大一新生設計，提供現代化的住宿環境與完善的生活設施。宿舍管理嚴謹，並有導師駐點輔導，幫助新生適應大學生活。',
+        desc: '教室明亮，討論聲此起彼落，知識在晨光裡悄悄生長',
         activities: [
             {
                 name: '潮起 - 性慾．癒',
-                intro: '敞開心胸，正視性慾',
+                intro: '以理解、尊重與包容，正視被社會視為禁忌的性慾，從而找到屬於自己的平衡點。',
                 url: 'https://artfest.ntu.edu.tw:2025/exhibition/'
             },
         ]
@@ -141,7 +141,7 @@ export const buildings: Building[] = [
       label: '6',
       info: { 
         name: '台大體育館（舊體）',
-        desc: '台大體育館是校內最大的室內運動場所，設有多功能運動場地及專業設備。定期舉辦校內外體育賽事，也是學生體育課程的主要場地。',
+        desc: '球場回響著加油聲，汗水與活力在這裡留下足跡，青春的記憶在這裡交織',
         activities: [
             {
                 name: '無量空處 ＃互動式人格測驗',
@@ -158,16 +158,16 @@ export const buildings: Building[] = [
       label: '7',
       info: { 
         name: '華南銀行',
-        desc: '大家要多光顧華南銀行歐！',
+        desc: '玻璃窗後是忙碌的身影，學生的第一張金融卡從這裡開始',
         activities: [
             {
                 name: '陶土工作坊',
-                intro: '歡迎來捏陶',
+                intro: '與臺大陶藝社攜手合作，邀請創辦人李仁燿陶藝家親自帶領，帶你動手捏製專屬的陶藝作品！',
                 url: 'https://artfest.ntu.edu.tw:2025/exhibition/'
             },
             {
                 name: '李仁燿陶藝家展覽',
-                intro: '展覽讚',
+                intro: '想親眼見到李仁燿陶藝家的作品嗎？快來看展吧',
                 url: 'https://artfest.ntu.edu.tw:2025/exhibition/'
             },
             {
@@ -179,24 +179,14 @@ export const buildings: Building[] = [
       },
       offset: [0, 1, 0]
     },
-    // {
-    //   name: 'clock',
-    //   real_name: '傅鐘',
-    //   label: '8',
-    //   info: { 
-    //     name: '傅鐘',
-    //     desc: '台大校鐘是校園的地標之一，也是學生約會集合的熱門地點。每到整點報時，悠揚的鐘聲迴盪在校園中，成為台大特有的聲音記憶。',
-    //     activities: []
-    //   },
-    //   offset: [0, 1, 0]
-    // },
+
     {
       name: '二活',
       real_name: '第二學生活動中心',
       label: '9',
       info: { 
         name: '第二學生活動中心',
-        desc: '整棟樓乘載了學生的一切，笑聲，打鬧，淚水，歡笑，都將成為了這棟樓的回憶',
+        desc: '整棟樓乘載了無數青春回憶，笑聲，打鬧，淚水，歡笑，都將成為了這棟樓的回憶',
         activities: [
             {
                 name: '潮差 - 失衡',
@@ -207,7 +197,46 @@ export const buildings: Building[] = [
       },
       offset: [0, 1, 0]
     },
+    {
+      name: '水源',
+      real_name: '水源市場',
+      label: '12',
+      info: { 
+        name: '水源市場',
+        desc: '人聲鼎沸，飯香四溢，校園生活的日常滋味全在這',
+        activities: [
+            {
+                name: '潮之外 - 錯位與形變',
+                intro: '外在社會與內在的自我互相牽絆拉扯，伴隨痛苦與自我懷疑，我們逐步摸索出自己最舒適的時區。然而，這真的「正常」嗎？',
+                url: 'https://artfest.ntu.edu.tw:2025/exhibition/'
+            },
+        ]
+      },
+      offset: [-5, 1, 3]
+    },
     // {
+    //   name: 'lake',
+    //   real_name: '醉月湖',
+    //   label: '13',
+    //   info: { 
+    //     name: '醉月湖',
+    //     desc: '醉月湖是台大校園內最著名的景點之一，湖畔環境優美，是學生休閒、約會的理想場所。湖中小島與周圍綠樹相映成趣，四季景色各有特色。',
+    //     activities: []
+    //   },
+    //   offset: [-10, 1, -6]
+    // }
+        // {
+    //   name: 'clock',
+    //   real_name: '傅鐘',
+    //   label: '8',
+    //   info: { 
+    //     name: '傅鐘',
+    //     desc: '台大校鐘是校園的地標之一，也是學生約會集合的熱門地點。每到整點報時，悠揚的鐘聲迴盪在校園中，成為台大特有的聲音記憶。',
+    //     activities: []
+    //   },
+    //   offset: [0, 1, 0]
+    // },
+        // {
     //   name: 'gate',
     //   real_name: '校門',
     //   label: '10',
@@ -229,32 +258,4 @@ export const buildings: Building[] = [
     //   },
     //   offset: [0, 1, 0]
     // },
-    {
-      name: '水源',
-      real_name: '水源市場',
-      label: '12',
-      info: { 
-        name: '水源市場',
-        desc: '校內市集匯集多家餐廳、小吃及便利商店，提供多元的飲食選擇。是學生用餐、購物及社交的熱門場所，尤其在午餐時間特別熱鬧。',
-        activities: [
-            {
-                name: '潮之外 - 錯位與形變',
-                intro: '潮之外, 城之內',
-                url: 'https://artfest.ntu.edu.tw:2025/exhibition/'
-            },
-        ]
-      },
-      offset: [-5, 1, 3]
-    },
-    // {
-    //   name: 'lake',
-    //   real_name: '醉月湖',
-    //   label: '13',
-    //   info: { 
-    //     name: '醉月湖',
-    //     desc: '醉月湖是台大校園內最著名的景點之一，湖畔環境優美，是學生休閒、約會的理想場所。湖中小島與周圍綠樹相映成趣，四季景色各有特色。',
-    //     activities: []
-    //   },
-    //   offset: [-10, 1, -6]
-    // }
   ];

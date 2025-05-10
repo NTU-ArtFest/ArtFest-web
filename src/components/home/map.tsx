@@ -34,9 +34,6 @@ function Markers({ scene, onActiveBuilding }: {
 }) {
   const { camera } = useThree();
   const markersRef = useRef<THREE.Group[]>([]);
-
-  const textureLoader = useMemo(() => new THREE.TextureLoader(), []);
-  const texture = useMemo(() => textureLoader.load('/'), []);   
   
   useFrame(() => {
     markersRef.current.forEach(marker => {
@@ -81,11 +78,10 @@ function Markers({ scene, onActiveBuilding }: {
               }}
               renderOrder={999}
             >
-            <planeGeometry args={[10, 10]} />
+            <planeGeometry args={[6, 6]} />
             <meshBasicMaterial 
-              map={texture}
               transparent={true}
-              opacity={1} 
+              opacity={0} 
               depthTest={false} 
               side={THREE.DoubleSide}
             />
@@ -103,8 +99,7 @@ function ModelWithMarkers({ onActiveBuilding }: {
   onActiveBuilding: (info: string | null) => void; 
 }) {
   const { scene } = useGLTF('/MAP.glb');
-  // (scene as unknown as THREE.Scene).background = new THREE.Color(0x000000); // 天空藍
-  
+
   return (
     <group>
       <primitive object={scene} scale={[30, 30, 30]} />
@@ -136,8 +131,8 @@ function LightController() {
       ref={lightRef}
       intensity={4}
       castShadow
-      shadow-mapSize-width={2048}
-      shadow-mapSize-height={2048}
+      shadow-mapSize-width={1024}
+      shadow-mapSize-height={1024}
     />
   );
 }
@@ -180,6 +175,21 @@ export default function ModelViewer() {
         }
     }, [activeBuildingname]);
 
+
+    const controlsProps = useMemo(() => ({
+      minPolarAngle: -Math.PI / 2,
+      maxPolarAngle: 2 * (Math.PI / 5),
+      enablePan: true,
+      enableDamping: true,
+      dampingFactor: 0.05,
+      minDistance,
+      maxDistance,
+      autoRotate: isAutoRotating,
+      autoRotateSpeed: 1,
+      onStart: () => setIsAutoRotating(false),
+      onEnd: () => setIsAutoRotating(true)
+    }), [isAutoRotating, minDistance, maxDistance]);
+
   return (
     <div className="w-full h-screen rounded-lg relative h-[490px] md:h-[75vh] shadow-2xl backdrop-blur-sm">
       <div className="absolute top-6 left-6 z-20 shadow-lg">
@@ -198,70 +208,53 @@ export default function ModelViewer() {
                   <div className="font-bold text-base mt-5">{activity.name}</div>
                   <div className="text-gray-700 mb-1">{activity.intro}</div>
                   <Link href={activity.url} className="hover:text-gray-900 underline text-gray-700 ">
-                    點我帶你去玩
+                    查看展覽資訊
                   </Link>
                 </div>
               ))}
             </div>
         )}
       </div>
-      
-      <Canvas 
-        camera={{ position: [-100, 20, 120], fov: 40}}
-        onPointerMissed={() => {
-          setActiveBuildingname(null);
-          setIsBegin(false)
-        }}
-        gl={{ 
-          alpha: true,
-          antialias: true,
-          preserveDrawingBuffer: true,
-          premultipliedAlpha: false
-        }}
-        onCreated={({ gl }) => {
-          gl.setClearColor(0x000000, 0);
-          gl.setPixelRatio(window.devicePixelRatio);
-        }}
-        style={{ background: 'transparent' }}
-      >
-        
-        {/* <ambientLight intensity={1} />
-        <directionalLight position={[2, 2, 2]} intensity={2} />
-        
-        <Environment preset="city" background={false} />
-        <Suspense fallback={null}>
-          <ModelWithMarkers  onActiveBuilding={setActiveBuildingname}/>
-        </Suspense> */}
-        <ambientLight intensity={0.5} />
-        <LightController />
-        <Suspense fallback={null}>
-          <Environment preset="sunset" />
-          <ModelWithMarkers onActiveBuilding={setActiveBuildingname} />
-        </Suspense>
-        <ContactShadows
-          position={[0, -1, 0]}
-          opacity={0.5}
-          width={20}
-          height={20}
-          blur={2}
-        />
+      <Suspense fallback={<div>Loading...</div>}>
+        <Canvas 
+          camera={{ position: [-100, 20, 120], fov: 40}}
+          onPointerMissed={() => {
+            setActiveBuildingname(null);
+            setIsBegin(false)
+          }}
+          gl={{ 
+            alpha: true,
+            antialias: true,
+            preserveDrawingBuffer: true,
+            premultipliedAlpha: false
+          }}
+          onCreated={({ gl }) => {
+            gl.setClearColor(0x000000, 0);
+            gl.setPixelRatio(window.devicePixelRatio);
+          }}
+          style={{ background: 'transparent' }}
+        >
+          
+          <ambientLight intensity={0.5} />
+          <LightController />
+          <Suspense fallback={null}>
+            <Environment preset="sunset" />
+            <ModelWithMarkers onActiveBuilding={setActiveBuildingname} />
+          </Suspense>
+          <ContactShadows
+            position={[0, -1, 0]}
+            opacity={0.5}
+            width={20}
+            height={20}
+            blur={2}
+          />  
 
-        <OrbitControls
+          <OrbitControls
+            {...controlsProps}
+          />
 
-          minPolarAngle={-Math.PI / 2}
-          maxPolarAngle={2 * (Math.PI / 5)}
-          enablePan={true}
-          enableDamping={true}
-          dampingFactor={0.05}
-          minDistance={minDistance}
-          maxDistance={maxDistance}
-          autoRotate={isAutoRotating}
-          autoRotateSpeed={1}
-          onStart={() => setIsAutoRotating(false)} 
-          onEnd={() => setIsAutoRotating(true)}   
-        />
-
-      </Canvas>
+        </Canvas>
+      </Suspense>
     </div>
   );
 }

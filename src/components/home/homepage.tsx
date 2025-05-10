@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -47,18 +47,38 @@ export default function Home() {
     // last part 
     const finalBlockRef = useRef<HTMLDivElement>(null);
 
+    const [isVideoLoaded, setIsVideoLoaded] = useState(false);
+
 
     // --- function --- 
+    // 檢測螢幕大小變化
+    useEffect(() => {
+      const checkScreenSize = () => {
+        setIsMobile(window.innerWidth < 768);
+        if (window.innerWidth >= 768) {
+          setIsMenuOpen(false);
+        }
+      };
 
+      // 初始檢查
+      checkScreenSize();
+
+      // 監聽視窗大小變化
+      window.addEventListener('resize', checkScreenSize);
+      
+      // 清理監聽器
+      return () => window.removeEventListener('resize', checkScreenSize);
+    }, []);
     // calculate  alot about opacity
-    const calculateOpacity = () => 0 + scrollY/800; 
+    // const calculateOpacity = () => 0 + scrollY/800; 
+    const calculateOpacity = useCallback(() => 0 + scrollY/800, [scrollY]);
     // const calculateOpacity1 = () => Math.max(0, 1 - scrollY / 500); 
   
     const calculateOpacity2 = () => {
         const scrollY = typeof window !== "undefined" ? window.scrollY : 0;
         return Math.min(0.3 + scrollY / 500, 1);
     };
-    const scrolly_calcultae = () => (minDistance + scrollY * 0.1);
+    const scrolly_calcultae = useCallback(() => (minDistance + scrollY * 0.1), [minDistance, scrollY]);
 
     const CAPTION_LIMIT = 25; // 你想要顯示的最大字數
     const [expandedCaptions, setExpandedCaptions] = useState<{ [key: number]: boolean }>({});
@@ -92,117 +112,40 @@ export default function Home() {
       return () => window.removeEventListener("scroll", handleScroll);
     }, []);
     
-    // gsap
     useEffect(() => {
-
       if (typeof window === 'undefined') return;
       
       const ctx = gsap.context(() => {
-
-        // from left
-        gsap.from(".text-left1", {
-          x: -100,
-          opacity: 0,
-          duration: 0.8,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: ".text-left1",
-            start: "top 60%", 
-            toggleActions: "play", 
-            markers: false   
-          }
-        });
-        
-        // from right
-        gsap.from(".text-right1", {
-          x: 100,
-          opacity: 0,
-          duration: 0.8,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: ".text-right1",
-            start: "top 60%",
-            toggleActions: "play ",
-            markers: false
-          }
-        });
-        
-      // from left
-        gsap.from(".text-left2", {
-          x: -100,
-          opacity: 0,
-          duration: 0.8,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: ".text-left2",
-            start: "top 60%", 
-            toggleActions: "play", 
-            markers: false   
-          }
-        });
-        // from right
-        gsap.from(".text-right2", {
-          x: 100,
-          opacity: 0,
-          duration: 0.8,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: ".text-right2",
-            start: "top 60%", 
-            toggleActions: "play", 
-            markers: false    
-          }
-        });
-        gsap.from(".text-left3", {
-          x: 100,
-          opacity: 0,
-          duration: 0.8,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: ".text-left3",
-            start: "top 60%", 
-            toggleActions: "play", 
-            markers: false    
-          }
-        });
-
-        gsap.from(".text-right3", {
-          x: 100,
-          opacity: 0,
-          duration: 0.8,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: ".text-right3",
-            start: "top 60%", 
-            toggleActions: "play", 
-            markers: false    
-          }
+        // 批量處理動畫，減少實例數量
+        const elements = [
+          { class: ".text-left1", x: -100 },
+          { class: ".text-right1", x: 100 },
+          { class: ".text-left2", x: -100 },
+          { class: ".text-right2", x: 100 },
+          { class: ".text-left3", x: 100 },
+          { class: ".text-right3", x: 100 }
+        ];
+    
+        elements.forEach(({ class: className, x }) => {
+          gsap.from(className, {
+            x,
+            opacity: 0,
+            duration: 0.8,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: className,
+              start: "top 60%",
+              toggleActions: "play",
+            }
+          });
         });
       }, containerRef);
       
-      return () => ctx.revert(); 
+      return () => ctx.revert();
     }, []);
-
     
 
-    // 檢測螢幕大小變化
-    useEffect(() => {
-      const checkScreenSize = () => {
-        setIsMobile(window.innerWidth < 768);
-        if (window.innerWidth >= 768) {
-          setIsMenuOpen(false);
-        }
-      };
-
-      // 初始檢查
-      checkScreenSize();
-
-      // 監聽視窗大小變化
-      window.addEventListener('resize', checkScreenSize);
-      
-      // 清理監聽器
-      return () => window.removeEventListener('resize', checkScreenSize);
-    }, []);
+    
   
     
     // last part 
@@ -363,15 +306,23 @@ export default function Home() {
   
         <div className="w-screen h-screen fixed top-0 left-0 z-2">
             <section id="hero" className="relative h-screen text-white">
-                <video
-                    autoPlay
-                    loop
-                    muted
-                    className="absolute top-0 left-0 w-full h-full object-cover z-0"
-                >
-                    <source src="/SeaWave.mov" type="video/mp4" />
-                </video>
-
+            {!isVideoLoaded && (
+              <div className="absolute inset-0 bg-gray-900 animate-pulse" />
+            )}
+              <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                onLoadedData={() => setIsVideoLoaded(true)}
+                className={`
+                  absolute top-0 left-0 w-full h-full object-cover z-0
+                  transition-opacity duration-300
+                  ${isVideoLoaded ? 'opacity-100' : 'opacity-0'}
+                `}
+              >
+                <source src="/SeaWave.mp4" type="video/mp4" />
+              </video>
                 <div
                     className={`absolute inset-0 bg-black transition-opacity duration-300 z-10`}
                     style={{
@@ -388,7 +339,6 @@ export default function Home() {
             className="w-full absolute top-0 left-0 h-[5400px]"  // 他預設只有一個 h-screen 不能有 h-full
             style={{
               backgroundImage: `url('/bg.png')`,
-              backgroundRepeat: 'repeat-y',
               backgroundSize: '100% auto',
               opacity: opacity,
               transition: "opacity 0.3s ease",
@@ -429,7 +379,7 @@ export default function Home() {
                         </div>
                     </div>
                     <div className="w-full absolute top-0 left-0" >
-                </div>
+                    </div>
 
                 </div>
 
@@ -546,10 +496,6 @@ export default function Home() {
                     ✨這是一場找尋的旅程，也是一場了解自己的冒險
                   </p>
                 </div>
-                  {/* <div className='h-[200px]'>
-                    <h2 className="text-center text-[25px] md:text-[50px] font-bold ">你又屬於哪個潮間帶生物呢</h2>
-                  </div>
-                   */}
                   <Swiper
                   modules={[Autoplay, EffectCoverflow, Navigation]}
                   effect="coverflow"
@@ -584,8 +530,9 @@ export default function Home() {
                           width={500}
                           // fill
                           sizes="10vw"
+                          loading="lazy" // 非首屏圖片使用懶加載
                           className="object-cover object-center23 scale-100 hover:scale-[1.2] transition duration-300"
-                          priority
+                          // priority
                         />
                       <div className="flex items-center justify-center h-[50px] w-full ">
                           <div>
