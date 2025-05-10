@@ -1,21 +1,23 @@
 export interface Exhibition {
-  id: string;
-  title: string;
-  subtitle: string;
-  team: string[];
-  advisor: string;
-  cooperation: string;
-  media: string;
-  date: string;
-  location: string;
-  quotes: string[];
-  introduction: string[];
-  works: {
-    title: string;
-    image: string;
-    description: string[];
+  id: string;                    // 展覽ID，用於路由和識別
+  title: string;                 // 展覽標題
+  subtitle: string;              // 展覽副標題
+  team: string[];                // 策劃團隊（陣列格式以便多名成員）
+  advisor?: string;              // 指導單位（可選）
+  cooperation?: string;          // 合作單位（可選）
+  media?: string;                // 展覽媒材（可選）
+  date?: string;                 // 展覽時間（可選）
+  location?: string;             // 展覽地點（可選） 
+  quotes: string[];              // 引文（陣列格式便於多段引文）
+  introduction: string[];        // 展覽介紹（陣列格式，每個元素是一個段落）
+  works: {                       // 作品集
+    title: string;               // 作品標題
+    image: string;               // 作品圖片路徑
+    description: string[];       // 作品描述（陣列格式，每個元素是一個段落）
   }[];
-  copyright: string;
+  copyright: string;             // 版權信息
+  videoSrc?: string;             // 影片來源（可選）
+  backgroundImage?: string;      // 背景圖片（可選，預設使用sea.jpg）
 }
 
 export const exhibitions: Exhibition[] = [
@@ -64,8 +66,8 @@ export const exhibitions: Exhibition[] = [
         ]
       }
     ],
-    "copyright": "© 2025 《潮間帶》影像展 | 臺大藝術季團隊"
+    "copyright": "© 2025 《潮間帶》影像展 | 臺大藝術季團隊",
+    "videoSrc": "/exhibition/tidal.mp4",
+    "backgroundImage": "/exhibition/sea.jpg"
   }
-    
 ];
-

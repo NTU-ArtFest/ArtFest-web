@@ -203,7 +203,7 @@ export default function Home() {
                 <span className="text-white">|</span>
 
                 <div className="flex space-x-6">
-                  {["ARG", "Polis", "Who-Art-You"].map((item) => (
+                  {["ARG 另類實境遊戲", "Polis 議題討論", "Who Art You 心理測驗"].map((item) => (
                     <Link
                       key={item}
                       href={`/${item.toLowerCase().replace(" ", "-")}`}
