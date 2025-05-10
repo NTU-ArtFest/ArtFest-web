@@ -10,7 +10,7 @@ export default function GravityExhibition() {
           <div className="absolute inset-0 bg-black z-0"></div>
           <img
             className="w-full h-full object-cover absolute inset-0 z-0 opacity-60"
-            src="/Gravity/1.png"
+            src="/all/Gravity/1.png"
             alt="Exhibition Background"
           />
           
@@ -124,7 +124,7 @@ export default function GravityExhibition() {
               {/* 作品1 */}
               <div className="overflow-hidden rounded-lg">
                 <img 
-                  src="/Gravity/1.png" 
+                  src="/all/Gravity/1.png" 
                   alt="Gravity Exhibition 1" 
                   className="w-full aspect-[4/3] object-cover transition-transform duration-700 hover:scale-105"
                 />
@@ -133,7 +133,7 @@ export default function GravityExhibition() {
               {/* 作品2 */}
               <div className="overflow-hidden rounded-lg">
                 <img 
-                  src="/Gravity/2.png" 
+                  src="/all/Gravity/2.png" 
                   alt="Gravity Exhibition 2" 
                   className="w-full aspect-[4/3] object-cover transition-transform duration-700 hover:scale-105"
                 />
@@ -142,7 +142,7 @@ export default function GravityExhibition() {
               {/* 作品3 */}
               <div className="overflow-hidden rounded-lg">
                 <img 
-                  src="/Gravity/3.png" 
+                  src="/all/Gravity/3.png" 
                   alt="Gravity Exhibition 3" 
                   className="w-full aspect-[4/3] object-cover transition-transform duration-700 hover:scale-105"
                 />
@@ -151,7 +151,7 @@ export default function GravityExhibition() {
               {/* 作品4 */}
               <div className="overflow-hidden rounded-lg">
                 <img 
-                  src="/Gravity/4.png" 
+                  src="/all/Gravity/4.png" 
                   alt="Gravity Exhibition 4" 
                   className="w-full aspect-[4/3] object-cover transition-transform duration-700 hover:scale-105"
                 />
@@ -160,7 +160,7 @@ export default function GravityExhibition() {
               {/* 作品5 */}
               <div className="overflow-hidden rounded-lg">
                 <img 
-                  src="/Gravity/5.png" 
+                  src="/all/Gravity/5.png" 
                   alt="Gravity Exhibition 5" 
                   className="w-full aspect-[4/3] object-cover transition-transform duration-700 hover:scale-105"
                 />
