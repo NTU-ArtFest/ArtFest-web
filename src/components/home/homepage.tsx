@@ -144,10 +144,6 @@ export default function Home() {
       return () => ctx.revert();
     }, []);
     
-
-    
-  
-    
     // last part 
     useEffect(() => {
       if (!finalBlockRef.current) return;
@@ -175,6 +171,13 @@ export default function Home() {
       { id: 4, description: "跳跳魚", color: "bg-yellow-500", caption: "跳跳魚 ( ENF ) 是潮間帶的活力高手，能在水中游動，也能在泥灘上靈活跳躍，像個不受拘束的探險家", url: '/who-art-you/ESJ001_without_bg.png' },
       { id: 5, description: "海兔", color: "bg-purple-500", caption: "海兔 ( INF ) 是海底的神秘遊俠，柔軟的身軀隨著海流飄動，優雅穿梭於珊瑚與沙地之間。", url: '/who-art-you/INF001_without_bg.png' },
     ];
+
+    const navItems = [
+      { id: "ARG", desc: "另類實境解謎" },
+      { id: "Polis", desc: "議題討論" },
+      { id: "Who Art You", desc: "心理測驗" }
+    ];
+    const [activeTooltip, setActiveTooltip] = useState<string | null>(null);
   
     return (
 
@@ -203,15 +206,32 @@ export default function Home() {
                 <span className="text-white">|</span>
 
                 <div className="flex space-x-6">
-                  {["ARG 另類實境遊戲", "Polis 議題討論", "Who Art You 心理測驗"].map((item) => (
-                    <Link
-                      key={item}
-                      href={`/${item.toLowerCase().replace(" ", "-")}`}
-                      className="text-white hover:text-gray-300 hover:scale-105 transition-transform"
+                {navItems.map((item) => ( 
+                  <Link
+                  href={`/${item.id.toLowerCase().replace(/\s+/g, "-")}`}
+                  className="text-white hover:text-gray-300 hover:scale-105 transition-transform"
+                  onMouseEnter={() => setActiveTooltip(item.id)}
+                  onMouseLeave={() => setActiveTooltip(null)}
+                  key={item.id}
+                >
+                <div 
+                  key={item.id}
+                  className="relative flex items-center group"
+                >
+                  {item.id}
+                  
+                  {activeTooltip === item.id && (
+                    <div
+                      className='overflow-hidden ml-2 w-0 group-hover:w-auto transition-all duration-300 ease-in-out flex items-center hover:text-gray-300 hover:scale-105 transition-transform'
                     >
-                      {item}
-                    </Link>
-                  ))}
+                      <span className="text-white text-sm ">
+                        {item.desc}
+                      </span>
+                    </div>
+                  )}
+                </div>
+                </Link>
+              ))}
                 </div>
                 <div className="flex items-center space-x-4">
                   <Link href="https://www.instagram.com/ntuartfest/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-300 hover:scale-110 transition-transform">
@@ -275,16 +295,32 @@ export default function Home() {
                   }`}
                 >
                   <div className="flex flex-col items-center space-y-4 py-2">
-                    {["ARG", "Polis", "Who-Art-You"].map((item) => (
-                      <Link
-                        key={item}
-                        href={`/${item.toLowerCase().replace(" ", "-")}`}
-                        className="text-white hover:text-gray-300 w-full text-center py-2"
-                        onClick={() => setIsMenuOpen(false)}
-                      >
-                        {item}
-                      </Link>
-                    ))}
+                  {navItems.map((item) => ( 
+                  <Link
+                  href={`/${item.id.toLowerCase().replace(/\s+/g, "-")}`}
+                  className="text-white hover:text-gray-300 hover:scale-105 transition-transform"
+                  onMouseEnter={() => setActiveTooltip(item.id)}
+                  onMouseLeave={() => setActiveTooltip(null)}
+                  key={item.id}
+                >
+                <div 
+                  key={item.id}
+                  className="relative flex items-center group"
+                >
+                  {item.id}
+                  
+                  {activeTooltip === item.id && (
+                    <div
+                      className='overflow-hidden ml-2 w-0 group-hover:w-auto transition-all duration-300 ease-in-out flex items-center hover:text-gray-300 hover:scale-105 transition-transform'
+                    >
+                      <span className="text-white text-sm ">
+                        {item.desc}
+                      </span>
+                    </div>
+                  )}
+                </div>
+                </Link>
+              ))}
                   </div>
                   <div className="flex items-center space-x-6 pt-5 pb-1 border-t border-gray-600 w-full justify-center mt-2">
                       <Link href="https://www.instagram.com/ntuartfest/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-300">
