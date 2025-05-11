@@ -37,14 +37,14 @@ export default function Exhibition() {
         <div className="md:hidden relative z-20 h-screen w-full flex flex-col">
           {/* 左上標題 - 縮小字體 */}
           <div className="self-start mt-8 ml-6">
-            <h1 className="text-2xl sm:text-4xl font-bold tracking-wider mb-1 uppercase">潮間帶</h1>
-            <p className="text-xs sm:text-base tracking-wide">影像展</p>
+            <h1 className="text-2xl sm:text-4xl font-bold tracking-wider mb-1 uppercase">《潮間帶》影像展</h1>
+            <p className="text-xs sm:text-base tracking-wide">Intertidal Photography Exhibition</p>
           </div>
                     
           {/* 右下展覽資訊 - 調整文字大小和位置以符合邊框 */}
           <div className="absolute bottom-6 right-6 text-right text-xs space-y-1">
-            <p className="mb-1"><span className="font-bold text-[10px]">策劃團隊</span><br />
-            <span className="text-[8px]">
+            <p className="mb-1"><span className="font-bold text-[8px]">策劃團隊</span><br />
+            <span className="text-[6px]">
             游善喆、蔡政峰、劉韋杰<br />
             李宥辰、黃楷翔、邱子芹<br />
             涂峻豪、賴晉億、王厚仁<br />
@@ -52,20 +52,20 @@ export default function Exhibition() {
             高翊茗、林昱安
             </span></p>
             
-            <p><span className="font-bold text-[10px]">指導單位</span><br />
-            <span className="text-[8px]">跨領域藝術課程 — 陶亞倫教授、金天尹助教</span></p>
+            <p><span className="font-bold text-[8px]">指導單位</span><br />
+            <span className="text-[6px]">跨領域藝術課程 — 陶亞倫教授、金天尹助教</span></p>
             
-            <p><span className="font-bold text-[10px]">合作單位</span><br />
-            <span className="text-[8px]">國立臺灣大學 戲劇學系</span></p>
+            <p><span className="font-bold text-[8px]">合作單位</span><br />
+            <span className="text-[6px]">國立臺灣大學 戲劇學系</span></p>
             
-            <p><span className="font-bold text-[10px]">展覽媒材</span><br />
-            <span className="text-[8px]">生成式互動影像裝置</span></p>
+            <p><span className="font-bold text-[8px]">展覽媒材</span><br />
+            <span className="text-[6px]">生成式互動影像裝置</span></p>
             
-            <p><span className="font-bold text-[10px]">展覽時間</span><br />
-            <span className="text-[8px]">5/6-5/15 18:30-21:30</span></p>
+            <p><span className="font-bold text-[8px]">展覽時間</span><br />
+            <span className="text-[6px]">5/6-5/15 18:30-21:30</span></p>
             
-            <p><span className="font-bold text-[10px]">展覽地點</span><br />
-            <span className="text-[8px]">國立臺灣大學 外教中心實驗劇場</span></p>
+            <p><span className="font-bold text-[8px]">展覽地點 </span><br />
+            <span className="text-[6px]">國立臺灣大學 外教中心實驗劇場</span></p>
           </div>
         </div>
 
@@ -75,8 +75,8 @@ export default function Exhibition() {
           {/* 左上標題與右下資訊 */}
           <div className="relative h-screen w-full">
             <div className="absolute top-12 left-12">
-              <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold tracking-wider mb-2">潮間帶</h1>
-              <p className="text-lg lg:text-xl xl:text-2xl font-light tracking-wide">影像展</p>
+              <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold tracking-wider mb-2">《潮間帶》影像展</h1>
+              <p className="text-lg lg:text-xl xl:text-2xl font-light tracking-wide">Intertidal Photography Exhibition</p>
             </div>
             
             {/* 右下展覽資訊 - 調整出血位置和文字大小 */}
@@ -131,6 +131,25 @@ export default function Exhibition() {
         </div>
       </div>
 
+      {/* 引文區塊 - 調整文字大小 */}
+      <div className="relative z-10 py-10 md:py-14 bg-black">
+        <div className="container mx-auto px-6">
+          <div className="max-w-3xl mx-auto text-xs md:text-base leading-relaxed space-y-5 font-light">
+            <p className="text-center italic">
+              NTU is like an intertidal zone — we are closer to the spirit of this era than anyone else. 
+              <br /><br />
+              Yet, at the same time, it is rich in nutrients — a transitional zone where light rivers flow toward the steady ocean. 
+              <br /><br />
+            </p>
+            <p className="text-center italic">
+            The great planet pulls the tides of the entire world, while we, small as we are, stand at the edge of the land, striving to learn and gradually discovering our unique traits and survival strategies.
+              <br /><br />
+              And you — what unique qualities do you possess?
+            </p>
+          </div>
+        </div>
+      </div>
+
       {/* 展覽介紹區塊 - 調整文字大小 */}
       <div className="relative z-10 py-10 md:py-14 bg-black">
         <div className="container mx-auto px-6">
@@ -150,10 +169,28 @@ export default function Exhibition() {
         </div>
       </div>
 
+      {/* Exhibition Introduction Section - Adjust text size */}
+      <div className="relative z-10 py-10 md:py-14 bg-black">
+        <div className="container mx-auto px-6">
+          <h2 className="text-base md:text-2xl font-light mb-6 md:mb-10 tracking-wider text-center uppercase">Exhibition Introduction</h2>
+          <div className="max-w-3xl mx-auto text-xs md:text-base leading-relaxed space-y-4 font-light">
+            <p className="text-left">
+              The Intertidal Photography exhibition centers on generative art, using its randomness and interactivity to explore the many "irregularities" beneath the rhythm of the tides. The viewer's body and behavior disrupt the regular patterns, responding to the tides through fluid movements, gazes, and thoughts — making each viewing experience a unique masterpiece.
+            </p>
+            <p className="text-left">
+              This exhibition creates an immersive space in the Experimental Theater of the Foreign Language Teaching and Resource Center, using three walls and floor projections to build a visual environment that envelops the body like the tide. You will walk along the boundary between shimmering waves and flowing information, sensing the elusive connection between self and environment.
+            </p>
+            <p className="text-left">
+              As the gravitational pull of the planet moves the entire ocean, we — small as we are — learn and grow at the edge of the land. And you — in this intertidal zone, you'll discover traits and survival strategies for yourself.
+            </p>
+          </div>
+        </div>
+      </div>
+
       {/* 作品展示區 - 調整文字大小 */}
       <div className="relative z-10 py-10 md:py-14 bg-gradient-to-b from-black to-gray-900">
         <div className="container mx-auto px-6">
-          <h2 className="text-base md:text-2xl font-light mb-8 md:mb-12 tracking-wider text-center uppercase">作品展示</h2>
+          <h2 className="text-base md:text-2xl font-light mb-8 md:mb-12 tracking-wider text-center uppercase">作品展示 Featured Works</h2>
           
           {/* 作品一：光芒中的人們 */}
           <div className="max-w-6xl mx-auto mb-14 md:mb-20">
@@ -222,8 +259,8 @@ export default function Exhibition() {
       {/* 底部版權聲明 */}
       <footer className="relative z-10 py-5 md:py-6 bg-black border-t border-gray-800">
         <div className="container mx-auto px-6">
-          <p className="text-center text-gray-500 text-xs">
-            © 2025 《潮間帶》影像展 | 臺大藝術季團隊
+          <p className="text-center text-gray-500 text-[8pt]">
+            © 2025 臺大藝術季團隊 NTU ARTFEST 30TH
           </p>
         </div>
       </footer>
