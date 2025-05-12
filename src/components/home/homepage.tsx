@@ -436,7 +436,7 @@ export default function  Home() {
                     </div>
                 </div>
 
-                <div className="h-[600px] md:h-[800px] mb-20">
+                <div className="h-[510px] md:h-[800px] mb-20">
                     <div className="w-full mx-auto flex flex-col md:flex-row items-center md:justify-center">
                         <div className="md:w-1/2 md:mt-[200px] mt-20 z-20 flex justify-center">
                             <motion.h2
@@ -509,7 +509,7 @@ export default function  Home() {
 
                     <div className="text-right3 p-8 text-right mb-10">
                       <Link href="/arg" className=" text-lg text-bold text-gray-700 scale-100 hover:text-black hover:font-semibold hover:underline ">
-                          點我解鎖真相 〉〉
+                          點我玩 ARG 來解鎖真相 〉〉
                       </Link>
                     </div>
                     
@@ -566,9 +566,9 @@ export default function  Home() {
                           width={500}
                           // fill
                           sizes="1000vw"
-                          loading="lazy" // 非首屏圖片使用懶加載
+                          // loading="lazy" // 非首屏圖片使用懶加載
                           className="object-cover object-center23 scale-100 hover:scale-[1.2] transition duration-300"
-                          // priority
+                          priority
                         />
                       <div className="flex items-center justify-center h-[50px] w-full ">
                           <div>
@@ -610,7 +610,7 @@ export default function  Home() {
                       </SwiperSlide>
                   ))}
                   </Swiper>
-                  <p className="mt-10 md:mt-1 text-gray-500">&gt;&gt; 走！一起看看<Link href='/who-art-you' className='text-[#ff9500]'> 屬於你的那一隻，是誰？</Link></p>
+                  <p className="mt-10 md:mt-1 text-gray-500">&gt;&gt; 一起來玩<Link href='/who-art-you' className='text-[#ff9500] hover:underline'> Who Art You 吧，看看哪一隻屬於你！</Link></p>
               </section>
     
     
@@ -622,8 +622,8 @@ export default function  Home() {
                   藝術季是眾人們能夠聚集在一起的時機，此刻你我最需要的就是自在地讓思想流動的空間，相信當眾人一起對校園、社會上存在的問題有所思考，甚至一起想解決方法時，是會成就傑作的！
                   </p>
                   <div className="mt-4 px-4 text-center">
-                    <Link href="/polis" className="hover:text-gray-900 underline text-gray-700">
-                      &gt;&gt;  走！我們一起來討論「公共議題」！
+                    <Link href="/polis" className="hover:text-gray-900 hover:underline text-gray-700">
+                      &gt;&gt;  走！我們一起來討論<span className='text-[#ff9500]'>「公共議題」</span>！
                     </Link>
                   </div>
                 </div>

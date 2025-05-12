@@ -100,7 +100,7 @@ export const buildings: Building[] = [
             },
             {
                 name: '延續',
-                intro: '每段延續，都是一次理解的練習',
+                intro: '延續是在記憶與創造之間，持續生成的動態過程',
                 url: 'https://artfest.ntu.edu.tw:2025/exhibition/continuum'
             },
             {
