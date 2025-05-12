@@ -249,17 +249,16 @@ export default function  Home() {
 
               {/* phone navi */}
               <div className="md:hidden flex items-center justify-between">
-                <div className="flex-1"></div> {/* 左側空白區域，用於置中 */}
-                <Link href="/" className="flex-1 text-center text-2xl font-bold text-white">
-                  NTU Artfest
-                </Link>
+                <div className="flex-1"></div>
+                  <Link href="/" className="flex-1 text-center text-2xl font-bold text-white">
+                    <span className="whitespace-nowrap">NTU Artfest</span>
+                  </Link>
                 <div className="flex-1 flex justify-end">
                   <button
                     onClick={() => setIsMenuOpen(!isMenuOpen)}
                     className="text-white focus:outline-none"
                     aria-label="Toggle menu"
                   >
-                    {/* 漢堡選單圖示 */}
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className="h-6 w-6"
@@ -427,7 +426,7 @@ export default function  Home() {
                                 className="text-[28px] md:text-5xl font-bold mb-4 tracking-wider backdrop-blur-sm"
                                 initial={{ opacity: 0 }}
                                 whileInView={{ opacity: 1 }}
-                                viewport={{ once: true, amount: 0.5 }} // 進入一半時觸發，且只觸發一次
+                                viewport={{ once: true, amount: 0.5 }} 
                                 transition={{  duration: 1.2, ease: "easeInOut", delay: 0.2 }}
                               >
                                 看見自己的輪廓
@@ -447,7 +446,7 @@ export default function  Home() {
                                 }}
                                 initial={{ opacity: 0 }}
                                 whileInView={{ opacity: 1 }}
-                                viewport={{ once: true, amount: 0.5 }} // 進入一半時觸發，且只觸發一次
+                                viewport={{ once: true, amount: 0.5 }} 
                                 transition={{  duration: 1.2, ease: "easeInOut", delay: 0.2 }}
                               >
                                 也找到與世界共振的節奏
