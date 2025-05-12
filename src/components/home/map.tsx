@@ -144,7 +144,7 @@ export default function ModelViewer() {
     const [isAutoRotating, setIsAutoRotating] = useState(true);
     const [isBegin, setIsBegin] = useState(true);
     const [isLoading, setIsLoading] = useState(true);
-    const [dots, setDots] = useState('.');
+    const [dots, setDots] = useState('...');
 
     const { width } = useWindowSize();
   
