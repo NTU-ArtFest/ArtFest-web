@@ -95,10 +95,17 @@ function Markers({ scene, onActiveBuilding }: {
 }
 
 
-function ModelWithMarkers({ onActiveBuilding }: { 
+function ModelWithMarkers({ onActiveBuilding, onLoaded}: { 
   onActiveBuilding: (info: string | null) => void; 
+  onLoaded: () => void;
 }) {
   const { scene } = useGLTF('MAP.glb');
+
+  useEffect(() => {
+    if (scene) {
+      onLoaded();
+    }
+  }, [scene, onLoaded]);
 
   return (
     <group>
@@ -144,6 +151,7 @@ export default function ModelViewer() {
     const [isAutoRotating, setIsAutoRotating] = useState(true);
     const [isBegin, setIsBegin] = useState(true);
     const [isLoading, setIsLoading] = useState(true);
+    const [modelLoaded, setModelLoaded] = useState(false);
     const [dots, setDots] = useState('...');
 
     const { width } = useWindowSize();
@@ -152,6 +160,16 @@ export default function ModelViewer() {
     const minDistance = width < 768 ? 120 : 120; 
     const maxDistance = width < 768 ? 350 : 230;
 
+    useEffect(() => {
+    if (modelLoaded) {
+      // 給予一個小延遲確保模型真的渲染完成
+      const timer = setTimeout(() => {
+        setIsLoading(false);
+      }, 1000);
+      return () => clearTimeout(timer);
+    }
+  }, [modelLoaded]);
+  
     useEffect(() => {
       const interval = setInterval(() => {
         setDots(prev => prev.length >= 3 ? '.' : prev + '.');
@@ -255,7 +273,6 @@ export default function ModelViewer() {
           onCreated={({ gl }) => {
             gl.setClearColor(0x000000, 0);
             gl.setPixelRatio(window.devicePixelRatio);
-            setIsLoading(false);
           }}
           style={{ background: 'transparent' }}
         >
@@ -264,7 +281,10 @@ export default function ModelViewer() {
           <LightController />
           <Suspense fallback={null}>
             <Environment preset="sunset" />
-            <ModelWithMarkers onActiveBuilding={setActiveBuildingname} />
+            <ModelWithMarkers 
+              onActiveBuilding={setActiveBuildingname} 
+              onLoaded={() => setModelLoaded(true)}
+              />
           </Suspense>
           <ContactShadows
             position={[0, -1, 0]}
