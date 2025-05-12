@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 export default function CampaignVideoExhibition() {
     return (
       <div className="w-full min-h-screen bg-black text-white" style={{ fontFamily: "'Helvetica Neue'" }}>
@@ -7,10 +9,14 @@ export default function CampaignVideoExhibition() {
         {/* 主視覺區塊 - 手機和桌面共用背景，調整為 3:2 比例 */}
         <div className="relative w-full z-10 h-[100vh]">
           {/* 背景圖 */}
-          <img
+          <Image
             className="w-full h-full object-cover absolute inset-0 z-0"
             src="/all/campaign-video/1.png"
             alt="Exhibition Background"
+            fill
+            sizes="100vw"
+            priority
+            quality={40}
           />
           
           {/* 手機版布局 - 調整標題和資訊文字大小和位置 */}

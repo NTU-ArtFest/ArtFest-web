@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 export default function BeyondTheTideExhibition() {
     return (
       <div className="w-full min-h-screen bg-black text-white" style={{ fontFamily: "'Helvetica Neue'" }}>
@@ -8,12 +10,15 @@ export default function BeyondTheTideExhibition() {
         <div className="relative w-full z-10 h-[100vh]">
           {/* 背景圖 - 亮度調低 */}
           <div className="absolute inset-0 bg-black z-0"></div>
-          <img
+          <Image
             className="w-full h-full object-cover absolute inset-0 z-0 opacity-60"
             src="/all/beyond-the-tide/1.png"
             alt="Exhibition Background"
+            fill
+            sizes="100vw"
+            priority
+            quality={40}
           />
-          
           {/* 手機版布局 - 調整標題和資訊文字大小和位置 */}
           <div className="md:hidden relative z-20 h-screen w-full flex flex-col">
             {/* 左上標題 - 縮小字體 */}
@@ -118,60 +123,69 @@ export default function BeyondTheTideExhibition() {
         </div>
   
         {/* 作品展示區 - 採用 3:2 比例展示圖片 */}
-        <div className="relative z-10 py-10 md:py-14 bg-gradient-to-b from-black to-gray-900">
-          <div className="container mx-auto px-6">
-            <h2 className="text-base md:text-2xl font-light mb-8 md:mb-12 tracking-wider text-center uppercase">作品展示 Featured Works</h2>
-            
-            {/* 網格畫廊 - 固定 3:2 比例 */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-              {/* 作品1 */}
-              <div className="overflow-hidden rounded-lg" style={{ aspectRatio: '3/2' }}>
-                <img 
-                  src="/all/beyond-the-tide/1.png" 
-                  alt="Beyond the Tide Exhibition 1" 
-                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
-                />
-              </div>
-              
-              {/* 作品2 */}
-              <div className="overflow-hidden rounded-lg" style={{ aspectRatio: '3/2' }}>
-                <img 
-                  src="/all/beyond-the-tide/2.png" 
-                  alt="Beyond the Tide Exhibition 2" 
-                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
-                />
-              </div>
-              
-              {/* 作品3 */}
-              <div className="overflow-hidden rounded-lg" style={{ aspectRatio: '3/2' }}>
-                <img 
-                  src="/all/beyond-the-tide/3.png" 
-                  alt="Beyond the Tide Exhibition 3" 
-                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
-                />
-              </div>
-              
-              {/* 作品4 */}
-              <div className="overflow-hidden rounded-lg" style={{ aspectRatio: '3/2' }}>
-                <img 
-                  src="/all/beyond-the-tide/4.png" 
-                  alt="Beyond the Tide Exhibition 4" 
-                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
-                />
-              </div>
-              
-              {/* 作品5 */}
-              <div className="overflow-hidden rounded-lg" style={{ aspectRatio: '3/2' }}>
-                <img 
-                  src="/all/beyond-the-tide/5.png" 
-                  alt="Beyond the Tide Exhibition 5" 
-                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
-                />
-              </div>
-            </div>
-          </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        {/* 作品1 */}
+        <div className="overflow-hidden rounded-lg relative" style={{ aspectRatio: '3/2' }}>
+          <Image 
+            src="/all/beyond-the-tide/1.png" 
+            alt="Beyond the Tide Exhibition 1" 
+            fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            className="object-cover transition-transform duration-700 hover:scale-105"
+            quality={75}
+          />
         </div>
-  
+        
+        {/* 作品2 */}
+        <div className="overflow-hidden rounded-lg relative" style={{ aspectRatio: '3/2' }}>
+          <Image 
+            src="/all/beyond-the-tide/2.png" 
+            alt="Beyond the Tide Exhibition 2" 
+            fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            className="object-cover transition-transform duration-700 hover:scale-105"
+            quality={75}
+          />
+        </div>
+        
+        {/* 作品3 */}
+        <div className="overflow-hidden rounded-lg relative" style={{ aspectRatio: '3/2' }}>
+          <Image 
+            src="/all/beyond-the-tide/3.png" 
+            alt="Beyond the Tide Exhibition 3" 
+            fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            className="object-cover transition-transform duration-700 hover:scale-105"
+            quality={75}
+          />
+        </div>
+        
+        {/* 作品4 */}
+        <div className="overflow-hidden rounded-lg relative" style={{ aspectRatio: '3/2' }}>
+          <Image 
+            src="/all/beyond-the-tide/4.png" 
+            alt="Beyond the Tide Exhibition 4" 
+            fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            className="object-cover transition-transform duration-700 hover:scale-105"
+            quality={75}
+          />
+        </div>
+        
+        {/* 作品5 */}
+        <div className="overflow-hidden rounded-lg relative" style={{ aspectRatio: '3/2' }}>
+          <Image 
+            src="/all/beyond-the-tide/5.png" 
+            alt="Beyond the Tide Exhibition 5" 
+            fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            className="object-cover transition-transform duration-700 hover:scale-105"
+            quality={75}
+          />
+        </div>
+      </div>
+        
       {/* 底部版權聲明 */}
       <footer className="relative z-10 py-5 md:py-6 bg-black border-t border-gray-800">
         <div className="container mx-auto px-6">

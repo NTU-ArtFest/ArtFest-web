@@ -143,6 +143,8 @@ export default function ModelViewer() {
     const [activeBuildingname, setActiveBuildingname] = useState<string | null>(null);
     const [isAutoRotating, setIsAutoRotating] = useState(true);
     const [isBegin, setIsBegin] = useState(true);
+    const [isLoading, setIsLoading] = useState(true);
+    const [dots, setDots] = useState('.');
 
     const { width } = useWindowSize();
   
@@ -150,6 +152,13 @@ export default function ModelViewer() {
     const minDistance = width < 768 ? 120 : 120; 
     const maxDistance = width < 768 ? 350 : 230;
 
+    useEffect(() => {
+      const interval = setInterval(() => {
+        setDots(prev => prev.length >= 3 ? '.' : prev + '.');
+      }, 500);
+      
+      return () => clearInterval(interval);
+    }, []);
     // exchange the url prefix to local url
     useEffect(() => {
         if (activeBuildingname) {
@@ -192,6 +201,13 @@ export default function ModelViewer() {
 
   return (
     <div className="w-full h-screen rounded-lg relative h-[900px] md:h-[78vh] shadow-2xl backdrop-blur-sm">
+      {isLoading && (
+        <div className="absolute inset-0 flex items-center justify-center z-50">
+          <div className="text-xl font-bold text-gray-800 animate-pulse">
+            Loading the map{dots}
+          </div>
+        </div>
+      )}
       <div className="absolute top-6 left-6 z-20 ">
         { isBegin && (
           <div>
@@ -239,6 +255,7 @@ export default function ModelViewer() {
           onCreated={({ gl }) => {
             gl.setClearColor(0x000000, 0);
             gl.setPixelRatio(window.devicePixelRatio);
+            setIsLoading(false);
           }}
           style={{ background: 'transparent' }}
         >

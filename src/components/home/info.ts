@@ -94,17 +94,17 @@ export const buildings: Building[] = [
         desc: '社團齊聚，樓內總有笑語與音樂飄散，青春在這裡發酵',
         activities: [
             {
-                name: '公園散步地圖',
-                intro: '公館散步地圖的活動開始了！',
-                url: 'https://www.instagram.com/p/DJGUwf_Rpps/?img_index=1'
-            },
-            {
                 name: '延續',
                 intro: '延續是在記憶與創造之間，持續生成的動態過程',
                 url: 'https://artfest.ntu.edu.tw:2025/exhibition/continuum'
             },
             {
-                name: '傳遞 - 情感關係中的漫反射',
+                name: '我們',
+                intro: '畫上此刻的你，留下重新定義的模樣',
+                url: 'https://artfest.ntu.edu.tw:2025/exhibition/us'
+            },
+            {
+                name: '傳遞',
                 intro: '在彼此的不一致中，找到共鳴的光斑',
                 url: 'https://artfest.ntu.edu.tw:2025/exhibition/conveyance'
             },

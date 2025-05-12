@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 export default function ContinuumExhibition() {
     return (
       <div className="w-full min-h-screen bg-black text-white" style={{ fontFamily: "'Helvetica Neue'" }}>
@@ -8,10 +10,14 @@ export default function ContinuumExhibition() {
         <div className="relative w-full z-10 h-[100vh]">
           {/* 背景圖 - 亮度調低 */}
           <div className="absolute inset-0 bg-black z-0"></div>
-          <img
+          <Image
             className="w-full h-full object-cover absolute inset-0 z-0 opacity-60"
             src="/all/continuum/1.png"
             alt="Exhibition Background"
+            fill
+            sizes="100vw"
+            priority
+            quality={40}
           />
           
           {/* 手機版布局 - 調整標題和資訊文字大小和位置 */}
@@ -134,13 +140,16 @@ export default function ContinuumExhibition() {
             {/* 網格畫廊 - 固定 3:2 比例 */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
               {/* 作品1 */}
-              <div className="overflow-hidden rounded-lg" style={{ aspectRatio: '3/2' }}>
-                <img 
-                  src="/all/continuum/1.png" 
-                  alt="Continuum Exhibition 1" 
-                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
-                />
-              </div>
+              <div className="overflow-hidden rounded-lg relative" style={{ aspectRatio: '3/2' }}>
+                        <Image 
+                          src="/all/continuum/1.png" 
+                          alt="Continuum Exhibition 1" 
+                          fill
+                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                          className="object-cover transition-transform duration-700 hover:scale-105"
+                          quality={75}
+                        />
+                      </div>
             </div>
           </div>
         </div>

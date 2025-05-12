@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 export default function UsExhibition() {
   return (
     <div className="w-full min-h-screen bg-black text-white" style={{ fontFamily: "'Helvetica Neue'" }}>
@@ -8,12 +10,15 @@ export default function UsExhibition() {
       <div className="relative w-full z-10 h-[100vh]">
         {/* 背景圖 - 亮度調低 */}
         <div className="absolute inset-0 bg-black z-0"></div>
-        <img
+        <Image
           className="w-full h-full object-cover absolute inset-0 z-0 opacity-60"
           src="/all/us/1.png"
           alt="Exhibition Background"
+          fill
+          sizes="100vw"
+          priority
+          quality={80}
         />
-        
         {/* 手機版布局 - 調整標題和資訊文字大小和位置 */}
         <div className="md:hidden relative z-20 h-screen w-full flex flex-col">
           {/* 左上標題 - 縮小字體 */}
@@ -125,65 +130,86 @@ export default function UsExhibition() {
           {/* 網格畫廊 - 固定 3:2 比例 */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {/* 作品1 */}
-            <div className="overflow-hidden rounded-lg" style={{ aspectRatio: '3/2' }}>
-              <img 
+            <div className="overflow-hidden rounded-lg relative" style={{ aspectRatio: '3/2' }}>
+              <Image 
                 src="/all/us/1.png" 
                 alt="US Exhibition 1" 
-                className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                className="object-cover transition-transform duration-700 hover:scale-105"
+                quality={85}
               />
             </div>
             
             {/* 作品2 */}
-            <div className="overflow-hidden rounded-lg" style={{ aspectRatio: '3/2' }}>
-              <img 
+            <div className="overflow-hidden rounded-lg relative" style={{ aspectRatio: '3/2' }}>
+              <Image 
                 src="/all/us/2.png" 
                 alt="US Exhibition 2" 
-                className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                className="object-cover transition-transform duration-700 hover:scale-105"
+                quality={85}
               />
             </div>
             
             {/* 作品3 */}
-            <div className="overflow-hidden rounded-lg" style={{ aspectRatio: '3/2' }}>
-              <img 
+            <div className="overflow-hidden rounded-lg relative" style={{ aspectRatio: '3/2' }}>
+              <Image 
                 src="/all/us/3.png" 
                 alt="US Exhibition 3" 
-                className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                className="object-cover transition-transform duration-700 hover:scale-105"
+                quality={85}
               />
             </div>
             
             {/* 作品4 */}
-            <div className="overflow-hidden rounded-lg" style={{ aspectRatio: '3/2' }}>
-              <img 
+            <div className="overflow-hidden rounded-lg relative" style={{ aspectRatio: '3/2' }}>
+              <Image 
                 src="/all/us/4.png" 
                 alt="US Exhibition 4" 
-                className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                className="object-cover transition-transform duration-700 hover:scale-105"
+                quality={85}
               />
             </div>
             
             {/* 作品5 */}
-            <div className="overflow-hidden rounded-lg" style={{ aspectRatio: '3/2' }}>
-              <img 
+            <div className="overflow-hidden rounded-lg relative" style={{ aspectRatio: '3/2' }}>
+              <Image 
                 src="/all/us/5.png" 
                 alt="US Exhibition 5" 
-                className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                className="object-cover transition-transform duration-700 hover:scale-105"
+                quality={85}
               />
             </div>
             
             {/* 作品6 */}
-            <div className="overflow-hidden rounded-lg" style={{ aspectRatio: '3/2' }}>
-              <img 
+            <div className="overflow-hidden rounded-lg relative" style={{ aspectRatio: '3/2' }}>
+              <Image 
                 src="/all/us/6.png" 
                 alt="US Exhibition 6" 
-                className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                className="object-cover transition-transform duration-700 hover:scale-105"
+                quality={85}
               />
             </div>
             
             {/* 作品7 */}
-            <div className="overflow-hidden rounded-lg" style={{ aspectRatio: '3/2' }}>
-              <img 
+            <div className="overflow-hidden rounded-lg relative" style={{ aspectRatio: '3/2' }}>
+              <Image 
                 src="/all/us/7.png" 
                 alt="US Exhibition 7" 
-                className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                className="object-cover transition-transform duration-700 hover:scale-105"
+                quality={85}
               />
             </div>
           </div>
