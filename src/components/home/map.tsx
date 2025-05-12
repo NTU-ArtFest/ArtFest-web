@@ -98,7 +98,7 @@ function Markers({ scene, onActiveBuilding }: {
 function ModelWithMarkers({ onActiveBuilding }: { 
   onActiveBuilding: (info: string | null) => void; 
 }) {
-  const { scene } = useGLTF('/MAP.glb');
+  const { scene } = useGLTF('MAP.glb');
 
   return (
     <group>

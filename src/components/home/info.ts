@@ -191,11 +191,7 @@ export const buildings: Building[] = [
                 intro: '想親眼見到李仁燿陶藝家的作品嗎？快來看展吧',
                 url: 'https://www.instagram.com/p/DH_R1KeCsu3/?img_index=1'
             },
-            {
-                name: '浪潮 30 : 潮映',
-                intro: '透過視覺整理個人歷程，映照獨特的自我樣貌',
-                url: 'https://www.instagram.com/p/DIbSgdSzTIQ/?img_index=2' //?
-            },
+            
         ]
       },
       offset: [0, 1, 0]
@@ -211,7 +207,7 @@ export const buildings: Building[] = [
         activities: [
             {
                 name: '潮差 - 失衡',
-                intro: '當愛變成控制，關係如何不失衡？在情緒勒索與不對等的關係裡，我們是否仍有選擇？',
+                intro: '以潮汐的「流動」為隱喻，​是​一趟人從身體感知到情緒轉化、從環境回應到內在沉澱的探索旅程。我們將透過行動、創作與對談，思考如何感到歸屬並定錨自我',
                 url: 'https://www.instagram.com/p/DIMFGyjhsXf/?img_index=1'
             },
         ]
