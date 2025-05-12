@@ -12,7 +12,7 @@ export default function ContinuumExhibition() {
           <div className="absolute inset-0 bg-black z-0"></div>
           <Image
             className="w-full h-full object-cover absolute inset-0 z-0 opacity-60"
-            src="/all/continuum/1.png"
+            src="/all/continuum/2.png"
             alt="Exhibition Background"
             fill
             sizes="100vw"
@@ -142,7 +142,7 @@ export default function ContinuumExhibition() {
               {/* 作品1 */}
               <div className="overflow-hidden rounded-lg relative" style={{ aspectRatio: '3/2' }}>
                         <Image 
-                          src="/all/continuum/1.png" 
+                          src="/all/continuum/2.png" 
                           alt="Continuum Exhibition 1" 
                           fill
                           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"

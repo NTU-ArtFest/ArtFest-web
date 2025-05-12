@@ -251,7 +251,7 @@ export default function  Home() {
               <div className="md:hidden flex items-center justify-between">
                 <div className="flex-1"></div> {/* 左側空白區域，用於置中 */}
                 <Link href="/" className="flex-1 text-center text-2xl font-bold text-white">
-                  Artfest
+                  NTU Artfest
                 </Link>
                 <div className="flex-1 flex justify-end">
                   <button
