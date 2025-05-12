@@ -23,7 +23,7 @@ export default function BeyondTheTideExhibition() {
           <div className="md:hidden relative z-20 h-screen w-full flex flex-col">
             {/* 左上標題 - 縮小字體 */}
             <div className="self-start mt-8 ml-6">
-              <h1 className="text-2xl sm:text-4xl font-bold tracking-wider mb-1 uppercase">潮之外</h1>
+              <h1 className="text-2xl sm:text-4xl font-bold tracking-wider mb-1 uppercase">潮之外：錯位與形變</h1>
               <p className="text-xs sm:text-base tracking-wide">Beyond the Tide: Displacement and Transformation</p>
             </div>
                       
@@ -57,7 +57,7 @@ export default function BeyondTheTideExhibition() {
             {/* 左上標題與右下資訊 */}
             <div className="relative h-full w-full">
               <div className="absolute top-12 left-12">
-                <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold tracking-wider mb-2">潮之外</h1>
+                <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold tracking-wider mb-2">潮之外：錯位與形變</h1>
                 <p className="text-lg lg:text-xl xl:text-2xl font-light tracking-wide">Beyond the Tide: Displacement and Transformation</p>
               </div>
               
@@ -181,7 +181,7 @@ export default function BeyondTheTideExhibition() {
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             className="object-cover transition-transform duration-700 hover:scale-105"
-            quality={75}
+            quality={40}
           />
         </div>
       </div>

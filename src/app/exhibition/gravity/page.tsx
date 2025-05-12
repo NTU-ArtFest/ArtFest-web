@@ -135,7 +135,7 @@ export default function GravityExhibition() {
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 className="object-cover transition-transform duration-700 hover:scale-105"
-                quality={75}
+                quality={40}
               />
             </div>
             
@@ -147,7 +147,7 @@ export default function GravityExhibition() {
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 className="object-cover transition-transform duration-700 hover:scale-105"
-                quality={75}
+                quality={40}
               />
             </div>
             
@@ -159,7 +159,7 @@ export default function GravityExhibition() {
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 className="object-cover transition-transform duration-700 hover:scale-105"
-                quality={75}
+                quality={40}
               />
             </div>
             
@@ -171,7 +171,7 @@ export default function GravityExhibition() {
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 className="object-cover transition-transform duration-700 hover:scale-105"
-                quality={75}
+                quality={40}
               />
             </div>
             
@@ -183,7 +183,7 @@ export default function GravityExhibition() {
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 className="object-cover transition-transform duration-700 hover:scale-105"
-                quality={75}
+                quality={40}
               />
             </div>
           </div>

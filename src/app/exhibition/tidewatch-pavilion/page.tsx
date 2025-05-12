@@ -149,7 +149,7 @@ export default function TidewatchPavilionExhibition() {
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 className="object-cover transition-transform duration-700 hover:scale-105"
-                quality={85}
+                quality={40}
               />
             </div>
             
@@ -161,7 +161,7 @@ export default function TidewatchPavilionExhibition() {
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 className="object-cover transition-transform duration-700 hover:scale-105"
-                quality={85}
+                quality={40}
               />
             </div>
             
@@ -173,7 +173,7 @@ export default function TidewatchPavilionExhibition() {
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 className="object-cover transition-transform duration-700 hover:scale-105"
-                quality={85}
+                quality={40}
               />
             </div>
 
@@ -185,7 +185,7 @@ export default function TidewatchPavilionExhibition() {
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 className="object-cover transition-transform duration-700 hover:scale-105"
-                quality={85}
+                quality={40}
               />
             </div>
 
@@ -197,7 +197,7 @@ export default function TidewatchPavilionExhibition() {
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 className="object-cover transition-transform duration-700 hover:scale-105"
-                quality={85}
+                quality={40}
               />
             </div>
           </div>
