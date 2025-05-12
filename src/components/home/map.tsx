@@ -78,7 +78,7 @@ function Markers({ scene, onActiveBuilding }: {
               }}
               renderOrder={999}
             >
-            <planeGeometry args={[6, 6]} />
+            <planeGeometry args={[10, 10]} />
             <meshBasicMaterial 
               transparent={true}
               opacity={0} 
@@ -150,7 +150,7 @@ export default function ModelViewer() {
     const minDistance = width < 768 ? 120 : 120; 
     const maxDistance = width < 768 ? 350 : 230;
 
-
+    // exchange the url prefix to local url
     useEffect(() => {
         if (activeBuildingname) {
             const building = module.buildings.find(b => b.name === activeBuildingname);
@@ -161,7 +161,7 @@ export default function ModelViewer() {
                 ...building.info,
                 activities: building.info.activities.map(act => ({
                   ...act,
-                  url: act.url.replace(/^https?:\/\/[^/]+/, base)
+                  url: act.url.includes('instagram') ? act.url : act.url.replace(/^https?:\/\/[^/]+/, base)
                 }))
               };
 
@@ -191,23 +191,31 @@ export default function ModelViewer() {
     }), [isAutoRotating, minDistance, maxDistance]);
 
   return (
-    <div className="w-full h-screen rounded-lg relative h-[490px] md:h-[75vh] shadow-2xl backdrop-blur-sm">
-      <div className="absolute top-6 left-6 z-20 shadow-lg">
+    <div className="w-full h-screen rounded-lg relative h-[900px] md:h-[78vh] shadow-2xl backdrop-blur-sm">
+      <div className="absolute top-6 left-6 z-20 ">
         { isBegin && (
-            <div className="bg-white bg-opacity-90 p-4 rounded  w-[220px] md:w-[300px] flex flex-row item-center justify-center">
+          <div>
+            <div className="bg-white bg-opacity-90 p-4 rounded w-[220px] md:w-[300px] flex flex-row item-center justify-center">
               <div className="text center font-bold text-lg">歡迎來到台大！</div>
-              {/* <div className="text center font-bold text-lg">歡迎任意拖曳、縮放！</div> */}
             </div>
+            <div className="bg-white bg-opacity-0 p-4 rounded w-[220px] md:w-[300px] flex flex-row item-center justify-center">
+              <div className="text center font-bold text-sm">歡迎任意拖曳、縮放！</div>
+            </div>
+            
+          </div>
+            
+            
         )}
         {!isBegin && activeBuildingInfo && (
             <div className="bg-white bg-opacity-90 p-4 rounded  w-[220px] md:w-[300px]">
               <div className="font-bold text-lg mb-1">{activeBuildingInfo.name}</div>
               <div className="text-gray-700 mb-1">{activeBuildingInfo.desc}</div>
+              <div className='pt-3 border-b border-gray-500'></div>
               {activeBuildingInfo.activities && activeBuildingInfo.activities.map((activity, index) => (
                 <div key={index}>
                   <div className="font-bold text-base mt-5">{activity.name}</div>
                   <div className="text-gray-700 mb-1">{activity.intro}</div>
-                  <Link href={activity.url} className="hover:text-gray-900 underline text-gray-700 ">
+                  <Link href={activity.url} className="hover:text-gray-900 underline hover:text-gray-900 text-gray-700 ">
                     查看展覽資訊
                   </Link>
                 </div>

@@ -43,7 +43,13 @@ export const buildings: Building[] = [
       info: { 
         name: '台大圖書館', 
         desc: '拱窗映椰林，藏書如海，午後陽光灑落書桌，靜靜陪伴每段求知時光',
-        activities: []
+        activities: [
+          {
+            name: '形象片',
+            intro: '30th NTU ARTFEST 形象片',
+            url: 'https://artfest.ntu.edu.tw:2025/exhibition/campaign-video' //?
+          },
+        ]
       },
       offset: [0, 1, 0]
     },
@@ -57,18 +63,23 @@ export const buildings: Building[] = [
         activities: [
             {
                 name: '開幕式',
-                intro: '在潮汐漲退間，我們持續漂流，透過不斷流動湧起的情緒，感受自我在不斷變化的世界裡存在',
-                url: 'https://artfest.ntu.edu.tw:2025/exhibition/'
+                intro: '在潮汐漲退間，我們持續漂流，感受自我在不斷變化的世界裡存在',
+                url: 'https://www.instagram.com/p/DJEd5xETNXx/?img_index=1'
             },
             {
-                name: '浪潮 30 動態地景藝術',
-                intro: '《觀潮亭》邀請人們駐足、凝視，重新與自己在時間與生命的流動裡相遇。',
-                url: 'https://artfest.ntu.edu.tw:2025/exhibition/'
+                name: '觀潮亭',
+                intro: '《觀潮亭》邀請人們駐足、凝視，重新與自己在時間與生命的流動裡相遇',
+                url: 'https://artfest.ntu.edu.tw:2025/exhibition/tidewatch-pavilion'
+            },
+            {
+                name: '海浪',
+                intro: '將每一個人的思念，編織成眾人共同記憶的流光',
+                url: 'https://artfest.ntu.edu.tw:2025/exhibition/the-wave'
             },
             {
                 name: '閉幕式',
-                intro: '藝術的浪潮逐漸退去，餘韻仍在空氣中迴盪。讓我們用聲音與影像，寫下藝術季最溫柔的句點。',
-                url: 'https://artfest.ntu.edu.tw:2025/exhibition/'
+                intro: '藝術的浪潮逐漸退去，讓我們用聲音與影像，寫下藝術季最溫柔的句點',
+                url: 'https://www.instagram.com/p/DJJaTAGsrGg/?img_index=1'
             },
         ]
       },
@@ -84,18 +95,28 @@ export const buildings: Building[] = [
         activities: [
             {
                 name: '公園散步地圖',
-                intro: '看完了靜態的展覽，想參加更動態的活動？偷偷跟你說，公館散步地圖的活動開始了！',
-                url: 'https://artfest.ntu.edu.tw:2025/exhibition/'
+                intro: '公館散步地圖的活動開始了！',
+                url: 'https://www.instagram.com/p/DJGUwf_Rpps/?img_index=1'
             },
             {
-                name: '子題展覽',
-                intro: '子提包涵延續、我們、傳遞、引力，帶領你在茫茫浪潮中找到屬於你的引流',
-                url: 'https://artfest.ntu.edu.tw:2025/exhibition/'
+                name: '延續',
+                intro: '每段延續，都是一次理解的練習',
+                url: 'https://artfest.ntu.edu.tw:2025/exhibition/continuum'
+            },
+            {
+                name: '傳遞 - 情感關係中的漫反射',
+                intro: '在彼此的不一致中，找到共鳴的光斑',
+                url: 'https://artfest.ntu.edu.tw:2025/exhibition/conveyance'
+            },
+            {
+                name: '引力',
+                intro: '引力是我們的心靈與身體，還是我們的情感思想？',
+                url: 'https://artfest.ntu.edu.tw:2025/exhibition/gravity'
             },
             {
                 name: '石尚玩家 ＃飾品手作工作方',
-                intro: '我們每個人都像一塊石頭，從最初的粗獷到後來的圓潤，在時間的打磨與環境的淬鍊下逐漸成形，最終找到屬於自己的模樣。',
-                url: 'https://artfest.ntu.edu.tw:2025/exhibition/'
+                intro: '我們就像石頭，最初的粗獷，在環境的淬鍊下，最終找到屬於自己的模樣',
+                url: 'https://www.instagram.com/p/DIyRWrxz2ae/?img_index=1'
             },
         ]
       },
@@ -111,7 +132,7 @@ export const buildings: Building[] = [
         activities: [
             {
                 name: '潮間帶影像展',
-                intro: '小小的我們在陸地邊界，努力學習，逐漸地找到我們的特質、我們的生存法則。而你，具備什麼特質呢？',
+                intro: '小小的我們在陸地邊界，逐漸地找到我們的特質。而你，具備什麼特質呢？',
                 url: 'https://artfest.ntu.edu.tw:2025/exhibition/photographic_exhibition'
             },
         ]
@@ -128,8 +149,8 @@ export const buildings: Building[] = [
         activities: [
             {
                 name: '潮起 - 性慾．癒',
-                intro: '以理解、尊重與包容，正視被社會視為禁忌的性慾，從而找到屬於自己的平衡點。',
-                url: 'https://artfest.ntu.edu.tw:2025/exhibition/'
+                intro: '以理解、尊重與包容，正視被社會視為禁忌的性慾，從而找到屬於自己的平衡點',
+                url: 'https://www.instagram.com/p/DIMFGyjhsXf/?img_index=1'
             },
         ]
       },
@@ -145,8 +166,8 @@ export const buildings: Building[] = [
         activities: [
             {
                 name: '無量空處 ＃互動式人格測驗',
-                intro: '來感受一下人格魅力',
-                url: 'https://artfest.ntu.edu.tw:2025/exhibition/'
+                intro: '海水帶著我們飄呀飄，最後，究竟會成為什麼模樣？',
+                url: 'https://www.instagram.com/p/DIyRWrxz2ae/?img_index=1'
             },
         ]
       },
@@ -163,17 +184,17 @@ export const buildings: Building[] = [
             {
                 name: '陶土工作坊',
                 intro: '與臺大陶藝社攜手合作，邀請創辦人李仁燿陶藝家親自帶領，帶你動手捏製專屬的陶藝作品！',
-                url: 'https://artfest.ntu.edu.tw:2025/exhibition/'
+                url: 'https://www.instagram.com/p/DH_R1KeCsu3/?img_index=1'
             },
             {
                 name: '李仁燿陶藝家展覽',
                 intro: '想親眼見到李仁燿陶藝家的作品嗎？快來看展吧',
-                url: 'https://artfest.ntu.edu.tw:2025/exhibition/'
+                url: 'https://www.instagram.com/p/DH_R1KeCsu3/?img_index=1'
             },
             {
                 name: '浪潮 30 : 潮映',
-                intro: '潮映',
-                url: 'https://artfest.ntu.edu.tw:2025/exhibition/'
+                intro: '透過視覺整理個人歷程，映照獨特的自我樣貌',
+                url: 'https://www.instagram.com/p/DIbSgdSzTIQ/?img_index=2' //?
             },
         ]
       },
@@ -186,12 +207,12 @@ export const buildings: Building[] = [
       label: '9',
       info: { 
         name: '第二學生活動中心',
-        desc: '整棟樓乘載了無數青春回憶，笑聲，打鬧，淚水，歡笑，都將成為了這棟樓的回憶',
+        desc: '整棟樓乘載了無數青春回憶，笑聲，打鬧，淚水，歡笑，都成為這棟樓的回憶',
         activities: [
             {
                 name: '潮差 - 失衡',
-                intro: '人總是有不如意之事',
-                url: 'https://artfest.ntu.edu.tw:2025/exhibition/'
+                intro: '當愛變成控制，關係如何不失衡？在情緒勒索與不對等的關係裡，我們是否仍有選擇？',
+                url: 'https://www.instagram.com/p/DIMFGyjhsXf/?img_index=1'
             },
         ]
       },
@@ -203,12 +224,12 @@ export const buildings: Building[] = [
       label: '12',
       info: { 
         name: '水源市場',
-        desc: '人聲鼎沸，飯香四溢，校園生活的日常滋味全在這',
+        desc: '人聲鼎沸，飯香四溢，學生及遊客的日常滋味全在這',
         activities: [
             {
                 name: '潮之外 - 錯位與形變',
                 intro: '外在社會與內在的自我互相牽絆拉扯，伴隨痛苦與自我懷疑，我們逐步摸索出自己最舒適的時區。然而，這真的「正常」嗎？',
-                url: 'https://artfest.ntu.edu.tw:2025/exhibition/'
+                url: 'https://artfest.ntu.edu.tw:2025/exhibition/beyond-the-tide'
             },
         ]
       },

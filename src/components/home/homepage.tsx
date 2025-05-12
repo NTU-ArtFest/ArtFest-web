@@ -21,7 +21,7 @@ if (typeof window !== 'undefined') {
 }
 
 
-export default function Home() {
+export default function  Home() {
 
     //  --- var ---
 
@@ -167,7 +167,7 @@ export default function Home() {
     const slides = [
       { id: 1, description: "寄居蟹", color: "bg-red-500", caption: "寄居蟹 ( ISP ) 一生都在尋找合適的新殼，展現出對自由和靈活生活方式的追求", url: '/who-art-you/001_without_bg.png'},
       { id: 2, description: "招潮蟹", color: "bg-blue-500",  caption: "招潮蟹 ( ESP ) 的英文名稱為「Fiddler crabs」，在泥灘上揮舞蟹螯的他們是天生的提琴演奏家，除了吸引異性之外，也是力量的象徵", url: '/who-art-you/001.png' },
-      { id: 3, description: "藤壺", color: "bg-green-500", caption: "藤壺 ( ISJ ) 是潮間帶的釘子戶，一旦找到合適的地方，就牢牢黏住不放，無論是岩石、船底，甚至鯨魚身上都能見到牠的蹤影，是潮間帶低調的強者", url: '/who-art-you/ENF001.png' },
+      { id: 3, description: "藤壺", color: "bg-green-500", caption: "藤壺 ( ISJ ) 是潮間帶的釘子戶，一旦找到合適的地方，就牢牢黏住不放，無論在哪裡都能見到牠的蹤影，是潮間帶低調的強者", url: '/who-art-you/ENF001.png' },
       { id: 4, description: "跳跳魚", color: "bg-yellow-500", caption: "跳跳魚 ( ENF ) 是潮間帶的活力高手，能在水中游動，也能在泥灘上靈活跳躍，像個不受拘束的探險家", url: '/who-art-you/ESJ001_without_bg.png' },
       { id: 5, description: "海兔", color: "bg-purple-500", caption: "海兔 ( INF ) 是海底的神秘遊俠，柔軟的身軀隨著海流飄動，優雅穿梭於珊瑚與沙地之間。", url: '/who-art-you/INF001_without_bg.png' },
     ];
@@ -297,28 +297,28 @@ export default function Home() {
                   <div className="flex flex-col items-center space-y-4 py-2">
                   {navItems.map((item) => ( 
                   <Link
-                  href={`/${item.id.toLowerCase().replace(/\s+/g, "-")}`}
-                  className="text-white hover:text-gray-300 hover:scale-105 transition-transform"
-                  onMouseEnter={() => setActiveTooltip(item.id)}
-                  onMouseLeave={() => setActiveTooltip(null)}
-                  key={item.id}
-                >
-                <div 
-                  key={item.id}
-                  className="relative flex items-center group"
-                >
-                  {item.id}
-                  
-                  {activeTooltip === item.id && (
-                    <div
-                      className='overflow-hidden ml-2 w-0 group-hover:w-auto transition-all duration-300 ease-in-out flex items-center hover:text-gray-300 hover:scale-105 transition-transform'
-                    >
-                      <span className="text-white text-sm ">
-                        {item.desc}
-                      </span>
-                    </div>
-                  )}
-                </div>
+                    href={`/${item.id.toLowerCase().replace(/\s+/g, "-")}`}
+                    className="text-white hover:text-gray-300 hover:scale-105 transition-transform"
+                    onMouseEnter={() => setActiveTooltip(item.id)}
+                    onMouseLeave={() => setActiveTooltip(null)}
+                    key={item.id}
+                  >
+                  <div 
+                    key={item.id}
+                    className="relative flex items-center group"
+                  >
+                    {item.id}
+                    
+                    {activeTooltip === item.id && (
+                      <div
+                        className='overflow-hidden ml-2 w-0 group-hover:w-auto transition-all duration-300 ease-in-out flex items-center hover:text-gray-300 hover:scale-105 transition-transform'
+                      >
+                        <span className="text-white text-sm ">
+                          {item.desc}
+                        </span>
+                      </div>
+                    )}
+                  </div>
                 </Link>
               ))}
                   </div>
@@ -565,7 +565,7 @@ export default function Home() {
                           height={500}
                           width={500}
                           // fill
-                          sizes="10vw"
+                          sizes="1000vw"
                           loading="lazy" // 非首屏圖片使用懶加載
                           className="object-cover object-center23 scale-100 hover:scale-[1.2] transition duration-300"
                           // priority
