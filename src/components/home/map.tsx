@@ -230,7 +230,7 @@ export default function ModelViewer() {
         { isBegin && (
           <div>
             <div className="bg-white bg-opacity-90 p-4 rounded w-[220px] md:w-[300px] flex flex-row item-center justify-center">
-              <div className="text center font-bold text-lg">歡迎來到台大！</div>
+              <div className="text center font-bold text-lg">歡迎來到臺大！</div>
             </div>
             <div className="bg-white bg-opacity-0 p-4 rounded w-[220px] md:w-[300px] flex flex-row item-center justify-center">
               <div className="text center font-bold text-sm">歡迎任意拖曳、縮放！</div>
