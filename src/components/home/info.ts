@@ -41,7 +41,7 @@ export const buildings: Building[] = [
       real_name: '總圖',
       label: '1', 
       info: { 
-        name: '台大圖書館', 
+        name: '臺大圖書館', 
         desc: '拱窗映椰林，藏書如海，午後陽光灑落書桌，靜靜陪伴每段求知時光',
         activities: [
           {
@@ -72,7 +72,7 @@ export const buildings: Building[] = [
                 url: 'https://artfest.ntu.edu.tw:2025/exhibition/tidewatch-pavilion'
             },
             {
-                name: '海浪',
+                name: '海浪 x 星想事成',
                 intro: '將每一個人的思念，編織成眾人共同記憶的流光',
                 url: 'https://artfest.ntu.edu.tw:2025/exhibition/the-wave'
             },
@@ -94,14 +94,9 @@ export const buildings: Building[] = [
         desc: '社團齊聚，樓內總有笑語與音樂飄散，青春在這裡發酵',
         activities: [
             {
-                name: '延續',
-                intro: '延續是在記憶與創造之間，持續生成的動態過程',
-                url: 'https://artfest.ntu.edu.tw:2025/exhibition/continuum'
-            },
-            {
-                name: '我們',
-                intro: '畫上此刻的你，留下重新定義的模樣',
-                url: 'https://artfest.ntu.edu.tw:2025/exhibition/us'
+                name: '引力',
+                intro: '引力是我們的心靈與身體，還是我們的情感思想？',
+                url: 'https://artfest.ntu.edu.tw:2025/exhibition/gravity'
             },
             {
                 name: '傳遞',
@@ -109,9 +104,14 @@ export const buildings: Building[] = [
                 url: 'https://artfest.ntu.edu.tw:2025/exhibition/conveyance'
             },
             {
-                name: '引力',
-                intro: '引力是我們的心靈與身體，還是我們的情感思想？',
-                url: 'https://artfest.ntu.edu.tw:2025/exhibition/gravity'
+                name: '我們',
+                intro: '畫上此刻的你，留下重新定義的模樣',
+                url: 'https://artfest.ntu.edu.tw:2025/exhibition/us'
+            },
+            {
+                name: '延續',
+                intro: '延續是在記憶與創造之間，持續生成的動態過程',
+                url: 'https://artfest.ntu.edu.tw:2025/exhibition/continuum'
             },
             {
                 name: '石尚玩家 ＃飾品手作工作方',
@@ -158,10 +158,10 @@ export const buildings: Building[] = [
     },
     {
       name: '舊體',
-      real_name: '台大體育館（舊體）',
+      real_name: '臺大體育館（舊體）',
       label: '6',
       info: { 
-        name: '台大體育館（舊體）',
+        name: '臺大體育館（舊體）',
         desc: '球場回響著加油聲，汗水與活力在這裡留下足跡，青春的記憶在這裡交織',
         activities: [
             {
@@ -237,7 +237,7 @@ export const buildings: Building[] = [
     //   label: '13',
     //   info: { 
     //     name: '醉月湖',
-    //     desc: '醉月湖是台大校園內最著名的景點之一，湖畔環境優美，是學生休閒、約會的理想場所。湖中小島與周圍綠樹相映成趣，四季景色各有特色。',
+    //     desc: '醉月湖是臺大校園內最著名的景點之一，湖畔環境優美，是學生休閒、約會的理想場所。湖中小島與周圍綠樹相映成趣，四季景色各有特色。',
     //     activities: []
     //   },
     //   offset: [-10, 1, -6]
@@ -248,7 +248,7 @@ export const buildings: Building[] = [
     //   label: '8',
     //   info: { 
     //     name: '傅鐘',
-    //     desc: '台大校鐘是校園的地標之一，也是學生約會集合的熱門地點。每到整點報時，悠揚的鐘聲迴盪在校園中，成為台大特有的聲音記憶。',
+    //     desc: '臺大校鐘是校園的地標之一，也是學生約會集合的熱門地點。每到整點報時，悠揚的鐘聲迴盪在校園中，成為臺大特有的聲音記憶。',
     //     activities: []
     //   },
     //   offset: [0, 1, 0]
@@ -259,7 +259,7 @@ export const buildings: Building[] = [
     //   label: '10',
     //   info: { 
     //     name: '校門',
-    //     desc: '恭賀光臨，歡迎來到台大！',
+    //     desc: '恭賀光臨，歡迎來到臺大！',
     //     activities: []
     //   },
     //   offset: [0, 1, 0]
@@ -270,7 +270,7 @@ export const buildings: Building[] = [
     //   label: '11',
     //   info: { 
     //     name: '捷運公館站',
-    //     desc: '為什麼不能叫捷運台大站',
+    //     desc: '為什麼不能叫捷運臺大站',
     //     activities: []
     //   },
     //   offset: [0, 1, 0]
