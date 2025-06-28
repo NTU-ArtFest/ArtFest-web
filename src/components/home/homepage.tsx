@@ -207,19 +207,20 @@ export default function  Home() {
           { Engname: "潮間帶影像展", Chiname: "", link: "/exhibition/photographic_exhibition"},
           { Engname: "Beyond the tide", Chiname: "潮之外", link: "/exhibition/beyond-the-tide"},
           { Engname: "The wave", Chiname: "海浪", link: "/exhibition/the-wave"},
-          { Engname: "Tidal pavilion", Chiname: "觀潮亭", link: "/exhibition/tidewatch-pavilion"},
+          { Engname: "Tidal Pavilion", Chiname: "觀潮亭", link: "/exhibition/tidewatch-pavilion"},
         ],
-        featuredImage: "./Footer.png"
+        featuredImage: "./exhibition/ppl_in_wave.png"
       },
       {
         id: "Events",
         title: "Events",
         items: [
-          { Engname: "sexual-healing", Chiname: "性慾・癒", link: "/events/sexual-healing"},
-          { Engname: "imbalance", Chiname: "失衡", link: "/events/imbalance"},
-          { name: "工作坊", link: "/events/workshop"}
+          { Engname: "Sexual Healing", Chiname: "性慾・癒", link: "/event/sexual-healing"},
+          { Engname: "Imbalance", Chiname: "失衡", link: "/event/imbalance"},
+          { Engname: "Key Visual", Chiname: "主視覺", link: "/event/key_visual"},
+
         ],
-        featuredImage: "./Footer.png"
+        featuredImage: "./exhibition/ppl_in_light.png"
       }
     ];
 
@@ -287,9 +288,9 @@ export default function  Home() {
                                     className="w-full h-64 object-cover transition-transform duration-500 group-hover/image:scale-110"
                                   />
                                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover/image:opacity-100 transition-opacity duration-300"></div>
-                                  <div className="absolute bottom-4 left-4 text-white opacity-0 group-hover/image:opacity-100 transition-opacity duration-300">
+                                  {/* <div className="absolute bottom-4 left-4 text-white opacity-0 group-hover/image:opacity-100 transition-opacity duration-300">
                                     <p className="text-sm font-medium">精選展覽</p>
-                                  </div>
+                                  </div> */}
                                 </div>
                               </div>
                               
@@ -298,7 +299,7 @@ export default function  Home() {
                                 <div className="space-y-8">
                                 {/* 上方大標題區域 */}
                                   <div className="ml-[3.5%] pt-4">
-                                    <h1 className="text-3xl font-bold text-gray-900 tracking-wide mb-2">
+                                    <h1 className="text-2xl font-bold text-gray-900 tracking-wide mb-2">
                                       {dropdown.title}
                                     </h1>
                                     <div className="w-[167px] h-0.5 bg-gray-900 mb-4"></div>
@@ -313,7 +314,7 @@ export default function  Home() {
                                         className="block text-gray-700 hover:text-black transition-all duration-300 hover:border-b-2 transform hover:-translate-y-2"
                                       >
                                         <div className="text-center space-y-2 pt-3">
-                                          <div className="text-base font-medium group-hover/item:text-white transition-colors text-xl">
+                                          <div className="text-base font-medium group-hover/item:text-white transition-colors text-l">
                                             {subItem.Engname} {subItem.Chiname}
                                           </div>
                                           {/* <div className="text-base font-medium group-hover/item:text-white transition-colors">

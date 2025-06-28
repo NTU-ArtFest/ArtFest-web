@@ -12,7 +12,7 @@ export default function HealingExhibition() {
         <div className="absolute inset-0 bg-black z-0"></div>
         <Image
           className="w-full h-full object-cover absolute inset-0 z-0 opacity-60"
-          src="/all/Gravity/1.png"
+          src="/all/imbalance/1.jpg"
           alt="Exhibition Background"
           fill
           sizes="100vw"
@@ -91,7 +91,7 @@ export default function HealingExhibition() {
       {/* 展覽介紹區塊 - 調整文字大小 */}
       <div className="relative z-10 py-10 md:py-14 bg-black">
         <div className="container mx-auto px-6">
-          <h2 className="text-base md:text-2xl font-light mb-6 md:mb-10 tracking-wider text-center uppercase">展覽介紹</h2>
+          <h2 className="text-base md:text-2xl font-light mb-6 md:mb-10 tracking-wider text-center uppercase">活動介紹</h2>
 
           <div className="max-w-3xl mx-auto text-xs md:text-base leading-relaxed space-y-4 font-light">
             <p className="text-left">
@@ -110,7 +110,7 @@ export default function HealingExhibition() {
       {/* 英文展覽介紹區塊 */}
       <div className="relative z-10 py-10 md:py-14 bg-black">
         <div className="container mx-auto px-6">
-          <h2 className="text-base md:text-2xl font-light mb-6 md:mb-10 tracking-wider text-center uppercase">Exhibition Introduction</h2>
+          <h2 className="text-base md:text-2xl font-light mb-6 md:mb-10 tracking-wider text-center uppercase">Event Introduction</h2>
 
           <div className="max-w-3xl mx-auto text-xs md:text-base leading-relaxed space-y-4 font-light">
             <p className="text-left">
@@ -136,7 +136,7 @@ export default function HealingExhibition() {
             {/* 作品1 */}
             <div className="overflow-hidden rounded-lg relative" style={{ aspectRatio: '3/2' }}>
               <Image 
-                src="/all/Gravity/1.png" 
+                src="/all/imbalance/2.jpg"
                 alt="Gravity Exhibition 1" 
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -148,7 +148,7 @@ export default function HealingExhibition() {
             {/* 作品2 */}
             <div className="overflow-hidden rounded-lg relative" style={{ aspectRatio: '3/2' }}>
               <Image 
-                src="/all/Gravity/2.png" 
+                src="/all/imbalance/3.jpg"
                 alt="Gravity Exhibition 2" 
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -160,7 +160,7 @@ export default function HealingExhibition() {
             {/* 作品3 */}
             <div className="overflow-hidden rounded-lg relative" style={{ aspectRatio: '3/2' }}>
               <Image 
-                src="/all/Gravity/3.png" 
+                src="/all/imbalance/4.jpg"
                 alt="Gravity Exhibition 3" 
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -172,7 +172,7 @@ export default function HealingExhibition() {
             {/* 作品4 */}
             <div className="overflow-hidden rounded-lg relative" style={{ aspectRatio: '3/2' }}>
               <Image 
-                src="/all/Gravity/4.png" 
+                src="/all/imbalance/5.jpg"
                 alt="Gravity Exhibition 4" 
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -181,17 +181,6 @@ export default function HealingExhibition() {
               />
             </div>
             
-            {/* 作品5 */}
-            <div className="overflow-hidden rounded-lg relative" style={{ aspectRatio: '3/2' }}>
-              <Image 
-                src="/all/Gravity/5.png" 
-                alt="Gravity Exhibition 5" 
-                fill
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                className="object-cover transition-transform duration-700 hover:scale-105"
-                quality={40}
-              />
-            </div>
           </div>
         </div>
       </div>
