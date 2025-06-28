@@ -79,6 +79,19 @@ export default function  Home() {
         const scrollY = typeof window !== "undefined" ? window.scrollY : 0;
         return Math.min(0.3 + scrollY / 500, 1);
     };
+
+    const getTextColor = () => {
+      const opacity = calculateOpacity();
+      const colorValue = Math.round(255 * (1 - opacity)); // 255 是白色，0 是黑色
+      return `rgb(${colorValue}, ${colorValue}, ${colorValue})`;
+    };
+
+    // const getTextColor2 = () => {
+    //   const opacity = calculateOpacity();
+    //   const colorValue = Math.round(255 * (opacity)); // 255 是白色，0 是黑色
+    //   return `rgb(${colorValue}, ${colorValue}, ${colorValue})`;
+    // };
+
     const scrolly_calcultae = useCallback(() => (minDistance + scrollY * 0.1), [minDistance, scrollY]);
 
     const CAPTION_LIMIT = 25; // 你想要顯示的最大字數
@@ -228,6 +241,9 @@ export default function  Home() {
   
     const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
 
+    const [activeMobileDropdown, setActiveMobileDropdown] = useState<string | null>(null);
+
+    
     return (
 
 
@@ -275,7 +291,14 @@ export default function  Home() {
                         <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-48 h-2 bg-transparent z-40"></div>
                         
                         {/* 主要下拉選單 */}
-                        <div className="fixed top-[65px] left-0 w-full bg-white border-t border-gray-200 shadow-xl z-50 opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300 ease-out">
+                        <div 
+                          className="fixed top-[65px] left-0 w-full border-t border-gray-200 shadow-xl z-50 opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300 ease-out"
+                          style={{
+                            backgroundColor: `rgba(255, 255, 255, ${calculateOpacity()})`,
+                            color: getTextColor(),
+                            transition: "background-color 0.3s ease",
+                          }}
+                        >
                           <div className="max-w-7xl mx-auto px-6 py-8">
                             <div className="grid grid-cols-12 gap-8 items-center">
                               
@@ -299,7 +322,7 @@ export default function  Home() {
                                 <div className="space-y-8">
                                 {/* 上方大標題區域 */}
                                   <div className="ml-[3.5%] pt-4">
-                                    <h1 className="text-2xl font-bold text-gray-900 tracking-wide mb-2">
+                                    <h1 className="text-2xl font-bold tracking-wide mb-2">
                                       {dropdown.title}
                                     </h1>
                                     <div className="w-[167px] h-0.5 bg-gray-900 mb-4"></div>
@@ -311,7 +334,7 @@ export default function  Home() {
                                       <Link
                                         key={index}
                                         href={subItem.link}
-                                        className="block text-gray-700 hover:text-black transition-all duration-300 hover:border-b-2 transform hover:-translate-y-2"
+                                        className="block hover:text-black transition-all duration-300 hover:border-b-2 transform hover:-translate-y-2"
                                       >
                                         <div className="text-center space-y-2 pt-3">
                                           <div className="text-base font-medium group-hover/item:text-white transition-colors text-l">
@@ -387,9 +410,9 @@ export default function  Home() {
               {/* phone navi */}
               <div className="md:hidden flex items-center justify-between">
                 <div className="flex-1"></div>
-                  <Link href="/" className="flex-1 text-center text-2xl font-bold text-white">
-                    <span className="whitespace-nowrap">NTU Artfest</span>
-                  </Link>
+                <Link href="/" className="flex-1 text-center text-2xl font-bold text-white">
+                  <span className="whitespace-nowrap">NTU Artfest</span>
+                </Link>
                 <div className="flex-1 flex justify-end">
                   <button
                     onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -427,36 +450,85 @@ export default function  Home() {
               {isMobile && (
                 <div
                   className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
-                    isMenuOpen ? 'max-h-60 opacity-100 mt-4' : 'max-h-0 opacity-0'
+                    isMenuOpen ? 'opacity-100 mt-4' : 'max-h-0 opacity-0'
                   }`}
                 >
-                  <div className="flex flex-col items-center space-y-4 py-2">
-                  {navItems.map((item) => ( 
-                  <Link
-                    href={`/${item.id.toLowerCase().replace(/\s+/g, "-")}`}
-                    className="text-white hover:text-gray-300 hover:scale-105 transition-transform"
-                    onMouseEnter={() => setActiveTooltip(item.id)}
-                    onMouseLeave={() => setActiveTooltip(null)}
-                    key={item.id}
-                  >
-                  <div 
-                    key={item.id}
-                    className="relative flex items-center group"
-                  >
-                    {item.id}
-                    
-                    {activeTooltip === item.id && (
-                      <div
-                        className='overflow-hidden ml-2 w-0 group-hover:w-auto transition-all duration-300 ease-in-out flex items-center hover:text-gray-300 hover:scale-105 transition-transform'
-                      >
-                        <span className="text-white text-sm ">
-                          {item.desc}
-                        </span>
+                  <div className="flex flex-col items-center space-y-4 py-2 text-center">
+                    {dropdownItems.map((dropdown) => (
+                      <div key={dropdown.id} className="w-full">
+                        <button 
+                          className="text-white hover:text-gray-300 hover:scale-105 transition-transform flex items-center justify-center w-full"
+                          onClick={() => setActiveMobileDropdown(
+                            activeMobileDropdown === dropdown.id ? null : dropdown.id
+                          )}
+                        >
+                          {dropdown.title}
+                          <svg 
+                            className={`w-4 h-4 ml-1 transform transition-transform duration-200 ${
+                              activeMobileDropdown === dropdown.id ? 'rotate-180' : ''
+                            }`} 
+                            fill="none" 
+                            stroke="currentColor" 
+                            viewBox="0 0 24 24"
+                          >
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                          </svg>
+                        </button>
+                        
+                        {activeMobileDropdown === dropdown.id && (
+                          <div className="mt-2 w-full">
+                            <div 
+                              className="w-full border border-gray-200 rounded-lg shadow-lg overflow-hidden text-white"
+                              style={{
+                                backgroundColor: `rgba(0, 0, 0, ${calculateOpacity()})`,
+                              }}
+                            >
+                              <div className="py-2">
+                                {dropdown.items.map((subItem, index) => (
+                                  <Link
+                                    key={index}
+                                    href={subItem.link}
+                                    className="block py-3 px-4 hover:bg-gray-100/20 transition-colors border-b border-gray-200/20 last:border-b-0"
+                                    onClick={() => setActiveMobileDropdown(null)}
+                                  >
+                                    <div className="text-sm font-medium text-center">
+                                      {subItem.Engname} {subItem.Chiname}
+                                    </div>
+                                  </Link>
+                                ))}
+                              </div>
+                            </div>
+                          </div>
+                        )}
                       </div>
-                    )}
-                  </div>
-                </Link>
-              ))}
+                    ))}
+
+                    {navItems.map((item) => ( 
+                      <Link
+                        href={`/${item.id.toLowerCase().replace(/\s+/g, "-")}`}
+                        className="text-white hover:text-gray-300 hover:scale-105 transition-transform"
+                        onMouseEnter={() => setActiveTooltip(item.id)}
+                        onMouseLeave={() => setActiveTooltip(null)}
+                        key={item.id}
+                      >
+                        <div 
+                          key={item.id}
+                          className="relative flex items-center group"
+                        >
+                          {item.id}
+                          
+                          {activeTooltip === item.id && (
+                            <div
+                              className='overflow-hidden ml-2 w-0 group-hover:w-auto transition-all duration-300 ease-in-out flex items-center hover:text-gray-300 hover:scale-105 transition-transform'
+                            >
+                              <span className="text-white text-sm ">
+                                {item.desc}
+                              </span>
+                            </div>
+                          )}
+                        </div>
+                      </Link>
+                    ))}
                   </div>
                   <div className="flex items-center space-x-6 pt-5 pb-1 border-t border-gray-600 w-full justify-center mt-2">
                       <Link href="https://www.instagram.com/ntuartfest/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-300">
