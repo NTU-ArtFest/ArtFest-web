@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef, useCallback } from 'react';
+import { useState, useEffect, useRef, useCallback, SetStateAction } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -14,6 +14,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { motion } from 'framer-motion';
 import ModelViewer from './map';
+import { describe } from 'node:test';
 
 // enroll
 if (typeof window !== 'undefined') {
@@ -163,6 +164,23 @@ export default function  Home() {
         }
       );
     }, []);
+
+    const [closeTimeout, setCloseTimeout] = useState<NodeJS.Timeout | null>(null)
+
+    const handleMouseEnter = (dropdownId: SetStateAction<string | null>) => {
+      if (closeTimeout) {
+        clearTimeout(closeTimeout)
+        setCloseTimeout(null)
+      }
+      setActiveDropdown(dropdownId)
+    }
+
+    const handleMouseLeave = () => {
+      const timeout = setTimeout(() => {
+        setActiveDropdown(null)
+      }, 400) // 200ms 延遲
+      setCloseTimeout(timeout)
+    }
   
     const slides = [
       { id: 1, description: "寄居蟹", color: "bg-red-500", caption: "寄居蟹 ( ISP ) 一生都在尋找合適的新殼，展現出對自由和靈活生活方式的追求", url: '/who-art-you/001_without_bg.png'},
@@ -177,8 +195,38 @@ export default function  Home() {
       { id: "Polis", desc: "議題討論" },
       { id: "Who Art You", desc: "心理測驗" }
     ];
+    const dropdownItems = [
+      {
+        id: "Exhibitions", 
+        title: "Exhibitions",
+        items: [
+          { Engname: "Gravity", Chiname: "引力", link: "/exhibition/gravity"},
+          { Engname: "Conveyance", Chiname: "傳遞", link: "/exhibition/conveyance"},
+          { Engname: "Us", Chiname: "我們", link: "/exhibition/us"},
+          { Engname: "Continuum", Chiname: "延續", link: "/exhibition/continuum"},
+          { Engname: "潮間帶影像展", Chiname: "", link: "/exhibition/photographic_exhibition"},
+          { Engname: "Beyond the tide", Chiname: "潮之外", link: "/exhibition/beyond-the-tide"},
+          { Engname: "The wave", Chiname: "海浪", link: "/exhibition/the-wave"},
+          { Engname: "Tidal pavilion", Chiname: "觀潮亭", link: "/exhibition/tidewatch-pavilion"},
+        ],
+        featuredImage: "./Footer.png"
+      },
+      {
+        id: "Events",
+        title: "Events",
+        items: [
+          { Engname: "sexual-healing", Chiname: "性慾・癒", link: "/events/sexual-healing"},
+          { Engname: "imbalance", Chiname: "失衡", link: "/events/imbalance"},
+          { name: "工作坊", link: "/events/workshop"}
+        ],
+        featuredImage: "./Footer.png"
+      }
+    ];
+
     const [activeTooltip, setActiveTooltip] = useState<string | null>(null);
   
+    const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+
     return (
 
 
@@ -198,14 +246,102 @@ export default function  Home() {
             <div className="container mx-auto px-4">
 
               {/* desktop navi */}
-              <div className="hidden md:flex items-center justify-center space-x-6 text-center">
-                <Link href="/" className="flex items-center space-x-1 text-xl font-bold text-white hover:text-gray-300 hover:scale-105 transition-transform">
+              <div className="hidden md:flex items-center justify-center space-x-6 ">
+                <Link href="/" className="flex items-center space-x-1 text-xl font-bold text-white hover:text-gray-300 hover:scale-105 transition-transform text-center">
                   NTU Artfest
                 </Link>
 
                 <span className="text-white">|</span>
 
                 <div className="flex space-x-6">
+                {dropdownItems.map((dropdown) => (
+                  <div 
+                    key={dropdown.id}
+                    className="relative group"
+                    onMouseEnter={() => handleMouseEnter(dropdown.id)}
+                    onMouseLeave={handleMouseLeave}
+                  >
+                    <button className="text-white hover:text-gray-300 hover:scale-105 transition-transform flex items-center">
+                      {dropdown.title}
+                      <svg className="w-4 h-4 ml-1 transform group-hover:rotate-180 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </button>
+                    
+                    {activeDropdown === dropdown.id && (
+                      <div>
+                        {/* 橋接區域 */}
+                        <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-48 h-2 bg-transparent z-40"></div>
+                        
+                        {/* 主要下拉選單 */}
+                        <div className="fixed top-[65px] left-0 w-full bg-white border-t border-gray-200 shadow-xl z-50 opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300 ease-out">
+                          <div className="max-w-7xl mx-auto px-6 py-8">
+                            <div className="grid grid-cols-12 gap-8 items-center">
+                              
+                              {/* 左側圖片區域 */}
+                              <div className="col-span-3">
+                                <div className="relative overflow-hidden rounded-xl shadow-lg group/image">
+                                  <img 
+                                    src={dropdown.featuredImage || "/default-exhibition.jpg"} 
+                                    alt={`${dropdown.title} featured image`}
+                                    className="w-full h-64 object-cover transition-transform duration-500 group-hover/image:scale-110"
+                                  />
+                                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover/image:opacity-100 transition-opacity duration-300"></div>
+                                  <div className="absolute bottom-4 left-4 text-white opacity-0 group-hover/image:opacity-100 transition-opacity duration-300">
+                                    <p className="text-sm font-medium">精選展覽</p>
+                                  </div>
+                                </div>
+                              </div>
+                              
+                              {/* 中間標題區域 */}
+                              <div className="col-span-9">
+                                <div className="space-y-8">
+                                {/* 上方大標題區域 */}
+                                  <div className="ml-[3.5%] pt-4">
+                                    <h1 className="text-3xl font-bold text-gray-900 tracking-wide mb-2">
+                                      {dropdown.title}
+                                    </h1>
+                                    <div className="w-[167px] h-0.5 bg-gray-900 mb-4"></div>
+                                  </div>                                
+                                {/* 下方子項目區域 */}
+                                <div className="space-y-4">
+                                  <div className="grid grid-cols-4 gap-4 max-w-5xl mx-auto">
+                                    {dropdown.items.map((subItem, index) => (
+                                      <Link
+                                        key={index}
+                                        href={subItem.link}
+                                        className="block text-gray-700 hover:text-black transition-all duration-300 hover:border-b-2 transform hover:-translate-y-2"
+                                      >
+                                        <div className="text-center space-y-2 pt-3">
+                                          <div className="text-base font-medium group-hover/item:text-white transition-colors text-xl">
+                                            {subItem.Engname} {subItem.Chiname}
+                                          </div>
+                                          {/* <div className="text-base font-medium group-hover/item:text-white transition-colors">
+                                            {subItem.Chiname}
+                                          </div> */}
+                                          <div className="mt-3 opacity-0 group-hover/item:opacity-100 transition-opacity flex justify-center">
+                                            <svg className="w-5 h-2 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                                            </svg>
+                                          </div>
+                                        </div>
+                                      </Link>
+                                    ))}
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+
+                              
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                ))}
+
+
                 {navItems.map((item) => ( 
                   <Link
                   href={`/${item.id.toLowerCase().replace(/\s+/g, "-")}`}
@@ -213,23 +349,23 @@ export default function  Home() {
                   onMouseEnter={() => setActiveTooltip(item.id)}
                   onMouseLeave={() => setActiveTooltip(null)}
                   key={item.id}
-                >
-                <div 
-                  key={item.id}
-                  className="relative flex items-center group"
-                >
-                  {item.id}
-                  
-                  {activeTooltip === item.id && (
-                    <div
-                      className='overflow-hidden ml-2 w-0 group-hover:w-auto transition-all duration-300 ease-in-out flex items-center hover:text-gray-300 hover:scale-105 transition-transform'
-                    >
-                      <span className="text-white text-sm ">
-                        {item.desc}
-                      </span>
-                    </div>
-                  )}
-                </div>
+                  >
+                  <div 
+                    key={item.id}
+                    className="relative flex items-center group"
+                  >
+                    {item.id}
+                    
+                    {activeTooltip === item.id && (
+                      <div
+                        className='overflow-hidden ml-2 w-0 group-hover:w-auto transition-all duration-300 ease-in-out flex items-center hover:text-gray-300 hover:scale-105 transition-transform'
+                      >
+                        <span className="text-white text-sm ">
+                          {item.desc}
+                        </span>
+                      </div>
+                    )}
+                  </div>
                 </Link>
               ))}
                 </div>
@@ -406,7 +542,7 @@ export default function  Home() {
                                 className="text-[28px] md:text-5xl font-bold backdrop-blur-sm mb-4 tracking-wider p-10 "
                                 initial={{ opacity: 0 }}
                                 whileInView={{ opacity: 1 }}
-                                viewport={{ once: true, amount: 0.5 }} // 進入一半時觸發，且只觸發一次
+                                viewport={{ once: true, amount: 0.5 }} 
                                 transition={{  duration: 1.2, ease: "easeInOut", delay: 0.2 }}
                               >
                                 願你在潮起潮落之間

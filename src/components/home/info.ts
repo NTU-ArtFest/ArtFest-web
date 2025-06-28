@@ -150,7 +150,7 @@ export const buildings: Building[] = [
             {
                 name: '潮起 - 性慾．癒',
                 intro: '以理解、尊重與包容，正視被社會視為禁忌的性慾，從而找到屬於自己的平衡點',
-                url: 'https://www.instagram.com/p/DIMFGyjhsXf/?img_index=1'
+                url: 'https://artfest.ntu.edu.tw:2025/exhibition/sexual-healing'
             },
         ]
       },
@@ -208,7 +208,7 @@ export const buildings: Building[] = [
             {
                 name: '潮差 - 失衡',
                 intro: '以潮汐的「流動」為隱喻，​是​一趟人從身體感知到情緒轉化、從環境回應到內在沉澱的探索旅程。我們將透過行動、創作與對談，思考如何感到歸屬並定錨自我',
-                url: 'https://www.instagram.com/p/DIMFGyjhsXf/?img_index=1'
+                url: 'https://artfest.ntu.edu.tw:2025/exhibition/imbalance'
             },
         ]
       },
