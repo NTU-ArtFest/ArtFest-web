@@ -39,6 +39,11 @@ export default function TheWaveExhibition() {
             <span className="text-[6px]">張芷嫣、陳郁庭、戴其恩、江妍恩、曾子庭、林揚傑、吳驊祐</span><br />
             <span className="text-[6px]">楊楀潔、蔡宇恩、李逸寬、雷婷羽、王若瑜</span></p>
 
+            <p className="mb-1"><span className="font-bold text-sm md:text-base">活動紀錄</span><br />
+            <span className="text-xs md:text-sm">
+              王厚仁
+            </span></p>
+
             <p><span className="font-bold text-[8px]">展出地點</span><br />
             <span className="text-[6px]">國立臺灣大學振興草皮</span></p>
             
@@ -71,6 +76,11 @@ export default function TheWaveExhibition() {
                 <span className="text-xs md:text-sm">李宥辰、林鴻、石英佐、魏銘志、林祈安、林致碩、謝磊</span><br />
                 <span className="text-xs md:text-sm">張芷嫣、陳郁庭、戴其恩、江妍恩、曾子庭、林揚傑、吳驊祐</span><br />
                 <span className="text-xs md:text-sm">楊楀潔、蔡宇恩、李逸寬、雷婷羽、王若瑜</span></p>
+
+            <p className="mb-1"><span className="font-bold text-sm md:text-base">活動紀錄</span><br />
+            <span className="text-xs md:text-sm">
+              王厚仁
+            </span></p>
 
               <p><span className="font-bold text-sm md:text-base">展出地點</span><br />
               <span className="text-xs md:text-sm">國立臺灣大學振興草皮</span></p>

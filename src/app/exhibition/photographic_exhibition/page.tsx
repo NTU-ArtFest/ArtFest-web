@@ -57,6 +57,11 @@ export default function Exhibition() {
             蘇晏禾、屈言真、曾得恩<br />
             高翊茗、林昱安
             </span></p>
+
+            <p className="mb-1"><span className="font-bold text-sm md:text-base">活動紀錄</span><br />
+            <span className="text-xs md:text-sm">
+              黃楷翔
+            </span></p>
             
             <p><span className="font-bold text-[8px]">指導單位</span><br />
             <span className="text-[6px]">跨領域藝術課程 — 陶亞倫教授、金天尹助教</span></p>
@@ -95,6 +100,11 @@ export default function Exhibition() {
                   蘇晏禾、屈言真、曾得恩<br />
                   高翊茗、林昱安
               </span></p>
+
+            <p className="mb-1"><span className="font-bold text-sm md:text-base">活動紀錄</span><br />
+            <span className="text-xs md:text-sm">
+              黃楷翔
+            </span></p>
               
               <p><span className="font-bold text-sm md:text-base">指導單位</span><br />
               <span className="text-xs md:text-sm">跨領域藝術課程 — 陶亞倫教授、金天尹助教</span></p>

@@ -36,6 +36,11 @@ export default function TidewatchPavilionExhibition() {
             
             <p><span className="font-bold text-[8px]">製作團隊</span><br />
             <span className="text-[6px]">李宥辰、林鴻、悅山工坊</span></p>
+
+            <p className="mb-1"><span className="font-bold text-sm md:text-base">活動紀錄</span><br />
+            <span className="text-xs md:text-sm">
+              王厚仁
+            </span></p>
             
             <p><span className="font-bold text-[8px]">展覽時間</span><br />
             <span className="text-[6px]">5/2~5/24 10:00-19:00</span></p>
@@ -64,6 +69,11 @@ export default function TidewatchPavilionExhibition() {
               
               <p><span className="font-bold text-sm md:text-base">製作團隊</span><br />
               <span className="text-xs md:text-sm">李宥辰、林鴻、悅山工坊</span></p>
+
+            <p className="mb-1"><span className="font-bold text-sm md:text-base">活動紀錄</span><br />
+            <span className="text-xs md:text-sm">
+              王厚仁
+            </span></p>
               
               <p><span className="font-bold text-sm md:text-base">展覽時間</span><br />
               <span className="text-xs md:text-sm">5/2~5/24 10:00-19:00</span></p>

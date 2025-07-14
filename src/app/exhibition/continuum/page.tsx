@@ -39,6 +39,11 @@ export default function ContinuumExhibition() {
               
               <p><span className="font-bold text-[8px]">平面設計</span><br />
               <span className="text-[6px]">黃丞琳</span></p>
+
+           <p className="mb-1"><span className="font-bold text-sm md:text-base">活動紀錄</span><br />
+            <span className="text-xs md:text-sm">
+              賴晉億
+            </span></p>
               
               <p><span className="font-bold text-[8px]">展覽時間</span><br />
               <span className="text-[6px]">5/2~5/16 10:00-20:00</span></p>
@@ -67,6 +72,11 @@ export default function ContinuumExhibition() {
                 
                 <p><span className="font-bold text-sm md:text-base">平面設計</span><br />
                 <span className="text-xs md:text-sm">黃丞琳</span></p>
+
+              <p className="mb-1"><span className="font-bold text-sm md:text-base">活動紀錄</span><br />
+                <span className="text-xs md:text-sm">
+                  賴晉億
+                </span></p>
                 
                 <p><span className="font-bold text-sm md:text-base">展覽時間</span><br />
                 <span className="text-xs md:text-sm">5/2~5/16 10:00-20:00</span></p>

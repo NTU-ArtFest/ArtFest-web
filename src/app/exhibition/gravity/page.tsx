@@ -34,6 +34,11 @@ export default function GravityExhibition() {
             <span className="text-[6px]">
             莊沛珣、陳姸均、李宜繡、蕭登允
             </span></p>
+
+            <p className="mb-1"><span className="font-bold text-sm md:text-base">活動紀錄</span><br />
+            <span className="text-xs md:text-sm">
+              林冠鋐
+            </span></p>
             
             <p><span className="font-bold text-[8px]">參展單位</span><br />
             <span className="text-[6px]">凌歆慧藝術家、臺大電影節 NTU MovieFest</span></p>
@@ -65,6 +70,11 @@ export default function GravityExhibition() {
               <span className="text-xs md:text-sm">
                   莊沛珣、陳姸均、李宜繡、蕭登允
               </span></p>
+
+            <p className="mb-1"><span className="font-bold text-sm md:text-base">活動紀錄</span><br />
+            <span className="text-xs md:text-sm">
+              林冠鋐
+            </span></p>
               
               <p><span className="font-bold text-sm md:text-base">參展單位</span><br />
               <span className="text-xs md:text-sm">凌歆慧藝術家、臺大電影節 NTU MovieFest</span></p>

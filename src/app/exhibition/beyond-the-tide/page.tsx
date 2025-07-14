@@ -33,6 +33,11 @@ export default function BeyondTheTideExhibition() {
               <span className="text-[6px]">
               張瑜真、封親靈、江侑蓁
               </span></p>
+
+              <p className="mb-1"><span className="font-bold text-sm md:text-base">活動紀錄</span><br />
+            <span className="text-xs md:text-sm">
+              黃楷翔
+            </span></p>
               
               <p><span className="font-bold text-[8px]">參展單位</span><br />
               <span className="text-[6px]">徐瑞藝術家、陳健文藝術家、王奕凡藝術家</span></p>
@@ -67,6 +72,11 @@ export default function BeyondTheTideExhibition() {
                 <span className="text-xs md:text-sm">
                     張瑜真、封親靈、江侑蓁
                 </span></p>
+
+                <p className="mb-1"><span className="font-bold text-sm md:text-base">活動紀錄</span><br />
+            <span className="text-xs md:text-sm">
+              黃楷翔
+            </span></p>
                 
                 <p><span className="font-bold text-sm md:text-base">參展單位</span><br />
                 <span className="text-xs md:text-sm">徐瑞藝術家、陳健文藝術家、王奕凡藝術家</span></p>
