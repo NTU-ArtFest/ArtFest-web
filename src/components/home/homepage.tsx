@@ -231,7 +231,7 @@ export default function  Home() {
       color: "bg-red-500",
       caption: {
         zh: "寄居蟹 ( ISP ) 一生都在尋找合適的新殼，展現出對自由和靈活生活方式的追求",
-        en: "Hermit Crab (ISP) spends its life searching for a suitable new shell, showing a pursuit of freedom and flexible lifestyle."
+        en: "Hermit Crab (ISP) spends its life searching for a suitable new shell, pursuing freedom and flexible lifestyle."
       },
       url: '/who-art-you/001_without_bg.png'
     },
@@ -241,7 +241,7 @@ export default function  Home() {
       color: "bg-blue-500",
       caption: {
         zh: "招潮蟹 ( ESP ) 英文又名「Fiddler crabs」，在泥灘上揮舞蟹螯的他們是天生的提琴演奏家，除了吸引異性之外，也是力量的象徵",
-        en: "Fiddler Crab (ESP), known for waving their claws on mudflats, are natural violinists, symbolizing strength and attracting mates."
+        en: "Fiddler Crab (ESP), known for waving their claws on mudflats, symbolizing strength and attracting mates."
       },
       url: '/who-art-you/001.png'
     },
@@ -251,7 +251,7 @@ export default function  Home() {
       color: "bg-green-500",
       caption: {
         zh: "藤壺 ( ISJ ) 是潮間帶的釘子戶，一旦找到合適的地方，就牢牢黏住不放，無論在哪裡都能見到牠的蹤影，是潮間帶低調的強者",
-        en: "Barnacle (ISJ) is a steadfast resident of the intertidal zone, firmly attaching itself wherever it finds a suitable spot, a low-key strong presence in the tidal area."
+        en: "Barnacle (ISJ) is a steadfast resident of the intertidal zone, firmly attaching itself wherever it finds a suitable spot."
       },
       url: '/who-art-you/ENF001.png'
     },
@@ -261,7 +261,7 @@ export default function  Home() {
       color: "bg-yellow-500",
       caption: {
         zh: "跳跳魚 ( ENF ) 是潮間帶的活力高手，能在水中游動，也能在泥灘上靈活跳躍，像個不受拘束的探險家",
-        en: "Mudskipper (ENF) is an energetic expert of the intertidal zone, able to swim in water and jump agilely on mudflats, like a free-spirited explorer."
+        en: "Mudskipper (ENF) is an energetic expert of the intertidal zone, able to swim in water and jump agilely on mudflats."
       },
       url: '/who-art-you/ESJ001_without_bg.png'
     },
@@ -271,7 +271,7 @@ export default function  Home() {
       color: "bg-purple-500",
       caption: {
         zh: "海兔 ( INF ) 是海底的神秘遊俠，柔軟的身軀隨著海流飄動，優雅穿梭於珊瑚與沙地之間。",
-        en: "Sea Hare (INF) is a mysterious underwater wanderer, with a soft body drifting with the currents, gracefully moving among corals and sandy areas."
+        en: "Sea Hare (INF) is a mysterious underwater wanderer, with a soft body drifting with the currents."
       },
       url: '/who-art-you/INF001_without_bg.png'
     },
