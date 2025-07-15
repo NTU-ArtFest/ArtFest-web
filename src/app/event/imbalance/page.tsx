@@ -75,8 +75,8 @@ export default function HealingExhibition() {
               <p><span className="font-bold text-sm md:text-base">活動講者</span><br />
               <span className="text-xs md:text-sm">許藍方 博士</span></p>
 
-              <p><span className="font-bold text-[8px]">展演演員</span><br />
-              <span className="text-[6px]">陳鈺潔、賀茂庭、許又云</span></p>
+              <p><span className="font-bold text-sm md:text-base">展演演員</span><br />
+              <span className="text-xs md:text-sm">陳鈺潔、賀茂庭、許又云</span></p>
               
               <p><span className="font-bold text-sm md:text-base">活動時間</span><br />
               <span className="text-xs md:text-sm">4月23日（星期三）18:00 ~ 20:30</span></p>

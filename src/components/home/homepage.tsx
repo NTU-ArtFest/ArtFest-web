@@ -14,7 +14,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { motion } from 'framer-motion';
 import ModelViewer from './map';
-import { describe } from 'node:test';
+import { useLanguage } from './LanguageContext';
 
 // enroll
 if (typeof window !== 'undefined') {
@@ -50,6 +50,27 @@ export default function  Home() {
 
     const [isVideoLoaded, setIsVideoLoaded] = useState(false);
 
+    const { lang, setLang } = useLanguage();
+
+    const { t } = useLanguage();
+
+    const text = t('find');
+
+    // 英文時一個字母一行
+    const renderText = () => {
+      if (lang === 'en') {
+        // 英文：每個單字一行
+        return text.split(' ').map((word, idx) => (
+          <span key={idx} style={{ display: 'block' }}>{word}</span>
+        ));
+      }
+      // 中文：每個字也包一個 span，但不分行
+      return (
+        <span style={{ display: 'inline' }}>
+          {text}
+        </span>
+      );
+    };
 
     // --- function --- 
     // 檢測螢幕大小變化
@@ -195,13 +216,67 @@ export default function  Home() {
       setCloseTimeout(timeout)
     }
   
-    const slides = [
-      { id: 1, description: "寄居蟹", color: "bg-red-500", caption: "寄居蟹 ( ISP ) 一生都在尋找合適的新殼，展現出對自由和靈活生活方式的追求", url: '/who-art-you/001_without_bg.png'},
-      { id: 2, description: "招潮蟹", color: "bg-blue-500",  caption: "招潮蟹 ( ESP ) 英文又名「Fiddler crabs」，在泥灘上揮舞蟹螯的他們是天生的提琴演奏家，除了吸引異性之外，也是力量的象徵", url: '/who-art-you/001.png' },
-      { id: 3, description: "藤壺", color: "bg-green-500", caption: "藤壺 ( ISJ ) 是潮間帶的釘子戶，一旦找到合適的地方，就牢牢黏住不放，無論在哪裡都能見到牠的蹤影，是潮間帶低調的強者", url: '/who-art-you/ENF001.png' },
-      { id: 4, description: "跳跳魚", color: "bg-yellow-500", caption: "跳跳魚 ( ENF ) 是潮間帶的活力高手，能在水中游動，也能在泥灘上靈活跳躍，像個不受拘束的探險家", url: '/who-art-you/ESJ001_without_bg.png' },
-      { id: 5, description: "海兔", color: "bg-purple-500", caption: "海兔 ( INF ) 是海底的神秘遊俠，柔軟的身軀隨著海流飄動，優雅穿梭於珊瑚與沙地之間。", url: '/who-art-you/INF001_without_bg.png' },
-    ];
+    type Slide = {
+      id: number;
+      description: { zh: string; en: string } | string;
+      color: string;
+      caption: { zh: string; en: string } | string;
+      url: string;
+    };
+
+    const slides: Slide[] = [
+    {
+      id: 1,
+      description: { zh: "寄居蟹", en: "Hermit Crab" },
+      color: "bg-red-500",
+      caption: {
+        zh: "寄居蟹 ( ISP ) 一生都在尋找合適的新殼，展現出對自由和靈活生活方式的追求",
+        en: "Hermit Crab (ISP) spends its life searching for a suitable new shell, showing a pursuit of freedom and flexible lifestyle."
+      },
+      url: '/who-art-you/001_without_bg.png'
+    },
+    {
+      id: 2,
+      description: { zh: "招潮蟹", en: "Fiddler Crab" },
+      color: "bg-blue-500",
+      caption: {
+        zh: "招潮蟹 ( ESP ) 英文又名「Fiddler crabs」，在泥灘上揮舞蟹螯的他們是天生的提琴演奏家，除了吸引異性之外，也是力量的象徵",
+        en: "Fiddler Crab (ESP), known for waving their claws on mudflats, are natural violinists, symbolizing strength and attracting mates."
+      },
+      url: '/who-art-you/001.png'
+    },
+    {
+      id: 3,
+      description: { zh: "藤壺", en: "Barnacle" },
+      color: "bg-green-500",
+      caption: {
+        zh: "藤壺 ( ISJ ) 是潮間帶的釘子戶，一旦找到合適的地方，就牢牢黏住不放，無論在哪裡都能見到牠的蹤影，是潮間帶低調的強者",
+        en: "Barnacle (ISJ) is a steadfast resident of the intertidal zone, firmly attaching itself wherever it finds a suitable spot, a low-key strong presence in the tidal area."
+      },
+      url: '/who-art-you/ENF001.png'
+    },
+    {
+      id: 4,
+      description: { zh: "跳跳魚", en: "Mudskipper" },
+      color: "bg-yellow-500",
+      caption: {
+        zh: "跳跳魚 ( ENF ) 是潮間帶的活力高手，能在水中游動，也能在泥灘上靈活跳躍，像個不受拘束的探險家",
+        en: "Mudskipper (ENF) is an energetic expert of the intertidal zone, able to swim in water and jump agilely on mudflats, like a free-spirited explorer."
+      },
+      url: '/who-art-you/ESJ001_without_bg.png'
+    },
+    {
+      id: 5,
+      description: { zh: "海兔", en: "Sea Hare" },
+      color: "bg-purple-500",
+      caption: {
+        zh: "海兔 ( INF ) 是海底的神秘遊俠，柔軟的身軀隨著海流飄動，優雅穿梭於珊瑚與沙地之間。",
+        en: "Sea Hare (INF) is a mysterious underwater wanderer, with a soft body drifting with the currents, gracefully moving among corals and sandy areas."
+      },
+      url: '/who-art-you/INF001_without_bg.png'
+    },
+  ];
+
 
     const navItems = [
       { id: "ARG", desc: "另類實境解謎" },
@@ -217,7 +292,7 @@ export default function  Home() {
           { Engname: "Conveyance", Chiname: "傳遞", link: "/exhibition/conveyance"},
           { Engname: "Us", Chiname: "我們", link: "/exhibition/us"},
           { Engname: "Continuum", Chiname: "延續", link: "/exhibition/continuum"},
-          { Engname: "潮間帶影像展", Chiname: "", link: "/exhibition/photographic_exhibition"},
+          { Engname: "Intertidal Photo Exhibition", Chiname: "潮間帶影像展", link: "/exhibition/photographic_exhibition"},
           { Engname: "Beyond the tide", Chiname: "潮之外", link: "/exhibition/beyond-the-tide"},
           { Engname: "The wave", Chiname: "海浪", link: "/exhibition/the-wave"},
           { Engname: "Tidal Pavilion", Chiname: "觀潮亭", link: "/exhibition/tidewatch-pavilion"},
@@ -228,9 +303,15 @@ export default function  Home() {
         id: "Events",
         title: "Events",
         items: [
+          { Engname: "Opening Ceremony", Chiname: "開幕式", link: "/event/opening-ceremony"},
+          { Engname: "Key Visual", Chiname: "主視覺", link: "/event/key_visual"},
           { Engname: "Sexual Healing", Chiname: "性慾・癒", link: "/event/sexual-healing"},
           { Engname: "Imbalance", Chiname: "失衡", link: "/event/imbalance"},
-          { Engname: "Key Visual", Chiname: "主視覺", link: "/event/key_visual"},
+          { Engname: "Immeasurable Emptiness", Chiname: "無量空處", link: "/event/immeasurable-emptiness"},
+          { Engname: "Insearch Of Flow", Chiname: "尋流‧相映", link: "/event/insearch-of-flow"},
+          { Engname: "Sea Collecting and Blue Mark", Chiname: "拾海‧藍印", link: "/event/seacollecting-and-bluemark"},
+          { Engname: "The Stone Crafters", Chiname: "石尚玩家", link: "/event/the-stone-crafters"},
+          { Engname: "Ending Ceremony", Chiname: "閉幕式", link: "/event/ending-ceremony"},
 
         ],
         featuredImage: "./exhibition/ppl_in_light.png"
@@ -311,9 +392,6 @@ export default function  Home() {
                                     className="w-full h-64 object-cover transition-transform duration-500 group-hover/image:scale-110"
                                   />
                                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover/image:opacity-100 transition-opacity duration-300"></div>
-                                  {/* <div className="absolute bottom-4 left-4 text-white opacity-0 group-hover/image:opacity-100 transition-opacity duration-300">
-                                    <p className="text-sm font-medium">精選展覽</p>
-                                  </div> */}
                                 </div>
                               </div>
                               
@@ -338,11 +416,8 @@ export default function  Home() {
                                       >
                                         <div className="text-center space-y-2 pt-3">
                                           <div className="text-base font-medium group-hover/item:text-white transition-colors text-l">
-                                            {subItem.Engname} {subItem.Chiname}
+                                            {lang === 'zh' ? subItem.Chiname : subItem.Engname}
                                           </div>
-                                          {/* <div className="text-base font-medium group-hover/item:text-white transition-colors">
-                                            {subItem.Chiname}
-                                          </div> */}
                                           <div className="mt-3 opacity-0 group-hover/item:opacity-100 transition-opacity flex justify-center">
                                             <svg className="w-5 h-2 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
@@ -404,6 +479,17 @@ export default function  Home() {
                       <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/>
                     </svg>
                   </Link>
+                  <button
+                    onClick={() => setLang(lang === 'zh' ? 'en' : 'zh')}
+                    className="text-white rounded transition-colors flex items-center"
+                    aria-label="切換語言"
+                  >
+                    {/* 地球 SVG 圖示 */}
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16" className='mr-1.5 text-white hover:text-gray-300 hover:scale-110 transition-transform'>
+  <path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m7.5-6.923c-.67.204-1.335.82-1.887 1.855A8 8 0 0 0 5.145 4H7.5zM4.09 4a9.3 9.3 0 0 1 .64-1.539 7 7 0 0 1 .597-.933A7.03 7.03 0 0 0 2.255 4zm-.582 3.5c.03-.877.138-1.718.312-2.5H1.674a7 7 0 0 0-.656 2.5zM4.847 5a12.5 12.5 0 0 0-.338 2.5H7.5V5zM8.5 5v2.5h2.99a12.5 12.5 0 0 0-.337-2.5zM4.51 8.5a12.5 12.5 0 0 0 .337 2.5H7.5V8.5zm3.99 0V11h2.653c.187-.765.306-1.608.338-2.5zM5.145 12q.208.58.468 1.068c.552 1.035 1.218 1.65 1.887 1.855V12zm.182 2.472a7 7 0 0 1-.597-.933A9.3 9.3 0 0 1 4.09 12H2.255a7 7 0 0 0 3.072 2.472M3.82 11a13.7 13.7 0 0 1-.312-2.5h-2.49c.062.89.291 1.733.656 2.5zm6.853 3.472A7 7 0 0 0 13.745 12H11.91a9.3 9.3 0 0 1-.64 1.539 7 7 0 0 1-.597.933M8.5 12v2.923c.67-.204 1.335-.82 1.887-1.855q.26-.487.468-1.068zm3.68-1h2.146c.365-.767.594-1.61.656-2.5h-2.49a13.7 13.7 0 0 1-.312 2.5m2.802-3.5a7 7 0 0 0-.656-2.5H12.18c.174.782.282 1.623.312 2.5zM11.27 2.461c.247.464.462.98.64 1.539h1.835a7 7 0 0 0-3.072-2.472c.218.284.418.598.597.933M10.855 4a8 8 0 0 0-.468-1.068C9.835 1.897 9.17 1.282 8.5 1.077V4z"/>
+</svg>
+                    <span className='pt-0.5 text-white hover:text-gray-300 hover:scale-110 transition-transform'>{lang === 'zh' ? 'CN' : 'EN'}</span>
+                  </button>
                 </div>
               </div>
 
@@ -492,7 +578,7 @@ export default function  Home() {
                                     onClick={() => setActiveMobileDropdown(null)}
                                   >
                                     <div className="text-sm font-medium text-center">
-                                      {subItem.Engname} {subItem.Chiname}
+                                      {lang === 'zh' ? subItem.Chiname : subItem.Engname}
                                     </div>
                                   </Link>
                                 ))}
@@ -541,6 +627,17 @@ export default function  Home() {
                           <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/>
                         </svg>
                       </Link>
+                      <button
+                        onClick={() => setLang(lang === 'zh' ? 'en' : 'zh')}
+                        className="text-white rounded transition-colors flex items-center"
+                        aria-label="切換語言"
+                      >
+                        {/* 地球 SVG 圖示 */}
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16" className='mr-1.5 text-white hover:text-gray-300 hover:scale-110 transition-transform'>
+      <path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m7.5-6.923c-.67.204-1.335.82-1.887 1.855A8 8 0 0 0 5.145 4H7.5zM4.09 4a9.3 9.3 0 0 1 .64-1.539 7 7 0 0 1 .597-.933A7.03 7.03 0 0 0 2.255 4zm-.582 3.5c.03-.877.138-1.718.312-2.5H1.674a7 7 0 0 0-.656 2.5zM4.847 5a12.5 12.5 0 0 0-.338 2.5H7.5V5zM8.5 5v2.5h2.99a12.5 12.5 0 0 0-.337-2.5zM4.51 8.5a12.5 12.5 0 0 0 .337 2.5H7.5V8.5zm3.99 0V11h2.653c.187-.765.306-1.608.338-2.5zM5.145 12q.208.58.468 1.068c.552 1.035 1.218 1.65 1.887 1.855V12zm.182 2.472a7 7 0 0 1-.597-.933A9.3 9.3 0 0 1 4.09 12H2.255a7 7 0 0 0 3.072 2.472M3.82 11a13.7 13.7 0 0 1-.312-2.5h-2.49c.062.89.291 1.733.656 2.5zm6.853 3.472A7 7 0 0 0 13.745 12H11.91a9.3 9.3 0 0 1-.64 1.539 7 7 0 0 1-.597.933M8.5 12v2.923c.67-.204 1.335-.82 1.887-1.855q.26-.487.468-1.068zm3.68-1h2.146c.365-.767.594-1.61.656-2.5h-2.49a13.7 13.7 0 0 1-.312 2.5m2.802-3.5a7 7 0 0 0-.656-2.5H12.18c.174.782.282 1.623.312 2.5zM11.27 2.461c.247.464.462.98.64 1.539h1.835a7 7 0 0 0-3.072-2.472c.218.284.418.598.597.933M10.855 4a8 8 0 0 0-.468-1.068C9.835 1.897 9.17 1.282 8.5 1.077V4z"/>
+    </svg>
+                        <span className='pt-0.5 text-white hover:text-gray-300 hover:scale-110 transition-transform'>{lang === 'zh' ? 'CN' : 'EN'}</span>
+                      </button>
                     </div>
                 </div>
               )}
@@ -601,12 +698,13 @@ export default function  Home() {
               <div className='relative'>
 
                 {/* Second main section : horizontal scroll */}
-                <div className="min-h-screen md:min-h-screen flex items-center justify-center z-20 pt-40 "> 
-                    <div className="relative w-[85%] md:w-[70%]  rounded-md"> 
-                        <h2 className="pb-10 text-5xl text-center md:text-left font-bold md:text-6xl ">展場地圖</h2> 
-                        <ModelViewer/>
-                    </div>
-                </div>
+                  <div className="min-h-screen md:min-h-screen flex items-center justify-center z-20 pt-40 "> 
+                      <div className="relative w-[85%] md:w-[70%]  rounded-md"> 
+                          <h2 className="pb-10 text-5xl text-center md:text-left font-bold md:text-6xl ">{t('map_cap')}</h2> 
+                          <ModelViewer lang={lang}/>
+                      </div>
+                  </div>
+
                 {/* First main section : introduction */}
                 <div className="h-[400px] flex items-center justify-center relative ">
                     <div className=" container mx-auto px-6 flex flex-col md:flex-row items-center md:justify-end">
@@ -618,7 +716,7 @@ export default function  Home() {
                                 viewport={{ once: true, amount: 0.5 }} 
                                 transition={{  duration: 1.2, ease: "easeInOut", delay: 0.2 }}
                               >
-                                願你在潮起潮落之間
+                                {t('wish')}
                             </motion.h2>
                         </div>
                     </div>
@@ -638,7 +736,7 @@ export default function  Home() {
                                 viewport={{ once: true, amount: 0.5 }} 
                                 transition={{  duration: 1.2, ease: "easeInOut", delay: 0.2 }}
                               >
-                                看見自己的輪廓
+                                {t('see')}
                             </motion.h2>
                         </div>
                     </div>
@@ -649,16 +747,22 @@ export default function  Home() {
                         <div className="md:w-1/2 md:mt-[200px] mt-20 z-20 flex justify-center">
                             <motion.h2
                                 className="text-[28px] md:text-5xl font-bold mb-4 tracking-wider backdrop-blur-sm"
-                                style={{
-                                  writingMode: "vertical-rl",    
-                                  textOrientation: "upright",    
-                                }}
+                                style={
+                                  lang === 'zh'
+                                    ? {
+                                        writingMode: "vertical-rl",
+                                        textOrientation: "upright",
+                                      }
+                                    : {
+                                        lineHeight: "1.3",
+                                      }
+                                }
                                 initial={{ opacity: 0 }}
                                 whileInView={{ opacity: 1 }}
                                 viewport={{ once: true, amount: 0.5 }} 
                                 transition={{  duration: 1.2, ease: "easeInOut", delay: 0.2 }}
                               >
-                                也找到與世界共振的節奏
+                                {renderText()}
                             </motion.h2>
                         </div>
                     </div>
@@ -696,28 +800,63 @@ export default function  Home() {
                   <div className="max-w-4xl mx-auto space-y-12"> 
 
                     <div className="text-left1 p-8 mt-6">
-                      <h3 className="text-xl md:text-3xl font-semibold text-black">架空世界觀 x 另類實境解謎 x 16型人格MBTI</h3>
+                      <h3 className="text-xl md:text-3xl font-semibold text-black">
+                        {t('Arg-1').split('<br/>').map((line, idx) => (
+                          <span key={idx}>
+                            {line}
+                            {idx !== t('Arg-1').split('<br/>').length - 1 && <br />}
+                          </span>
+                        ))}
+                      </h3>
                     </div>
                     
                     <div className="text-right1 p-8 text-right">
-                      <h3 className="text-xl md:text-3xl font-semibold text-black">2030年<br/>長生不老的夢想終於實現<br/>Current Effect 的科學突破<br/>讓人類的壽命延長至 150、甚至 200 歲</h3>
+                      <h3 className="text-xl md:text-3xl font-semibold text-black" >
+                        {t('Arg-2').split('<br/>').map((line, idx) => (
+                          <span key={idx}>
+                            {line}
+                            {idx !== t('Arg-2').split('<br/>').length - 1 && <br />}
+                          </span>
+                        ))}
+                      </h3>
                     </div>
                     
                     <div className="text-left2 p-8">
-                      <h3 className="text-xl md:text-3xl font-semibold text-black">有些人迎來永恆的青春，有些人卻成了「不良種」<br/>——畸形、智能退化，逐漸被社會遺棄</h3>
+                      <h3 className="text-xl md:text-3xl font-semibold text-black">
+                        {t('Arg-3').split('<br/>').map((line, idx) => (
+                          <span key={idx}>
+                            {line}
+                            {idx !== t('Arg-3').split('<br/>').length - 1 && <br />}
+                          </span>
+                        ))}
+                      </h3>
                     </div>
                     
                     <div className="text-right2 p-8 text-right mb-10">
-                      <h3 className="text-xl md:text-3xl font-semibold mb-10 text-black">一顆變種的牡蠣<br/>如何讓社會陷入混亂？</h3>
+                      <h3 className="text-xl md:text-3xl font-semibold mb-10 text-black">
+                        {t('Arg-4').split('<br/>').map((line, idx) => (
+                          <span key={idx}>
+                            {line}
+                            {idx !== t('Arg-4').split('<br/>').length - 1 && <br />}
+                          </span>
+                        ))}
+                      </h3>
                     </div>
                     
                     <div className="text-left3 p-8">
-                      <h3 className="text-xl md:text-3xl font-semibold text-orange-600" >當生命不再有終點，你如何度過百歲人生？</h3>
+                      <h3 className="text-xl md:text-3xl font-semibold text-orange-600" >
+                        {t('Arg-5').split('<br/>').map((line, idx) => (
+                          <span key={idx}>
+                            {line}
+                            {idx !== t('Arg-5').split('<br/>').length - 1 && <br />}
+                          </span>
+                        ))}
+                      </h3>
                     </div>
 
                     <div className="text-right3 p-8 text-right mb-10">
                       <Link href="/arg" className=" text-lg text-bold text-gray-700 scale-100 hover:text-black hover:font-semibold hover:underline ">
-                          點我玩 ARG 來解鎖真相 〉〉
+                          {t('Arg-6')}
                       </Link>
                     </div>
                     
@@ -730,14 +869,28 @@ export default function  Home() {
               <section className="py-10 min-h-screen flex flex-col items-center justify-center relative bg-white pt-[140px]">
                 <div className="max-w-2xl mx-auto mb-10 px-4 w-[90%]">
                   <p className="text-center text-xl md:text-3xl font-bold text-gray-800 leading-relaxed mb-4">
-                    每個人心中，都有一隻住在潮間帶的小夥伴
+                    {t('wau-1').split('<br/>').map((line, idx) => (
+                      <span key={idx}>
+                        {line}
+                        {idx !== t('wau-1').split('<br/>').length - 1 && <br />}
+                      </span>
+                    ))}
                   </p>
                   <p className="text-center text-lg md:text-xl text-gray-700 leading-relaxed mb-4">
-                    牠可能黏黏軟軟、可能行動敏捷、也可能擁有驚人的防禦力，<br />
-                    而牠的個性，或許和你意想不到地相似。
+                    {t('wau-2').split('<br/>').map((line, idx) => (
+                      <span key={idx}>
+                        {line}
+                        {idx !== t('wau-2').split('<br/>').length - 1 && <br />}
+                      </span>
+                    ))}
                   </p>
                   <p className="text-center mt-2 mb-2 text-yellow-500 text-lg md:text-xl font-semibold">
-                    ✨這是一場找尋的旅程，也是一場了解自己的冒險
+                    {t('wau-3').split('<br/>').map((line, idx) => (
+                      <span key={idx}>
+                        {line}
+                        {idx !== t('wau-3').split('<br/>').length - 1 && <br />}
+                      </span>
+                    ))}
                   </p>
                 </div>
                   <Swiper
@@ -780,37 +933,71 @@ export default function  Home() {
                         />
                       <div className="flex items-center justify-center h-[50px] w-full ">
                           <div>
-                          {slide.description}
+                            {typeof slide.description === 'object' && slide.description !== null
+                              ? slide.description[lang]
+                              : slide.description}
                           </div>
                       </div>
                       <div className="flex justify-center h-[100px] w-full">
                         <p className="mt-4 text-gray-700 w-[70%]">
-                          {slide.caption.length > CAPTION_LIMIT && !expandedCaptions[slide.id]
+                          {typeof slide.caption === 'object' && slide.caption !== null
                             ? (
-                              <>
-                                {slide.caption.slice(0, CAPTION_LIMIT)}...
-                                <button
-                                  className="text-gray-500 ml-2 "
-                                  onClick={() => toggleCaption(slide.id)}
-                                  type="button"
-                                >
-                                  打開
-                                </button>
-                              </>
+                              slide.caption[lang].length > CAPTION_LIMIT && !expandedCaptions[slide.id]
+                                ? (
+                                  <>
+                                    {slide.caption[lang].slice(0, CAPTION_LIMIT)}...
+                                    <button
+                                      className="text-gray-500 ml-2 "
+                                      onClick={() => toggleCaption(slide.id)}
+                                      type="button"
+                                    >
+                                      {t('open')}
+                                    </button>
+                                  </>
+                                )
+                                : (
+                                  <>
+                                    {slide.caption[lang]}
+                                    {slide.caption[lang].length > CAPTION_LIMIT && (
+                                      <button
+                                        className="text-gray-500 ml-2"
+                                        onClick={() => toggleCaption(slide.id)}
+                                        type="button"
+                                      >
+                                        {t('close')}
+                                      </button>
+                                    )}
+                                  </>
+                                )
                             )
                             : (
-                              <>
-                                {slide.caption}
-                                {slide.caption.length > CAPTION_LIMIT && (
-                                  <button
-                                    className="text-gray-500 ml-2"
-                                    onClick={() => toggleCaption(slide.id)}
-                                    type="button"
-                                  >
-                                    收起
-                                  </button>
-                                )}
-                              </>
+                              slide.caption.length > CAPTION_LIMIT && !expandedCaptions[slide.id]
+                                ? (
+                                  <>
+                                    {slide.caption.slice(0, CAPTION_LIMIT)}...
+                                    <button
+                                      className="text-gray-500 ml-2 "
+                                      onClick={() => toggleCaption(slide.id)}
+                                      type="button"
+                                    >
+                                      {t('open')}
+                                    </button>
+                                  </>
+                                )
+                                : (
+                                  <>
+                                    {slide.caption}
+                                    {slide.caption.length > CAPTION_LIMIT && (
+                                      <button
+                                        className="text-gray-500 ml-2"
+                                        onClick={() => toggleCaption(slide.id)}
+                                        type="button"
+                                      >
+                                        {t('close')}
+                                      </button>
+                                    )}
+                                  </>
+                                )
                             )
                           }
                         </p>
@@ -818,21 +1005,21 @@ export default function  Home() {
                       </SwiperSlide>
                   ))}
                   </Swiper>
-                  <p className="mt-10 md:mt-1 text-gray-500">&gt;&gt; 一起來玩<Link href='/who-art-you' className='text-[#ff9500] hover:underline'> Who Art You 吧，看看哪一隻屬於你！</Link></p>
+                  <div dangerouslySetInnerHTML={{ __html: t('wau_final') }} />
               </section>
     
     
               {/* Fifth main section : polis */}
               <section className="h-screen flex items-center justify-center bg-white z-20 ">
                 <div ref={finalBlockRef} className="max-w-1xl w-full bg-white rounded-xl shadow-xs p-8 md:p-12 space-y-8 scale-90 hover:scale-105 transition-transform duration-300 md:w-[80%] md:text-center leading-relaxed">
-                  <h1 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4 text-center">最後，我們想說的是</h1>
+                  <h1 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4 text-center">{t('polis-1')}</h1>
                   <p className="text-lg md:text-xl text-gray-700 leading-relaxed italic">
-                  藝術季是眾人們能夠聚集在一起的時機，此刻你我最需要的就是自在地讓思想流動的空間，相信當眾人一起對校園、社會上存在的問題有所思考，甚至一起想解決方法時，是會成就傑作的！
+                  {t('polis-2')}
                   </p>
                   <div className="mt-4 px-4 text-center">
-                    <Link href="/polis" className="hover:text-gray-900 hover:underline text-gray-700">
-                      &gt;&gt;  走！我們一起來討論<span className='text-[#ff9500]'>「公共議題」</span>！
-                    </Link>
+                    <a href="/polis" className="hover:text-gray-900 hover:underline text-gray-700">
+                      <div dangerouslySetInnerHTML={{ __html: t('polis-3') }} />
+                    </a>
                   </div>
                 </div>
                 
