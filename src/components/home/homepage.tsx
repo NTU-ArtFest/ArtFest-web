@@ -57,21 +57,34 @@ export default function  Home() {
     const text = t('find');
 
     // 英文時一個字母一行
-    const renderText = () => {
-      if (lang === 'en') {
-        // 英文：每個單字一行
-        return text.split(' ').map((word, idx) => (
-          <span key={idx} style={{ display: 'block' }}>{word}</span>
-        ));
-      }
-      // 中文：每個字也包一個 span，但不分行
-      return (
-        <span style={{ display: 'inline' }}>
-          {text}
-        </span>
-      );
-    };
-
+    // const renderText = () => {
+    //   if (lang === 'en') {
+    //     // 英文：每個單字一行
+    //     return text.split(' ').map((word, idx) => (
+    //       <span key={idx} style={{ display: 'block' }}>{word}</span>
+    //     ));
+    //   }
+    //   // 中文：每個字也包一個 span，但不分行
+    //   return (
+    //     <span style={{ display: 'inline' }}>
+    //       {text}
+    //     </span>
+    //   );
+    // };
+ const renderText = () => {
+  if (lang === 'zh') {
+    // 中文：每個字一行，但需要反轉順序以符合由右到左的閱讀習慣
+    return text.split('').reverse().map((char, idx) => (
+      <span key={idx} style={{ display: 'block' }}>{char}</span>
+    ));
+  }
+  // 英文：正常顯示，不分行
+  return (
+    <span style={{ display: 'inline' }}>
+      {text}
+    </span>
+  );
+};
     // --- function --- 
     // 檢測螢幕大小變化
     useEffect(() => {
@@ -212,7 +225,7 @@ export default function  Home() {
     const handleMouseLeave = () => {
       const timeout = setTimeout(() => {
         setActiveDropdown(null)
-        setHoveredImage("/exhibition/ppl_in_light.png")
+        setHoveredImage("/all/Gravity/1.png")
       }, 400) // 200ms 延遲
       setCloseTimeout(timeout)
     }
@@ -278,7 +291,7 @@ export default function  Home() {
     },
   ];
 
-    const [hoveredImage, setHoveredImage] = useState("/exhibition/ppl_in_light.png");
+    const [hoveredImage, setHoveredImage] = useState("/all/Gravity/1.png");
 
     const navItems = [
       { id: "ARG", desc: "另類實境解謎" },
@@ -299,7 +312,7 @@ export default function  Home() {
           { Engname: "The wave", Chiname: "海浪", link: "/exhibition/the-wave", url: "/all/the-wave/1.png"},
           { Engname: "Tidal Pavilion", Chiname: "觀潮亭", link: "/exhibition/tidewatch-pavilion", url: "/all/tidewatch-pavilion/1.png"},
         ],
-        featuredImage: "./exhibition/ppl_in_wave.png"
+        featuredImage: "/all/Gravity/1.png"
       },
       {
         id: "Events",
@@ -316,7 +329,7 @@ export default function  Home() {
           { Engname: "Ending Ceremony", Chiname: "閉幕式", link: "/event/ending-ceremony", url: "/all/ending-ceremony/17.png"},
 
         ],
-        featuredImage: "/exhibition/ppl_in_light.png"
+        featuredImage: "/all/opening-ceremony/16.png"
       }
     ];
 
@@ -388,7 +401,7 @@ export default function  Home() {
                               
                               {/* 左側圖片區域 */}
                               <div className="col-span-3">
-                                <div className="relative overflow-hidden rounded-xl shadow-lg group/image w-full h-64">
+                                <div className="relative overflow-hidden rounded-xl shadow-lg group/image w-full "style={{ aspectRatio: '3/2' }}>
                                   <Image 
                                     src={hoveredImage}
                                     alt={`${dropdown.title} featured image`}

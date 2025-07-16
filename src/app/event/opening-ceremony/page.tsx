@@ -18,7 +18,7 @@ export default function OpeningCeremonyActivity() {
         <div className="md:hidden relative z-20 h-screen w-full flex flex-col">
           {/* 左上標題 - 縮小字體 */}
           <div className="self-start mt-8 ml-6">
-            <h1 className="text-xl sm:text-3xl font-bold tracking-wider mb-1 uppercase">第30屆台大藝術季</h1>
+            <h1 className="text-xl sm:text-3xl font-bold tracking-wider mb-1 uppercase">第30屆臺大藝術季</h1>
             <h2 className="text-lg sm:text-2xl font-bold tracking-wider mb-1 uppercase">開幕式</h2>
             <p className="text-xs sm:text-base tracking-wide">Rise & Fall</p>
           </div>
@@ -47,7 +47,7 @@ export default function OpeningCeremonyActivity() {
           {/* 左上標題與右下資訊 */}
           <div className="relative h-full w-full">
             <div className="absolute top-12 left-12">
-              <h1 className="text-3xl lg:text-4xl xl:text-5xl font-bold tracking-wider mb-1">第30屆台大藝術季</h1>
+              <h1 className="text-3xl lg:text-4xl xl:text-5xl font-bold tracking-wider mb-1">第30屆臺大藝術季</h1>
               <h2 className="text-2xl lg:text-3xl xl:text-4xl font-bold tracking-wider mb-2">開幕式</h2>
               <p className="text-lg lg:text-xl xl:text-2xl font-light tracking-wide">Rise & Fall</p>
             </div>
@@ -89,8 +89,8 @@ export default function OpeningCeremonyActivity() {
               開幕式舉辦之「潮浪集」市集，邀請關注不同社會議題的非營利組織，包括綠色和平、人生百味、賽珍珠基金會、暖暖、撐傘者後盾等。透過議題宣導與互動設計，這場市集將掀起一波與社會引力拉扯的對話，在討論與交流間激盪新的浪潮。
             </p>
             <p className="text-left">
-              <strong>｜「逐浪之境」Ｘ 表演舞台</strong><br />
-              夜幕降臨，開幕式進入高潮——「逐浪之境」表演舞台。我們邀請藝人柏霖 Polin、Control T、Theseus忒修斯，以及本校的嘻哈研究社、肚皮舞社、火舞社，透過視覺與聽覺的交錯演繹，展現潮汐的節奏感。從漲潮的激昂、滿潮的狂放，到退潮的餘韻，讓觀眾在音樂與舞蹈的流動之間，感受潮汐的吸引力與張力。
+              <strong>｜「逐浪之境」Ｘ 表演舞臺</strong><br />
+              夜幕降臨，開幕式進入高潮——「逐浪之境」表演舞臺。我們邀請藝人柏霖 Polin、Control T、Theseus忒修斯，以及本校的嘻哈研究社、肚皮舞社、火舞社，透過視覺與聽覺的交錯演繹，展現潮汐的節奏感。從漲潮的激昂、滿潮的狂放，到退潮的餘韻，讓觀眾在音樂與舞蹈的流動之間，感受潮汐的吸引力與張力。
             </p>
             <p className="text-left">
               本次開幕式將透過多元媒介與參與形式，激盪出藝術與社會、個人與群體間的對話。隨著潮汐推進，藝術季的旅程在5/2的開幕式中，正式展開。

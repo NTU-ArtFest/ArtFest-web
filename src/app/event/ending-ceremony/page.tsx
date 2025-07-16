@@ -18,22 +18,31 @@ export default function EndingCeremonyActivity() {
         <div className="md:hidden relative z-20 h-screen w-full flex flex-col">
           {/* 左上標題 - 縮小字體 */}
           <div className="self-start mt-8 ml-6">
-            <h1 className="text-xl sm:text-3xl font-bold tracking-wider mb-1 uppercase">第30屆台大藝術季</h1>
-            <h2 className="text-lg sm:text-2xl font-bold tracking-wider mb-1 uppercase">閉幕式</h2>
-            <p className="text-xs sm:text-base tracking-wide">Rise & Fall</p>
+            <h1 className="text-xl sm:text-3xl font-bold tracking-wider mb-1 uppercase">第30屆臺大藝術季</h1>
+            <h2 className="text-lg sm:text-2xl font-bold tracking-wider mb-1 uppercase">閉幕式回顧</h2>
+            <p className="text-xs sm:text-base tracking-wide">Closing Ceremony Recap</p>
           </div>
                     
           {/* 右下展覽資訊 - 調整文字大小和位置以符合邊框 */}
           <div className="absolute bottom-6 right-6 text-right text-xs space-y-1">
-            <p className="mb-1"><span className="font-bold text-[8px]">策劃團隊</span><br />
+            <p className="mb-1"><span className="font-bold text-[8px]">籌備成員</span><br />
             <span className="text-[6px]">
-            張恩齊、邱禹甄、蔡宇恩、洪涵溱、蔡佩渝
+            張恩齊、蔡宇恩、邱禹甄、洪涵溱、蔡佩渝
             </span></p>
 
-            <p className="mb-1"><span className="font-bold text-sm md:text-base">活動紀錄</span><br />
-            <span className="text-xs md:text-sm">
-                劉韋杰、周世倫、蘇晏禾、劉韋辰、周宜葇、游兩婕、吳士昕、廖尹淇、王芋勻、江卉柔、黃楷翔
+            <p className="mb-1"><span className="font-bold text-[8px]">影像紀錄</span><br />
+            <span className="text-[6px]">
+                劉韋辰、黃楷翔、游雨婕、周世倫、蘇晏禾、劉韋杰、周宜葇、廖尹淇、王芓勻、江卉柔
             </span></p>
+
+            <p className="mb-1"><span className="font-bold text-[8px]">文案撰寫</span><br />
+            <span className="text-[6px]">張恩齊</span></p>
+
+            <p className="mb-1"><span className="font-bold text-[8px]">文案翻譯</span><br />
+            <span className="text-[6px]">陳子安</span></p>
+
+            <p className="mb-1"><span className="font-bold text-[8px]">平面設計</span><br />
+            <span className="text-[6px]">林鴻</span></p>
             
             <p><span className="font-bold text-[8px]">活動時間</span><br />
             <span className="text-[6px]">5/16 17:00-22:00</span></p>
@@ -49,24 +58,31 @@ export default function EndingCeremonyActivity() {
           {/* 左上標題與右下資訊 */}
           <div className="relative h-full w-full">
             <div className="absolute top-12 left-12">
-              <h1 className="text-3xl lg:text-4xl xl:text-5xl font-bold tracking-wider mb-1">第30屆台大藝術季</h1>
-              <h2 className="text-2xl lg:text-3xl xl:text-4xl font-bold tracking-wider mb-2">閉幕式</h2>
-              <p className="text-lg lg:text-xl xl:text-2xl font-light tracking-wide">Rise & Fall</p>
+              <h1 className="text-3xl lg:text-4xl xl:text-5xl font-bold tracking-wider mb-1">第30屆臺大藝術季</h1>
+              <h2 className="text-2xl lg:text-3xl xl:text-4xl font-bold tracking-wider mb-2">閉幕式回顧</h2>
+              <p className="text-lg lg:text-xl xl:text-2xl font-light tracking-wide">Closing Ceremony Recap</p>
             </div>
             
             {/* 右下展覽資訊 - 調整出血位置和文字大小 */}
-            <div className="absolute bottom-10 right-10 md:bottom-12 md:right-12 lg:bottom-14 lg:right-14 text-right max-w-md space-y-2.5">
-              <p className="mb-1"><span className="font-bold text-sm md:text-base">策劃團隊</span><br />
+            <div className="absolute bottom-10 right-10 md:bottom-12 md:right-12 lg:bottom-14 lg:right-14 text-right max-w-md space-y-2">
+              <p className="mb-1"><span className="font-bold text-sm md:text-base">籌備成員</span><br />
               <span className="text-xs md:text-sm">
-                  張恩齊、邱禹甄、蔡宇恩、洪涵溱、蔡佩渝
+                  張恩齊、蔡宇恩、邱禹甄、洪涵溱、蔡佩渝
               </span></p>
 
-              <p className="mb-1"><span className="font-bold text-sm md:text-base">活動紀錄</span><br />
+              <p className="mb-1"><span className="font-bold text-sm md:text-base">影像紀錄</span><br />
               <span className="text-xs md:text-sm">
-                  劉韋杰、周世倫、蘇晏禾、劉韋辰、周宜葇、游兩婕、吳士昕、廖尹淇、王芋勻、江卉柔、黃楷翔
+                  劉韋辰、黃楷翔、游雨婕、周世倫、蘇晏禾、劉韋杰、周宜葇、廖尹淇、王芓勻、江卉柔
               </span></p>
 
-            
+              <p className="mb-1"><span className="font-bold text-sm md:text-base">文案撰寫</span><br />
+              <span className="text-xs md:text-sm">張恩齊</span></p>
+
+              <p className="mb-1"><span className="font-bold text-sm md:text-base">文案翻譯</span><br />
+              <span className="text-xs md:text-sm">陳子安</span></p>
+
+              <p className="mb-1"><span className="font-bold text-sm md:text-base">平面設計</span><br />
+              <span className="text-xs md:text-sm">林鴻</span></p>
               
               <p><span className="font-bold text-sm md:text-base">活動時間</span><br />
               <span className="text-xs md:text-sm">5/16 17:00-22:00</span></p>
@@ -78,63 +94,95 @@ export default function EndingCeremonyActivity() {
         </div>
       </div>
 
-      {/* 活動介紹區塊 - 調整文字大小 */}
+      {/* 中文回顧內容 */}
       <div className="relative z-10 py-10 md:py-14 bg-black">
         <div className="container mx-auto px-6">
-          <h2 className="text-base md:text-2xl font-light mb-6 md:mb-10 tracking-wider text-center uppercase">活動介紹</h2>
+          <h2 className="text-base md:text-2xl font-light mb-6 md:mb-10 tracking-wider text-center uppercase">閉幕式回顧</h2>
 
           <div className="max-w-3xl mx-auto text-xs md:text-base leading-relaxed space-y-4 font-light">
-            <p className="text-center italic">
-              ❝ 潮水退去，抹淨了淚痕與足跡，帶不走在心中漾起的漣漪。 ❞
-            </p>
             <p className="text-left">
-              <strong>5月16日（五）的閉幕式</strong>中，我們將引領參與者收斂這兩週以來的體驗與感受。以「延續」為核心概念，讓『潮汐』在心中激起的浪花持續蕩漾，延展藝術季的餘韻。
+              烏雲飄過的午後，沒有火燒椰林大道的絕美景象，振興草坪上卻充滿歡笑聲與音樂。<br />
+              這片平靜的海波，連泫然欲泣的天空都不忍心打擾。<br />
+              在五月十六號的那個下午，我們借用了一個不下雨的願望，汲取一些愜意，注入這個空間。
             </p>
+            
             <p className="text-left">
-              <strong>｜ 「藍汐午後」 野餐 Ｘ 不插電樂團</strong><br />
-              5/16下午16:30起，我們將在振興草坪上展開「野餐」活動，伴隨紅眼班機、The Wicked Witches、森日和三組學生樂團的不插電演出。音樂將如微風輕撫，讓藝術季的情感與回憶透過旋律流轉，牽引著最後的餘波。
+              閉幕式與潮汐的交會——是在奔騰、善變與混亂的潮流中，回歸自我的【我們】與【延續】。
             </p>
+            
             <p className="text-left">
-              <strong>｜ 「瓶間寄語」 Ｘ 瓶中信互動裝置</strong><br />
-              同時間，草坪上將展出互動裝置「瓶中信」，透過戶外藝術裝置呈現海洋的淺層 / 中層 / 深層，象徵我們在人生旅程中的漂流與交會。在這片藝術海域裡，參與者可以透過書寫與交換瓶中信，讓訊息在人與人之間傳遞，讓溫度得以延續。
+              <strong>｜藍汐午後｜</strong><br />
+              木棧板搭建的舞臺因為不平整而有些搖搖晃晃，正巧構築了一艘小船。<br />
+              以表演者與主持人為船員，在交談聲與歡笑聲中，我們徐徐地航行在音樂劃開的水波紋上，輕踩過藝術季留下的痕跡，在表演者與參與者、藝術空間和人群中，建立起連結。<br />
+              誠摯感謝參與的所有人員，用歌聲與樂聲，將藝術以平易近人的形式，輕巧地在潮水中，掀起漣漪。
             </p>
+            
             <p className="text-left">
-              <strong>｜ 「潮間映夜」Ｘ 露天電影</strong><br />
-              傍晚19:20，藝術季將進入最後的章節——「電影放映」。我們將播放藝術季的紀錄片，回顧這段旅程的點滴，並精選一部電影——《海街日記》，邀請大家在銀幕前沈澱心境，與自身對話。在光影交錯間，藝術季的記憶將再次浮現，而潮汐的共鳴，也將在心中緩緩擴散。
+              <strong>｜瓶間寄語｜</strong><br />
+              「寫一封信給你、給未知的他人，它將會在夜晚的光點中，靜靜地漂流向遠方。」<br />
+              從沙灘、海岸交界線、透光層、中層海，最後降落在深海。<br />
+              你在哪一處找到自己？在哪一處選擇放下？<br />
+              不論是陽光所及之處，抑或是黑暗沉靜的海底，期許你的話語、念想與情感，也能在這片海洋中，找到歸處。
             </p>
+            
             <p className="text-left">
-              閉幕式將以恬靜而溫暖的氛圍落幕，然而，這場藝術的浪潮，仍將繼續流動，陪伴我們走向更遼闊的未知之境。
+              <strong>｜潮間映夜｜</strong><br />
+              天漸漸暗下來，草坪正中的螢幕投影出的影像在黑夜中更顯顏色。<br />
+              從藝術季MV到《海街日記》，在某一個畫面、音樂或對話中，也許漂流的心已經得到安放。
+            </p>
+            
+            <p className="text-left">
+              潮水退去，留在沙灘上的石礫，是我們用力生活的痕跡。<br />
+              感謝所有從策劃、討論到執行的過程中，曾經駐足過，與我們一起奮力在潮汐中開展一條旅途的工作人員們。
+            </p>
+            
+            <p className="text-left">
+              潮起潮落，陰晴圓缺。<br />
+              五月十六號的閉幕式，第30屆臺大藝術季【潮汐】落幕，但是地與月仍會繼續牽引，而我們亦會持續漂流、向前。
             </p>
           </div>
         </div>
       </div>
 
-      {/* 英文活動介紹區塊 */}
+      {/* 英文回顧內容 */}
       <div className="relative z-10 py-10 md:py-14 bg-black">
         <div className="container mx-auto px-6">
-          <h2 className="text-base md:text-2xl font-light mb-6 md:mb-10 tracking-wider text-center uppercase">Activity Introduction</h2>
+          <h2 className="text-base md:text-2xl font-light mb-6 md:mb-10 tracking-wider text-center uppercase">Closing Ceremony Recap</h2>
 
           <div className="max-w-3xl mx-auto text-xs md:text-base leading-relaxed space-y-4 font-light">
-            <p className="text-center italic">
-              ❝ As the tide recedes, it washes away the tears and footprints, but leaves behind ripples that continue to stir within our hearts. ❞
-            </p>
             <p className="text-left">
-              On May 16th (Friday), the closing ceremony invites participants to gather the reflections and emotions from the past two weeks. Centered around the theme of "Continuum," we hope the waves stirred by Rise & Fall will linger and resonate, extending the festival's gentle afterglow.
+              On a cloudy May afternoon with no fiery sunset, no glowing boulevard, but Zhenxing Lawn lit up with music and laughter.<br />
+              We borrowed a wish for no rain and let ourselves ease into the moment.<br />
+              The tide was wild, ever-changing. But we found our own rhythm.
             </p>
+            
             <p className="text-left">
-              <strong>｜"Blue Tide Afternoon" X Picnic & Unplugged Performances</strong><br />
-              Starting at 4:30 PM on the Zhenxing Lawn, join us for a laid-back picnic accompanied by unplugged performances from student bands Red-Eye Flight, The Wicked Witches, and Mori Hiwa. Let the melodies drift like a soft breeze, carrying the festival's memories and sentiments into the lingering waves of farewell.
+              <strong>｜A Gentle Drift｜</strong><br />
+              The stage wobbled a little, like a boat about to set sail.<br />
+              Performers and hosts became our crew.<br />
+              As music rippled through the grass, we drifted together through conversations, through laughter, through the memories art left behind.<br />
+              Thank you to everyone who joined us, your voices stirred the water in the softest, most beautiful way.
             </p>
+            
             <p className="text-left">
-              <strong>｜"Message in a Bottle" X Interactive Installation</strong><br />
-              At the same time, explore the interactive installation Messages in Bottles on the lawn, an outdoor art piece portraying the ocean's surface, mid, and deep layers—symbolizing our drifting and encounters along life's journey. Here, participants can write and exchange messages in bottles, allowing words and warmth to continue their voyage between people.
+              <strong>｜Message in a Bottle｜</strong><br />
+              "Write a letter to yourself, or someone you haven't met yet."<br />
+              Let it float across a sea of light: from the beach to the deep.<br />
+              Where did you find yourself? Where did you choose to let go?<br />
+              Whether under sunlight or in the quiet dark, may your words find a place to rest.
             </p>
+            
             <p className="text-left">
-              <strong>｜Tide-lit Night – Open-Air Cinema</strong><br />
-              At 7:20 PM, the festival enters its final chapter with an open-air cinema. We'll screen the Arts Festival documentary, revisiting the moments shared throughout this journey, followed by a special feature film, <em>Our Little Sister</em>. Under the shimmering night sky, we invite everyone to quietly reflect and reconnect with themselves. In the dance of light and shadow, the memories of the festival will resurface, and the echoes of the tides will continue to ripple gently within.
+              <strong>｜Tide x Screen x Night｜</strong><br />
+              As the sky dimmed, the screen came to life.<br />
+              From our season MV to scenes from Our Little Sister, maybe a drifting heart found a soft landing.
             </p>
+            
             <p className="text-left">
-              The closing ceremony will end in a tranquil, heartfelt atmosphere—but the tides of art will keep flowing, accompanying us as we journey toward new and boundless horizons.
+              The tide went out, but traces remain — proof we lived it fully.<br />
+              To every planner, dreamer, and doer: thank you for sailing through this with us.<br />
+              Tides rise and fall, but the pull continues.<br />
+              So do we.
             </p>
           </div>
         </div>
