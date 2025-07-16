@@ -87,6 +87,26 @@ Perhaps the real question isn’t how the stone exists—but how it has been cha
         </div>
       </div>
 
+      {/* 作品展示區 - 採用 3:2 比例展示圖片 */}
+      <div className="relative z-10 py-10 md:py-14 bg-gradient-to-b from-black to-gray-900">
+        <div className="container mx-auto px-6">
+          <h2 className="text-base md:text-2xl font-light mb-8 md:mb-12 tracking-wider text-center uppercase">活動紀錄 Activity Documentation</h2>
+          
+          {/* 網格畫廊 - 固定 3:2 比例 */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            {Array.from({ length: 10 }, (_, index) => (
+              <div key={index + 1} className="overflow-hidden rounded-lg" style={{ aspectRatio: '3/2' }}>
+                <img 
+                  src={`/all/key_visual/${index + 1}.png`} 
+                  alt={`Key Visual ${index + 1}`} 
+                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
       {/* 底部版權聲明 */}
       <footer className="relative z-10 py-5 md:py-6 bg-black border-t border-gray-800">
         <div className="container mx-auto px-6">
