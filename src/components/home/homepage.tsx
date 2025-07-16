@@ -212,6 +212,7 @@ export default function  Home() {
     const handleMouseLeave = () => {
       const timeout = setTimeout(() => {
         setActiveDropdown(null)
+        setHoveredImage("/exhibition/ppl_in_light.png")
       }, 400) // 200ms 延遲
       setCloseTimeout(timeout)
     }
@@ -277,6 +278,7 @@ export default function  Home() {
     },
   ];
 
+    const [hoveredImage, setHoveredImage] = useState("/exhibition/ppl_in_light.png");
 
     const navItems = [
       { id: "ARG", desc: "另類實境解謎" },
@@ -288,14 +290,14 @@ export default function  Home() {
         id: "Exhibitions", 
         title: "Exhibitions",
         items: [
-          { Engname: "Gravity", Chiname: "引力", link: "/exhibition/gravity"},
-          { Engname: "Conveyance", Chiname: "傳遞", link: "/exhibition/conveyance"},
-          { Engname: "Us", Chiname: "我們", link: "/exhibition/us"},
-          { Engname: "Continuum", Chiname: "延續", link: "/exhibition/continuum"},
-          { Engname: "Intertidal Photo Exhibition", Chiname: "潮間帶影像展", link: "/exhibition/photographic_exhibition"},
-          { Engname: "Beyond the tide", Chiname: "潮之外", link: "/exhibition/beyond-the-tide"},
-          { Engname: "The wave", Chiname: "海浪", link: "/exhibition/the-wave"},
-          { Engname: "Tidal Pavilion", Chiname: "觀潮亭", link: "/exhibition/tidewatch-pavilion"},
+          { Engname: "Gravity", Chiname: "引力", link: "/exhibition/gravity", url: "/all/Gravity/1.png"},
+          { Engname: "Conveyance", Chiname: "傳遞", link: "/exhibition/conveyance", url: "/all/conveyance/1.png"},
+          { Engname: "Us", Chiname: "我們", link: "/exhibition/us", url: "/all/us/1.png"},
+          { Engname: "Continuum", Chiname: "延續", link: "/exhibition/continuum", url: "/all/continuum/2.png"},
+          { Engname: "Intertidal Photo Exhibition", Chiname: "潮間帶影像展", link: "/exhibition/photographic_exhibition", url: "/exhibition/sea.png"},
+          { Engname: "Beyond the tide", Chiname: "潮之外", link: "/exhibition/beyond-the-tide", url: "/all/beyond-the-tide/1.png"},
+          { Engname: "The wave", Chiname: "海浪", link: "/exhibition/the-wave", url: "/all/the-wave/1.png"},
+          { Engname: "Tidal Pavilion", Chiname: "觀潮亭", link: "/exhibition/tidewatch-pavilion", url: "/all/tidewatch-pavilion/1.png"},
         ],
         featuredImage: "./exhibition/ppl_in_wave.png"
       },
@@ -303,18 +305,18 @@ export default function  Home() {
         id: "Events",
         title: "Events",
         items: [
-          { Engname: "Opening Ceremony", Chiname: "開幕式", link: "/event/opening-ceremony"},
-          { Engname: "Key Visual", Chiname: "主視覺", link: "/event/key_visual"},
-          { Engname: "Sexual Healing", Chiname: "性慾・癒", link: "/event/sexual-healing"},
-          { Engname: "Imbalance", Chiname: "失衡", link: "/event/imbalance"},
-          { Engname: "Immeasurable Emptiness", Chiname: "無量空處", link: "/event/immeasurable-emptiness"},
-          { Engname: "Insearch Of Flow", Chiname: "尋流‧相映", link: "/event/insearch-of-flow"},
-          { Engname: "Sea Collecting and Blue Mark", Chiname: "拾海‧藍印", link: "/event/seacollecting-and-bluemark"},
-          { Engname: "The Stone Crafters", Chiname: "石尚玩家", link: "/event/the-stone-crafters"},
-          { Engname: "Ending Ceremony", Chiname: "閉幕式", link: "/event/ending-ceremony"},
+          { Engname: "Opening Ceremony", Chiname: "開幕式", link: "/event/opening-ceremony", url: "/all/opening-ceremony/16.png"},
+          { Engname: "Key Visual", Chiname: "主視覺", link: "/event/key_visual", url: "/all/key_visual/1.png"},
+          { Engname: "Sexual Healing", Chiname: "性慾・癒", link: "/event/sexual-healing", url: "/all/sexual-healing/1.jpg"},
+          { Engname: "Imbalance", Chiname: "失衡", link: "/event/imbalance", url: "/all/imbalance/1.jpg"},
+          { Engname: "Immeasurable Emptiness", Chiname: "無量空處", link: "/event/immeasurable-emptiness", url: "/all/immeasurable-emptiness/3.png"},
+          { Engname: "Insearch Of Flow", Chiname: "尋流‧相映", link: "/event/insearch-of-flow", url: "/all/insearch-of-flow/21.png"},
+          { Engname: "Sea Collecting and Blue Mark", Chiname: "拾海‧藍印", link: "/event/seacollecting-and-bluemark", url: "/all/seacollecting-and-bluemark/2.png"},
+          { Engname: "The Stone Crafters", Chiname: "石尚玩家", link: "/event/the-stone-crafters", url: "/all/the-stone-crafters/8.png"},
+          { Engname: "Ending Ceremony", Chiname: "閉幕式", link: "/event/ending-ceremony", url: "/all/ending-ceremony/17.png"},
 
         ],
-        featuredImage: "./exhibition/ppl_in_light.png"
+        featuredImage: "/exhibition/ppl_in_light.png"
       }
     ];
 
@@ -379,18 +381,25 @@ export default function  Home() {
                             color: getTextColor(),
                             transition: "background-color 0.3s ease",
                           }}
+                          
                         >
                           <div className="max-w-7xl mx-auto px-6 py-8">
                             <div className="grid grid-cols-12 gap-8 items-center">
                               
                               {/* 左側圖片區域 */}
                               <div className="col-span-3">
-                                <div className="relative overflow-hidden rounded-xl shadow-lg group/image">
-                                  <img 
-                                    src={dropdown.featuredImage || "/default-exhibition.jpg"} 
+                                <div className="relative overflow-hidden rounded-xl shadow-lg group/image w-full h-64">
+                                  <Image 
+                                    src={hoveredImage}
                                     alt={`${dropdown.title} featured image`}
-                                    className="w-full h-64 object-cover transition-transform duration-500 group-hover/image:scale-110"
-                                  />
+                                    className="w-full h-64 object-cover transition-transform duration-500"
+                                    fill
+                                    sizes="100vw"
+                                    placeholder="blur"        // 開啟模糊預覽
+                                    blurDataURL="/placeholder-blur.jpg" // 泛用，或每張配對附加
+                                    loading="lazy" // 懶加載（非首屏時可用）
+                                    priority={false} // 僅首屏圖優先
+                                  />  
                                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover/image:opacity-100 transition-opacity duration-300"></div>
                                 </div>
                               </div>
@@ -413,6 +422,7 @@ export default function  Home() {
                                         key={index}
                                         href={subItem.link}
                                         className="block hover:text-black transition-all duration-300 hover:border-b-2 transform hover:-translate-y-2"
+                                        onMouseEnter={() => setHoveredImage(subItem.url || dropdown.featuredImage || "/default-exhibition.jpg")}
                                       >
                                         <div className="text-center space-y-2 pt-3">
                                           <div className="text-base font-medium group-hover/item:text-white transition-colors text-l">
@@ -485,7 +495,7 @@ export default function  Home() {
                     aria-label="切換語言"
                   >
                     {/* 地球 SVG 圖示 */}
-                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16" className='mr-1.5 text-white hover:text-gray-300 hover:scale-110 transition-transform'>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16" className='mr-1.5 text-white hover:text-gray-300 hover:scale-110 transition-transform'>
   <path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m7.5-6.923c-.67.204-1.335.82-1.887 1.855A8 8 0 0 0 5.145 4H7.5zM4.09 4a9.3 9.3 0 0 1 .64-1.539 7 7 0 0 1 .597-.933A7.03 7.03 0 0 0 2.255 4zm-.582 3.5c.03-.877.138-1.718.312-2.5H1.674a7 7 0 0 0-.656 2.5zM4.847 5a12.5 12.5 0 0 0-.338 2.5H7.5V5zM8.5 5v2.5h2.99a12.5 12.5 0 0 0-.337-2.5zM4.51 8.5a12.5 12.5 0 0 0 .337 2.5H7.5V8.5zm3.99 0V11h2.653c.187-.765.306-1.608.338-2.5zM5.145 12q.208.58.468 1.068c.552 1.035 1.218 1.65 1.887 1.855V12zm.182 2.472a7 7 0 0 1-.597-.933A9.3 9.3 0 0 1 4.09 12H2.255a7 7 0 0 0 3.072 2.472M3.82 11a13.7 13.7 0 0 1-.312-2.5h-2.49c.062.89.291 1.733.656 2.5zm6.853 3.472A7 7 0 0 0 13.745 12H11.91a9.3 9.3 0 0 1-.64 1.539 7 7 0 0 1-.597.933M8.5 12v2.923c.67-.204 1.335-.82 1.887-1.855q.26-.487.468-1.068zm3.68-1h2.146c.365-.767.594-1.61.656-2.5h-2.49a13.7 13.7 0 0 1-.312 2.5m2.802-3.5a7 7 0 0 0-.656-2.5H12.18c.174.782.282 1.623.312 2.5zM11.27 2.461c.247.464.462.98.64 1.539h1.835a7 7 0 0 0-3.072-2.472c.218.284.418.598.597.933M10.855 4a8 8 0 0 0-.468-1.068C9.835 1.897 9.17 1.282 8.5 1.077V4z"/>
 </svg>
                     <span className='pt-0.5 text-white hover:text-gray-300 hover:scale-110 transition-transform'>{lang === 'zh' ? 'CN' : 'EN'}</span>
