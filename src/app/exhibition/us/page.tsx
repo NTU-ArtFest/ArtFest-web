@@ -37,6 +37,11 @@ export default function UsExhibition() {
             <p><span className="font-bold text-[8px]">製作團隊</span><br />
             <span className="text-[7px]">李宥辰、許秝榳、佘秉修、江妍恩、石英佐<br/>劉芸辰、楊楀潔、謝磊、戴其恩、沈若涵、黃芷柔</span></p>
             
+           <p className="mb-1"><span className="font-bold text-sm md:text-base">活動紀錄</span><br />
+            <span className="text-xs md:text-sm">
+              賴晉億
+            </span></p>
+
             <p><span className="font-bold text-[8px]">展覽時間</span><br />
             <span className="text-[7px]">5/2~5/16 10:00-20:00</span></p>
             
@@ -67,6 +72,11 @@ export default function UsExhibition() {
                 李宥辰、許秝榳、佘秉修、江妍恩、石英佐<br/>
                 劉芸辰、楊楀潔、謝磊、戴其恩、沈若涵、黃芷柔
               </span></p>
+
+           <p className="mb-1"><span className="font-bold text-sm md:text-base">活動紀錄</span><br />
+            <span className="text-xs md:text-sm">
+              賴晉億
+            </span></p>
               
               <p><span className="font-bold text-sm md:text-base">展覽時間</span><br />
               <span className="text-xs md:text-sm">5/2~5/16 10:00-20:00</span></p>

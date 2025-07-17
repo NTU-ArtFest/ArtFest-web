@@ -41,6 +41,11 @@ export default function ConveyanceExhibition() {
             <p><span className="font-bold text-[8px]">創作團隊</span><br />
             <span className="text-[6px]">李宥辰、封親靈、蔡政峰、黃楷翔、劉韋杰<br/>王厚仁、林昱安、屈言真、蘇晏禾、林冠鋐<br/>江侑蓁、臧逸新、徐婕芸、李嘉昕、張芷嫣<br/>陳亮穎、陳睿瀚、陳昱璇</span></p>
             
+            <p className="mb-1"><span className="font-bold text-sm md:text-base">活動紀錄</span><br />
+            <span className="text-xs md:text-sm">
+              賴晉億
+            </span></p>
+            
             <p><span className="font-bold text-[8px]">展覽時間</span><br />
             <span className="text-[6px]">5/2~5/16 10:00-20:00</span></p>
             
@@ -76,6 +81,11 @@ export default function ConveyanceExhibition() {
                 江侑蓁、臧逸新、徐婕芸、李嘉昕、張芷嫣<br/>
                 陳亮穎、陳睿瀚、陳昱璇
               </span></p>
+
+           <p className="mb-1"><span className="font-bold text-sm md:text-base">活動紀錄</span><br />
+            <span className="text-xs md:text-sm">
+              賴晉億
+            </span></p>
               
               <p><span className="font-bold text-sm md:text-base">展覽時間</span><br />
               <span className="text-xs md:text-sm">5/2~5/16 10:00-20:00</span></p>

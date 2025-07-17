@@ -41,9 +41,18 @@ export default {
           },
         },
       },
-      fontFamily:{
-        'Noto': ['Noto+Serif+TC', 'serif'],
-        'retro': ['"Old Standard TT"', 'serif'],
+      fontFamily: {
+        helvetica: [
+          '"Helvetica Neue"',
+          'Helvetica',
+          'Arial',
+          '"PingFang TC"',
+          '"Noto Sans TC"',
+          '"Microsoft JhengHei"',
+          'sans-serif',
+        ],
+        Noto: ['"Noto Serif TC"', 'serif'],
+        retro: ['"Old Standard TT"', 'serif'],
       },
     },
   },

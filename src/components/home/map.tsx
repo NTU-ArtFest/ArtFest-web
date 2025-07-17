@@ -5,6 +5,8 @@ import { Suspense, useState, useEffect, useRef, useMemo} from 'react'
 import Link from 'next/link'
 import * as THREE from 'three'
 import * as module from "./info";
+import { useLanguage } from './LanguageContext';
+
 
 
 function useWindowSize() {
@@ -28,13 +30,14 @@ function useWindowSize() {
   return size;
 }
 
-function Markers({ scene, onActiveBuilding }: { 
+function Markers({ scene, onActiveBuilding, lang}: { 
   scene: THREE.Scene; 
-  onActiveBuilding: (info: string | null) => void; 
+  onActiveBuilding: (info: string | null) => void;
+  lang: string; 
 }) {
   const { camera } = useThree();
   const markersRef = useRef<THREE.Group[]>([]);
-  
+
   useFrame(() => {
     markersRef.current.forEach(marker => {
       if (marker && marker.parent) {
@@ -42,11 +45,11 @@ function Markers({ scene, onActiveBuilding }: {
       }
     });
   });
-
+  
   return (
     <>
       {module.buildings.map((building, index) => {
-        const mesh = scene.getObjectByName(building.name);
+        const mesh = scene.getObjectByName(building.name['zh']);
         if (!mesh) return null;
 
         const pos = new THREE.Vector3();
@@ -60,7 +63,7 @@ function Markers({ scene, onActiveBuilding }: {
         ];
         return (
           <group 
-            key={building.name} 
+            key={building.name['zh']} 
             position={markerPos}
             ref={(el) => {
               if (el) markersRef.current[index] = el;
@@ -69,12 +72,13 @@ function Markers({ scene, onActiveBuilding }: {
             <mesh
               onPointerOver={(e) => {
                 e.stopPropagation();
-                onActiveBuilding(building.name);
+                console.log(`Hovering over: ${building.name[lang as 'zh' | 'en']}`);
+                onActiveBuilding(building.name[lang as 'zh' | 'en']);
               }}
 
               onClick={(e) => {
                 e.stopPropagation();
-                onActiveBuilding(building.name);
+                onActiveBuilding(building.name[lang as 'zh' | 'en']);
               }}
               renderOrder={999}
             >
@@ -95,9 +99,10 @@ function Markers({ scene, onActiveBuilding }: {
 }
 
 
-function ModelWithMarkers({ onActiveBuilding, onLoaded}: { 
+function ModelWithMarkers({ onActiveBuilding, onLoaded, lang}: { 
   onActiveBuilding: (info: string | null) => void; 
   onLoaded: () => void;
+  lang: string;
 }) {
   const { scene } = useGLTF('MAP.glb');
 
@@ -110,7 +115,11 @@ function ModelWithMarkers({ onActiveBuilding, onLoaded}: {
   return (
     <group>
       <primitive object={scene} scale={[30, 30, 30]} />
-      <Markers scene={scene as unknown as THREE.Scene} onActiveBuilding={onActiveBuilding} />
+      <Markers 
+        scene={scene as unknown as THREE.Scene} 
+        onActiveBuilding={onActiveBuilding} 
+        lang={lang}
+      />
     </group>
   );
 }
@@ -144,7 +153,7 @@ function LightController() {
   );
 }
 
-export default function ModelViewer() {
+export default function ModelViewer({ lang }: { lang: string }) {
    
     const [activeBuildingInfo, setBuildingInfo] = useState<module.BuildingInfo | null>(null);
     const [activeBuildingname, setActiveBuildingname] = useState<string | null>(null);
@@ -159,16 +168,15 @@ export default function ModelViewer() {
     // Calculate distances based on screen width
     const minDistance = width < 768 ? 120 : 120; 
     const maxDistance = width < 768 ? 350 : 230;
-
     useEffect(() => {
-    if (modelLoaded) {
-      // 給予一個小延遲確保模型真的渲染完成
-      const timer = setTimeout(() => {
-        setIsLoading(false);
-      }, 1000);
-      return () => clearTimeout(timer);
-    }
-  }, [modelLoaded]);
+      if (modelLoaded) {
+        // 給予一個小延遲確保模型真的渲染完成
+        const timer = setTimeout(() => {
+          setIsLoading(false);
+        }, 1000);
+        return () => clearTimeout(timer);
+      }
+    }, [modelLoaded]);
   
     useEffect(() => {
       const interval = setInterval(() => {
@@ -177,21 +185,25 @@ export default function ModelViewer() {
       
       return () => clearInterval(interval);
     }, []);
-    // exchange the url prefix to local url
+
+
     useEffect(() => {
         if (activeBuildingname) {
-            const building = module.buildings.find(b => b.name === activeBuildingname);
+            const building = module.buildings.find(b => b.name[lang as 'zh' | 'en'] === activeBuildingname);
             if (building) {
               const base = typeof window !== "undefined" ? window.location.origin : "";
               // 替換每個 activity 的 url 前綴
               const infoWithLocalUrl = {
                 ...building.info,
+                name: building.info.name[lang as 'zh' | 'en'],
+                desc: building.info.desc[lang as 'zh' | 'en'],
                 activities: building.info.activities.map(act => ({
                   ...act,
+                  name: act.name[lang as 'zh' | 'en'],
+                  intro: act.intro[lang as 'zh' | 'en'],
                   url: act.url.includes('instagram') ? act.url : act.url.replace(/^https?:\/\/[^/]+/, base)
                 }))
               };
-
               setBuildingInfo(infoWithLocalUrl);
               setIsBegin(false)
             } else {
@@ -217,6 +229,21 @@ export default function ModelViewer() {
       onEnd: () => setIsAutoRotating(true)
     }), [isAutoRotating, minDistance, maxDistance]);
 
+    const WELCOME_MESSAGES = {
+      welcome: {
+        zh: '歡迎來到臺大！',
+        en: 'Welcome to NTU!',
+      },
+      drag: {
+        zh: '歡迎任意拖曳、縮放！',
+        en: 'Feel free to drag and zoom!',
+      },
+      search: {
+        zh: '查看展覽資訊',
+        en: 'View exhibition information',
+      }
+    };
+
   return (
     <div className="w-full h-screen rounded-lg relative h-[900px] md:h-[78vh] shadow-2xl backdrop-blur-sm">
       {isLoading && (
@@ -230,10 +257,10 @@ export default function ModelViewer() {
         { isBegin && (
           <div>
             <div className="bg-white bg-opacity-90 p-4 rounded w-[220px] md:w-[300px] flex flex-row item-center justify-center">
-              <div className="text center font-bold text-lg">歡迎來到臺大！</div>
+              <div className="text center font-bold text-lg">{WELCOME_MESSAGES.welcome[lang as 'zh' | 'en']}</div>
             </div>
             <div className="bg-white bg-opacity-0 p-4 rounded w-[220px] md:w-[300px] flex flex-row item-center justify-center">
-              <div className="text center font-bold text-sm">歡迎任意拖曳、縮放！</div>
+              <div className="text center font-bold text-sm">{WELCOME_MESSAGES.drag[lang as 'zh' | 'en']}</div>
             </div>
             
           </div>
@@ -250,7 +277,7 @@ export default function ModelViewer() {
                   <div className="font-bold text-base mt-5">{activity.name}</div>
                   <div className="text-gray-700 mb-1">{activity.intro}</div>
                   <Link href={activity.url} className="hover:text-gray-900 underline hover:text-gray-900 text-gray-700 ">
-                    查看展覽資訊
+                    {WELCOME_MESSAGES.search[lang as 'zh' | 'en']}
                   </Link>
                 </div>
               ))}
@@ -284,6 +311,7 @@ export default function ModelViewer() {
             <ModelWithMarkers 
               onActiveBuilding={setActiveBuildingname} 
               onLoaded={() => setModelLoaded(true)}
+              lang={lang}
               />
           </Suspense>
           <ContactShadows
