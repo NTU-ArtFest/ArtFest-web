@@ -49,7 +49,7 @@ export default function Exhibition() {
                     
           {/* 右下展覽資訊 - 調整文字大小和位置以符合邊框 */}
           <div className="absolute bottom-6 right-6 text-right text-xs space-y-1">
-            <p className="mb-1"><span className="font-bold text-[8px]">策劃團隊</span><br />
+            <p className="mb-1"><span className="font-bold text-[8px]">策劃團隊 Curatorial Team</span><br />
             <span className="text-[6px]">
             游善喆、蔡政峰、劉韋杰<br />
             李宥辰、黃楷翔、邱子芹<br />
@@ -58,24 +58,24 @@ export default function Exhibition() {
             高翊茗、林昱安
             </span></p>
 
-            <p className="mb-1"><span className="font-bold text-sm md:text-base">活動紀錄</span><br />
+            <p className="mb-1"><span className="font-bold text-sm md:text-base">展場紀錄 Exhibition Documentationon</span><br />
             <span className="text-xs md:text-sm">
               黃楷翔
             </span></p>
             
-            <p><span className="font-bold text-[8px]">指導單位</span><br />
+            <p><span className="font-bold text-[8px]">指導單位 Advisory Organization</span><br />
             <span className="text-[6px]">跨領域藝術課程 — 陶亞倫教授、金天尹助教</span></p>
             
-            <p><span className="font-bold text-[8px]">合作單位</span><br />
+            <p><span className="font-bold text-[8px]">合作單位 Official Partner</span><br />
             <span className="text-[6px]">國立臺灣大學 戲劇學系</span></p>
             
-            <p><span className="font-bold text-[8px]">展覽媒材</span><br />
+            <p><span className="font-bold text-[8px]">展覽媒材 Media</span><br />
             <span className="text-[6px]">生成式互動影像裝置</span></p>
             
-            <p><span className="font-bold text-[8px]">展覽時間</span><br />
+            <p><span className="font-bold text-[8px]">展出時間 Exhibition Dates</span><br />
             <span className="text-[6px]">5/6-5/15 18:30-21:30</span></p>
             
-            <p><span className="font-bold text-[8px]">展覽地點 </span><br />
+            <p><span className="font-bold text-[8px]">展出地點 Exhibition Venue </span><br />
             <span className="text-[6px]">國立臺灣大學 外教中心實驗劇場</span></p>
           </div>
         </div>
@@ -92,7 +92,7 @@ export default function Exhibition() {
             
             {/* 右下展覽資訊 - 調整出血位置和文字大小 */}
             <div className="absolute bottom-10 right-10 md:bottom-12 md:right-12 lg:bottom-14 lg:right-14 text-right max-w-md space-y-2.5">
-              <p className="mb-1"><span className="font-bold text-sm md:text-base">策劃團隊</span><br />
+              <p className="mb-1"><span className="font-bold text-sm md:text-base">策劃團隊 Curatorial Team</span><br />
               <span className="text-xs md:text-sm">
                   游善喆、蔡政峰、劉韋杰<br />
                   李宥辰、黃楷翔、邱子芹<br />
@@ -101,24 +101,24 @@ export default function Exhibition() {
                   高翊茗、林昱安
               </span></p>
 
-            <p className="mb-1"><span className="font-bold text-sm md:text-base">活動紀錄</span><br />
+            <p className="mb-1"><span className="font-bold text-sm md:text-base">展場紀錄 Exhibition Documentationon</span><br />
             <span className="text-xs md:text-sm">
               黃楷翔
             </span></p>
               
-              <p><span className="font-bold text-sm md:text-base">指導單位</span><br />
+              <p><span className="font-bold text-sm md:text-base">指導單位 Advisory Organization</span><br />
               <span className="text-xs md:text-sm">跨領域藝術課程 — 陶亞倫教授、金天尹助教</span></p>
               
-              <p><span className="font-bold text-sm md:text-base">合作單位</span><br />
+              <p><span className="font-bold text-sm md:text-base">合作單位 Official Partner</span><br />
               <span className="text-xs md:text-sm">國立臺灣大學 戲劇學系</span></p>
               
-              <p><span className="font-bold text-sm md:text-base">展覽媒材</span><br />
+              <p><span className="font-bold text-sm md:text-base">展覽媒材 Media</span><br />
               <span className="text-xs md:text-sm">生成式互動影像裝置</span></p>
               
-              <p><span className="font-bold text-sm md:text-base">展覽時間</span><br />
+              <p><span className="font-bold text-sm md:text-base">展出時間 Exhibition Dates</span><br />
               <span className="text-xs md:text-sm">5/6-5/15 18:30-21:30</span></p>
               
-              <p><span className="font-bold text-sm md:text-base">展覽地點</span><br />
+              <p><span className="font-bold text-sm md:text-base">展出地點 Exhibition Venue</span><br />
               <span className="text-xs md:text-sm">國立臺灣大學 外教中心實驗劇場</span></p>
             </div>
           </div>

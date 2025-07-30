@@ -19,26 +19,26 @@ export default function SeaCollectingBlueMarkActivity() {
           {/* 左上標題 - 縮小字體 */}
           <div className="self-start mt-8 ml-6">
             <h1 className="text-2xl sm:text-4xl font-bold tracking-wider mb-1 uppercase">拾海‧藍印</h1>
-            <p className="text-xs sm:text-base tracking-wide">Sea collecting and blue mark</p>
+            <p className="text-xs sm:text-base tracking-wide">Sea·Blueprint</p>
           </div>
                     
           {/* 右下展覽資訊 - 調整文字大小和位置以符合邊框 */}
           <div className="absolute bottom-6 right-6 text-right text-xs space-y-1">
-            <p className="mb-1"><span className="font-bold text-[8px]">專案管理</span><br />
+            <p className="mb-1"><span className="font-bold text-[8px]">專案管理 Project Manager </span><br />
             <span className="text-[6px]">
             曾子珉
             </span></p>
             
-            <p><span className="font-bold text-[8px]">專案組員</span><br />
+            <p><span className="font-bold text-[8px]">專案組員 Project Team</span><br />
             <span className="text-[6px]">沈庭苙、照本麻瑛</span></p>
 
-            <p><span className="font-bold text-sm md:text-base">活動紀錄</span><br />
+            <p><span className="font-bold text-sm md:text-base">活動紀錄 Activity Documentation</span><br />
             <span className="text-xs md:text-sm">周宜葇</span></p> 
             
-            <p><span className="font-bold text-[8px]">活動時間</span><br />
+            <p><span className="font-bold text-[8px]">活動時間 Activity Dates</span><br />
             <span className="text-[6px]">5月11日 09:30-18:30</span></p>
             
-            <p><span className="font-bold text-[8px]">活動地點</span><br />
+            <p><span className="font-bold text-[8px]">活動地點 Activity Venue</span><br />
             <span className="text-[6px]">新北市 福隆海灘</span></p>
           </div>
         </div>
@@ -50,26 +50,26 @@ export default function SeaCollectingBlueMarkActivity() {
           <div className="relative h-full w-full">
             <div className="absolute top-12 left-12">
               <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold tracking-wider mb-2">拾海‧藍印</h1>
-              <p className="text-lg lg:text-xl xl:text-2xl font-light tracking-wide">Sea collecting and blue mark</p>
+              <p className="text-lg lg:text-xl xl:text-2xl font-light tracking-wide">Sea·Blueprint</p>
             </div>
             
             {/* 右下展覽資訊 - 調整出血位置和文字大小 */}
             <div className="absolute bottom-10 right-10 md:bottom-12 md:right-12 lg:bottom-14 lg:right-14 text-right max-w-md space-y-2.5">
-              <p className="mb-1"><span className="font-bold text-sm md:text-base">專案管理</span><br />
+              <p className="mb-1"><span className="font-bold text-sm md:text-base">專案管理 Project Manager </span><br />
               <span className="text-xs md:text-sm">
                   曾子珉
               </span></p>
               
-              <p><span className="font-bold text-sm md:text-base">專案組員</span><br />
+              <p><span className="font-bold text-sm md:text-base">專案組員 Project Team</span><br />
               <span className="text-xs md:text-sm">沈庭苙、照本麻瑛</span></p>
               
-              <p><span className="font-bold text-sm md:text-base">活動紀錄</span><br />
+              <p><span className="font-bold text-sm md:text-base">活動紀錄 Activity Documentation</span><br />
               <span className="text-xs md:text-sm">周宜葇</span></p> 
 
-              <p><span className="font-bold text-sm md:text-base">活動時間</span><br />
+              <p><span className="font-bold text-sm md:text-base">活動時間 Activity Dates</span><br />
               <span className="text-xs md:text-sm">5月11日 09:30-18:30</span></p>
               
-              <p><span className="font-bold text-sm md:text-base">活動地點</span><br />
+              <p><span className="font-bold text-sm md:text-base">活動地點 Activity Venue</span><br />
               <span className="text-xs md:text-sm">新北市 福隆海灘</span></p>
             </div>
           </div>

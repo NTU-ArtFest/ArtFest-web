@@ -25,29 +25,32 @@ export default function HealingExhibition() {
           {/* 左上標題 - 縮小字體 */}
           <div className="self-start mt-8 ml-6">
             <h1 className="text-2xl sm:text-4xl font-bold tracking-wider mb-1 uppercase">失衡 | 潮差</h1>
-            <p className="text-xs sm:text-base tracking-wide">Imbalance</p>
+            <p className="text-xs sm:text-base tracking-wide">Unbalanced</p>
           </div>
                     
           {/* 右下展覽資訊 - 調整文字大小和位置以符合邊框 */}
           <div className="absolute bottom-6 right-6 text-right text-xs space-y-1">
-            <p className="mb-1"><span className="font-bold text-[8px]">專案管理</span><br />
+            <p className="mb-1"><span className="font-bold text-[8px]">專案管理 Project Manager </span><br />
             <span className="text-[6px]">
             曾子珉
             </span></p>
             
-            <p><span className="font-bold text-[8px]">專案組員</span><br />
+            <p><span className="font-bold text-[8px]">專案組員 Project Team</span><br />
             <span className="text-[6px]">洪翊軒、楊睿桐</span></p>
             
-            <p><span className="font-bold text-[8px]">活動講者</span><br />
+            <p><span className="font-bold text-[8px]">活動講者 Lecturer</span><br />
             <span className="text-[6px]">陳麗雅 學輔專員/諮商心理師</span></p>
 
-            <p><span className="font-bold text-[8px]">展演演員</span><br />
+            <p><span className="font-bold text-[8px]">展演演員 Performance Artist</span><br />
             <span className="text-[6px]">陳鈺潔、賀茂庭、許又云</span></p>
+
+            <p><span className="font-bold text-sm md:text-base">活動紀錄 Activity Documentation</span><br />
+            <span className="text-xs md:text-sm">廖尹淇、劉韋辰</span></p>
             
-            <p><span className="font-bold text-[8px]">活動時間</span><br />
+            <p><span className="font-bold text-[8px]">活動時間 Activity Dates</span><br />
             <span className="text-[6px]">4月23日（星期三）18:00 ~ 20:30</span></p>
             
-            <p><span className="font-bold text-[8px]">活動地點</span><br />
+            <p><span className="font-bold text-[8px]">活動地點 Activity Venue</span><br />
             <span className="text-[6px]">國立臺灣大學 學生第二活動中心 沃思空間</span></p>
           </div>
         </div>
@@ -59,29 +62,32 @@ export default function HealingExhibition() {
           <div className="relative h-full w-full">
             <div className="absolute top-12 left-12">
               <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold tracking-wider mb-2">失衡 | 潮差</h1>
-              <p className="text-lg lg:text-xl xl:text-2xl font-light tracking-wide">Imbalance</p>
+              <p className="text-lg lg:text-xl xl:text-2xl font-light tracking-wide">Unbalanced</p>
             </div>
             
             {/* 右下展覽資訊 - 調整出血位置和文字大小 */}
             <div className="absolute bottom-10 right-10 md:bottom-12 md:right-12 lg:bottom-14 lg:right-14 text-right max-w-md space-y-2.5">
-              <p className="mb-1"><span className="font-bold text-sm md:text-base">專案管理</span><br />
+              <p className="mb-1"><span className="font-bold text-sm md:text-base">專案管理 Project Manager </span><br />
               <span className="text-xs md:text-sm">
                 曾子珉
               </span></p>
               
-              <p><span className="font-bold text-sm md:text-base">專案組員</span><br />
+              <p><span className="font-bold text-sm md:text-base">專案組員 Project Team</span><br />
               <span className="text-xs md:text-sm">洪翊軒、楊睿桐</span></p>
               
-              <p><span className="font-bold text-sm md:text-base">活動講者</span><br />
+              <p><span className="font-bold text-sm md:text-base">活動講者 Lecturer</span><br />
               <span className="text-xs md:text-sm">許藍方 博士</span></p>
 
-              <p><span className="font-bold text-sm md:text-base">展演演員</span><br />
+              <p><span className="font-bold text-sm md:text-base">展演演員 Performance Artist</span><br />
               <span className="text-xs md:text-sm">陳鈺潔、賀茂庭、許又云</span></p>
+
+              <p><span className="font-bold text-sm md:text-base">活動紀錄 Activity Documentation</span><br />
+              <span className="text-xs md:text-sm">廖尹淇、劉韋辰</span></p>   
               
-              <p><span className="font-bold text-sm md:text-base">活動時間</span><br />
+              <p><span className="font-bold text-sm md:text-base">活動時間 Activity Dates</span><br />
               <span className="text-xs md:text-sm">4月23日（星期三）18:00 ~ 20:30</span></p>
               
-              <p><span className="font-bold text-sm md:text-base">活動地點</span><br />
+              <p><span className="font-bold text-sm md:text-base">活動地點 Activity Venue</span><br />
               <span className="text-xs md:text-sm">國立臺灣大學 學生第二活動中心 沃思空間</span></p>
             </div>
           </div>
@@ -129,7 +135,7 @@ export default function HealingExhibition() {
       {/* 作品展示區 - 採用 3:2 比例展示圖片 */}
       <div className="relative z-10 py-10 md:py-14 bg-gradient-to-b from-black to-gray-900">
         <div className="container mx-auto px-6">
-          <h2 className="text-base md:text-2xl font-light mb-8 md:mb-12 tracking-wider text-center uppercase">活動照片 Event Photos</h2>
+          <h2 className="text-base md:text-2xl font-light mb-8 md:mb-12 tracking-wider text-center uppercase">活動紀錄 Activity Documentation</h2>
           
           {/* 網格畫廊 - 固定 3:2 比例 */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">

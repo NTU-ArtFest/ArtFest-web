@@ -29,29 +29,29 @@ export default function BeyondTheTideExhibition() {
                       
             {/* 右下展覽資訊 - 調整文字大小和位置以符合邊框 */}
             <div className="absolute bottom-6 right-6 text-right text-xs space-y-1">
-              <p className="mb-1"><span className="font-bold text-[8px]">策展團隊</span><br />
+              <p className="mb-1"><span className="font-bold text-[8px]">策劃團隊 Curatorial Team</span><br />
               <span className="text-[6px]">
               張瑜真、封親靈、江侑蓁
               </span></p>
 
-              <p className="mb-1"><span className="font-bold text-sm md:text-base">活動紀錄</span><br />
+              <p className="mb-1"><span className="font-bold text-sm md:text-base">展場紀錄 Exhibition Documentationon</span><br />
             <span className="text-xs md:text-sm">
               黃楷翔
             </span></p>
               
-              <p><span className="font-bold text-[8px]">參展單位</span><br />
+              <p><span className="font-bold text-[8px]">參展單位 Participating Units</span><br />
               <span className="text-[6px]">徐瑞藝術家、陳健文藝術家、王奕凡藝術家</span></p>
               
-              <p><span className="font-bold text-[8px]">合作單位</span><br />
+              <p><span className="font-bold text-[8px]">合作單位 Official Partner</span><br />
               <span className="text-[6px]">寶藏巖國際藝術村 Treasure Hill Artist Village</span></p>
               
-              <p><span className="font-bold text-[8px]">展覽媒材</span><br />
+              <p><span className="font-bold text-[8px]">展覽媒材 Media</span><br />
               <span className="text-[6px]">聲音互動裝置、影音作品</span></p>
               
-              <p><span className="font-bold text-[8px]">展覽時間</span><br />
+              <p><span className="font-bold text-[8px]">展出時間 Exhibition Dates</span><br />
               <span className="text-[6px]">5/2~5/16 9:00-17:00（The exhibition is closed on Mondays）</span></p>
               
-              <p><span className="font-bold text-[8px]">展覽地點</span><br />
+              <p><span className="font-bold text-[8px]">展出地點 Exhibition Venue</span><br />
               <span className="text-[6px]">水源市場2樓059號空間</span></p>
             </div>
           </div>
@@ -68,29 +68,29 @@ export default function BeyondTheTideExhibition() {
               
               {/* 右下展覽資訊 - 調整出血位置和文字大小 */}
               <div className="absolute bottom-10 right-10 md:bottom-12 md:right-12 lg:bottom-14 lg:right-14 text-right max-w-md space-y-2.5">
-                <p className="mb-1"><span className="font-bold text-sm md:text-base">策展團隊</span><br />
+                <p className="mb-1"><span className="font-bold text-sm md:text-base">策劃團隊 Curatorial Team</span><br />
                 <span className="text-xs md:text-sm">
                     張瑜真、封親靈、江侑蓁
                 </span></p>
 
-                <p className="mb-1"><span className="font-bold text-sm md:text-base">活動紀錄</span><br />
+                <p className="mb-1"><span className="font-bold text-sm md:text-base">展場紀錄 Exhibition Documentationon</span><br />
             <span className="text-xs md:text-sm">
               黃楷翔
             </span></p>
                 
-                <p><span className="font-bold text-sm md:text-base">參展單位</span><br />
+                <p><span className="font-bold text-sm md:text-base">參展單位 Participating Units</span><br />
                 <span className="text-xs md:text-sm">徐瑞藝術家、陳健文藝術家、王奕凡藝術家</span></p>
                 
-                <p><span className="font-bold text-sm md:text-base">合作單位</span><br />
+                <p><span className="font-bold text-sm md:text-base">合作單位 Official Partner</span><br />
                 <span className="text-xs md:text-sm">寶藏巖國際藝術村 Treasure Hill Artist Village</span></p>
                 
-                <p><span className="font-bold text-sm md:text-base">展覽媒材</span><br />
+                <p><span className="font-bold text-sm md:text-base">展覽媒材 Media</span><br />
                 <span className="text-xs md:text-sm">聲音互動裝置、影音作品</span></p>
                 
-                <p><span className="font-bold text-sm md:text-base">展覽時間</span><br />
+                <p><span className="font-bold text-sm md:text-base">展出時間 Exhibition Dates</span><br />
                 <span className="text-xs md:text-sm">5/2~5/16 9:00-17:00（The exhibition is closed on Mondays）</span></p>
                 
-                <p><span className="font-bold text-sm md:text-base">展覽地點</span><br />
+                <p><span className="font-bold text-sm md:text-base">展出地點 Exhibition Venue</span><br />
                 <span className="text-xs md:text-sm">水源市場2樓059號空間</span></p>
               </div>
             </div>

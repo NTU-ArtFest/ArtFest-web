@@ -76,9 +76,20 @@ export default function PolisList() {
 
   return (
     <>
-      <div className="relative min-h-screen bg-white bg-[url('/all/background.png')] bg-cover bg-center">
+      <div className="relative min-h-screen bg-[url('/all/background.png')] bg-cover bg-center">
+        {/* 模糊罩層 */}
+        <div
+          className="absolute inset-0 z-0"
+          style={{
+            backgroundColor: 'rgba(255, 255, 255, 0.3)',
+            backdropFilter: 'blur(150px)', // 你可以調到 150px 或 200px
+            WebkitBackdropFilter: 'blur(150px)', // Safari 兼容
+          }}
+        />
+        <div className="relative z-10">
+
         {/* Header */}
-        <header className="flex justify-between items-center p-4 bg-white bg-opacity-50 shadow">
+        <header className="flex justify-between items-center p-4 bg-white/30 backdrop-blur-md shadow">
           <h1 className="text-2xl font-bold text-black">Polis 議題列表</h1>
           <div className="flex items-center space-x-2">
             <button onClick={() => router.push('/')} aria-label="Home" className="p-2 hover:bg-gray-200 rounded text-black">
@@ -171,6 +182,7 @@ export default function PolisList() {
             </div>
           </div>
         )}
+      </div>
       </div>
     </>
   );

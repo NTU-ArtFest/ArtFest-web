@@ -29,28 +29,28 @@ export default function TheWaveExhibition() {
                     
           {/* 右下展覽資訊 - 調整文字大小和位置以符合邊框 */}
           <div className="absolute bottom-6 right-6 text-right text-xs space-y-1">
-            <p className="mb-1"><span className="font-bold text-[8px]">策劃團隊</span><br />
+            <p className="mb-1"><span className="font-bold text-[8px]">策劃團隊 Curatorial Team</span><br />
             <span className="text-[6px]">
             李宥辰、林鴻
             </span></p>
             
-            <p><span className="font-bold text-[8px]">製作團隊</span><br />
+            <p><span className="font-bold text-[8px]">製作團隊 Production Team</span><br />
             <span className="text-[6px]">李宥辰、林鴻、石英佐、魏銘志、林祈安、林致碩、謝磊</span><br />
             <span className="text-[6px]">張芷嫣、陳郁庭、戴其恩、江妍恩、曾子庭、林揚傑、吳驊祐</span><br />
             <span className="text-[6px]">楊楀潔、蔡宇恩、李逸寬、雷婷羽、王若瑜</span></p>
 
-            <p className="mb-1"><span className="font-bold text-sm md:text-base">活動紀錄</span><br />
+            <p className="mb-1"><span className="font-bold text-sm md:text-base">展場紀錄 Exhibition Documentationon</span><br />
             <span className="text-xs md:text-sm">
               王厚仁
             </span></p>
 
-            <p><span className="font-bold text-[8px]">展出地點</span><br />
+            <p><span className="font-bold text-[8px]">展出地點 Exhibition Venue</span><br />
             <span className="text-[6px]">國立臺灣大學振興草皮</span></p>
             
-            <p><span className="font-bold text-[8px]">展出時間</span><br />
+            <p><span className="font-bold text-[8px]">展出時間 Exhibition Dates</span><br />
             <span className="text-[6px]">05/05 – 05/15 10:00–19:00</span></p>
             
-            <p><span className="font-bold text-[8px]">留言地點</span><br />
+            <p><span className="font-bold text-[8px]">留言地點 Message Writing Spot </span><br />
             <span className="text-[6px]">國立臺灣大學總圖一樓小展廳</span></p>
           </div>
         </div>
@@ -67,28 +67,28 @@ export default function TheWaveExhibition() {
             
             {/* 右下展覽資訊 - 調整出血位置和文字大小 */}
             <div className="absolute bottom-10 right-10 md:bottom-12 md:right-12 lg:bottom-14 lg:right-14 text-right max-w-md space-y-2.5">
-              <p className="mb-1"><span className="font-bold text-sm md:text-base">策劃團隊</span><br />
+              <p className="mb-1"><span className="font-bold text-sm md:text-base">策劃團隊 Curatorial Team</span><br />
               <span className="text-xs md:text-sm">
                   李宥辰、林鴻
               </span></p>
               
-              <p><span className="font-bold text-sm md:text-base">製作團隊</span><br />
+              <p><span className="font-bold text-sm md:text-base">製作團隊 Production Team</span><br />
                 <span className="text-xs md:text-sm">李宥辰、林鴻、石英佐、魏銘志、林祈安、林致碩、謝磊</span><br />
                 <span className="text-xs md:text-sm">張芷嫣、陳郁庭、戴其恩、江妍恩、曾子庭、林揚傑、吳驊祐</span><br />
                 <span className="text-xs md:text-sm">楊楀潔、蔡宇恩、李逸寬、雷婷羽、王若瑜</span></p>
 
-            <p className="mb-1"><span className="font-bold text-sm md:text-base">活動紀錄</span><br />
+            <p className="mb-1"><span className="font-bold text-sm md:text-base">展場紀錄 Exhibition Documentationon</span><br />
             <span className="text-xs md:text-sm">
               王厚仁
             </span></p>
 
-              <p><span className="font-bold text-sm md:text-base">展出地點</span><br />
+              <p><span className="font-bold text-sm md:text-base">展出地點 Exhibition Venue</span><br />
               <span className="text-xs md:text-sm">國立臺灣大學振興草皮</span></p>
               
-              <p><span className="font-bold text-sm md:text-base">展出時間</span><br />
+              <p><span className="font-bold text-sm md:text-base">展出時間 Exhibition Dates</span><br />
               <span className="text-xs md:text-sm">05/05 – 05/15 10:00–19:00</span></p>
               
-              <p><span className="font-bold text-sm md:text-base">留言地點</span><br />
+              <p><span className="font-bold text-sm md:text-base">留言地點 Message Writing Spot </span><br />
               <span className="text-xs md:text-sm">國立臺灣大學總圖一樓小展廳</span></p>
             </div>
           </div>

@@ -320,12 +320,12 @@ export default function  Home() {
         items: [
           { Engname: "Opening Ceremony", Chiname: "開幕式", link: "/event/opening-ceremony", url: "/all/opening-ceremony/16.png"},
           { Engname: "Key Visual", Chiname: "主視覺", link: "/event/key_visual", url: "/all/key_visual/1.png"},
-          { Engname: "Desire·Healing", Chiname: "性慾・癒", link: "/event/sexual-healing", url: "/all/sexual-healing/1.jpg"},
-          { Engname: "Unbalanced", Chiname: "失衡", link: "/event/imbalance", url: "/all/imbalance/1.jpg"},
-          { Engname: "Infinite Void", Chiname: "無量空處", link: "/event/immeasurable-emptiness", url: "/all/immeasurable-emptiness/3.png"},
-          { Engname: "Tracing the Tides·Reflections", Chiname: "尋流‧相映", link: "/event/insearch-of-flow", url: "/all/insearch-of-flow/21.png"},
-          { Engname: "Sea·Blueprint", Chiname: "拾海‧藍印", link: "/event/seacollecting-and-bluemark", url: "/all/seacollecting-and-bluemark/2.png"},
-          { Engname: "Rock On: The Stone Artisans", Chiname: "石尚玩家", link: "/event/the-stone-crafters", url: "/all/the-stone-crafters/8.png"},
+          { Engname: "Sexual Healing", Chiname: "性慾・癒", link: "/event/sexual-healing", url: "/all/sexual-healing/1.jpg"},
+          { Engname: "Imbalance", Chiname: "失衡", link: "/event/imbalance", url: "/all/imbalance/1.jpg"},
+          { Engname: "Immeasurable Emptiness", Chiname: "無量空處", link: "/event/immeasurable-emptiness", url: "/all/immeasurable-emptiness/3.png"},
+          { Engname: "Insearch Of Flow", Chiname: "尋流‧相映", link: "/event/insearch-of-flow", url: "/all/insearch-of-flow/21.png"},
+          { Engname: "Sea Collecting and Blue Mark", Chiname: "拾海‧藍印", link: "/event/seacollecting-and-bluemark", url: "/all/seacollecting-and-bluemark/2.png"},
+          { Engname: "The Stone Crafters", Chiname: "石尚玩家", link: "/event/the-stone-crafters", url: "/all/the-stone-crafters/8.png"},
           { Engname: "Ending Ceremony", Chiname: "閉幕式", link: "/event/ending-ceremony", url: "/all/ending-ceremony/17.png"},
 
         ],
@@ -509,8 +509,8 @@ export default function  Home() {
                   >
                     {/* 地球 SVG 圖示 */}
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16" className='mr-1.5 text-white hover:text-gray-300 hover:scale-110 transition-transform'>
-                      <path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m7.5-6.923c-.67.204-1.335.82-1.887 1.855A8 8 0 0 0 5.145 4H7.5zM4.09 4a9.3 9.3 0 0 1 .64-1.539 7 7 0 0 1 .597-.933A7.03 7.03 0 0 0 2.255 4zm-.582 3.5c.03-.877.138-1.718.312-2.5H1.674a7 7 0 0 0-.656 2.5zM4.847 5a12.5 12.5 0 0 0-.338 2.5H7.5V5zM8.5 5v2.5h2.99a12.5 12.5 0 0 0-.337-2.5zM4.51 8.5a12.5 12.5 0 0 0 .337 2.5H7.5V8.5zm3.99 0V11h2.653c.187-.765.306-1.608.338-2.5zM5.145 12q.208.58.468 1.068c.552 1.035 1.218 1.65 1.887 1.855V12zm.182 2.472a7 7 0 0 1-.597-.933A9.3 9.3 0 0 1 4.09 12H2.255a7 7 0 0 0 3.072 2.472M3.82 11a13.7 13.7 0 0 1-.312-2.5h-2.49c.062.89.291 1.733.656 2.5zm6.853 3.472A7 7 0 0 0 13.745 12H11.91a9.3 9.3 0 0 1-.64 1.539 7 7 0 0 1-.597.933M8.5 12v2.923c.67-.204 1.335-.82 1.887-1.855q.26-.487.468-1.068zm3.68-1h2.146c.365-.767.594-1.61.656-2.5h-2.49a13.7 13.7 0 0 1-.312 2.5m2.802-3.5a7 7 0 0 0-.656-2.5H12.18c.174.782.282 1.623.312 2.5zM11.27 2.461c.247.464.462.98.64 1.539h1.835a7 7 0 0 0-3.072-2.472c.218.284.418.598.597.933M10.855 4a8 8 0 0 0-.468-1.068C9.835 1.897 9.17 1.282 8.5 1.077V4z"/>
-                    </svg>
+  <path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m7.5-6.923c-.67.204-1.335.82-1.887 1.855A8 8 0 0 0 5.145 4H7.5zM4.09 4a9.3 9.3 0 0 1 .64-1.539 7 7 0 0 1 .597-.933A7.03 7.03 0 0 0 2.255 4zm-.582 3.5c.03-.877.138-1.718.312-2.5H1.674a7 7 0 0 0-.656 2.5zM4.847 5a12.5 12.5 0 0 0-.338 2.5H7.5V5zM8.5 5v2.5h2.99a12.5 12.5 0 0 0-.337-2.5zM4.51 8.5a12.5 12.5 0 0 0 .337 2.5H7.5V8.5zm3.99 0V11h2.653c.187-.765.306-1.608.338-2.5zM5.145 12q.208.58.468 1.068c.552 1.035 1.218 1.65 1.887 1.855V12zm.182 2.472a7 7 0 0 1-.597-.933A9.3 9.3 0 0 1 4.09 12H2.255a7 7 0 0 0 3.072 2.472M3.82 11a13.7 13.7 0 0 1-.312-2.5h-2.49c.062.89.291 1.733.656 2.5zm6.853 3.472A7 7 0 0 0 13.745 12H11.91a9.3 9.3 0 0 1-.64 1.539 7 7 0 0 1-.597.933M8.5 12v2.923c.67-.204 1.335-.82 1.887-1.855q.26-.487.468-1.068zm3.68-1h2.146c.365-.767.594-1.61.656-2.5h-2.49a13.7 13.7 0 0 1-.312 2.5m2.802-3.5a7 7 0 0 0-.656-2.5H12.18c.174.782.282 1.623.312 2.5zM11.27 2.461c.247.464.462.98.64 1.539h1.835a7 7 0 0 0-3.072-2.472c.218.284.418.598.597.933M10.855 4a8 8 0 0 0-.468-1.068C9.835 1.897 9.17 1.282 8.5 1.077V4z"/>
+</svg>
                     <span className='pt-0.5 text-white hover:text-gray-300 hover:scale-110 transition-transform'>{lang === 'zh' ? 'CN' : 'EN'}</span>
                   </button>
                 </div>
@@ -645,33 +645,29 @@ export default function  Home() {
                           <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
                         </svg>
                       </Link>
-
                       <Link href="https://www.facebook.com/NTUartfest?locale=zh_TW" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-300">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
                           <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/>
                         </svg>
                       </Link>
-
                       <button
                         onClick={() => setLang(lang === 'zh' ? 'en' : 'zh')}
                         className="text-white rounded transition-colors flex items-center"
                         aria-label="切換語言"
                       >
-                      {/* 地球 SVG 圖示 */}
-                      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16" className='mr-1.5 text-white hover:text-gray-300 hover:scale-110 transition-transform'>
-                          <path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m7.5-6.923c-.67.204-1.335.82-1.887 1.855A8 8 0 0 0 5.145 4H7.5zM4.09 4a9.3 9.3 0 0 1 .64-1.539 7 7 0 0 1 .597-.933A7.03 7.03 0 0 0 2.255 4zm-.582 3.5c.03-.877.138-1.718.312-2.5H1.674a7 7 0 0 0-.656 2.5zM4.847 5a12.5 12.5 0 0 0-.338 2.5H7.5V5zM8.5 5v2.5h2.99a12.5 12.5 0 0 0-.337-2.5zM4.51 8.5a12.5 12.5 0 0 0 .337 2.5H7.5V8.5zm3.99 0V11h2.653c.187-.765.306-1.608.338-2.5zM5.145 12q.208.58.468 1.068c.552 1.035 1.218 1.65 1.887 1.855V12zm.182 2.472a7 7 0 0 1-.597-.933A9.3 9.3 0 0 1 4.09 12H2.255a7 7 0 0 0 3.072 2.472M3.82 11a13.7 13.7 0 0 1-.312-2.5h-2.49c.062.89.291 1.733.656 2.5zm6.853 3.472A7 7 0 0 0 13.745 12H11.91a9.3 9.3 0 0 1-.64 1.539 7 7 0 0 1-.597.933M8.5 12v2.923c.67-.204 1.335-.82 1.887-1.855q.26-.487.468-1.068zm3.68-1h2.146c.365-.767.594-1.61.656-2.5h-2.49a13.7 13.7 0 0 1-.312 2.5m2.802-3.5a7 7 0 0 0-.656-2.5H12.18c.174.782.282 1.623.312 2.5zM11.27 2.461c.247.464.462.98.64 1.539h1.835a7 7 0 0 0-3.072-2.472c.218.284.418.598.597.933M10.855 4a8 8 0 0 0-.468-1.068C9.835 1.897 9.17 1.282 8.5 1.077V4z"/>
-                      </svg>
-
-                      <span className='pt-0.5 text-white hover:text-gray-300 hover:scale-110 transition-transform'>{lang === 'zh' ? 'CN' : 'EN'}</span>
-                    </button>
-                  </div>
+                        {/* 地球 SVG 圖示 */}
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16" className='mr-1.5 text-white hover:text-gray-300 hover:scale-110 transition-transform'>
+      <path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m7.5-6.923c-.67.204-1.335.82-1.887 1.855A8 8 0 0 0 5.145 4H7.5zM4.09 4a9.3 9.3 0 0 1 .64-1.539 7 7 0 0 1 .597-.933A7.03 7.03 0 0 0 2.255 4zm-.582 3.5c.03-.877.138-1.718.312-2.5H1.674a7 7 0 0 0-.656 2.5zM4.847 5a12.5 12.5 0 0 0-.338 2.5H7.5V5zM8.5 5v2.5h2.99a12.5 12.5 0 0 0-.337-2.5zM4.51 8.5a12.5 12.5 0 0 0 .337 2.5H7.5V8.5zm3.99 0V11h2.653c.187-.765.306-1.608.338-2.5zM5.145 12q.208.58.468 1.068c.552 1.035 1.218 1.65 1.887 1.855V12zm.182 2.472a7 7 0 0 1-.597-.933A9.3 9.3 0 0 1 4.09 12H2.255a7 7 0 0 0 3.072 2.472M3.82 11a13.7 13.7 0 0 1-.312-2.5h-2.49c.062.89.291 1.733.656 2.5zm6.853 3.472A7 7 0 0 0 13.745 12H11.91a9.3 9.3 0 0 1-.64 1.539 7 7 0 0 1-.597.933M8.5 12v2.923c.67-.204 1.335-.82 1.887-1.855q.26-.487.468-1.068zm3.68-1h2.146c.365-.767.594-1.61.656-2.5h-2.49a13.7 13.7 0 0 1-.312 2.5m2.802-3.5a7 7 0 0 0-.656-2.5H12.18c.174.782.282 1.623.312 2.5zM11.27 2.461c.247.464.462.98.64 1.539h1.835a7 7 0 0 0-3.072-2.472c.218.284.418.598.597.933M10.855 4a8 8 0 0 0-.468-1.068C9.835 1.897 9.17 1.282 8.5 1.077V4z"/>
+    </svg>
+                        <span className='pt-0.5 text-white hover:text-gray-300 hover:scale-110 transition-transform'>{lang === 'zh' ? 'CN' : 'EN'}</span>
+                      </button>
+                    </div>
                 </div>
               )}
             </div>
           </nav>
         </header>
   
-        {/* hero */}
         <div className="w-screen h-screen fixed top-0 left-0 z-2">
             <section id="hero" className="relative h-screen text-white">
             {!isVideoLoaded && (
@@ -702,11 +698,7 @@ export default function  Home() {
             </section>
         </div>
         <div className="absolute inset-0 z-10 bg-gradient-to-b from-black/0 to-black/50 h-screen"></div>
-
-        {/* main section */}
         <div className='relative'>
-
-          {/* bg */}
           <div 
             className="w-full absolute top-0 left-0 h-[5400px]"  // 他預設只有一個 h-screen 不能有 h-full
             style={{
@@ -717,8 +709,6 @@ export default function  Home() {
               boxShadow: "inset 0 10px 20px -10px rgba(0,0,0,0.5), inset 0 -10px 20px -10px rgba(0,0,0,0.5)"
             }}
           ></div>
-
-          {/* bg filter */}
           <div 
             className="absolute inset-0 h-[5400px]"
             style={{
@@ -728,470 +718,332 @@ export default function  Home() {
           />
           <div className="relative z-17 mt-[100vh] h-[100vh] ">
           
+              <div className='relative'>
 
-            {/* 1st main section : Map 0730 edited */}
-            <div className='relative'>
-
-            <div className="min-h-screen md:min-h-screen flex items-center justify-center z-20 pt-40 "> 
-                <div className="relative w-[85%] md:w-[70%]  rounded-md"> 
-                    <h2 className="pb-10 text-5xl text-center md:text-left md:text-6xl ">{t('map_cap')}</h2> 
-                    <ModelViewer lang={lang}/>
-                </div>
-            </div>
-
-            {/* 2nd main section : Introduction 0730 edited */}
-            <div className="h-[500px] flex items-center justify-center relative ">
-            </div>
-
-            <div className="h-[200px] flex items-center justify-center relative ">
-                <div className=" container mx-auto px-6 flex flex-col items-center text-center">
-                    <div className="z-20 ">
-                        <motion.h2
-                            className="text-8xl md:text-6xl font-light backdrop-blur-sm mb-4 tracking-widest text-slate-700 p-10 "
-                            initial={{ opacity: 0 }}
-                            whileInView={{ opacity: 1 }}
-                            viewport={{ once: true, amount: 0.5 }} 
-                            transition={{  duration: 1.2, ease: "easeInOut", delay: 0.2 }}
-                          >
-                            {t('wish')}
-                        </motion.h2>
-                    </div>
-                </div>
-                <div className="w-full absolute top-0 left-0" >
-                </div>
-
-            </div>
-
-            <div className="h-[100px] flex items-center justify-center">
-                <div className=" container mx-auto px-6 flex flex-col items-center text-center  ">
-  
-                    <div className="mt-10 md:mt-0 z-20 ">
-                        <motion.h2
-                            className="text-4xl md:text-3xl font-light mb-4 tracking-wider backdrop-blur-sm text-slate-600"
-                            initial={{ opacity: 0 }}
-                            whileInView={{ opacity: 1 }}
-                            viewport={{ once: true, amount: 0.5 }} 
-                            transition={{  duration: 1.2, ease: "easeInOut", delay: 0.2 }}
-                          >
-                            {t('see')}
-                        </motion.h2>
-                    </div>
-                </div>
-            </div>
-
-            <div className="h-[0px] md:h-[400px] mb-10">
-                <div className="w-full mx-auto flex flex-col items-center justify-center">
-                    <div className="md:mt-[10px] mt-5 z-20 flex justify-center">
-                        <motion.h2
-                            className="text-xl md:text-xl font-light mb-4 tracking-wide backdrop-blur-sm text-slate-500"
-                            style={
-                              lang === 'zh'
-                                ? {
-                                    writingMode: "vertical-rl",
-                                    textOrientation: "upright",
-                                  }
-                                : {
-                                    lineHeight: "1.3",
-                                  }
-                            }
-                            initial={{ opacity: 0 }}
-                            whileInView={{ opacity: 1 }}
-                            viewport={{ once: true, amount: 0.5 }} 
-                            transition={{  duration: 1.2, ease: "easeInOut", delay: 0.2 }}
-                          >
-                            {renderText()}
-                        </motion.h2>
-                    </div>
-                </div>
-            </div>
-
-            <div className="h-[200px] flex items-center justify-center relative ">
-            </div>
-
-            </div>
-
-            {/* 3rd main section : Arg 0730 edited */}
-            <div className="h-[330px] md:h-[800px] relative">
-              <div 
-                className="absolute inset-0 w-full overflow-hidden" 
-              >
-                <div 
-                  className="absolute inset-0 w-[120%] md:w-full h-[calc(100%+200px)]"
-                  style={{
-                    transform: `translateY(${scrolly_calcultae()}px)`,
-                    left: windowWidth < 768 ? '-15%' : '0%',
-                  }}
-                >
-                  <Image 
-                    src="/arg/arg.png"
-                    alt="背景圖片"
-                    fill
-                    sizes="100vw"
-                    className="object-cover object-center"
-                    priority
-                  />
-                </div>
-              </div>
-            </div>
-
-
-              
-            {/* gsap amimation 0730 edited - Updated with new layout */}
-            
-            <div ref={containerRef} className="py-20 w-full min-h-[1000px] relative overflow-x-hidden" 
-                 style={{
-                   background: 'linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)'
-                 }}>
-              <div className="relative container mx-auto px-6 max-w-5xl">
-                
-              <div className="h-[100px]"></div>
-
-                {/* Section Title */}
-                <div className="text-center mb-16">
-                  <h2 className="text-2xl md:text-4xl font-normal text-gray-800 mb-8" 
-                      style={{ letterSpacing: '3px' }}>
-                    {t('Arg-1').split('<br/>').map((line, idx) => (
-                      <span key={idx}>
-                        {line}
-                        {idx !== t('Arg-1').split('<br/>').length - 1 && <br />}
-                      </span>
-                    ))}
-                  </h2>
-                </div>
-
-                {/* Main Content Card */}
-                <div className="bg-white bg-opacity-80 backdrop-blur-lg rounded-3xl p-12 md:p-16 shadow-2xl shadow-black/10 text-center space-y-12">
-                  
-                  {/* Year Highlight */}
-                  <div className="text-left1">
-                    <div className="text-xl md:text-5xl font-semibold text-red-500 mb-8" 
-                         style={{ letterSpacing: '4px' }}>
-                      {t('Arg-2').split('<br/>').map((line, idx) => (
-                        <span key={idx}>
-                          {line}
-                          {idx !== t('Arg-2').split('<br/>').length - 1 && <br />}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Future Description */}
-                  <div className="text-right1 space-y-4">
-                    <p className="text-xl md:text-2xl font-normal text-gray-700" 
-                       style={{ letterSpacing: '2px', lineHeight: '1.8' }}>
-                      {t('Arg-3').split('<br/>').map((line, idx) => (
-                        <span key={idx}>
-                          {line}
-                          {idx !== t('Arg-3').split('<br/>').length - 1 && <br />}
-                        </span>
-                      ))}
-                    </p>
-                    
-                    <p className="text-lg md:text-2xl font-normal text-gray-700" 
-                       style={{ letterSpacing: '2px', lineHeight: '1.8' }}>
-                      {t('Arg-4').split('<br/>').map((line, idx) => (
-                        <span key={idx}>
-                          {line}
-                          {idx !== t('Arg-4').split('<br/>').length - 1 && <br />}
-                        </span>
-                      ))}
-                    </p>
-
-                    <p className="text-lg md:text-2xl font-normal text-gray-700" 
-                       style={{ letterSpacing: '2px', lineHeight: '1.8' }}>
-                      {t('Arg-5').split('<br/>').map((line, idx) => (
-                        <span key={idx}>
-                          {line}
-                          {idx !== t('Arg-5').split('<br/>').length - 1 && <br />}
-                        </span>
-                      ))}
-                    </p>
-                  </div>
-
-                  {/* Society Description */}
-                  <div className="text-left2">
-                    <p className="text-lg md:text-xl font-normal text-gray-600" 
-                       style={{ letterSpacing: '1px', lineHeight: '1.8' }}>
-                      {t('Arg-6').split('<br/>').map((line, idx) => (
-                        <span key={idx}>
-                          {line}
-                          {idx !== t('Arg-6').split('<br/>').length - 1 && <br />}
-                        </span>
-                      ))}
-                    </p>
-                    
-                    <p className="text-base md:text-lg font-normal text-gray-500 italic mt-2" 
-                       style={{ letterSpacing: '1px', lineHeight: '1.8' }}>
-                      {t('Arg-7').split('<br/>').map((line, idx) => (
-                        <span key={idx}>
-                          {line}
-                          {idx !== t('Arg-7').split('<br/>').length - 1 && <br />}
-                        </span>
-                      ))}
-                    </p>
-                  </div>
-
-                  {/* Question Block */}
-                  <div className="text-right2">
-                    <div className="text-xl md:text-2xl font-medium text-gray-800 mb-4" 
-                         style={{ letterSpacing: '2px', lineHeight: '1.6' }}>
-                      {t('Arg-8').split('<br/>').map((line, idx) => (
-                        <span key={idx}>
-                          {line}
-                          {idx !== t('Arg-8').split('<br/>').length - 1 && <br />}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Life Question */}
-                  <div className="text-left3">
-                    <p className="text-xl md:text-2xl font-medium text-orange-500" 
-                       style={{ letterSpacing: '2px', lineHeight: '1.6' }}>
-                      {t('Arg-10').split('<br/>').map((line, idx) => (
-                        <span key={idx}>
-                          {line}
-                          {idx !== t('Arg-10').split('<br/>').length - 1 && <br />}
-                        </span>
-                      ))}
-                    </p>
-                  </div>
-
-                  {/* ARG Button */}
-                  <div className="text-center">
-                    <Link 
-                      href="/arg" 
-                      className="inline-block px-10 py-4 text-lg font-medium text-white rounded-full transition-all duration-300 hover:transform hover:-translate-y-1"
-                      style={{
-                        background: 'linear-gradient(135deg, #C9A27E 0%, #E7C9A9 100%)',
-                        letterSpacing: '2px',
-                        boxShadow: '0 8px 25px rgba(201, 162, 126, 0.3)' // 柔和陰影
-                      }}
-                      onMouseEnter={(e) => {
-                        e.target.style.boxShadow = '0 12px 35px rgba(201, 162, 126, 0.5)';
-                      }}
-                      onMouseLeave={(e) => {
-                        e.target.style.boxShadow = '0 8px 25px rgba(201, 162, 126, 0.3)';
-                      }}
-                    >
-                      {t('Arg-11')}
-                    </Link>
-                  </div>
-                  
-                </div>
-
-                <div className="h-[400px]"></div>
-              </div>
-            </div>
-
-                      
-            {/* 4th main section : who-art-you */}
-            <section className="py-20 min-h-screen flex flex-col items-center justify-center relative pt-[400px]" 
-                      style={{
-                        background: 'rgba(250, 255, 255, 1)'
-                      }}>
-              <style jsx>{`
-                .scrollbar-hide {
-                  -ms-overflow-style: none;
-                  scrollbar-width: none;
-                }
-                .scrollbar-hide::-webkit-scrollbar {
-                  display: none;
-                }
-              `}</style>
-              <div className="max-w-4xl mx-auto mb-16 px-6 w-full">
-                <h2 className="text-center text-2xl md:text-4xl font-normal text-gray-800 leading-relaxed mb-8" 
-                    style={{ letterSpacing: '3px' }}>
-                  {t('wau-1').split('<br/>').map((line, idx) => (
-                    <span key={idx}>
-                      {line}
-                      {idx !== t('wau-1').split('<br/>').length - 1 && <br />}
-                    </span>
-                  ))}
-                </h2>
-                <p className="text-center text-lg md:text-xl text-gray-600 leading-relaxed mb-6" 
-                    style={{ letterSpacing: '1px', lineHeight: '2' }}>
-                  {t('wau-2').split('<br/>').map((line, idx) => (
-                    <span key={idx}>
-                      {line}
-                      {idx !== t('wau-2').split('<br/>').length - 1 && <br />}
-                    </span>
-                  ))}
-                </p>
-                <p className="text-center mt-4 mb-8 text-orange-500 text-lg md:text-xl font-medium" 
-                    style={{ letterSpacing: '1px' }}>
-                  ✧ {t('wau-3').split('<br/>').map((line, idx) => (
-                    <span key={idx}>
-                      {line}
-                      {idx !== t('wau-3').split('<br/>').length - 1 && <br />}
-                    </span>
-                  ))} ✧
-                </p>
-              </div>
-
-              <div className="w-full max-w-6xl mx-auto px-4">
-                <div className="flex gap-6 overflow-x-auto scrollbar-hide pb-4" 
-                      style={{
-                        scrollBehavior: 'smooth',
-                        WebkitOverflowScrolling: 'touch'
-                      }}>
-                  {slides.map((slide) => (
-                      <div key={slide.id} className="flex-shrink-0 w-80 md:w-96">
-                        <div className="bg-white rounded-2xl p-6 shadow-lg transition-all duration-300 hover:shadow-xl hover:transform hover:-translate-y-2 h-full flex flex-col">
-                          <div className="flex-shrink-0 mb-4">
-                            <Image 
-                              src={slide.url}
-                              alt="背景圖片"
-                              height={300}
-                              width={300}
-                              sizes="300px"
-                              className="object-cover object-center rounded-xl transition-transform duration-300 hover:scale-105 w-full"
-                              priority
-                            />
-                          </div>
-                          
-                          <div className="flex items-center justify-center mb-4 flex-shrink-0">
-                            <h3 className="text-lg md:text-xl font-medium text-gray-800" 
-                                style={{ letterSpacing: '2px' }}>
-                              {typeof slide.description === 'object' && slide.description !== null
-                                ? slide.description[lang]
-                                : slide.description}
-                            </h3>
-                          </div>
-                          
-                          <div className="flex-grow flex items-start justify-center">
-                            <p className="text-sm md:text-base text-gray-600 leading-relaxed w-full" 
-                                style={{ letterSpacing: '1px', lineHeight: '1.8' }}>
-                              {typeof slide.caption === 'object' && slide.caption !== null
-                                ? (
-                                  slide.caption[lang].length > CAPTION_LIMIT && !expandedCaptions[slide.id]
-                                    ? (
-                                      <>
-                                        {slide.caption[lang].slice(0, CAPTION_LIMIT)}...
-                                        <button
-                                          className="text-orange-500 ml-2 font-medium hover:text-orange-600 transition-colors"
-                                          onClick={() => toggleCaption(slide.id)}
-                                          type="button"
-                                        >
-                                          {t('open')}
-                                        </button>
-                                      </>
-                                    )
-                                    : (
-                                      <>
-                                        {slide.caption[lang]}
-                                        {slide.caption[lang].length > CAPTION_LIMIT && (
-                                          <button
-                                            className="text-orange-500 ml-2 font-medium hover:text-orange-600 transition-colors"
-                                            onClick={() => toggleCaption(slide.id)}
-                                            type="button"
-                                          >
-                                            {t('close')}
-                                          </button>
-                                        )}
-                                      </>
-                                    )
-                                )
-                                : (
-                                  slide.caption.length > CAPTION_LIMIT && !expandedCaptions[slide.id]
-                                    ? (
-                                      <>
-                                        {slide.caption.slice(0, CAPTION_LIMIT)}...
-                                        <button
-                                          className="text-orange-500 ml-2 font-medium hover:text-orange-600 transition-colors"
-                                          onClick={() => toggleCaption(slide.id)}
-                                          type="button"
-                                        >
-                                          {t('open')}
-                                        </button>
-                                      </>
-                                    )
-                                    : (
-                                      <>
-                                        {slide.caption}
-                                        {slide.caption.length > CAPTION_LIMIT && (
-                                          <button
-                                            className="text-orange-500 ml-2 font-medium hover:text-orange-600 transition-colors"
-                                            onClick={() => toggleCaption(slide.id)}
-                                            type="button"
-                                          >
-                                            {t('close')}
-                                          </button>
-                                        )}
-                                      </>
-                                    )
-                                )
-                              }
-                            </p>
-                          </div>
-                        </div>
+                {/* Second main section : horizontal scroll */}
+                  <div className="min-h-screen md:min-h-screen flex items-center justify-center z-20 pt-40 "> 
+                      <div className="relative w-[85%] md:w-[70%]  rounded-md"> 
+                          <h2 className="pb-10 text-5xl text-center md:text-left font-bold md:text-6xl ">{t('map_cap')}</h2> 
+                          <ModelViewer lang={lang}/>
                       </div>
-                  ))}
+                  </div>
+
+                {/* First main section : introduction */}
+                <div className="h-[400px] flex items-center justify-center relative ">
+                    <div className=" container mx-auto px-6 flex flex-col md:flex-row items-center md:justify-end">
+                        <div className="md:w-1/2 md:mt-0 z-20 ">
+                            <motion.h2
+                                className="text-[28px] md:text-5xl font-bold backdrop-blur-sm mb-4 tracking-wider p-10 "
+                                initial={{ opacity: 0 }}
+                                whileInView={{ opacity: 1 }}
+                                viewport={{ once: true, amount: 0.5 }} 
+                                transition={{  duration: 1.2, ease: "easeInOut", delay: 0.2 }}
+                              >
+                                {t('wish')}
+                            </motion.h2>
+                        </div>
+                    </div>
+                    <div className="w-full absolute top-0 left-0" >
+                    </div>
+
+                </div>
+
+                <div className="h-[300px] flex items-center justify-center">
+                    <div className=" container mx-auto px-6 flex flex-col md:flex-row items-center text-center  ">
+      
+                        <div className="md:w-1/2 mt-10 md:mt-0 z-20 ">
+                            <motion.h2
+                                className="text-[28px] md:text-5xl font-bold mb-4 tracking-wider backdrop-blur-sm"
+                                initial={{ opacity: 0 }}
+                                whileInView={{ opacity: 1 }}
+                                viewport={{ once: true, amount: 0.5 }} 
+                                transition={{  duration: 1.2, ease: "easeInOut", delay: 0.2 }}
+                              >
+                                {t('see')}
+                            </motion.h2>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="h-[510px] md:h-[800px] mb-20">
+                    <div className="w-full mx-auto flex flex-col md:flex-row items-center md:justify-center">
+                        <div className="md:w-1/2 md:mt-[200px] mt-20 z-20 flex justify-center">
+                            <motion.h2
+                                className="text-[28px] md:text-5xl font-bold mb-4 tracking-wider backdrop-blur-sm"
+                                style={
+                                  lang === 'zh'
+                                    ? {
+                                        writingMode: "vertical-rl",
+                                        textOrientation: "upright",
+                                      }
+                                    : {
+                                        lineHeight: "1.3",
+                                      }
+                                }
+                                initial={{ opacity: 0 }}
+                                whileInView={{ opacity: 1 }}
+                                viewport={{ once: true, amount: 0.5 }} 
+                                transition={{  duration: 1.2, ease: "easeInOut", delay: 0.2 }}
+                              >
+                                {renderText()}
+                            </motion.h2>
+                        </div>
+                    </div>
                 </div>
               </div>
-
-              {/* ARG Button */}
-              <div className="mt-16 px-6 max-w-4xl mx-auto text-center">
-                <div className="text-center">
-                  <Link 
-                    href="/who-art-you" 
-                    className="inline-block px-10 py-4 text-lg font-medium text-white rounded-full transition-all duration-300 hover:transform hover:-translate-y-1"
+              
+              
+              {/* Third main section : arg */}
+              <div className="h-[330px] md:h-[700px] relative">
+                <div 
+                  className="absolute inset-0 w-full overflow-hidden" 
+                >
+                  <div 
+                    className="absolute inset-0 w-[120%] md:w-full h-[calc(100%+200px)]"
                     style={{
-                      background: 'linear-gradient(135deg, #A3B8C2 30%, #D1DDE5 100%)',
-                      letterSpacing: '2px',
-                      boxShadow: '0 8px 25px rgba(163, 184, 194, 0.3)'
-                    }}
-                    onMouseEnter={(e) => {
-                      e.target.style.boxShadow = '0 12px 35px rgba(163, 184, 194, 0.5)';
-                    }}
-                    onMouseLeave={(e) => {
-                      e.target.style.boxShadow = '0 8px 25px rgba(163, 184, 194, 0.3)';
+                      transform: `translateY(${scrolly_calcultae()}px)`,
+                      left: windowWidth < 768 ? '-15%' : '0%',
                     }}
                   >
-                    {t('wau_final')}
-                  </Link>
+                    <Image 
+                      src="/arg/arg.png"
+                      alt="背景圖片"
+                      fill
+                      sizes="100vw"
+                      className="object-cover object-center"
+                      priority
+                    />
+                  </div>
                 </div>
-                <div className="h-[200px]"></div>
               </div>
-            </section>
+                
+              {/* gsap amimation */}
+              <div ref={containerRef} className="pt-10 py-16 bg-gray-50 w-full h-[1250px] relative opacity-70 overflow-x-hidden">
+                <div className="relative container mx-auto px-4 ">
+                  <div className="max-w-4xl mx-auto space-y-12"> 
+
+                    <div className="text-left1 p-8 mt-6">
+                      <h3 className="text-xl md:text-3xl font-semibold text-black">
+                        {t('Arg-1').split('<br/>').map((line, idx) => (
+                          <span key={idx}>
+                            {line}
+                            {idx !== t('Arg-1').split('<br/>').length - 1 && <br />}
+                          </span>
+                        ))}
+                      </h3>
+                    </div>
+                    
+                    <div className="text-right1 p-8 text-right">
+                      <h3 className="text-xl md:text-3xl font-semibold text-black" >
+                        {t('Arg-2').split('<br/>').map((line, idx) => (
+                          <span key={idx}>
+                            {line}
+                            {idx !== t('Arg-2').split('<br/>').length - 1 && <br />}
+                          </span>
+                        ))}
+                      </h3>
+                    </div>
+                    
+                    <div className="text-left2 p-8">
+                      <h3 className="text-xl md:text-3xl font-semibold text-black">
+                        {t('Arg-3').split('<br/>').map((line, idx) => (
+                          <span key={idx}>
+                            {line}
+                            {idx !== t('Arg-3').split('<br/>').length - 1 && <br />}
+                          </span>
+                        ))}
+                      </h3>
+                    </div>
+                    
+                    <div className="text-right2 p-8 text-right mb-10">
+                      <h3 className="text-xl md:text-3xl font-semibold mb-10 text-black">
+                        {t('Arg-4').split('<br/>').map((line, idx) => (
+                          <span key={idx}>
+                            {line}
+                            {idx !== t('Arg-4').split('<br/>').length - 1 && <br />}
+                          </span>
+                        ))}
+                      </h3>
+                    </div>
+                    
+                    <div className="text-left3 p-8">
+                      <h3 className="text-xl md:text-3xl font-semibold text-orange-600" >
+                        {t('Arg-5').split('<br/>').map((line, idx) => (
+                          <span key={idx}>
+                            {line}
+                            {idx !== t('Arg-5').split('<br/>').length - 1 && <br />}
+                          </span>
+                        ))}
+                      </h3>
+                    </div>
+
+                    <div className="text-right3 p-8 text-right mb-10">
+                      <Link href="/arg" className=" text-lg text-bold text-gray-700 scale-100 hover:text-black hover:font-semibold hover:underline ">
+                          {t('Arg-6')}
+                      </Link>
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+
+                      
+            {/* Fourth main section : who-art-you */}
+              <section className="py-10 min-h-screen flex flex-col items-center justify-center relative bg-white pt-[140px]">
+                <div className="max-w-2xl mx-auto mb-10 px-4 w-[90%]">
+                  <p className="text-center text-xl md:text-3xl font-bold text-gray-800 leading-relaxed mb-4">
+                    {t('wau-1').split('<br/>').map((line, idx) => (
+                      <span key={idx}>
+                        {line}
+                        {idx !== t('wau-1').split('<br/>').length - 1 && <br />}
+                      </span>
+                    ))}
+                  </p>
+                  <p className="text-center text-lg md:text-xl text-gray-700 leading-relaxed mb-4">
+                    {t('wau-2').split('<br/>').map((line, idx) => (
+                      <span key={idx}>
+                        {line}
+                        {idx !== t('wau-2').split('<br/>').length - 1 && <br />}
+                      </span>
+                    ))}
+                  </p>
+                  <p className="text-center mt-2 mb-2 text-yellow-500 text-lg md:text-xl font-semibold">
+                    {t('wau-3').split('<br/>').map((line, idx) => (
+                      <span key={idx}>
+                        {line}
+                        {idx !== t('wau-3').split('<br/>').length - 1 && <br />}
+                      </span>
+                    ))}
+                  </p>
+                </div>
+                  <Swiper
+                  modules={[Autoplay, EffectCoverflow, Navigation]}
+                  effect="coverflow"
+                  grabCursor={true}
+                  centeredSlides={true}
+                  slidesPerView={2} 
+                  loop={true} 
+                  autoplay={{
+                      delay: 3000, 
+                      disableOnInteraction: false, 
+                  }}
+                  coverflowEffect={{
+                      rotate: 0, 
+                      stretch: 10, 
+                      depth: 100,
+                      modifier: 1,
+                      slideShadows: false, 
+                  }}
+                  breakpoints={{
+                    768: {
+                      slidesPerView: 3,
+                    },
+                  }}
+                  className="w-full h-[440px] md:h-[640px]"
+                  >
+                  {slides.map((slide) => (
+                      <SwiperSlide key={slide.id} className="flex flex-col items-center justify-center text-center">
+                        <Image 
+                          src={slide.url}
+                          alt="背景圖片"
+                          height={500}
+                          width={500}
+                          // fill
+                          sizes="1000vw"
+                          // loading="lazy" // 非首屏圖片使用懶加載
+                          className="object-cover object-center23 scale-100 hover:scale-[1.2] transition duration-300"
+                          priority
+                        />
+                      <div className="flex items-center justify-center h-[50px] w-full ">
+                          <div>
+                            {typeof slide.description === 'object' && slide.description !== null
+                              ? slide.description[lang]
+                              : slide.description}
+                          </div>
+                      </div>
+                      <div className="flex justify-center h-[100px] w-full">
+                        <p className="mt-4 text-gray-700 w-[70%]">
+                          {typeof slide.caption === 'object' && slide.caption !== null
+                            ? (
+                              slide.caption[lang].length > CAPTION_LIMIT && !expandedCaptions[slide.id]
+                                ? (
+                                  <>
+                                    {slide.caption[lang].slice(0, CAPTION_LIMIT)}...
+                                    <button
+                                      className="text-gray-500 ml-2 "
+                                      onClick={() => toggleCaption(slide.id)}
+                                      type="button"
+                                    >
+                                      {t('open')}
+                                    </button>
+                                  </>
+                                )
+                                : (
+                                  <>
+                                    {slide.caption[lang]}
+                                    {slide.caption[lang].length > CAPTION_LIMIT && (
+                                      <button
+                                        className="text-gray-500 ml-2"
+                                        onClick={() => toggleCaption(slide.id)}
+                                        type="button"
+                                      >
+                                        {t('close')}
+                                      </button>
+                                    )}
+                                  </>
+                                )
+                            )
+                            : (
+                              slide.caption.length > CAPTION_LIMIT && !expandedCaptions[slide.id]
+                                ? (
+                                  <>
+                                    {slide.caption.slice(0, CAPTION_LIMIT)}...
+                                    <button
+                                      className="text-gray-500 ml-2 "
+                                      onClick={() => toggleCaption(slide.id)}
+                                      type="button"
+                                    >
+                                      {t('open')}
+                                    </button>
+                                  </>
+                                )
+                                : (
+                                  <>
+                                    {slide.caption}
+                                    {slide.caption.length > CAPTION_LIMIT && (
+                                      <button
+                                        className="text-gray-500 ml-2"
+                                        onClick={() => toggleCaption(slide.id)}
+                                        type="button"
+                                      >
+                                        {t('close')}
+                                      </button>
+                                    )}
+                                  </>
+                                )
+                            )
+                          }
+                        </p>
+                      </div>
+                      </SwiperSlide>
+                  ))}
+                  </Swiper>
+                  <div dangerouslySetInnerHTML={{ __html: t('wau_final') }} />
+              </section>
     
     
               {/* Fifth main section : polis */}
               <section className="h-screen flex items-center justify-center bg-white z-20 ">
                 <div ref={finalBlockRef} className="max-w-1xl w-full bg-white rounded-xl shadow-xs p-8 md:p-12 space-y-8 scale-90 hover:scale-105 transition-transform duration-300 md:w-[80%] md:text-center leading-relaxed">
-                  
-                  <h1 className="text-3xl md:text-4xl text-gray-800 mb-4 text-center">{t('polis-1')}</h1>
+                  <h1 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4 text-center">{t('polis-1')}</h1>
                   <p className="text-lg md:text-xl text-gray-700 leading-relaxed italic">
                   {t('polis-2')}
                   </p>
-
-                <div className="mt-16 px-6 max-w-4xl mx-auto text-center">
-                  <div className="text-center">
-                    <Link 
-                      href="/polis" 
-                      className="inline-block px-10 py-4 text-lg font-medium text-white rounded-full transition-all duration-300 hover:transform hover:-translate-y-1"
-
-                      style={{
-                        background: 'linear-gradient(135deg, #E8C5C1 30%, #F4E1DE 100%)',
-                        letterSpacing: '2px',
-                        boxShadow: '0 8px 25px rgba(232, 197, 193, 0.3)'
-                      }}
-
-
-                      onMouseEnter={(e) => {
-                        e.target.style.boxShadow = '0 12px 35px rgba(232, 197, 193, 0.5)';
-                      }}
-                      onMouseLeave={(e) => {
-                        e.target.style.boxShadow = '0 8px 25px rgba(232, 197, 193, 0.3)';
-                      }}
-
-                    >
-                      {t('polis-3')}
-                    </Link>
+                  <div className="mt-4 px-4 text-center">
+                    <a href="/polis" className="hover:text-gray-900 hover:underline text-gray-700">
+                      <div dangerouslySetInnerHTML={{ __html: t('polis-3') }} />
+                    </a>
                   </div>
-                  <div className="h-[200px]"></div>
-                </div>
-
                 </div>
                 
               </section>

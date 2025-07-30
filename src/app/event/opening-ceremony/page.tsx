@@ -25,18 +25,18 @@ export default function OpeningCeremonyActivity() {
                     
           {/* 右下展覽資訊 - 調整文字大小和位置以符合邊框 */}
           <div className="absolute bottom-6 right-6 text-right text-xs space-y-1">
-            <p className="mb-1"><span className="font-bold text-[8px]">策劃團隊</span><br />
+            <p className="mb-1"><span className="font-bold text-[8px]">策劃團隊 Curatorial Team</span><br />
             <span className="text-[6px]">
             張恩齊、邱禹甄、蔡宇恩、洪涵溱、蔡佩渝
             </span></p>
             
-            <p><span className="font-bold text-sm md:text-base">活動紀錄</span><br />
+            <p><span className="font-bold text-sm md:text-base">活動紀錄 Activity Documentation</span><br />
             <span className="text-xs md:text-sm">屈言真、王厚仁、游雨婕、林于萱、蘇晏禾</span></p> 
 
-            <p><span className="font-bold text-[8px]">活動時間</span><br />
+            <p><span className="font-bold text-[8px]">活動時間 Activity Dates</span><br />
             <span className="text-[6px]">5/2 15:00-22:00</span></p>
             
-            <p><span className="font-bold text-[8px]">活動地點</span><br />
+            <p><span className="font-bold text-[8px]">活動地點 Activity Venue</span><br />
             <span className="text-[6px]">國立臺灣大學 振興草坪</span></p>
           </div>
         </div>
@@ -54,18 +54,18 @@ export default function OpeningCeremonyActivity() {
             
             {/* 右下展覽資訊 - 調整出血位置和文字大小 */}
             <div className="absolute bottom-10 right-10 md:bottom-12 md:right-12 lg:bottom-14 lg:right-14 text-right max-w-md space-y-2.5">
-              <p className="mb-1"><span className="font-bold text-sm md:text-base">策劃團隊</span><br />
+              <p className="mb-1"><span className="font-bold text-sm md:text-base">策劃團隊 Curatorial Team</span><br />
               <span className="text-xs md:text-sm">
                   張恩齊、邱禹甄、蔡宇恩、洪涵溱、蔡佩渝
               </span></p>
 
-              <p><span className="font-bold text-sm md:text-base">活動紀錄</span><br />
+              <p><span className="font-bold text-sm md:text-base">活動紀錄 Activity Documentation</span><br />
               <span className="text-xs md:text-sm">屈言真、王厚仁、游雨婕、林于萱、蘇晏禾</span></p> 
               
-              <p><span className="font-bold text-sm md:text-base">活動時間</span><br />
+              <p><span className="font-bold text-sm md:text-base">活動時間 Activity Dates</span><br />
               <span className="text-xs md:text-sm">5/2 15:00-22:00</span></p>
               
-              <p><span className="font-bold text-sm md:text-base">活動地點</span><br />
+              <p><span className="font-bold text-sm md:text-base">活動地點 Activity Venue</span><br />
               <span className="text-xs md:text-sm">國立臺灣大學 振興草坪</span></p>
             </div>
           </div>

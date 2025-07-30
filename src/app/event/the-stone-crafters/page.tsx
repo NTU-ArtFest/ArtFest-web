@@ -19,26 +19,26 @@ export default function StoneCraftersActivity() {
           {/* 左上標題 - 縮小字體 */}
           <div className="self-start mt-8 ml-6">
             <h1 className="text-2xl sm:text-4xl font-bold tracking-wider mb-1 uppercase">石尚玩家</h1>
-            <p className="text-xs sm:text-base tracking-wide">The Stone Crafters</p>
+            <p className="text-xs sm:text-base tracking-wide">Rock On: The Stone Artisans</p>
           </div>
                     
           {/* 右下展覽資訊 - 調整文字大小和位置以符合邊框 */}
           <div className="absolute bottom-6 right-6 text-right text-xs space-y-1">
-            <p className="mb-1"><span className="font-bold text-[8px]">專案管理</span><br />
+            <p className="mb-1"><span className="font-bold text-[8px]">專案管理 Project Manager</span><br />
             <span className="text-[6px]">
             曾子珉
             </span></p>
             
-            <p><span className="font-bold text-[8px]">專案組員</span><br />
+            <p><span className="font-bold text-[8px]">專案組員 Project Team</span><br />
             <span className="text-[6px]">黃淳郁、蔡依玲</span></p>
 
-            <p><span className="font-bold text-sm md:text-base">活動紀錄</span><br />
+            <p><span className="font-bold text-sm md:text-base">活動紀錄 Activity Documentation</span><br />
             <span className="text-xs md:text-sm">王厚仁、周宜葇、王芋勻</span></p>
             
-            <p><span className="font-bold text-[8px]">活動時間</span><br />
+            <p><span className="font-bold text-[8px]">活動時間 Activity Dates</span><br />
             <span className="text-[6px]">5月2日、5月7日、5月10日</span></p>
             
-            <p><span className="font-bold text-[8px]">活動地點</span><br />
+            <p><span className="font-bold text-[8px]">活動地點 Activity Venue</span><br />
             <span className="text-[6px]">振興草皮旁、學一活B1</span></p>
           </div>
         </div>
@@ -50,26 +50,26 @@ export default function StoneCraftersActivity() {
           <div className="relative h-full w-full">
             <div className="absolute top-12 left-12">
               <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold tracking-wider mb-2">石尚玩家</h1>
-              <p className="text-lg lg:text-xl xl:text-2xl font-light tracking-wide">The Stone Crafters</p>
+              <p className="text-lg lg:text-xl xl:text-2xl font-light tracking-wide">Rock On: The Stone Artisans</p>
             </div>
             
             {/* 右下展覽資訊 - 調整出血位置和文字大小 */}
             <div className="absolute bottom-10 right-10 md:bottom-12 md:right-12 lg:bottom-14 lg:right-14 text-right max-w-md space-y-2.5">
-              <p className="mb-1"><span className="font-bold text-sm md:text-base">專案管理</span><br />
+              <p className="mb-1"><span className="font-bold text-sm md:text-base">專案管理 Project Manager</span><br />
               <span className="text-xs md:text-sm">
                   曾子珉
               </span></p>
               
-              <p><span className="font-bold text-sm md:text-base">專案組員</span><br />
+              <p><span className="font-bold text-sm md:text-base">專案組員 Project Team</span><br />
               <span className="text-xs md:text-sm">黃淳郁、蔡依玲</span></p>
 
-              <p><span className="font-bold text-sm md:text-base">活動紀錄</span><br />
+              <p><span className="font-bold text-sm md:text-base">活動紀錄 Activity Documentation</span><br />
               <span className="text-xs md:text-sm">王厚仁、周宜葇、王芋勻</span></p>
               
-              <p><span className="font-bold text-sm md:text-base">活動時間</span><br />
+              <p><span className="font-bold text-sm md:text-base">活動時間 Activity Dates</span><br />
               <span className="text-xs md:text-sm">5月2日、5月7日、5月10日</span></p>
               
-              <p><span className="font-bold text-sm md:text-base">活動地點</span><br />
+              <p><span className="font-bold text-sm md:text-base">活動地點 Activity Venue</span><br />
               <span className="text-xs md:text-sm">振興草皮旁、學一活B1</span></p>
             </div>
           </div>

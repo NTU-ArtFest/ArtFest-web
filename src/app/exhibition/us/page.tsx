@@ -29,23 +29,23 @@ export default function UsExhibition() {
                     
           {/* 右下展覽資訊 - 調整文字大小和位置以符合邊框 */}
           <div className="absolute bottom-6 right-6 text-right text-xs space-y-1">
-            <p className="mb-1"><span className="font-bold text-[8px]">策展團隊</span><br />
+            <p className="mb-1"><span className="font-bold text-[8px]">策劃團隊 Curatorial Team</span><br />
             <span className="text-[7px]">
             李侑蓁、陳庭妤、林佩㚬
             </span></p>
             
-            <p><span className="font-bold text-[8px]">製作團隊</span><br />
+            <p><span className="font-bold text-[8px]">製作團隊 Production Team</span><br />
             <span className="text-[7px]">李宥辰、許秝榳、佘秉修、江妍恩、石英佐<br/>劉芸辰、楊楀潔、謝磊、戴其恩、沈若涵、黃芷柔</span></p>
             
-           <p className="mb-1"><span className="font-bold text-sm md:text-base">活動紀錄</span><br />
+           <p className="mb-1"><span className="font-bold text-sm md:text-base">展場紀錄 Exhibition Documentationon</span><br />
             <span className="text-xs md:text-sm">
               賴晉億
             </span></p>
 
-            <p><span className="font-bold text-[8px]">展覽時間</span><br />
+            <p><span className="font-bold text-[8px]">展出時間 Exhibition Dates</span><br />
             <span className="text-[7px]">5/2~5/16 10:00-20:00</span></p>
             
-            <p><span className="font-bold text-[8px]">展覽地點</span><br />
+            <p><span className="font-bold text-[8px]">展出地點 Exhibition Venue</span><br />
             <span className="text-[7px]">國立臺灣大學第一學生活動中心B 藝文展示室</span></p>
           </div>
         </div>
@@ -62,26 +62,26 @@ export default function UsExhibition() {
             
             {/* 右下展覽資訊 - 調整出血位置和文字大小 */}
             <div className="absolute bottom-10 right-10 md:bottom-12 md:right-12 lg:bottom-14 lg:right-14 text-right max-w-md space-y-2.5">
-              <p className="mb-1"><span className="font-bold text-sm md:text-base">策展團隊</span><br />
+              <p className="mb-1"><span className="font-bold text-sm md:text-base">策劃團隊 Curatorial Team</span><br />
               <span className="text-xs md:text-sm">
                   李侑蓁、陳庭妤、林佩㚬
               </span></p>
               
-              <p><span className="font-bold text-sm md:text-base">製作團隊</span><br />
+              <p><span className="font-bold text-sm md:text-base">製作團隊 Production Team</span><br />
               <span className="text-xs md:text-sm">
                 李宥辰、許秝榳、佘秉修、江妍恩、石英佐<br/>
                 劉芸辰、楊楀潔、謝磊、戴其恩、沈若涵、黃芷柔
               </span></p>
 
-           <p className="mb-1"><span className="font-bold text-sm md:text-base">活動紀錄</span><br />
+           <p className="mb-1"><span className="font-bold text-sm md:text-base">展場紀錄 Exhibition Documentationon</span><br />
             <span className="text-xs md:text-sm">
               賴晉億
             </span></p>
               
-              <p><span className="font-bold text-sm md:text-base">展覽時間</span><br />
+              <p><span className="font-bold text-sm md:text-base">展出時間 Exhibition Dates</span><br />
               <span className="text-xs md:text-sm">5/2~5/16 10:00-20:00</span></p>
               
-              <p><span className="font-bold text-sm md:text-base">展覽地點</span><br />
+              <p><span className="font-bold text-sm md:text-base">展出地點 Exhibition Venue</span><br />
               <span className="text-xs md:text-sm">國立臺灣大學第一學生活動中心B 藝文展示室</span></p>
             </div>
           </div>

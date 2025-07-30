@@ -32,23 +32,23 @@ export default function ContinuumExhibition() {
                       
             {/* 右下展覽資訊 - 調整文字大小和位置以符合邊框 */}
             <div className="absolute bottom-6 right-6 text-right text-xs space-y-1">
-              <p className="mb-1"><span className="font-bold text-[8px]">策展團隊</span><br />
+              <p className="mb-1"><span className="font-bold text-[8px]">策劃團隊 Curatorial Team</span><br />
               <span className="text-[6px]">
               李宥辰、江侑蓁、曾子珉
               </span></p>
               
-              <p><span className="font-bold text-[8px]">平面設計</span><br />
+              <p><span className="font-bold text-[8px]">平面設計 Graphic Designer</span><br />
               <span className="text-[6px]">黃丞琳</span></p>
 
-           <p className="mb-1"><span className="font-bold text-sm md:text-base">活動紀錄</span><br />
+           <p className="mb-1"><span className="font-bold text-sm md:text-base">展場紀錄 Exhibition Documentationon</span><br />
             <span className="text-xs md:text-sm">
               賴晉億
             </span></p>
               
-              <p><span className="font-bold text-[8px]">展覽時間</span><br />
+              <p><span className="font-bold text-[8px]">展出時間 Exhibition Dates</span><br />
               <span className="text-[6px]">5/2~5/16 10:00-20:00</span></p>
               
-              <p><span className="font-bold text-[8px]">展覽地點</span><br />
+              <p><span className="font-bold text-[8px]">展出地點 Exhibition Venue</span><br />
               <span className="text-[6px]">國立臺灣大學第一學生活動中心B 藝文展示室</span></p>
             </div>
           </div>
@@ -65,23 +65,23 @@ export default function ContinuumExhibition() {
               
               {/* 右下展覽資訊 - 調整出血位置和文字大小 */}
               <div className="absolute bottom-10 right-10 md:bottom-12 md:right-12 lg:bottom-14 lg:right-14 text-right max-w-md space-y-2.5">
-                <p className="mb-1"><span className="font-bold text-sm md:text-base">策展團隊</span><br />
+                <p className="mb-1"><span className="font-bold text-sm md:text-base">策劃團隊 Curatorial Team</span><br />
                 <span className="text-xs md:text-sm">
                     李宥辰、江侑蓁、曾子珉
                 </span></p>
                 
-                <p><span className="font-bold text-sm md:text-base">平面設計</span><br />
+                <p><span className="font-bold text-sm md:text-base">平面設計 Graphic Designer</span><br />
                 <span className="text-xs md:text-sm">黃丞琳</span></p>
 
-              <p className="mb-1"><span className="font-bold text-sm md:text-base">活動紀錄</span><br />
+              <p className="mb-1"><span className="font-bold text-sm md:text-base">展場紀錄 Exhibition Documentationon</span><br />
                 <span className="text-xs md:text-sm">
                   賴晉億
                 </span></p>
                 
-                <p><span className="font-bold text-sm md:text-base">展覽時間</span><br />
+                <p><span className="font-bold text-sm md:text-base">展出時間 Exhibition Dates</span><br />
                 <span className="text-xs md:text-sm">5/2~5/16 10:00-20:00</span></p>
                 
-                <p><span className="font-bold text-sm md:text-base">展覽地點</span><br />
+                <p><span className="font-bold text-sm md:text-base">展出地點 Exhibition Venue</span><br />
                 <span className="text-xs md:text-sm">國立臺灣大學第一學生活動中心B 藝文展示室</span></p>
               </div>
             </div>

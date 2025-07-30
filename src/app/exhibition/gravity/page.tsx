@@ -30,26 +30,26 @@ export default function GravityExhibition() {
                     
           {/* 右下展覽資訊 - 調整文字大小和位置以符合邊框 */}
           <div className="absolute bottom-6 right-6 text-right text-xs space-y-1">
-            <p className="mb-1"><span className="font-bold text-[8px]">策展團隊</span><br />
+            <p className="mb-1"><span className="font-bold text-[8px]">策劃團隊 Curatorial Team</span><br />
             <span className="text-[6px]">
             莊沛珣、陳姸均、李宜繡、蕭登允
             </span></p>
 
-            <p className="mb-1"><span className="font-bold text-sm md:text-base">活動紀錄</span><br />
+            <p className="mb-1"><span className="font-bold text-sm md:text-base">展場紀錄 Exhibition Documentationon</span><br />
             <span className="text-xs md:text-sm">
               林冠鋐
             </span></p>
             
-            <p><span className="font-bold text-[8px]">參展單位</span><br />
+            <p><span className="font-bold text-[8px]">參展單位 Participating Units</span><br />
             <span className="text-[6px]">凌歆慧藝術家、臺大電影節 NTU MovieFest</span></p>
             
-            <p><span className="font-bold text-[8px]">展覽媒材</span><br />
+            <p><span className="font-bold text-[8px]">展覽媒材 Media</span><br />
             <span className="text-[6px]">新媒體藝術裝置、互動裝置</span></p>
             
-            <p><span className="font-bold text-[8px]">展覽時間</span><br />
+            <p><span className="font-bold text-[8px]">展出時間 Exhibition Dates</span><br />
             <span className="text-[6px]">5/2~5/16 10:00-20:00</span></p>
             
-            <p><span className="font-bold text-[8px]">展覽地點</span><br />
+            <p><span className="font-bold text-[8px]">展出地點 Exhibition Venue</span><br />
             <span className="text-[6px]">臺灣大學第一學生活動中心 一樓 103、104 展示室</span></p>
           </div>
         </div>
@@ -66,26 +66,26 @@ export default function GravityExhibition() {
             
             {/* 右下展覽資訊 - 調整出血位置和文字大小 */}
             <div className="absolute bottom-10 right-10 md:bottom-12 md:right-12 lg:bottom-14 lg:right-14 text-right max-w-md space-y-2.5">
-              <p className="mb-1"><span className="font-bold text-sm md:text-base">策展團隊</span><br />
+              <p className="mb-1"><span className="font-bold text-sm md:text-base">策劃團隊 Curatorial Team</span><br />
               <span className="text-xs md:text-sm">
                   莊沛珣、陳姸均、李宜繡、蕭登允
               </span></p>
 
-            <p className="mb-1"><span className="font-bold text-sm md:text-base">活動紀錄</span><br />
+            <p className="mb-1"><span className="font-bold text-sm md:text-base">展場紀錄 Exhibition Documentationon</span><br />
             <span className="text-xs md:text-sm">
               林冠鋐
             </span></p>
               
-              <p><span className="font-bold text-sm md:text-base">參展單位</span><br />
+              <p><span className="font-bold text-sm md:text-base">參展單位 Participating Units</span><br />
               <span className="text-xs md:text-sm">凌歆慧藝術家、臺大電影節 NTU MovieFest</span></p>
               
-              <p><span className="font-bold text-sm md:text-base">展覽媒材</span><br />
+              <p><span className="font-bold text-sm md:text-base">展覽媒材 Media</span><br />
               <span className="text-xs md:text-sm">新媒體藝術裝置、互動裝置</span></p>
               
-              <p><span className="font-bold text-sm md:text-base">展覽時間</span><br />
+              <p><span className="font-bold text-sm md:text-base">展出時間 Exhibition Dates</span><br />
               <span className="text-xs md:text-sm">5/2~5/16 10:00-20:00</span></p>
               
-              <p><span className="font-bold text-sm md:text-base">展覽地點</span><br />
+              <p><span className="font-bold text-sm md:text-base">展出地點 Exhibition Venue</span><br />
               <span className="text-xs md:text-sm">臺灣大學第一學生活動中心 一樓 103、104 展示室</span></p>
             </div>
           </div>
