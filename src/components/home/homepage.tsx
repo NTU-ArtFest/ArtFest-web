@@ -71,6 +71,7 @@ export default function  Home() {
     //     </span>
     //   );
     // };
+
  const renderText = () => {
   if (lang === 'zh') {
     // 中文：每個字一行，但需要反轉順序以符合由右到左的閱讀習慣
@@ -296,7 +297,9 @@ export default function  Home() {
     const navItems = [
       { id: "ARG", desc: "另類實境解謎" },
       { id: "Polis", desc: "議題討論" },
-      { id: "Who Art You", desc: "心理測驗" }
+      { id: "Who Art You", desc: "心理測驗" },
+      { id: "Key Visual", desc: "主視覺" },
+      { id: "Merch", desc: "周邊商品"}
     ];
     const dropdownItems = [
       {
@@ -453,8 +456,6 @@ export default function  Home() {
                                 </div>
                               </div>
                             </div>
-
-                              
                             </div>
                           </div>
                         </div>
@@ -502,6 +503,11 @@ export default function  Home() {
                       <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/>
                     </svg>
                   </Link>
+                  <Link href="https://www.youtube.com/@YOUR_CHANNEL" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-300 hover:scale-110 transition-transform">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M23.498 6.186a2.993 2.993 0 0 0-2.109-2.12C19.322 3.5 12 3.5 12 3.5s-7.322 0-9.388.566a2.993 2.993 0 0 0-2.11 2.12C0 8.25 0 12 0 12s0 3.75.502 5.814c.28 1.055 1.104 1.88 2.11 2.12C4.677 20.5 12 20.5 12 20.5s7.322 0 9.388-.566a2.993 2.993 0 0 0 2.109-2.12C24 15.75 24 12 24 12s0-3.75-.502-5.814zM9.753 15.516V8.484l6.518 3.516-6.518 3.516z"/>
+                    </svg>
+                  </Link>     
                   <button
                     onClick={() => setLang(lang === 'zh' ? 'en' : 'zh')}
                     className="text-white rounded transition-colors flex items-center"
@@ -651,7 +657,11 @@ export default function  Home() {
                           <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/>
                         </svg>
                       </Link>
-
+                      <Link href="https://www.youtube.com/@YOUR_CHANNEL" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-300 hover:scale-110 transition-transform">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M23.498 6.186a2.993 2.993 0 0 0-2.109-2.12C19.322 3.5 12 3.5 12 3.5s-7.322 0-9.388.566a2.993 2.993 0 0 0-2.11 2.12C0 8.25 0 12 0 12s0 3.75.502 5.814c.28 1.055 1.104 1.88 2.11 2.12C4.677 20.5 12 20.5 12 20.5s7.322 0 9.388-.566a2.993 2.993 0 0 0 2.109-2.12C24 15.75 24 12 24 12s0-3.75-.502-5.814zM9.753 15.516V8.484l6.518 3.516-6.518 3.516z"/>
+                        </svg>
+                      </Link>   
                       <button
                         onClick={() => setLang(lang === 'zh' ? 'en' : 'zh')}
                         className="text-white rounded transition-colors flex items-center"
@@ -968,10 +978,10 @@ export default function  Home() {
                         boxShadow: '0 8px 25px rgba(163, 184, 194, 0.3)'
                       }}
                       onMouseEnter={(e) => {
-                        e.target.style.boxShadow = '0 12px 35px rgba(163, 184, 194, 0.5)';
+                        (e.target as HTMLElement).style.boxShadow = '0 12px 35px rgba(163, 184, 194, 0.5)';
                       }}
                       onMouseLeave={(e) => {
-                        e.target.style.boxShadow = '0 8px 25px rgba(163, 184, 194, 0.3)';
+                        (e.target as HTMLElement).style.boxShadow = '0 8px 25px rgba(163, 184, 194, 0.3)';
                       }}
                     >
                       {t('Arg-11')}
@@ -1142,10 +1152,10 @@ export default function  Home() {
                       boxShadow: '0 8px 25px rgba(163, 184, 194, 0.3)'
                     }}
                     onMouseEnter={(e) => {
-                      e.target.style.boxShadow = '0 12px 35px rgba(163, 184, 194, 0.5)';
+                      (e.target as HTMLElement).style.boxShadow = '0 12px 35px rgba(163, 184, 194, 0.5)';
                     }}
                     onMouseLeave={(e) => {
-                      e.target.style.boxShadow = '0 8px 25px rgba(163, 184, 194, 0.3)';
+                      (e.target as HTMLElement).style.boxShadow = '0 8px 25px rgba(163, 184, 194, 0.3)';
                     }}
                   >
                     {t('wau_final')}
@@ -1178,10 +1188,10 @@ export default function  Home() {
                         boxShadow: '0 8px 25px rgba(163, 184, 194, 0.3)'
                       }}
                       onMouseEnter={(e) => {
-                        e.target.style.boxShadow = '0 12px 35px rgba(163, 184, 194, 0.5)';
+                        (e.target as HTMLElement).style.boxShadow = '0 12px 35px rgba(163, 184, 194, 0.5)';
                       }}
                       onMouseLeave={(e) => {
-                        e.target.style.boxShadow = '0 8px 25px rgba(163, 184, 194, 0.3)';
+                        (e.target as HTMLElement).style.boxShadow = '0 8px 25px rgba(163, 184, 194, 0.3)';
                       }}
 
                     >
