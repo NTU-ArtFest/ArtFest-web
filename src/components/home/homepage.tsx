@@ -963,15 +963,15 @@ export default function  Home() {
                       href="/arg" 
                       className="inline-block px-10 py-4 text-lg font-medium text-white rounded-full transition-all duration-300 hover:transform hover:-translate-y-1"
                       style={{
-                        background: 'linear-gradient(135deg, #C9A27E 0%, #E7C9A9 100%)',
+                        background: 'linear-gradient(135deg, #A3B8C2 30%, #D1DDE5 100%)',
                         letterSpacing: '2px',
-                        boxShadow: '0 8px 25px rgba(201, 162, 126, 0.3)' // 柔和陰影
+                        boxShadow: '0 8px 25px rgba(163, 184, 194, 0.3)'
                       }}
                       onMouseEnter={(e) => {
-                        e.target.style.boxShadow = '0 12px 35px rgba(201, 162, 126, 0.5)';
+                        e.target.style.boxShadow = '0 12px 35px rgba(163, 184, 194, 0.5)';
                       }}
                       onMouseLeave={(e) => {
-                        e.target.style.boxShadow = '0 8px 25px rgba(201, 162, 126, 0.3)';
+                        e.target.style.boxShadow = '0 8px 25px rgba(163, 184, 194, 0.3)';
                       }}
                     >
                       {t('Arg-11')}
@@ -1130,7 +1130,7 @@ export default function  Home() {
                 </div>
               </div>
 
-              {/* ARG Button */}
+              {/* WAU Button */}
               <div className="mt-16 px-6 max-w-4xl mx-auto text-center">
                 <div className="text-center">
                   <Link 
@@ -1159,12 +1159,13 @@ export default function  Home() {
               {/* Fifth main section : polis */}
               <section className="h-screen flex items-center justify-center bg-white z-20 ">
                 <div ref={finalBlockRef} className="max-w-1xl w-full bg-white rounded-xl shadow-xs p-8 md:p-12 space-y-8 scale-90 hover:scale-105 transition-transform duration-300 md:w-[80%] md:text-center leading-relaxed">
-                  
+
                   <h1 className="text-3xl md:text-4xl text-gray-800 mb-4 text-center">{t('polis-1')}</h1>
                   <p className="text-lg md:text-xl text-gray-700 leading-relaxed italic">
                   {t('polis-2')}
                   </p>
 
+                {/* Polis Button */}
                 <div className="mt-16 px-6 max-w-4xl mx-auto text-center">
                   <div className="text-center">
                     <Link 
@@ -1172,17 +1173,15 @@ export default function  Home() {
                       className="inline-block px-10 py-4 text-lg font-medium text-white rounded-full transition-all duration-300 hover:transform hover:-translate-y-1"
 
                       style={{
-                        background: 'linear-gradient(135deg, #E8C5C1 30%, #F4E1DE 100%)',
+                        background: 'linear-gradient(135deg, #A3B8C2 30%, #D1DDE5 100%)',
                         letterSpacing: '2px',
-                        boxShadow: '0 8px 25px rgba(232, 197, 193, 0.3)'
+                        boxShadow: '0 8px 25px rgba(163, 184, 194, 0.3)'
                       }}
-
-
                       onMouseEnter={(e) => {
-                        e.target.style.boxShadow = '0 12px 35px rgba(232, 197, 193, 0.5)';
+                        e.target.style.boxShadow = '0 12px 35px rgba(163, 184, 194, 0.5)';
                       }}
                       onMouseLeave={(e) => {
-                        e.target.style.boxShadow = '0 8px 25px rgba(232, 197, 193, 0.3)';
+                        e.target.style.boxShadow = '0 8px 25px rgba(163, 184, 194, 0.3)';
                       }}
 
                     >
