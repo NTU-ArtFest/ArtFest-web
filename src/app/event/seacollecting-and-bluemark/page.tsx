@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 export default function SeaCollectingBlueMarkActivity() {
   return (
     <div className="w-full min-h-screen bg-black text-white" style={{ fontFamily: "'Helvetica Neue'" }}>
@@ -111,16 +113,25 @@ export default function SeaCollectingBlueMarkActivity() {
       {/* 作品展示區 - 採用 3:2 比例展示圖片 */}
       <div className="relative z-10 py-10 md:py-14 bg-gradient-to-b from-black to-gray-900">
         <div className="container mx-auto px-6">
-          <h2 className="text-base md:text-2xl font-light mb-8 md:mb-12 tracking-wider text-center uppercase">活動紀錄 Activity Documentation</h2>
+          <h2 className="text-base md:text-2xl font-light mb-8 md:mb-12 tracking-wider text-center uppercase">
+            活動紀錄 Activity Documentation
+          </h2>
           
           {/* 網格畫廊 - 固定 3:2 比例 */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {Array.from({ length: 13 }, (_, index) => (
-              <div key={index + 1} className="overflow-hidden rounded-lg" style={{ aspectRatio: '3/2' }}>
-                <img 
+              <div 
+                key={index + 1} 
+                className="relative overflow-hidden rounded-lg" 
+                style={{ aspectRatio: '3/2' }}
+              >
+                <Image
                   src={`/all/seacollecting-and-bluemark/${index + 1}.png`} 
                   alt={`Sea collecting and blue mark Activity ${index + 1}`} 
-                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                  className="object-cover transition-transform duration-700 hover:scale-105"
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  priority={index < 6} // 只對前 6 張圖片使用 priority
                 />
               </div>
             ))}
