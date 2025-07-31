@@ -301,11 +301,11 @@ export default function  Home() {
     ];
     const dropdownItems = [
       {
-        id: "Key_visual", 
-        title: "Key_visual",
+        id: "Key visual", 
+        title: "Key visual",
         items: [
-          { Engname: "Design", Chiname: "主視覺設計", link: "/event/key_visual", url: "/all/key_visual/1.png"},
-          { Engname: "Merch", Chiname: "周邊商品", link: "/exhibition/conveyance", url: "/all/conveyance/1.png"}
+          { Engname: "Design", Chiname: "主視覺設計", link: "/key_visual", url: "/all/key_visual/1.png"},
+          { Engname: "Merch", Chiname: "周邊商品", link: "/merch", url: "/all/key_visual/3.png"}
         ],
         featuredImage: "/all/key_visual/1.png"
       },
