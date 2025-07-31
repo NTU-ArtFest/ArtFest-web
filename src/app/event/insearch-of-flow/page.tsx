@@ -31,12 +31,12 @@ export default function InSearchOfFlowActivity() {
             曾子珉
             </span></p>
             
-            <p><span className="font-bold text-sm md:text-base">活動講者 Lecturer</span><br />
-            <span className="text-xs md:text-sm">Sofia 城市浪人執行長 x 李宥辰 臺大藝術季第三十屆總召</span></p>
+            <p><span className="font-bold text-[8px]">活動講者 Lecturer</span><br />
+            <span className="text-[6px]">Sofia 城市浪人執行長 x 李宥辰 臺大藝術季第三十屆總召</span></p>
 
 
-            <p><span className="font-bold text-sm md:text-base">活動紀錄 Activity Documentation</span><br />
-            <span className="text-xs md:text-sm">吳士昕、鄭鉯儒</span></p> 
+            <p><span className="font-bold text-[8px]">活動紀錄 Activity Documentation</span><br />
+            <span className="text-[6px]">吳士昕、鄭鉯儒</span></p> 
             
             <p><span className="font-bold text-[8px]">活動時間 Activity Dates</span><br />
             <span className="text-[6px]">5月12日 19:10-21:10</span></p>

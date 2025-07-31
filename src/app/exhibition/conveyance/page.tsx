@@ -41,8 +41,8 @@ export default function ConveyanceExhibition() {
             <p><span className="font-bold text-[8px]">製作團隊 Production Team</span><br />
             <span className="text-[6px]">李宥辰、封親靈、蔡政峰、黃楷翔、劉韋杰<br/>王厚仁、林昱安、屈言真、蘇晏禾、林冠鋐<br/>江侑蓁、臧逸新、徐婕芸、李嘉昕、張芷嫣<br/>陳亮穎、陳睿瀚、陳昱璇</span></p>
             
-            <p className="mb-1"><span className="font-bold text-sm md:text-base">展場紀錄 Exhibition Documentationon</span><br />
-            <span className="text-xs md:text-sm">
+            <p className="mb-1"><span className="font-bold text-[8px]">展場紀錄 Exhibition Documentationon</span><br />
+            <span className="text-[6px]">
               賴晉億
             </span></p>
             

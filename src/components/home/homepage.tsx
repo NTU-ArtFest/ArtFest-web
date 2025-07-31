@@ -313,8 +313,8 @@ export default function  Home() {
         id: "Exhibitions", 
         title: "Exhibitions",
         items: [
-          { Engname: "Tidal Pavilion", Chiname: "觀潮亭", link: "/exhibition/tidewatch-pavilion", url: "/all/tidewatch-pavilion/1.png"},
-          { Engname: "The wave", Chiname: "星想事成 x 海浪", link: "/exhibition/Starlit Whispers × The Wave", url: "/all/the-wave/1.png"},
+          { Engname: "Tidewatch Pavilion", Chiname: "觀潮亭", link: "/exhibition/tidewatch-pavilion", url: "/all/tidewatch-pavilion/1.png"},
+          { Engname: "Starlit Whispers × The Wave", Chiname: "星想事成 x 海浪", link: "/exhibition/the-wave", url: "/all/the-wave/1.png"},
           { Engname: "Gravity", Chiname: "引力", link: "/exhibition/gravity", url: "/all/Gravity/1.png"},
           { Engname: "Conveyance", Chiname: "傳遞", link: "/exhibition/conveyance", url: "/all/conveyance/1.png"},
           { Engname: "Us", Chiname: "我們", link: "/exhibition/us", url: "/all/us/1.png"},

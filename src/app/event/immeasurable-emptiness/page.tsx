@@ -34,8 +34,8 @@ export default function ImmeasurableEmptinessActivity() {
             <p><span className="font-bold text-[8px]">專案組員 Project Team</span><br />
             <span className="text-[6px]">宋恩祈、蔡郁程</span></p>
 
-            <p><span className="font-bold text-sm md:text-base">活動紀錄 Activity Documentation</span><br />
-            <span className="text-xs md:text-sm">王芋勻</span></p>  
+            <p><span className="font-bold text-[8px]">活動紀錄 Activity Documentation</span><br />
+            <span className="text-[6px]">王芋勻</span></p>  
             
             <p><span className="font-bold text-[8px]">活動時間 Activity Dates</span><br />
             <span className="text-[6px]">5月3日 13:30-14:40</span></p>

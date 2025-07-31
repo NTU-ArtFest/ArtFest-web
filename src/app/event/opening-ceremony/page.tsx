@@ -32,8 +32,8 @@ export default function OpeningCeremonyActivity() {
             張恩齊、邱禹甄、蔡宇恩、洪涵溱、蔡佩渝
             </span></p>
             
-            <p><span className="font-bold text-sm md:text-base">活動紀錄 Activity Documentation</span><br />
-            <span className="text-xs md:text-sm">屈言真、王厚仁、游雨婕、林于萱、蘇晏禾</span></p> 
+            <p><span className="font-bold text-[8px]">活動紀錄 Activity Documentation</span><br />
+            <span className="text-[6px]">屈言真、王厚仁、游雨婕、林于萱、蘇晏禾</span></p> 
 
             <p><span className="font-bold text-[8px]">活動時間 Activity Dates</span><br />
             <span className="text-[6px]">5/2 15:00-22:00</span></p>

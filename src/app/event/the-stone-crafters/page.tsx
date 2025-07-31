@@ -34,8 +34,8 @@ export default function StoneCraftersActivity() {
             <p><span className="font-bold text-[8px]">專案組員 Project Team</span><br />
             <span className="text-[6px]">黃淳郁、蔡依玲</span></p>
 
-            <p><span className="font-bold text-sm md:text-base">活動紀錄 Activity Documentation</span><br />
-            <span className="text-xs md:text-sm">王厚仁、周宜葇、王芋勻</span></p>
+            <p><span className="font-bold text-[8px]">活動紀錄 Activity Documentation</span><br />
+            <span className="text-[6px]">王厚仁、周宜葇、王芋勻</span></p>
             
             <p><span className="font-bold text-[8px]">活動時間 Activity Dates</span><br />
             <span className="text-[6px]">5月2日、5月7日、5月10日</span></p>

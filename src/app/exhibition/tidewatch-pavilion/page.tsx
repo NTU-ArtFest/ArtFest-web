@@ -37,8 +37,8 @@ export default function TidewatchPavilionExhibition() {
             <p><span className="font-bold text-[8px]">製作團隊 Production Team</span><br />
             <span className="text-[6px]">李宥辰、林鴻、悅山工坊</span></p>
 
-            <p className="mb-1"><span className="font-bold text-sm md:text-base">展場紀錄 Exhibition Documentationon</span><br />
-            <span className="text-xs md:text-sm">
+            <p className="mb-1"><span className="font-bold text-[8px]">展場紀錄 Exhibition Documentationon</span><br />
+            <span className="text-[6px]">
               王厚仁
             </span></p>
             

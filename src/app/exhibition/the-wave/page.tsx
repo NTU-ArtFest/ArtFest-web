@@ -39,8 +39,8 @@ export default function TheWaveExhibition() {
             <span className="text-[6px]">張芷嫣、陳郁庭、戴其恩、江妍恩、曾子庭、林揚傑、吳驊祐</span><br />
             <span className="text-[6px]">楊楀潔、蔡宇恩、李逸寬、雷婷羽、王若瑜</span></p>
 
-            <p className="mb-1"><span className="font-bold text-sm md:text-base">展場紀錄 Exhibition Documentationon</span><br />
-            <span className="text-xs md:text-sm">
+            <p><span className="font-bold text-[8px]">展場紀錄 Exhibition Documentationon</span><br />
+            <span className="text-[6px]">
               王厚仁
             </span></p>
 
@@ -88,7 +88,7 @@ export default function TheWaveExhibition() {
               <p><span className="font-bold text-sm md:text-base">展出時間 Exhibition Dates</span><br />
               <span className="text-xs md:text-sm">05/05 – 05/15 10:00–19:00</span></p>
               
-              <p><span className="font-bold text-sm md:text-base">留言地點 Message Writing Spot </span><br />
+              <p><span className="font-bold text-sm md:text-base">留言地點 Message Writing Spot</span><br />
               <span className="text-xs md:text-sm">國立臺灣大學總圖一樓小展廳</span></p>
             </div>
           </div>

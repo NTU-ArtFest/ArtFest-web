@@ -40,8 +40,8 @@ export default function ContinuumExhibition() {
               <p><span className="font-bold text-[8px]">平面設計 Graphic Designer</span><br />
               <span className="text-[6px]">黃丞琳</span></p>
 
-           <p className="mb-1"><span className="font-bold text-sm md:text-base">展場紀錄 Exhibition Documentationon</span><br />
-            <span className="text-xs md:text-sm">
+           <p className="mb-1"><span className="font-bold text-[8px]">展場紀錄 Exhibition Documentationon</span><br />
+            <span className="text-[6px]">
               賴晉億
             </span></p>
               

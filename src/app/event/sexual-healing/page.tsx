@@ -41,8 +41,8 @@ export default function HealingExhibition() {
             <p><span className="font-bold text-[8px]">活動講者 Lecturer</span><br />
             <span className="text-[6px]">許藍方 博士</span></p>
 
-            <p><span className="font-bold text-sm md:text-base">活動紀錄 Activity Documentation</span><br />
-            <span className="text-xs md:text-sm">游雨婕、林昱安</span></p>   
+            <p><span className="font-bold text-[8px]">活動紀錄 Activity Documentation</span><br />
+            <span className="text-[6px]">游雨婕、林昱安</span></p>   
           
             <p><span className="font-bold text-[8px]">活動時間 Activity Dates</span><br />
             <span className="text-[6px]">4月18日（星期五） 19:10 ~ 21:30</span></p>

@@ -32,11 +32,6 @@ export default function EndingCeremonyActivity() {
             張恩齊、蔡宇恩、邱禹甄、洪涵溱、蔡佩渝
             </span></p>
 
-            <p className="mb-1"><span className="font-bold text-[8px]">活動紀錄 Activity Documentation</span><br />
-            <span className="text-[6px]">
-                劉韋辰、黃楷翔、游雨婕、周世倫、蘇晏禾、劉韋杰、周宜葇、廖尹淇、王芓勻、江卉柔
-            </span></p>
-
             <p className="mb-1"><span className="font-bold text-[8px]">文案撰寫 Copywriting</span><br />
             <span className="text-[6px]">張恩齊</span></p>
 
@@ -51,6 +46,11 @@ export default function EndingCeremonyActivity() {
             
             <p><span className="font-bold text-[8px]">活動地點 Activity Venue</span><br />
             <span className="text-[6px]">國立臺灣大學 振興草坪</span></p>
+
+            <p className="mb-1"><span className="font-bold text-sm md:text-base">活動紀錄 Activity Documentation</span><br />
+            <span className="text-xs md:text-sm">
+                劉韋辰、黃楷翔、游雨婕、周世倫、蘇晏禾、劉韋杰、周宜葇、廖尹淇、王芓勻、江卉柔
+            </span></p>
           </div>
         </div>
 
@@ -72,11 +72,6 @@ export default function EndingCeremonyActivity() {
                   張恩齊、蔡宇恩、邱禹甄、洪涵溱、蔡佩渝
               </span></p>
 
-              <p className="mb-1"><span className="font-bold text-sm md:text-base">活動紀錄 Activity Documentation</span><br />
-              <span className="text-xs md:text-sm">
-                  劉韋辰、黃楷翔、游雨婕、周世倫、蘇晏禾、劉韋杰、周宜葇、廖尹淇、王芓勻、江卉柔
-              </span></p>
-
               <p className="mb-1"><span className="font-bold text-sm md:text-base">文案撰寫 Copywriting</span><br />
               <span className="text-xs md:text-sm">張恩齊</span></p>
 
@@ -91,6 +86,11 @@ export default function EndingCeremonyActivity() {
               
               <p><span className="font-bold text-sm md:text-base">活動地點 Activity Venue</span><br />
               <span className="text-xs md:text-sm">國立臺灣大學 振興草坪</span></p>
+
+              <p className="mb-1"><span className="font-bold text-sm md:text-base">活動紀錄 Activity Documentation</span><br />
+              <span className="text-xs md:text-sm">
+                  劉韋辰、黃楷翔、游雨婕、周世倫、蘇晏禾、劉韋杰、周宜葇、廖尹淇、王芓勻、江卉柔
+              </span></p>
             </div>
           </div>
         </div>
@@ -218,7 +218,7 @@ export default function EndingCeremonyActivity() {
           </div>
         </div>
       </div>
-      
+
       {/* 底部版權聲明 */}
       <footer className="relative z-10 py-5 md:py-6 bg-black border-t border-gray-800">
         <div className="container mx-auto px-6">
