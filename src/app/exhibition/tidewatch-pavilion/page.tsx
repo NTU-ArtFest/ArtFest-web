@@ -210,6 +210,43 @@ export default function TidewatchPavilionExhibition() {
                 quality={40}
               />
             </div>
+
+            {/* 作品6 */}
+            <div className="overflow-hidden rounded-lg relative" style={{ aspectRatio: '3/2' }}>
+              <Image 
+                src="/all/tidewatch-pavilion/6.png" 
+                alt="Tidewatch Pavilion Exhibition 6" 
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                className="object-cover transition-transform duration-700 hover:scale-105"
+                quality={40}
+              />
+            </div>
+
+            {/* 作品7 */}
+            <div className="overflow-hidden rounded-lg relative" style={{ aspectRatio: '3/2' }}>
+              <Image 
+                src="/all/tidewatch-pavilion/7.png" 
+                alt="Tidewatch Pavilion Exhibition 7" 
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                className="object-cover transition-transform duration-700 hover:scale-105"
+                quality={40}
+              />
+            </div>
+
+            {/* 作品8 */}
+            <div className="overflow-hidden rounded-lg relative" style={{ aspectRatio: '3/2' }}>
+              <Image 
+                src="/all/tidewatch-pavilion/8.png" 
+                alt="Tidewatch Pavilion Exhibition 8" 
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                className="object-cover transition-transform duration-700 hover:scale-105"
+                quality={40}
+              />
+            </div>
+
           </div>
         </div>
       </div>

@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-    title: "第 𝟑𝟎 屆臺大藝術季 - 潮汐",
+    title: "第 𝟑𝟎 屆臺大藝術季 - 潮汐 Rise and Fall",
     description: "活動期間：5/2-5/16",
 };
 

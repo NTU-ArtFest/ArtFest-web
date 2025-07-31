@@ -1,5 +1,7 @@
 'use client';
 
+import Image from "next/image"
+
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
@@ -128,8 +130,21 @@ export default function PolisList() {
                 <X size={20} />
               </button>
 
-              <div className="w-full flex-shrink-0 mb-4 h-40 sm:h-[50vh] flex items-center justify-center">
+              {/* <div className="w-full flex-shrink-0 mb-4 h-40 sm:h-[50vh] flex items-center justify-center">
                 {tutorialImages[step].src && <img src={tutorialImages[step].src} alt={tutorialImages[step].alt} className="max-h-full w-auto" />}
+              </div> */}
+
+              <div className="w-full flex-shrink-0 mb-4 h-40 sm:h-[50vh] flex items-center justify-center">
+                {tutorialImages[step].src && (
+                  <Image
+                    src={tutorialImages[step].src}
+                    alt={tutorialImages[step].alt}
+                    width={800} // 或依據你圖片實際大小調整
+                    height={600}
+                    className="max-h-full w-auto"
+                    style={{ objectFit: "contain" }}
+                  />
+                )}
               </div>
 
               <div className="flex-1 text-black overflow-auto px-4 pb-4">

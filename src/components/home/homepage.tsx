@@ -302,7 +302,7 @@ export default function  Home() {
     const dropdownItems = [
       {
         id: "Key visual", 
-        title: "Key visual",
+        title: "Key Visual",
         items: [
           { Engname: "Design", Chiname: "視覺設計", link: "/key-visual", url: "/all/key_visual/1.png"},
           { Engname: "Merch", Chiname: "周邊商品", link: "/merch", url: "/all/merch/1.png"}
@@ -314,7 +314,7 @@ export default function  Home() {
         title: "Exhibitions",
         items: [
           { Engname: "Tidewatch Pavilion", Chiname: "觀潮亭", link: "/exhibition/tidewatch-pavilion", url: "/all/tidewatch-pavilion/1.png"},
-          { Engname: "Starlit Whispers × The Wave", Chiname: "星想事成 x 海浪", link: "/exhibition/the-wave", url: "/all/the-wave/1.png"},
+          { Engname: "Starlit Whispers × The Wave", Chiname: "星想事成 x 海浪", link: "/exhibition/the-wave", url: "/all/the-wave/7.png"},
           { Engname: "Gravity", Chiname: "引力", link: "/exhibition/gravity", url: "/all/Gravity/1.png"},
           { Engname: "Conveyance", Chiname: "傳遞", link: "/exhibition/conveyance", url: "/all/conveyance/1.png"},
           { Engname: "Us", Chiname: "我們", link: "/exhibition/us", url: "/all/us/1.png"},
@@ -763,7 +763,7 @@ export default function  Home() {
                 <div className=" container mx-auto px-6 flex flex-col items-center text-center">
                     <div className="z-20 ">
                         <motion.h2
-                            className="text-8xl md:text-6xl font-light backdrop-blur-sm mb-4 tracking-widest text-slate-700 p-10 "
+                            className="text-4xl md:text-6xl font-light backdrop-blur-sm mb-4 tracking-widest text-slate-700 p-10 "
                             initial={{ opacity: 0 }}
                             whileInView={{ opacity: 1 }}
                             viewport={{ once: true, amount: 0.5 }} 
@@ -783,7 +783,7 @@ export default function  Home() {
   
                     <div className="mt-10 md:mt-0 z-20 ">
                         <motion.h2
-                            className="text-4xl md:text-3xl font-light mb-4 tracking-wider backdrop-blur-sm text-slate-600"
+                            className="text-2xl md:text-3xl font-light mb-4 tracking-wider backdrop-blur-sm text-slate-600"
                             initial={{ opacity: 0 }}
                             whileInView={{ opacity: 1 }}
                             viewport={{ once: true, amount: 0.5 }} 

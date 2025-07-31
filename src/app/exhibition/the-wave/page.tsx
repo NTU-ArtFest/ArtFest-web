@@ -12,7 +12,7 @@ export default function TheWaveExhibition() {
         <div className="absolute inset-0 bg-black z-0"></div>
         <Image
           className="w-full h-full object-cover absolute inset-0 z-0 opacity-60"
-          src="/all/the-wave/1.png"
+          src="/all/the-wave/7.png"
           alt="Exhibition Background"
           fill
           sizes="100vw"
@@ -191,6 +191,79 @@ export default function TheWaveExhibition() {
                 quality={45}
               />
             </div>
+
+            {/* 作品3 */}
+            <div className="overflow-hidden rounded-lg relative" style={{ aspectRatio: '3/2' }}>
+              <Image 
+                src="/all/the-wave/3.png" 
+                alt="The Wave Exhibition 3" 
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                className="object-cover transition-transform duration-700 hover:scale-105"
+                quality={45}
+              />
+            </div>
+
+            {/* 作品4 */}
+            <div className="overflow-hidden rounded-lg relative" style={{ aspectRatio: '3/2' }}>
+              <Image 
+                src="/all/the-wave/4.png" 
+                alt="The Wave Exhibition 4" 
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                className="object-cover transition-transform duration-700 hover:scale-105"
+                quality={45}
+              />
+            </div>
+
+            {/* 作品5 */}
+            <div className="overflow-hidden rounded-lg relative" style={{ aspectRatio: '3/2' }}>
+              <Image 
+                src="/all/the-wave/5.png" 
+                alt="The Wave Exhibition 5" 
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                className="object-cover transition-transform duration-700 hover:scale-105"
+                quality={45}
+              />
+            </div>
+            
+            {/* 作品6 */}
+            <div className="overflow-hidden rounded-lg relative" style={{ aspectRatio: '3/2' }}>
+              <Image 
+                src="/all/the-wave/6.png" 
+                alt="The Wave Exhibition 6" 
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                className="object-cover transition-transform duration-700 hover:scale-105"
+                quality={45}
+              />
+            </div>
+
+            {/* 作品7 */}
+            <div className="overflow-hidden rounded-lg relative" style={{ aspectRatio: '3/2' }}>
+              <Image 
+                src="/all/the-wave/7.png" 
+                alt="The Wave Exhibition 7" 
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                className="object-cover transition-transform duration-700 hover:scale-105"
+                quality={45}
+              />
+            </div>
+
+            {/* 作品8 */}
+            <div className="overflow-hidden rounded-lg relative" style={{ aspectRatio: '3/2' }}>
+              <Image 
+                src="/all/the-wave/8.png" 
+                alt="The Wave Exhibition 8" 
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                className="object-cover transition-transform duration-700 hover:scale-105"
+                quality={45}
+              />
+            </div>
+
           </div>
         </div>
       </div>
