@@ -226,7 +226,7 @@ export default function  Home() {
     const handleMouseLeave = () => {
       const timeout = setTimeout(() => {
         setActiveDropdown(null)
-        setHoveredImage("/all/Gravity/1.png")
+        setHoveredImage("/all/key_visual/1.png")
       }, 400) // 200ms 延遲
       setCloseTimeout(timeout)
     }
@@ -298,10 +298,17 @@ export default function  Home() {
       { id: "ARG", desc: "另類實境解謎" },
       { id: "Polis", desc: "議題討論" },
       { id: "Who Art You", desc: "心理測驗" },
-      { id: "Key Visual", desc: "主視覺" },
-      { id: "Merch", desc: "周邊商品"}
     ];
     const dropdownItems = [
+      {
+        id: "Key_visual", 
+        title: "Key_visual",
+        items: [
+          { Engname: "Design", Chiname: "主視覺設計", link: "/event/key_visual", url: "/all/key_visual/1.png"},
+          { Engname: "Merch", Chiname: "周邊商品", link: "/exhibition/conveyance", url: "/all/conveyance/1.png"}
+        ],
+        featuredImage: "/all/key_visual/1.png"
+      },
       {
         id: "Exhibitions", 
         title: "Exhibitions",
@@ -322,7 +329,6 @@ export default function  Home() {
         title: "Events",
         items: [
           { Engname: "Opening Ceremony", Chiname: "開幕式", link: "/event/opening-ceremony", url: "/all/opening-ceremony/16.png"},
-          { Engname: "Key Visual", Chiname: "主視覺", link: "/event/key_visual", url: "/all/key_visual/1.png"},
           { Engname: "Desire·Healing", Chiname: "性慾・癒", link: "/event/sexual-healing", url: "/all/sexual-healing/1.jpg"},
           { Engname: "Unbalanced", Chiname: "失衡", link: "/event/imbalance", url: "/all/imbalance/1.jpg"},
           { Engname: "Infinite Void", Chiname: "無量空處", link: "/event/immeasurable-emptiness", url: "/all/immeasurable-emptiness/3.png"},
