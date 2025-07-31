@@ -503,7 +503,7 @@ export default function  Home() {
                       <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/>
                     </svg>
                   </Link>
-                  <Link href="https://www.youtube.com/@YOUR_CHANNEL" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-300 hover:scale-110 transition-transform">
+                  <Link href="https://www.youtube.com/@%E6%BD%AE%E6%B1%90RiseandFall" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-300 hover:scale-110 transition-transform">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M23.498 6.186a2.993 2.993 0 0 0-2.109-2.12C19.322 3.5 12 3.5 12 3.5s-7.322 0-9.388.566a2.993 2.993 0 0 0-2.11 2.12C0 8.25 0 12 0 12s0 3.75.502 5.814c.28 1.055 1.104 1.88 2.11 2.12C4.677 20.5 12 20.5 12 20.5s7.322 0 9.388-.566a2.993 2.993 0 0 0 2.109-2.12C24 15.75 24 12 24 12s0-3.75-.502-5.814zM9.753 15.516V8.484l6.518 3.516-6.518 3.516z"/>
                     </svg>
@@ -657,7 +657,7 @@ export default function  Home() {
                           <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/>
                         </svg>
                       </Link>
-                      <Link href="https://www.youtube.com/@YOUR_CHANNEL" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-300 hover:scale-110 transition-transform">
+                      <Link href="https://www.youtube.com/@%E6%BD%AE%E6%B1%90RiseandFall" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-300 hover:scale-110 transition-transform">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
                           <path d="M23.498 6.186a2.993 2.993 0 0 0-2.109-2.12C19.322 3.5 12 3.5 12 3.5s-7.322 0-9.388.566a2.993 2.993 0 0 0-2.11 2.12C0 8.25 0 12 0 12s0 3.75.502 5.814c.28 1.055 1.104 1.88 2.11 2.12C4.677 20.5 12 20.5 12 20.5s7.322 0 9.388-.566a2.993 2.993 0 0 0 2.109-2.12C24 15.75 24 12 24 12s0-3.75-.502-5.814zM9.753 15.516V8.484l6.518 3.516-6.518 3.516z"/>
                         </svg>
