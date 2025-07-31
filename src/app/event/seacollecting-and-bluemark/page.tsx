@@ -34,8 +34,8 @@ export default function SeaCollectingBlueMarkActivity() {
             <p><span className="font-bold text-[8px]">專案組員 Project Team</span><br />
             <span className="text-[6px]">沈庭苙、照本麻瑛</span></p>
 
-            <p><span className="font-bold text-sm md:text-base">活動紀錄 Activity Documentation</span><br />
-            <span className="text-xs md:text-sm">周宜葇</span></p> 
+            <p><span className="font-bold text-[8px]">活動紀錄 Activity Documentation</span><br />
+            <span className="text-[6px]">周宜葇</span></p> 
             
             <p><span className="font-bold text-[8px]">活動時間 Activity Dates</span><br />
             <span className="text-[6px]">5月11日 09:30-18:30</span></p>
