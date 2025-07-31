@@ -12,7 +12,7 @@ export default function HealingExhibition() {
         <div className="absolute inset-0 bg-black z-0"></div>
         <Image
           className="w-full h-full object-cover absolute inset-0 z-0 opacity-60"
-          src="/all/sexual-healing/1.jpg" 
+          src="/all/sexual-healing/1.png" 
           alt="Exhibition Background"
           fill
           sizes="100vw"
