@@ -128,6 +128,27 @@ export default function OpeningCeremonyActivity() {
         </div>
       </div>
 
+      {/* 開幕式紀錄影片區塊 */}
+      <div className="relative z-10 py-10 md:py-14 bg-gradient-to-b from-black to-gray-900">
+        <div className="container mx-auto px-6">
+          <h2 className="text-base md:text-2xl font-light mb-8 md:mb-12 tracking-wider text-center uppercase">開幕式紀錄影片 Opening Ceremony Video</h2>
+          
+          {/* YouTube 影片容器 - 16:9 比例 */}
+          <div className="max-w-4xl mx-auto">
+            <div className="relative overflow-hidden rounded-lg shadow-2xl" style={{ aspectRatio: '16/9' }}>
+              <iframe
+                className="w-full h-full"
+                src="https://www.youtube.com/embed/zwWJ4mOUH1s"
+                title="第30屆臺大藝術季開幕式紀錄影片"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* 作品展示區 - 採用 3:2 比例展示圖片 */}
       <div className="relative z-10 py-10 md:py-14 bg-gradient-to-b from-black to-gray-900">
         <div className="container mx-auto px-6">
@@ -137,7 +158,7 @@ export default function OpeningCeremonyActivity() {
           
           {/* 網格畫廊 - 固定 3:2 比例 */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            {Array.from({ length: 28 }, (_, index) => (
+            {Array.from({ length: 27 }, (_, index) => (
               <div 
                 key={index + 1} 
                 className="relative overflow-hidden rounded-lg" 

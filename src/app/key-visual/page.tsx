@@ -24,8 +24,8 @@ export default function HealingExhibition() {
         <div className="md:hidden relative z-20 h-screen w-full flex flex-col">
           {/* 左上標題 - 縮小字體 */}
           <div className="self-start mt-8 ml-6">
-            <h1 className="text-2xl sm:text-4xl font-bold tracking-wider mb-1 uppercase">主視覺</h1>
-            <p className="text-xs sm:text-base tracking-wide">Key Visual</p>
+            <h1 className="text-2xl sm:text-4xl font-bold tracking-wider mb-1 uppercase">視覺設計</h1>
+            <p className="text-xs sm:text-base tracking-wide">Visual Design</p>
           </div>
         </div>
 
@@ -35,8 +35,8 @@ export default function HealingExhibition() {
           {/* 左上標題與右下資訊 */}
           <div className="relative h-full w-full">
             <div className="absolute top-12 left-12">
-              <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold tracking-wider mb-2">主視覺</h1>
-              <p className="text-lg lg:text-xl xl:text-2xl font-light tracking-wide">Key Visual</p>
+              <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold tracking-wider mb-2">視覺設計</h1>
+              <p className="text-lg lg:text-xl xl:text-2xl font-light tracking-wide">Visual Design</p>
             </div>
           </div>
         </div>

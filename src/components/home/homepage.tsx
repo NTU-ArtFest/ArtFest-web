@@ -305,7 +305,7 @@ export default function  Home() {
         title: "Key visual",
         items: [
           { Engname: "Design", Chiname: "視覺設計", link: "/key-visual", url: "/all/key_visual/1.png"},
-          { Engname: "Merch", Chiname: "周邊商品", link: "/merch", url: "/all/key_visual/3.png"}
+          { Engname: "Merch", Chiname: "周邊商品", link: "/merch", url: "/all/merch/1.png"}
         ],
         featuredImage: "/all/key_visual/1.png"
       },
