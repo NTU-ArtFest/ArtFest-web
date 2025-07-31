@@ -87,7 +87,7 @@ export const buildings = [
           url: 'https://artfest.ntu.edu.tw:2025/exhibition/tidewatch-pavilion'
         },
         {
-          name: { zh: '海浪 x 星想事成', en: 'The Wave x Wishing Stars' },
+          name: { zh: '星想事成 x 海浪', en: 'Starlit Whispers × The Wave' },
           intro: {
             zh: '將每一個人的思念，編織成眾人共同記憶的流光',
             en: 'Weaving everyone’s memories into a shared stream of light.'
@@ -150,7 +150,7 @@ export const buildings = [
           url: 'https://artfest.ntu.edu.tw:2025/exhibition/continuum'
         },
         {
-          name: { zh: '石尚玩家 ＃飾品手作工作方', en: 'Stone Workshop - Jewelry DIY' },
+          name: { zh: '石尚玩家', en: 'Rock On: The Stone Artisans' },
           intro: {
             zh: '我們就像石頭，最初的粗獷，在環境的淬鍊下，最終找到屬於自己的模樣',
             en: 'We are like stones: from rawness, we find our true selves after being shaped by our surroundings.'
@@ -196,7 +196,7 @@ export const buildings = [
       },
       activities: [
         {
-          name: { zh: '潮起 - 性慾．癒', en: 'Rising Tide - Sexual Healing' },
+          name: { zh: '性慾・癒', en: 'Desire·Healing' },
           intro: {
             zh: '以理解、尊重與包容，正視被社會視為禁忌的性慾，從而找到屬於自己的平衡點',
             en: 'With understanding, respect, and acceptance, we confront sexuality once seen as taboo, finding our own balance.'
@@ -219,7 +219,7 @@ export const buildings = [
       },
       activities: [
         {
-          name: { zh: '無量空處 ＃互動式人格測驗', en: 'Infinite Space - Interactive Personality Test' },
+          name: { zh: '無量空處', en: 'Infinite Void' },
           intro: {
             zh: '海水帶著我們飄呀飄，最後，究竟會成為什麼模樣？',
             en: 'Carried by the sea, who will we become in the end?'
@@ -273,12 +273,12 @@ export const buildings = [
       },
       activities: [
         {
-          name: { zh: '潮差 - 失衡', en: 'Tidal Difference - Imbalance' },
+          name: { zh: '失衡', en: 'Unbalanced' },
           intro: {
             zh: '以潮汐的「流動」為隱喻，​是​一趟人從身體感知到情緒轉化、從環境回應到內在沉澱的探索旅程。我們將透過行動、創作與對談，思考如何感到歸屬並定錨自我',
             en: 'Using the “flow” of tides as a metaphor, this event explores the journey from physical sensation to emotional change and from environmental reaction to inner reflection.'
           },
-          url: 'https://artfest.ntu.edu.tw:2025/exhibition/imbalance'
+          url: 'https://artfest.ntu.edu.tw:2025/event/imbalance'
         },
       ]
     },

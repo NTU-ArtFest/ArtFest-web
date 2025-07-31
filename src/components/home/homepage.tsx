@@ -304,7 +304,7 @@ export default function  Home() {
         id: "Key visual", 
         title: "Key visual",
         items: [
-          { Engname: "Design", Chiname: "主視覺設計", link: "/key-visual", url: "/all/key_visual/1.png"},
+          { Engname: "Design", Chiname: "視覺設計", link: "/key-visual", url: "/all/key_visual/1.png"},
           { Engname: "Merch", Chiname: "周邊商品", link: "/merch", url: "/all/key_visual/3.png"}
         ],
         featuredImage: "/all/key_visual/1.png"
@@ -320,7 +320,7 @@ export default function  Home() {
           { Engname: "Intertidal Photo Exhibition", Chiname: "潮間帶影像展", link: "/exhibition/photographic_exhibition", url: "/exhibition/sea.png"},
           { Engname: "Beyond the tide", Chiname: "潮之外", link: "/exhibition/beyond-the-tide", url: "/all/beyond-the-tide/1.png"},
           { Engname: "Tidal Pavilion", Chiname: "觀潮亭", link: "/exhibition/tidewatch-pavilion", url: "/all/tidewatch-pavilion/1.png"},
-          { Engname: "The wave", Chiname: "海浪", link: "/exhibition/the-wave", url: "/all/the-wave/1.png"},
+          { Engname: "The wave", Chiname: "星想事成 x 海浪", link: "/exhibition/Starlit Whispers × The Wave", url: "/all/the-wave/1.png"},
         ],
         featuredImage: "/all/Gravity/1.png"
       },
@@ -949,7 +949,7 @@ export default function  Home() {
 
                   {/* Question Block */}
                   <div className="text-right2">
-                    <div className="text-xl md:text-2xl font-medium text-gray-800 mb-4" 
+                    <div className="text-xl md:text-2xl font-medium text-orange-500 mb-4" 
                          style={{ letterSpacing: '2px', lineHeight: '1.6' }}>
                       {t('Arg-8').split('<br/>').map((line, idx) => (
                         <span key={idx}>
@@ -960,26 +960,13 @@ export default function  Home() {
                     </div>
                   </div>
 
-                  {/* Life Question */}
-                  <div className="text-left3">
-                    <p className="text-xl md:text-2xl font-medium text-orange-500" 
-                       style={{ letterSpacing: '2px', lineHeight: '1.6' }}>
-                      {t('Arg-10').split('<br/>').map((line, idx) => (
-                        <span key={idx}>
-                          {line}
-                          {idx !== t('Arg-10').split('<br/>').length - 1 && <br />}
-                        </span>
-                      ))}
-                    </p>
-                  </div>
-
                   {/* ARG Button */}
                   <div className="text-center">
                     <Link 
                       href="/arg" 
                       className="inline-block px-10 py-4 text-lg font-medium text-white rounded-full transition-all duration-300 hover:transform hover:-translate-y-1"
                       style={{
-                        background: 'linear-gradient(135deg, #A3B8C2 30%, #D1DDE5 100%)',
+                        background: ' #A3B8C2',
                         letterSpacing: '2px',
                         boxShadow: '0 8px 25px rgba(163, 184, 194, 0.3)'
                       }}
@@ -1025,6 +1012,7 @@ export default function  Home() {
                     </span>
                   ))}
                 </h2>
+
                 <p className="text-center text-lg md:text-xl text-gray-600 leading-relaxed mb-6" 
                     style={{ letterSpacing: '1px', lineHeight: '2' }}>
                   {t('wau-2').split('<br/>').map((line, idx) => (
@@ -1153,7 +1141,7 @@ export default function  Home() {
                     href="/who-art-you" 
                     className="inline-block px-10 py-4 text-lg font-medium text-white rounded-full transition-all duration-300 hover:transform hover:-translate-y-1"
                     style={{
-                      background: 'linear-gradient(135deg, #A3B8C2 30%, #D1DDE5 100%)',
+                      background: ' #A3B8C2',
                       letterSpacing: '2px',
                       boxShadow: '0 8px 25px rgba(163, 184, 194, 0.3)'
                     }}
@@ -1173,13 +1161,13 @@ export default function  Home() {
     
     
               {/* Fifth main section : polis */}
-              <section className="h-screen flex items-center justify-center bg-white z-20 ">
+
+              <section className="h-screen  px-10 flex items-center justify-center bg-white z-20 ">
                 <div ref={finalBlockRef} className="max-w-1xl w-full bg-white rounded-xl shadow-xs p-8 md:p-12 space-y-8 scale-90 hover:scale-105 transition-transform duration-300 md:w-[80%] md:text-center leading-relaxed">
 
-                  <h1 className="text-3xl md:text-4xl text-gray-800 mb-4 text-center">{t('polis-1')}</h1>
-                  <p className="text-lg md:text-xl text-gray-700 leading-relaxed italic">
-                  {t('polis-2')}
-                  </p>
+                  <h1 className="text-4xl text-gray-800 mb-4 text-center" style={{ letterSpacing: '3px' }}>{t('polis-1')}</h1>
+
+                  <p className="text-lg md:text-xl text-gray-700 leading-relaxed">{t('polis-2')}</p>
 
                 {/* Polis Button */}
                 <div className="mt-16 px-6 max-w-4xl mx-auto text-center">
@@ -1189,7 +1177,7 @@ export default function  Home() {
                       className="inline-block px-10 py-4 text-lg font-medium text-white rounded-full transition-all duration-300 hover:transform hover:-translate-y-1"
 
                       style={{
-                        background: 'linear-gradient(135deg, #A3B8C2 30%, #D1DDE5 100%)',
+                        background: ' #A3B8C2',
                         letterSpacing: '2px',
                         boxShadow: '0 8px 25px rgba(163, 184, 194, 0.3)'
                       }}
