@@ -158,7 +158,7 @@ export default function OpeningCeremonyActivity() {
           
           {/* 網格畫廊 - 固定 3:2 比例 */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            {Array.from({ length: 27 }, (_, index) => (
+            {Array.from({ length: 26 }, (_, index) => (
               <div 
                 key={index + 1} 
                 className="relative overflow-hidden rounded-lg" 

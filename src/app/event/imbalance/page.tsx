@@ -142,8 +142,8 @@ export default function HealingExhibition() {
             {/* 作品1 */}
             <div className="overflow-hidden rounded-lg relative" style={{ aspectRatio: '3/2' }}>
               <Image 
-                src="/all/imbalance/2.jpg"
-                alt="Gravity Exhibition 1" 
+                src="/all/imbalance/1.jpg"
+                alt="Imbalance 1" 
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 className="object-cover transition-transform duration-700 hover:scale-105"
@@ -154,8 +154,8 @@ export default function HealingExhibition() {
             {/* 作品2 */}
             <div className="overflow-hidden rounded-lg relative" style={{ aspectRatio: '3/2' }}>
               <Image 
-                src="/all/imbalance/3.jpg"
-                alt="Gravity Exhibition 2" 
+                src="/all/imbalance/2.jpg"
+                alt="Imbalance 2" 
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 className="object-cover transition-transform duration-700 hover:scale-105"
@@ -166,26 +166,15 @@ export default function HealingExhibition() {
             {/* 作品3 */}
             <div className="overflow-hidden rounded-lg relative" style={{ aspectRatio: '3/2' }}>
               <Image 
-                src="/all/imbalance/4.jpg"
-                alt="Gravity Exhibition 3" 
+                src="/all/imbalance/3.jpg"
+                alt="Imbalance 3" 
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 className="object-cover transition-transform duration-700 hover:scale-105"
                 quality={40}
               />
             </div>
-            
-            {/* 作品4 */}
-            <div className="overflow-hidden rounded-lg relative" style={{ aspectRatio: '3/2' }}>
-              <Image 
-                src="/all/imbalance/5.jpg"
-                alt="Gravity Exhibition 4" 
-                fill
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                className="object-cover transition-transform duration-700 hover:scale-105"
-                quality={40}
-              />
-            </div>
+          
             
           </div>
         </div>
