@@ -691,7 +691,11 @@ export default function  Home() {
         <div className="w-screen h-screen fixed top-0 left-0 z-2">
             <section id="hero" className="relative h-screen text-white">
             {!isVideoLoaded && (
-              <div className="absolute inset-0 bg-gray-900 animate-pulse" />
+              <div className="absolute inset-0 bg-gray-900" 
+              style={{ 
+                animation: 'pulse 7s cubic-bezier(0.4, 0, 0.6, 1) infinite' 
+              }}
+              />
             )}
               <video
                 autoPlay
