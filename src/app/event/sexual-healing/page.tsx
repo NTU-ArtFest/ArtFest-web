@@ -137,7 +137,7 @@ In this safe space of learning and care, we move toward wholeness—where desire
           
           {/* 網格畫廊 - 固定 3:2 比例 */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            {Array.from({ length: 18 }, (_, index) => (
+            {Array.from({ length: 16 }, (_, index) => (
               <div key={index + 1} className="overflow-hidden rounded-lg" style={{ aspectRatio: '3/2' }}>
                 <img 
                   src={`/all/sexual-healing/${index + 1}.png`} 

@@ -175,30 +175,6 @@ export default function BeyondTheTideExhibition() {
                 quality={75}
               />
             </div>
-            
-            {/* 作品4 */}
-            <div className="overflow-hidden rounded-lg relative" style={{ aspectRatio: '3/2' }}>
-              <Image 
-                src="/all/beyond-the-tide/4.png" 
-                alt="Beyond the Tide Exhibition 4" 
-                fill
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                className="object-cover transition-transform duration-700 hover:scale-105"
-                quality={75}
-              />
-            </div>
-            
-            {/* 作品5 */}
-            <div className="overflow-hidden rounded-lg relative" style={{ aspectRatio: '3/2' }}>
-              <Image 
-                src="/all/beyond-the-tide/5.png" 
-                alt="Beyond the Tide Exhibition 5" 
-                fill
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                className="object-cover transition-transform duration-700 hover:scale-105"
-                quality={40}
-              />
-            </div>
           </div>
         </div>
       </div>

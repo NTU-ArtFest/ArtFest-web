@@ -12,7 +12,7 @@ export default function ImmeasurableEmptinessActivity() {
         <div className="absolute inset-0 bg-black z-0"></div>
         <img
           className="w-full h-full object-cover absolute inset-0 z-0 opacity-60"
-          src="/all/immeasurable-emptiness/3.png"
+          src="/all/immeasurable-emptiness/10.png"
           alt="Activity Background"
         />
         
@@ -125,7 +125,7 @@ export default function ImmeasurableEmptinessActivity() {
           
           {/* 網格畫廊 - 固定 3:2 比例 */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            {Array.from({ length: 20 }, (_, index) => (
+            {Array.from({ length: 18 }, (_, index) => (
               <div 
                 key={index + 1} 
                 className="relative overflow-hidden rounded-lg" 

@@ -12,7 +12,7 @@ export default function InSearchOfFlowActivity() {
         <div className="absolute inset-0 bg-black z-0"></div>
         <img
           className="w-full h-full object-cover absolute inset-0 z-0 opacity-60"
-          src="/all/insearch-of-flow/21.png"
+          src="/all/insearch-of-flow/20.png"
           alt="Activity Background"
         />
         
