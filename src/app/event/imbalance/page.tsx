@@ -135,47 +135,28 @@ export default function HealingExhibition() {
       {/* 作品展示區 - 採用 3:2 比例展示圖片 */}
       <div className="relative z-10 py-10 md:py-14 bg-gradient-to-b from-black to-gray-900">
         <div className="container mx-auto px-6">
-          <h2 className="text-base md:text-2xl font-light mb-8 md:mb-12 tracking-wider text-center uppercase">活動紀錄 Activity Documentation</h2>
+          <h2 className="text-base md:text-2xl font-light mb-8 md:mb-12 tracking-wider text-center uppercase">
+            活動紀錄 Activity Documentation
+          </h2>
           
           {/* 網格畫廊 - 固定 3:2 比例 */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            {/* 作品1 */}
-            <div className="overflow-hidden rounded-lg relative" style={{ aspectRatio: '3/2' }}>
-              <Image 
-                src="/all/imbalance/1.jpg"
-                alt="Imbalance 1" 
-                fill
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                className="object-cover transition-transform duration-700 hover:scale-105"
-                quality={40}
-              />
-            </div>
-            
-            {/* 作品2 */}
-            <div className="overflow-hidden rounded-lg relative" style={{ aspectRatio: '3/2' }}>
-              <Image 
-                src="/all/imbalance/2.jpg"
-                alt="Imbalance 2" 
-                fill
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                className="object-cover transition-transform duration-700 hover:scale-105"
-                quality={40}
-              />
-            </div>
-            
-            {/* 作品3 */}
-            <div className="overflow-hidden rounded-lg relative" style={{ aspectRatio: '3/2' }}>
-              <Image 
-                src="/all/imbalance/3.jpg"
-                alt="Imbalance 3" 
-                fill
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                className="object-cover transition-transform duration-700 hover:scale-105"
-                quality={40}
-              />
-            </div>
-          
-            
+            {Array.from({ length: 17 }, (_, index) => (
+              <div 
+                key={index + 1} 
+                className="relative overflow-hidden rounded-lg" 
+                style={{ aspectRatio: '3/2' }}
+              >
+                <Image
+                  src={`/all/imbalance/${index + 1}.png`} 
+                  alt={`Imbalance Activity ${index + 1}`} 
+                  className="object-cover transition-transform duration-700 hover:scale-105"
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  priority={index < 6} // 只對前 6 張圖片使用 priority
+                />
+              </div>
+            ))}
           </div>
         </div>
       </div>
