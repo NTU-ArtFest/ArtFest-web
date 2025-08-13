@@ -40,12 +40,12 @@ export default function PolisList() {
 
   // 教學圖片
   const tutorialImages = [
-    { src: '/all/Instruction1.png', alt: 'Instruction 1' },
-    { src: '/all/Instruction2.png', alt: 'Instruction 2' },
-    { src: '/all/Instruction3.png', alt: 'Instruction 3' },
-    { src: '/all/Instruction4.png', alt: 'Instruction 4' },
-    { src: '/all/Instruction5.png', alt: 'Instruction 5' },
-    { src: '/all/Instruction6.png', alt: 'Instruction 6' },
+    { src: '/all/instruction1.png', alt: 'Instruction 1' },
+    { src: '/all/instruction2.png', alt: 'Instruction 2' },
+    { src: '/all/instruction3.png', alt: 'Instruction 3' },
+    { src: '/all/instruction4.png', alt: 'Instruction 4' },
+    { src: '/all/instruction5.png', alt: 'Instruction 5' },
+    { src: '/all/instruction6.png', alt: 'Instruction 6' },
   ];
 
   // 教學文字
